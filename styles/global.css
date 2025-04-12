@@ -52,6 +52,7 @@ body {
   transition: padding 0.2s ease;
   overflow: visible !important;
   /* ✅ Quan trọng để scale vượt khung */
+  transition: transform 0.3s ease-in-out;
 }
 
 .bottom-nav-wrapper::-webkit-scrollbar {
@@ -155,6 +156,16 @@ body {
   color: #9a9a9a;
 }
 
+.hidden {
+  transform: translateY(150%);
+  /* Ẩn header bằng cách dịch lên 100% */
+}
+
+.h-shadow {
+  border-bottom: 1px solid rgba(110, 110, 110, 0.385);
+  /* Đường viền ở dưới */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.041);
+}
 
 /*========= MAIN ===========*/
 .container {

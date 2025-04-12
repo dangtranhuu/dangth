@@ -64,27 +64,41 @@ export default function Navbar() {
       };
     });
 
+    // 👉 Logic scroll để ẩn/hiện header
+    let lastScrollTop = 0;
 
-    // Toggle detail trong section khi click title
-    document.querySelectorAll('.section .item').forEach((item) => {
-      const title = item.querySelector('.title');
-      const details = item.querySelector('.details');
-      const icon = item.querySelector('svg');
+    const handleScroll = () => {
+      const currentScrollTop = window.scrollY;
+      if (!navRef.current) return;
 
-      title?.addEventListener('click', () => {
-        details?.classList.toggle('show');
-        icon?.classList.toggle('rotate');
-      });
-    });
+      if (currentScrollTop > 0) {
+        navRef.current.classList.add('h-shadow');
+      } else {
+        navRef.current.classList.remove('h-shadow');
+      }
 
-    // Cleanup (optional)
+      if (currentScrollTop > lastScrollTop) {
+        navRef.current.classList.add('hidden'); // scroll down
+      } else {
+        navRef.current.classList.remove('hidden'); // scroll up
+      }
+
+      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // fix safari
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup scroll event
     return () => {
+      window.removeEventListener('scroll', handleScroll);
+
       items.forEach((item) => {
         item.removeEventListener('mouseenter', () => { });
         item.removeEventListener('mouseleave', () => { });
       });
     };
   }, []);
+
 
   return (
     <div className="menu">
@@ -130,11 +144,12 @@ export default function Navbar() {
             <Link href="#"><FaCertificate /></Link>
           </div>
 
+          {/* 
           <div className="nav-item">
             <Link href="#"><FaEnvelope /></Link>
           </div>
 
-          {/* 🌐 Social Dev */}
+          🌐 Social Dev
           <div className="nav-item">
             <a href="https://github.com/" target="_blank" rel="noreferrer">
               <FaGithub />
@@ -154,7 +169,7 @@ export default function Navbar() {
             <a href="https://stackoverflow.com/" target="_blank" rel="noreferrer">
               <FaStackOverflow />
             </a>
-          </div>
+          </div> */}
 
           {/* 🌙 Theme toggle */}
           <div className="nav-item">
