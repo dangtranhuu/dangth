@@ -1,3 +1,5 @@
+// CHỈ DÙNG CHO GITHUB PAGE
+
 'use client'; // Chỉ cần nếu bạn dùng App Router (app/), không cần với pages/
 
 import React from 'react';
