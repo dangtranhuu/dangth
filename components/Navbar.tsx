@@ -107,7 +107,7 @@ export default function Navbar() {
           {/* 👤 Cá nhân */}
           <div className="nav-item">
             <span>Home</span>
-            <Link href="#"><FaUser /></Link>
+            <Link href="/"><FaUser /></Link>
           </div>
 
           <div className="nav-item">
@@ -141,7 +141,7 @@ export default function Navbar() {
 
           <div className="nav-item">
             <span>Cert</span>
-            <Link href="#"><FaCertificate /></Link>
+            <Link href="/cert"><FaCertificate /></Link>
           </div>
 
           {/* 

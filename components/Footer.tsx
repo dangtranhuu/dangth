@@ -3,7 +3,7 @@ import React from 'react';
 export default function Footer() {
   return (
     <footer>
-      © Davis 2023 · A FrogDev at @{' '}
+      © Davis 2023 · A Fullstack developer at @{' '}
       <a
         href="http://devlands.io.vn"
         target="_blank"

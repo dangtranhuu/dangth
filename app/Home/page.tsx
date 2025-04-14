@@ -1,8 +1,39 @@
 'use client';
 import Image from "next/image";
 import React from 'react';
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const items = document.querySelectorAll('.item');
+
+    items.forEach((item) => {
+      const title = item.querySelector('.title') as HTMLElement;
+      const details = item.querySelector('.details') as HTMLElement;
+      const icon = item.querySelector('.icon-wrap svg') as HTMLElement;
+
+      if (title && details && icon) {
+        title.addEventListener('click', () => {
+          icon.classList.toggle('rotate');
+          details.classList.toggle('show');
+        });
+      }
+    });
+
+    return () => {
+      // Cleanup listeners when component unmounts
+      items.forEach((item) => {
+        const title = item.querySelector('.title') as HTMLElement;
+        const details = item.querySelector('.details') as HTMLElement;
+        const icon = item.querySelector('.icon-wrap svg') as HTMLElement;
+
+        if (title && details && icon) {
+          title.replaceWith(title.cloneNode(true));
+        }
+      });
+    };
+  }, []);
+
   return (
     <div className='container'>
       <div className="head item">
@@ -81,20 +112,6 @@ export default function Home() {
         </p>
         <p style={{ paddingRight: '30px' }}>
           Connect with my Linkedin to discuss about work or my Github to share interesting knowledge ^^
-        </p>
-      </div>
-
-      {/* ABOUT section */}
-      <div className="about item">
-        <p>Hi, I&apos;m Tran Huu Dang. You can call me Davis.</p>
-        <p>
-          I like technology and other work with computers. I am a developer in the back-end website fields (NodeJS and Spring Boot)
-        </p>
-        <p>
-          In addition, I also have knowledge of frontend tech such as Angular, VueJS, TailwindCSS, JavaSwing. I understand tools like Git, Postman, Debug, ...
-        </p>
-        <p style={{ paddingRight: '30px' }}>
-          Connect with my LinkedIn to discuss work or visit my GitHub to share interesting knowledge ^^
         </p>
       </div>
 
@@ -244,10 +261,10 @@ export default function Home() {
         <div className="body">
           <div className="cert-container">
             {[
-              { img: 'udemy.png', title: 'Build Responsive Websites', org: 'Udemy', date: '02/08/2024' },
-              { img: 'aws-cloudfoundations.png', title: 'Cloud Foundations', org: 'AWS', date: '03/07/2022' },
-              { img: 'programing_hub.png', title: 'Cybersecurity', org: 'Certiport', date: '20/06/2023' },
-              { img: 'mos-ppt-2016.png', title: 'MOS PowerPoint 2016', org: 'Certiport', date: '03/07/2022' }
+              { img: 'udemy.png', title: 'Master Microservices with Spring Boot & Spring Cloud', org: 'Udemy', date: '02/08/2024' },
+              { img: 'aws-cloudfoundations.png', title: 'AWS Academy Cloud Foundations', org: 'AWS', date: '03/07/2022' },
+              // { img: 'programing_hub.png', title: 'Cybersecurity', org: 'Certiport', date: '20/06/2023' },
+              // { img: 'mos-ppt-2016.png', title: 'MOS PowerPoint 2016', org: 'Certiport', date: '03/07/2022' }
             ].map((cert, idx) => (
               <div className="cert" key={idx}>
                 <img src={`/images/cert/${cert.img}`} alt={cert.title} />
