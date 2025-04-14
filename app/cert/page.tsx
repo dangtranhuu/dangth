@@ -122,7 +122,7 @@ export default function CertPage() {
                         height={80}
                         className={styles.certImage}
                       />
-                      <div className={styles.certCaption}>{cert.name}</div>
+                      <div className={styles.certCaption}>{cert.name || <em>Untitled</em>}</div>
                     </div>
                   ))}
                 </div>
