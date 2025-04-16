@@ -37,39 +37,35 @@ export default function Navbar() {
 
 
   useEffect(() => {
-    // Apply saved mode on load
     const saved = localStorage.getItem("modeByThean");
     const dark = saved === "dark";
 
     setIsDark(dark);
     document.body.classList.toggle('dark-mode', dark);
 
-    // Hover effect cho nav item
     const nav = navRef.current;
     if (!nav) return;
 
     const items = nav.querySelectorAll('.nav-item a');
 
+    const mouseEvents: { item: Element; enter: () => void; leave: () => void }[] = [];
+
     items.forEach((item) => {
-      const mouseEnter = () => item.classList.add('hovered');
-      const mouseLeave = () => item.classList.remove('hovered');
+      const enter = () => item.classList.add('hovered');
+      const leave = () => item.classList.remove('hovered');
 
-      item.addEventListener('mouseenter', mouseEnter);
-      item.addEventListener('mouseleave', mouseLeave);
+      item.addEventListener('mouseenter', enter);
+      item.addEventListener('mouseleave', leave);
 
-      // Cleanup
-      return () => {
-        item.removeEventListener('mouseenter', mouseEnter);
-        item.removeEventListener('mouseleave', mouseLeave);
-      };
+      mouseEvents.push({ item, enter, leave });
     });
 
-    // 👉 Logic scroll để ẩn/hiện header
     let lastScrollTop = 0;
 
     const handleScroll = () => {
-      const currentScrollTop = window.scrollY;
       if (!navRef.current) return;
+
+      const currentScrollTop = window.scrollY;
 
       if (currentScrollTop > 0) {
         navRef.current.classList.add('h-shadow');
@@ -78,26 +74,26 @@ export default function Navbar() {
       }
 
       if (currentScrollTop > lastScrollTop) {
-        navRef.current.classList.add('hidden'); // scroll down
+        navRef.current.classList.add('hidden');
       } else {
-        navRef.current.classList.remove('hidden'); // scroll up
+        navRef.current.classList.remove('hidden');
       }
 
-      lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // fix safari
+      lastScrollTop = Math.max(currentScrollTop, 0);
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup scroll event
     return () => {
       window.removeEventListener('scroll', handleScroll);
 
-      items.forEach((item) => {
-        item.removeEventListener('mouseenter', () => { });
-        item.removeEventListener('mouseleave', () => { });
+      mouseEvents.forEach(({ item, enter, leave }) => {
+        item.removeEventListener('mouseenter', enter);
+        item.removeEventListener('mouseleave', leave);
       });
     };
   }, []);
+
 
 
   return (
