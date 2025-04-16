@@ -21,7 +21,15 @@ export default function CertPage() {
         { name: 'AWS Cloud Practitioner Journey', image: '/images/cert/udemy/UC-9c1f9d11-56e1-4892-91fb-b2ec21873e71_page-0001.jpg' },
         { name: 'Master Java Web Services & RESTAPI with Spring Boot', image: '/images/cert/udemy/UC-e051a1c4-9e19-46a4-a941-7fd0aa660d3d_page-0001.jpg' },
       ],
-    }, {
+    },
+    {
+      org: 'Data Camp',
+      logo: '/images/cert/datacamp/datacamp-logo-freelogovectors.net_.png',
+      certs: [
+        { name: 'Intermediate SQL Queries', image: '/images/cert/datacamp/Intermediate SQL Queries.png' },
+      ],
+    },
+    {
       org: 'FreeCodeCamp',
       logo: '/images/cert/freecodecamp/freecodecamp-icon.png',
       certs: [

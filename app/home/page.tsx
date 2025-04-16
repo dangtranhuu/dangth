@@ -1,13 +1,11 @@
 'use client';
-import Image from "next/image";
-import React from 'react';
-import { useEffect } from "react";
+import React, { useEffect } from 'react';
 
 export default function Home() {
   useEffect(() => {
     const items = document.querySelectorAll('.item');
 
-    items.forEach((item) => {
+    const handleClick = (item: Element) => {
       const title = item.querySelector('.title') as HTMLElement;
       const details = item.querySelector('.details') as HTMLElement;
       const icon = item.querySelector('.icon-wrap svg') as HTMLElement;
@@ -18,7 +16,10 @@ export default function Home() {
           details.classList.toggle('show');
         });
       }
-    });
+    };
+
+    // Adding event listeners to all items
+    items.forEach(handleClick);
 
     return () => {
       // Cleanup listeners when component unmounts
@@ -28,7 +29,10 @@ export default function Home() {
         const icon = item.querySelector('.icon-wrap svg') as HTMLElement;
 
         if (title && details && icon) {
-          title.replaceWith(title.cloneNode(true));
+          title.removeEventListener('click', () => {
+            icon.classList.toggle('rotate');
+            details.classList.toggle('show');
+          });
         }
       });
     };
@@ -123,7 +127,7 @@ export default function Home() {
             <div className="title">
               <div className="left col">
                 <div className="left">
-                  <img className="logo" src="/assets/images/exp/fpoly.jpg" alt="fpoly" />
+                  <img className="logo" src="/images/exp/fpoly.jpg" alt="fpoly" />
                 </div>
                 <div className="right">
                   <div className="top">
@@ -166,7 +170,7 @@ export default function Home() {
             <div className="title">
               <div className="left col">
                 <div className="left">
-                  <img className="logo" src="/assets/images/education/ctu.png" alt="ctu" />
+                  <img className="logo" src="/images/education/ctu.png" alt="ctu" />
                 </div>
                 <div className="right">
                   <div className="top">
@@ -263,6 +267,7 @@ export default function Home() {
             {[
               { img: 'udemy.png', title: 'Master Microservices with Spring Boot & Spring Cloud', org: 'Udemy', date: '02/08/2024' },
               { img: 'aws-cloudfoundations.png', title: 'AWS Academy Cloud Foundations', org: 'AWS', date: '03/07/2022' },
+              { img: 'datacamp/statement-of-accomplishment.png', title: 'Intermediate SQL Queries', org: 'Data Camp', date: 'APR 15, 2022' },
               // { img: 'programing_hub.png', title: 'Cybersecurity', org: 'Certiport', date: '20/06/2023' },
               // { img: 'mos-ppt-2016.png', title: 'MOS PowerPoint 2016', org: 'Certiport', date: '03/07/2022' }
             ].map((cert, idx) => (
