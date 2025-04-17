@@ -3,8 +3,9 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import { notFound } from 'next/navigation'
 
-const postsDirectory = path.join(process.cwd(), 'posts')
+const postsDir = path.join(process.cwd(), 'posts')
 
 export interface PostData {
   slug: string
@@ -13,62 +14,34 @@ export interface PostData {
   contentHtml: string
 }
 
-// Lấy danh sách file .md trong thư mục posts/
+// Lấy tất cả slug từ thư mục posts
 export function getAllPostSlugs(): { params: { slug: string } }[] {
-  const filenames = fs.readdirSync(postsDirectory)
-  return filenames
+  return fs.readdirSync(postsDir)
     .filter(file => file.endsWith('.md'))
-    .map((filename) => ({
-      params: {
-        slug: filename.replace(/\.md$/, ''),
-      },
+    .map(file => ({
+      params: { slug: file.replace(/\.md$/, '') }
     }))
 }
 
-// Lấy nội dung file Markdown theo slug
-export async function getPostData(slug: string): Promise<PostData> {
-  const fullPath = path.join(postsDirectory, `${slug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
+// Load nội dung bài viết từ slug
+export async function getPost(slug: string): Promise<PostData> {
+  const filePath = path.join(postsDir, `${slug}.md`)
 
-  const matterResult = matter(fileContents)
-
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content)
-  const contentHtml = processedContent.toString()
-
-  return {
-    slug,
-    title: matterResult.data.title,
-    date: matterResult.data.date,
-    contentHtml,
-  }
-}
-
-
-import { notFound } from 'next/navigation'
-
-export async function getPost(slug: string) {
-  const filePath = path.join(postsDirectory, `${slug}.md`)
-
-  // Check nếu file không tồn tại
-  if (!fs.existsSync(filePath)) {
-    notFound()
-  }
+  if (!fs.existsSync(filePath)) notFound()
 
   try {
-    const file = fs.readFileSync(filePath, 'utf-8')
-    const { content, data } = matter(file)
-    const processed = await remark().use(html).process(content)
+    const raw = fs.readFileSync(filePath, 'utf-8')
+    const { content, data } = matter(raw)
+    const contentHtml = (await remark().use(html).process(content)).toString()
 
     return {
+      slug,
       title: data.title ?? 'Untitled',
       date: data.date ?? '',
-      contentHtml: processed.toString(),
+      contentHtml,
     }
   } catch (err) {
-    console.error('Error reading post:', err)
+    console.error(`Error loading post "${slug}":`, err)
     notFound()
   }
 }
-
