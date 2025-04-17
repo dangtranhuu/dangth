@@ -17,7 +17,7 @@ export default function GiscusComments() {
       theme="light"
       lang="vi"
       loading="lazy"
-      mapping="specific" term={"post/backend/jwt-springboot"}
+      mapping="specific" term={"post/backend/jwt-springboot/"}
 
     />
   )
