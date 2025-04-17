@@ -1,4 +1,4 @@
-import { getPost } from '../../../lib/markdown'
+import { getPost, getAllPostSlugs } from '../../../lib/markdown'
 import React from 'react'
 
 interface Props {
@@ -15,4 +15,9 @@ export default async function PostPage({ params }: Props) {
       <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
     </article>
   )
+}
+
+export async function generateStaticParams() {
+  const slugs = getAllPostSlugs()
+  return slugs.map(({ params }) => ({ slug: params.slug }))
 }
