@@ -46,15 +46,29 @@ export async function getPostData(slug: string): Promise<PostData> {
 }
 
 
+import { notFound } from 'next/navigation'
+
 export async function getPost(slug: string) {
   const filePath = path.join(postsDirectory, `${slug}.md`)
-  const file = fs.readFileSync(filePath, 'utf-8')
-  const { content, data } = matter(file)
-  const processed = await remark().use(html).process(content)
 
-  return {
-    title: data.title,
-    date: data.date,
-    contentHtml: processed.toString(),
+  // Check nếu file không tồn tại
+  if (!fs.existsSync(filePath)) {
+    notFound()
+  }
+
+  try {
+    const file = fs.readFileSync(filePath, 'utf-8')
+    const { content, data } = matter(file)
+    const processed = await remark().use(html).process(content)
+
+    return {
+      title: data.title ?? 'Untitled',
+      date: data.date ?? '',
+      contentHtml: processed.toString(),
+    }
+  } catch (err) {
+    console.error('Error reading post:', err)
+    notFound()
   }
 }
+
