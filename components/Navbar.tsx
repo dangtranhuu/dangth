@@ -126,7 +126,7 @@ export default function Navbar() {
           </div>
 
           <div className="nav-item">
-            <span>Cert</span>
+            <span>Post</span>
             <Link href="/blog"><ImBlog /></Link>
           </div>
 

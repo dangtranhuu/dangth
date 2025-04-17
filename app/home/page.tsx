@@ -1,5 +1,12 @@
 'use client';
 import React, { useEffect } from 'react';
+import { FiGithub } from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
+import { TbBrandHackerrank } from "react-icons/tb";
+import { LuLinkedin } from "react-icons/lu";
+import { FiYoutube } from "react-icons/fi";
+import { LuFacebook } from "react-icons/lu";
+import { TbBrandTiktok } from "react-icons/tb";
 
 export default function Home() {
   useEffect(() => {
@@ -54,22 +61,17 @@ export default function Home() {
             <div className="wrap">
               <a target="_blank" href="https://github.com/theanishtar">
                 <button>
-                  <i className="fa-brands fa-github"></i>
+                  <FiGithub />
                 </button>
               </a>
               <a href="https://leetcode.com/tranhuudang" target="_blank">
                 <button>
-                  <svg id="leetcode" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
-                    <title>LeetCode icon</title>
-                    <path d="M16.102 17.93l-2.697 2.607c-..." />
-                  </svg>
+                  <SiLeetcode />
                 </button>
               </a>
               <a href="https://www.hackerrank.com/tranhuudang" target="_blank">
                 <button>
-                  <svg id="hackerrank" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 0c1.714 0 13 6.516..." />
-                  </svg>
+                  <TbBrandHackerrank />
                 </button>
               </a>
             </div>
@@ -77,22 +79,22 @@ export default function Home() {
             <div className="wrap">
               <a target="_blank" href="https://www.linkedin.com/in/tranhuudang">
                 <button>
-                  <i className="fa-brands fa-linkedin-in" id="linkedin"></i>
+                  <LuLinkedin />
                 </button>
               </a>
               <a href="https://www.youtube.com/@froggydev" target="_blank">
                 <button>
-                  <i className="fa-brands fa-youtube" id="youtube"></i>
+                  <FiYoutube />
                 </button>
               </a>
               <a target="_blank" href="https://www.facebook.com/dangdeveloper/">
                 <button>
-                  <i className="fa-brands fa-facebook" id="facebook"></i>
+                  <LuFacebook />
                 </button>
               </a>
               <a href="https://www.tiktok.com/@theanishtar" target="_blank" rel="noopener noreferrer">
                 <button>
-                  <i className="fa-brands fa-tiktok" id="tiktok"></i>
+                  <TbBrandTiktok />
                 </button>
               </a>
             </div>

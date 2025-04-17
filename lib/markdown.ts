@@ -16,6 +16,7 @@ export interface PostData {
   title: string
   date: string
   contentHtml: string
+  image?: string | null // 👈 thêm dòng này
 }
 
 // Lấy tất cả slug từ thư mục posts
@@ -45,11 +46,18 @@ export async function getPost(slug: string): Promise<PostData> {
       .use(rehypeStringify)
       .process(content)
 
+    const contentHtml = processed.toString()
+
+    // 🖼️ Trích ảnh đầu tiên (nếu có)
+    const imgMatch = contentHtml.match(/<img[^>]+src="([^">]+)"/)
+    const firstImage = imgMatch ? imgMatch[1] : "@/public/images/avt.png"
+
     return {
       slug,
       title: data.title ?? 'Untitled',
       date: data.date ?? '',
-      contentHtml: processed.toString(),
+      contentHtml: contentHtml,
+      image: firstImage, // 👈 ảnh đầu tiên
     }
   } catch (err) {
     console.error(`Error loading post "${slug}":`, err)

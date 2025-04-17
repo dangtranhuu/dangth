@@ -30,3 +30,22 @@ export async function generateStaticParams() {
   const slugs = getAllPostSlugs()
   return slugs.map(({ params }) => ({ slug: params.slug }))
 }
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = await getPost(params.slug)
+
+  return {
+    title: post.title,
+    openGraph: {
+      title: post.title,
+      type: 'article',
+      images: post.image ? [post.image] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      images: post.image ? [post.image] : [],
+    }
+  }
+}
+
