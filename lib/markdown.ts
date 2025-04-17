@@ -65,3 +65,24 @@ export async function getPost(slug: string): Promise<PostData> {
   }
 }
 
+export async function getAllPostsMeta() {
+  const files = fs.readdirSync(postsDir)
+
+  return files
+    .filter((file) => file.endsWith('.md'))
+    .map((filename) => {
+      const slug = filename.replace(/\.md$/, '')
+      const fileContent = fs.readFileSync(path.join(postsDir, filename), 'utf-8')
+      const { data } = matter(fileContent)
+
+      return {
+        slug,
+        title: data.title ?? 'Untitled',
+        date: data.date ?? '',
+        image: data.image ?? null,
+        authors: data.authors ?? [],
+        arxiv: data.arxiv ?? null,
+        tags: data.tags ?? [],
+      }
+    })
+}

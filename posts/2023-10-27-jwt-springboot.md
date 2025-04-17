@@ -2,18 +2,15 @@
 layout: Post
 title: Xây dựng Json Web Token trong Spring Boot
 subtitle: Phân quyền và đăng nhập trong Spring Boot
-author: Trần Hữu Đang
+authors: ["Trần Hữu Đang", "Nguyễn Văn A"]
 date: "2023-10-27"
-useHeaderImage: false
-headerImage: img/in-post/back-end/jwtspringboot.png
-headerMask: rgba(70, 112, 80, 0)
-permalinkPattern: /post/backend/:slug/
-tags:
-  - Backend
-  - Authentication
-  - Authoriztion
-  - SpringBoot
+image: "https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtspringboot/main.png?raw=true"
+arxiv: "https://arxiv.org/abs/2502.13095"
+tags: ["Backend", "Authentication", "Authoriztion", "SpringBoot"]
+
 ---
+
+
 
 [JWT]() là một hình thức xác thực người dùng rất bảo mật, hiệu quả và phổ biến trong mô hình[CSR]()
 

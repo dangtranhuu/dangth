@@ -12,6 +12,7 @@ import {
   FaSun,
   FaMoon,
 } from 'react-icons/fa';
+import { GiMagicPortal } from "react-icons/gi";
 import { ImBlog } from "react-icons/im";
 export default function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
@@ -124,8 +125,13 @@ export default function Navbar() {
           </div>
 
           <div className="nav-item">
-            <span>Post</span>
+            <span>Blog</span>
             <a href="/blog"><ImBlog /></a>
+          </div>
+
+          <div className="nav-item">
+            <span>Posts</span>
+            <a href="/post"><GiMagicPortal /></a>
           </div>
 
           {/* 
