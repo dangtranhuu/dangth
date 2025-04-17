@@ -2,8 +2,10 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
+import remarkGfm from 'remark-gfm' // 👈 thêm dòng này
 import html from 'remark-html'
 import { notFound } from 'next/navigation'
+
 
 const postsDir = path.join(process.cwd(), 'posts')
 
@@ -32,16 +34,21 @@ export async function getPost(slug: string): Promise<PostData> {
   try {
     const raw = fs.readFileSync(filePath, 'utf-8')
     const { content, data } = matter(raw)
-    const contentHtml = (await remark().use(html).process(content)).toString()
+    // const contentHtml = (await remark().use(html).process(content)).toString()
+    const processed = await remark()
+      .use(remarkGfm) // 👈 hỗ trợ bảng, task list, strikethrough
+      .use(html)
+      .process(content)
 
     return {
       slug,
       title: data.title ?? 'Untitled',
       date: data.date ?? '',
-      contentHtml,
+      contentHtml: processed.toString(),
     }
   } catch (err) {
     console.error(`Error loading post "${slug}":`, err)
     notFound()
   }
 }
+

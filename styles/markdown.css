@@ -88,3 +88,7 @@
   color: #0070f3;
   text-decoration: underline;
 }
+
+.markdown-body img {
+  max-width: 100%;
+}
