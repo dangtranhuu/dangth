@@ -41,6 +41,7 @@ export async function getPost(slug: string): Promise<PostData> {
       .use(remarkGfm)
       .use(remarkRehype)           // convert markdown → HTML AST
       .use(rehypeHighlight)        // 🪄 gán class `language-java`, highlight luôn
+      .use(rehypeHighlight) // 🪄 Highlight từng ngôn ngữ
       .use(rehypeStringify)
       .process(content)
 

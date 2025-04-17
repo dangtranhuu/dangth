@@ -243,8 +243,6 @@ code {
   padding: 2px 6px;
   border-radius: 4px;
   color: #38bdf8;
-  font-weight: 600;
-
 }
 
 :not(pre)>code {
@@ -455,4 +453,32 @@ html.dark .prose pre {
 
 html.dark .prose pre[data-lang]::after {
   color: #aaa;
+}
+
+/* HIGHTLIGHT CODE */
+.hljs {
+  background-color: #005cc500;
+  color: #333;
+}
+
+.hljs-keyword {
+  color: #d73a49;
+  font-weight: bold;
+}
+
+.hljs-string {
+  color: #032f62;
+}
+
+.hljs-comment {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.hljs-built_in {
+  color: #005cc5;
+}
+
+.hljs-title {
+  color: #6f42c1;
 }
