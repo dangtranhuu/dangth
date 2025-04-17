@@ -10,13 +10,15 @@ export default function GiscusComments() {
       repoId="R_kgDOJpeyjQ"
       category="Announcements"
       categoryId="DIC_kwDOJpeyjc4CW2KO"
-      mapping="pathname"
+      // mapping="pathname"
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="bottom"
       theme="light"
       lang="vi"
       loading="lazy"
+      mapping="specific" term={"post/backend/jwt-springboot"}
+
     />
   )
 }
