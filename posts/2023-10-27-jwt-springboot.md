@@ -47,18 +47,22 @@ Sẽ cập nhật sau ^^
 
 Như bạn thấy ở hình trên ta cần 3 Table chính liên quan đến người dùng gồm: **Users**, **Roles** và **UserRole**.
 
-::: details <b>Chi tiết:</b>
-**Users**: chứa danh sách người dùng
+<details>
+<summary><b>Chi tiết:</b></summary>
 
-**Roles**: chứa tất cả các quyền trong hệ thống
-
+**Users**: chứa danh sách người dùng  
+**Roles**: chứa tất cả các quyền trong hệ thống  
 **UserRole**: bảng trung gian liên kết N-N trong hệ thống
-:::
+
+</details>
+
 
 ### Mã nguồn My-SQL
 #### Tạo bảng
 
-::: details <b>Code SQL</b>
+<details>
+  <summary><b>Code SQL</b></summary>
+
 ```sql
 --Quyền
 CREATE TABLE roles(
@@ -90,12 +94,13 @@ CREATE TABLE user_role(
 	userid INT NOT NULL FOREIGN KEY REFERENCES users(userid), --id ng dung
 	role_id INT NOT NULL FOREIGN KEY REFERENCES roles(role_id)--Vai trò người dùng
 )
-```
-:::
+
 
 #### Thêm dữ liệu
 
-::: details <b>Mã SQL</b>
+<details>
+  <summary><b>Mã SQL</b></summary>
+
 ```sql
 INSERT INTO roles VALUES
 	('ROLE_ADMIN',N'Quản trị web'),
@@ -120,7 +125,8 @@ INSERT INTO user_role VALUES
 	(7 ,1),
 	(7 ,2)
 ```
-:::
+</details> 
+
 Ta có thể lấy ra các thông tin và quyền của một **User** ứng với `email` và `password` bằng câu truy vấn sau:
 ```sql
 SELECT 

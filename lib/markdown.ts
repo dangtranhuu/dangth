@@ -2,8 +2,10 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
-import remarkGfm from 'remark-gfm' // 👈 thêm dòng này
-import html from 'remark-html'
+import remarkGfm from 'remark-gfm'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
+import rehypeHighlight from 'rehype-highlight'
 import { notFound } from 'next/navigation'
 
 
@@ -36,8 +38,10 @@ export async function getPost(slug: string): Promise<PostData> {
     const { content, data } = matter(raw)
     // const contentHtml = (await remark().use(html).process(content)).toString()
     const processed = await remark()
-      .use(remarkGfm) // 👈 hỗ trợ bảng, task list, strikethrough
-      .use(html)
+      .use(remarkGfm)
+      .use(remarkRehype)           // convert markdown → HTML AST
+      .use(rehypeHighlight)        // 🪄 gán class `language-java`, highlight luôn
+      .use(rehypeStringify)
       .process(content)
 
     return {
