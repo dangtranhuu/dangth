@@ -1,4 +1,5 @@
 import { getPost, getAllPostSlugs } from '../../../lib/markdown'
+import GiscusComments from '@/components/GiscusComments'
 import React from 'react'
 
 interface Props {
@@ -13,6 +14,9 @@ export default async function PostPage({ params }: Props) {
       <h1>{post.title}</h1>
       <p>{post.date}</p>
       <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+
+      <hr style={{ margin: '2rem 0' }} />
+      <GiscusComments />
     </article>
   )
 }

@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^3.1.0",
     "dotenv": "^16.5.0",
+    "giscus": "^1.6.0",
     "gray-matter": "^4.0.3",
     "next": "14.2.28",
     "react": "^18",
