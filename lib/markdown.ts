@@ -13,6 +13,19 @@ export interface PostData {
   contentHtml: string
 }
 
+// Lấy danh sách file .md trong thư mục posts/
+export function getAllPostSlugs(): { params: { slug: string } }[] {
+  const filenames = fs.readdirSync(postsDirectory)
+  return filenames
+    .filter(file => file.endsWith('.md'))
+    .map((filename) => ({
+      params: {
+        slug: filename.replace(/\.md$/, ''),
+      },
+    }))
+}
+
+// Lấy nội dung file Markdown theo slug
 export async function getPostData(slug: string): Promise<PostData> {
   const fullPath = path.join(postsDirectory, `${slug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -26,8 +39,22 @@ export async function getPostData(slug: string): Promise<PostData> {
 
   return {
     slug,
-    contentHtml,
     title: matterResult.data.title,
     date: matterResult.data.date,
+    contentHtml,
+  }
+}
+
+
+export async function getPost(slug: string) {
+  const filePath = path.join(postsDirectory, `${slug}.md`)
+  const file = fs.readFileSync(filePath, 'utf-8')
+  const { content, data } = matter(file)
+  const processed = await remark().use(html).process(content)
+
+  return {
+    title: data.title,
+    date: data.date,
+    contentHtml: processed.toString(),
   }
 }

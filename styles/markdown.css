@@ -1,0 +1,90 @@
+/* styles/markdown.css */
+
+:root {
+  --primary-color: #0074e4;
+  --primary-color-dark: #d41d45;
+  --secondary-color: #ff6600;
+  --background-color: #f0f0f0;
+  --background-color-dark: #374151;
+  --text-color: #1F2937;
+  --text-color-dark: #e5e7eb;
+  --contact-bc: #dbdfe7;
+  --contact-bc-dark: #4A5363;
+}
+
+.markdown-body {
+  background-color: var(--background-color);
+  font-family: "Computer Modern Sans", sans-serif;
+  /* font-family: 'CMUSans', sans-serif; */
+  font-size: 18px;
+  color: var(--text-color);
+  /* margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.75;
+  color: #333;
+  font-size: 1rem;
+  word-break: break-word; */
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.3rem;
+}
+
+.markdown-body h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.2rem;
+}
+
+.markdown-body h3 {
+  font-size: 1.25rem;
+}
+
+.markdown-body p {
+  margin: 1rem 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body pre {
+  background: #f6f8fa;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.markdown-body code {
+  background: #f0f0f0;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.markdown-body blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid #ddd;
+  background-color: #f9f9f9;
+  color: #555;
+  font-style: italic;
+}
+
+.markdown-body a {
+  color: #0070f3;
+  text-decoration: underline;
+}

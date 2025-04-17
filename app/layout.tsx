@@ -1,6 +1,7 @@
 // app/layout.tsx
 import '../styles/global.css'
 import '../styles/animation.css'
+import '../styles/markdown.css'
 import { ReactNode } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
