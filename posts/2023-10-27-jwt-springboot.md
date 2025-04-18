@@ -2,10 +2,10 @@
 layout: Post
 title: Xây dựng Json Web Token trong Spring Boot
 subtitle: Phân quyền và đăng nhập trong Spring Boot
-authors: ["Trần Hữu Đang", "Nguyễn Văn A"]
+author: Trần Hữu Đang
 date: "2023-10-27"
 image: "https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtspringboot/main.png?raw=true"
-arxiv: "https://arxiv.org/abs/2502.13095"
+# arxiv: "https://arxiv.org/abs/2502.13095"
 tags: ["Backend", "Authentication", "Authoriztion", "SpringBoot"]
 
 ---

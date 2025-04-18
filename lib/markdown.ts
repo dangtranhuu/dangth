@@ -19,6 +19,18 @@ export interface PostData {
   image?: string | null // 👈 thêm dòng này
 }
 
+export interface PostMeta {
+  slug: string
+  title: string
+  subtitle?: string
+  author?: string
+  date: string
+  image?: string | null
+  tags?: string[]
+  arxiv?: string | null
+}
+
+
 // Lấy tất cả slug từ thư mục posts
 export function getAllPostSlugs(): { params: { slug: string } }[] {
   return fs.readdirSync(postsDir)
@@ -55,10 +67,14 @@ export async function getPost(slug: string): Promise<PostData> {
     return {
       slug,
       title: data.title ?? 'Untitled',
+      subtitle: data.subtitle ?? '',
+      author: data.author ?? '',
       date: data.date ?? '',
       contentHtml: contentHtml,
-      image: firstImage, // 👈 ảnh đầu tiên
+      image: firstImage,
+      tags: data.tags ?? [],
     }
+
   } catch (err) {
     console.error(`Error loading post "${slug}":`, err)
     notFound()
@@ -78,11 +94,12 @@ export async function getAllPostsMeta() {
       return {
         slug,
         title: data.title ?? 'Untitled',
-        date: data.date ?? '',
+        subtitle: data.subtitle ?? '',
+        author: data.author ?? '',
+        date: typeof data.date === 'string' ? data.date : new Date(data.date).toISOString().slice(0, 10),
         image: data.image ?? null,
-        authors: data.authors ?? [],
-        arxiv: data.arxiv ?? null,
         tags: data.tags ?? [],
+        arxiv: data.arxiv ?? null,
       }
     })
 }
