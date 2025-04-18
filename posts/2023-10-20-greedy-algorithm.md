@@ -3,7 +3,7 @@ title: Tìm hiểu về giải thuật tham lam
 subtitle: Cấu trúc dữ liệu và giải thuật
 author: Trần Hữu Đang
 date: "2023-10-20"
-image: https://github.com/dangtranhuu/davisupers/blob/main/blog/.vuepress/public/img/in-post/algorithm/greedy.png?raw=true
+image: https://github.com/theanishtar/davisupers/blob/main/blog/.vuepress/public/img/in-post/algorithm/greedy.png?raw=true
 tags:
   - Algorithm
   - Thuật toán
@@ -17,19 +17,21 @@ Thuật toán tham lam được ứng dụng nhiều rất vào các bài toán 
 Thuật toán tham lam là gì, nó có tham lam thật không ???
 
 
-![](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/1.png?raw=true)
+![](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/1.png?raw=true)
 
-:::details <b>Nội dung chính</b>
+<details>
+<summary><strong>Nội dung chính</strong></summary>
 
-![Nguyên lý](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/2.png?raw=true)
-![Thành phần](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/3.png?raw=true)
-![Tính chất lựa ](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/4.png?raw=truee)
-![Ưu điểm](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/5.png?raw=true)
-![Nhược điểm](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/6.png?raw=true)
-![Bài tập](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/7.png?raw=true)
-![Bài giải](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/8.png?raw=true)
-![Lời cảm ơn](https://github.com/dangtranhuu/images/blob/main/frogcyber/post/greedy/9.png?raw=true)
-:::
+![Nguyên lý](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/2.png?raw=true)  
+![Thành phần](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/3.png?raw=true)  
+![Tính chất lựa](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/4.png?raw=truee)  
+![Ưu điểm](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/5.png?raw=true)  
+![Nhược điểm](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/6.png?raw=true)  
+![Bài tập](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/7.png?raw=true)  
+![Bài giải](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/8.png?raw=true)  
+![Lời cảm ơn](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/9.png?raw=true)
+
+</details>
 
 ## Giới thiệu
 
@@ -60,9 +62,12 @@ Tham lam thường là thuật toán dạng lặp, trong đó tại mỗi bướ
 
 Ý tưởng của tham lam, như cái tên đã gợi ý cho ta, là:
 
-::: info <b style="opacity: 01">Nguyên lý tham lam</b>
-Tại mỗi bước của thuật toán, trong số các lựa chọn khả thi, chọn một lựa chọn  <b style="">có lợi nhất</b>
-:::
+<div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
+
+<strong>Nguyên lý tham lam</strong><br/>
+Tại mỗi bước của thuật toán, trong số các lựa chọn khả thi, chọn một lựa chọn <strong>có lợi nhất</strong>.
+</div>
+
 
 Rất nhiều thuật toán nổi tiếng được thiết kế dựa trên tư tưởng của tham lam, ví dụ như thuật toán tìm đường đi ngắn nhất của **Dijkstra**, thuật toán cây khung nhỏ nhất của **Kruskal**, v.v. 
 
@@ -88,9 +93,12 @@ Theo đó thì thứ tự ưu tiên để chọn đồ vật là là B, A, D và
 
 Vật B được xét đầu tiên và ta chọn tối đa 3 cái vì mỗi cái vì trọng lượng mỗi cái là 10 và ba lô có trọng lượng 37. Sau khi đã chọn 3 vât loại B, trọng lượng còn lại trong ba lô là 37 – 3*10 = 7. Ta xét đến vật A, vì A có trọng lượng 15 mà trọng lượng còn lại của balô chỉ còn 7 nên không thể chọn vật A. Xét vật D và ta thấy có thể chọn 1 vật D, khi đó trọng lượng còn lại của ba lô là 7-4 = 3. Cuối cùng ta chọn được một vật C.
 
-:::info <b>KẾT LUẬN</b>
-Như vậy chúng ta đã chọn 3 cái loại B, một cái loại D và 1 cái loại C. Tổng trọng lương là <b>310 + 14 + 12 = 36 và tổng giá trị là 325+16+12 = 83.</b>
-:::
+<div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
+<strong>📌 KẾT LUẬN</strong><br/>
+Như vậy chúng ta đã chọn 3 cái loại B, một cái loại D và 1 cái loại C.<br/>
+Tổng trọng lượng là <strong>3×10 + 4 + 2 = 36</strong> và tổng giá trị là <strong>3×25 + 6 + 2 = 83</strong>.
+</div>
+
 
 ## Thuật toán
 
@@ -191,47 +199,48 @@ Mệnh giá tiền gồm có: **500, 200, 100, 50, 20, 10, 5, 2, 1**
 
 Hãy suy nghĩ cách giải rồi bấm vào xem code của mình dưới đây xem có giống nhau không nhé
 
-:::tip SẼ THẬT LÀ TUYỆT
+<div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
+<strong>💡 SẼ THẬT LÀ TUYỆT</strong><br/>
 Nếu bạn để lại code của mình phía dưới comment bài viết này ^^
-:::
+</div>
+
+
 #### Bài giải
-::: details BÀI GIẢI
+<details>
+<summary><strong>BÀI GIẢI</strong></summary>
+
 ```cpp
 #include<stdio.h>
 int main() {
 	int i,soTo,soTien,soTienBanDau;
 	int menhGia[9] = {500,200,100,50,20,10,5,2,1};
 	do {
-			printf("Nhap vao menh gia muon doi: "); scanf("%d",&soTien);
-			soTienBanDau=soTien;
-			if (soTien>0) {
-				printf("Voi ");
-				printf("%dK ",soTienBanDau); 
-				printf("ban co the doi thanh:\n");
-			}
-				
-		if (soTienBanDau>=1) {
-			while (soTien>0) {
-				for (i=0; i<9; i++) {
-					//Neu nhap 500k -> 2x200 & 1x100
-					//Neu khong co thi: 500k --> 500k
-					if (soTienBanDau == menhGia[i] && soTienBanDau !=1 ) 
+		printf("Nhap vao menh gia muon doi: ");
+		scanf("%d", &soTien);
+		soTienBanDau = soTien;
+		if (soTien > 0) {
+			printf("Voi %dK ban co the doi thanh:\n", soTienBanDau);
+		}
+		if (soTienBanDau >= 1) {
+			while (soTien > 0) {
+				for (i = 0; i < 9; i++) {
+					if (soTienBanDau == menhGia[i] && soTienBanDau != 1)
 						i++;
-					soTo=soTien/menhGia[i];
-					if (soTo!=0 ) {
-					printf("%d ",soTo); 
-					printf("to ");
-						printf("%dK\n",menhGia[i]);
+					soTo = soTien / menhGia[i];
+					if (soTo != 0) {
+						printf("%d to %dK\n", soTo, menhGia[i]);
 					}
-					soTien=soTien-soTo*menhGia[i];
-				} 
+					soTien -= soTo * menhGia[i];
+				}
 			}
-		} else printf("Khong co menh gia nay, vui long nhap lai!\n");
-	}while (soTienBanDau<1);
-	return 0;	
+		} else {
+			printf("Khong co menh gia nay, vui long nhap lai!\n");
+		}
+	} while (soTienBanDau < 1);
+	return 0;
 }
-```
-:::
+ ```
+</details>
 
 ### Ví dụ 3 
 
@@ -253,9 +262,15 @@ C(\pi(i))=\sum_{\substack{i=1}}^kL[\pi(k)]
 $$
 Tìm cách lưu trữ file sao cho việc truy xuất được hiệu quả nhất, biết rằng mỗi file được truy cập đúng 1 lần.
 
-:::tip <b>Ví dụ 1:</b>
-Giả sử các file đánh số $1,2,3$ có dung lượng lần lượt là $5,4,6$. Nếu ta sắp xếp file theo thứ tự $2,3,1$ thì chi phí truy nhập là $4+10+15=29$. Nếu ta sắp theo thứ tự $2,1,3$ thì chi phí truy nhập là $4+9+15=28$.
-:::
+
+<div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
+
+<strong>💡 Ví dụ 1:</strong><br/>
+Giả sử các file đánh số $1,2,3$ có dung lượng lần lượt là $5,4,6$.<br/>
+Nếu ta sắp xếp file theo thứ tự $2,3,1$ thì chi phí truy nhập là $4+10+15=29$.<br/>
+Nếu ta sắp theo thứ tự $2,1,3$ thì chi phí truy nhập là $4+9+15=28$.
+</div>
+
 
 Ý tưởng của **giải thuật tham lam** như sau: giả sử ta đang ắp xếp file vào vị trí thứ $i$, để giảm chi phí truy nhập file thứ $i$, ta nên lưu trữ các vị trí $1,2,…i−1$ bằng các file với tổng dung lượng nhỏ nhất. 
 
@@ -265,16 +280,18 @@ Trong ví dụ 1, cách lưu $2,1,3$ có chi phí nhỏ hơn là vì nó là cá
 
 Ta có giả mã như sau:
 
-:::info <b>GreedyFileOnTape: </b> 
+<div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
 
-$(L[1,2,…,n])$ <br>
-$S\larr {1,2,…,n}$<br/>
-<b>repeat</b><br/>
-choose $s∈S$ with minimum $L[s]$<br/>
-write $s$ to the tape<br/>
-$S\larr S ∖{ s }$<br/>
-<b>until</b> $S=\empty$
-:::
+<strong>GreedyFileOnTape:</strong><br/><br/>
+<span>$L = [1, 2, \dots, n]$</span><br/>
+<span>$S \gets \{1, 2, \dots, n\}$</span><br/>
+<strong>repeat</strong><br/>
+chọn $s \in S$ với $L[s]$ nhỏ nhất<br/>
+ghi $s$ vào băng<br/>
+$S \gets S \setminus \{s\}$<br/>
+<strong>until</strong> $S = \emptyset$
+</div>
+
 
 #### Tính đúng đắn của thuật toán
 
@@ -299,7 +316,7 @@ Do đó, $cost_\pi> cost_\pi\prime$, trái với giả thiết $\pi(i)$ là các
 
 #### Phân tích thời gian
 
-Bằng cách thực hiện sắp xếp theo chiều tăng của kích thước file, chúng ta có thể thực thi thuật toán trên trong thời gian ==O(nlogn)==.
+Bằng cách thực hiện sắp xếp theo chiều tăng của kích thước file, chúng ta có thể thực thi thuật toán trên trong thời gian `O(n log n)`
 
 ### Tổng kết
 

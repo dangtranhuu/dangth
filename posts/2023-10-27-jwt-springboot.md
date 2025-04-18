@@ -383,7 +383,7 @@ public class AuthenticationRequest {
 }
 ```
 
-- Lớp `AutenticationResponse` để trả về ==Token== khi đăng nhập.
+- Lớp `AutenticationResponse` để trả về `Token` khi đăng nhập.
 
 ```java
 package com.davisys.auth;
