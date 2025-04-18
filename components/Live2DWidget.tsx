@@ -8,7 +8,7 @@ export default function Live2DWidget() {
     script.async = true;
 
     script.onload = () => {
-      // @ts-expect-error
+      // @ts-expect-error: third-party library doesn't have types
       window.L2Dwidget?.init({
         model: {
           jsonPath: '/models/histoire/model.json',
