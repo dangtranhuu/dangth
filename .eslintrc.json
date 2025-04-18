@@ -5,6 +5,12 @@
   ],
   "rules": {
     "@next/next/no-page-custom-font": "off",
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-without-description"
+      }
+    ]
   }
 }
