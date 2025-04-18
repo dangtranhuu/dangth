@@ -7,6 +7,7 @@ import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 import rehypeHighlight from 'rehype-highlight'
 import { notFound } from 'next/navigation'
+import rehypeRaw from 'rehype-raw'
 
 
 const postsDir = path.join(process.cwd(), 'posts')
@@ -56,10 +57,10 @@ export async function getPost(slug: string): Promise<PostData> {
     // const contentHtml = (await remark().use(html).process(content)).toString()
     const processed = await remark()
       .use(remarkGfm)
-      .use(remarkRehype)           // convert markdown → HTML AST
-      .use(rehypeHighlight)        // 🪄 gán class `language-java`, highlight luôn
-      .use(rehypeHighlight) // 🪄 Highlight từng ngôn ngữ
-      .use(rehypeStringify)
+      .use(remarkRehype, { allowDangerousHtml: true }) // 👈 cần có cái này nếu muốn xử lý HTML
+      .use(rehypeRaw)                                  // 👈 cần thêm để "chấp nhận" HTML trong MD
+      .use(rehypeHighlight)
+      .use(rehypeStringify, { allowDangerousHtml: true }) // 👈 để giữ HTML khi stringify
       .process(content)
 
     const contentHtml = processed.toString()
