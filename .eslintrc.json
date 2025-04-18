@@ -9,7 +9,10 @@
     "@typescript-eslint/ban-ts-comment": [
       "error",
       {
-        "ts-expect-error": "allow-without-description"
+        "ts-ignore": false,
+        "ts-nocheck": false,
+        "ts-check": false,
+        "ts-expect-error": false
       }
     ]
   }
