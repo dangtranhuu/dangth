@@ -14,10 +14,14 @@ const postsDir = path.join(process.cwd(), 'posts')
 export interface PostData {
   slug: string
   title: string
+  subtitle?: string
+  author?: string
   date: string
   contentHtml: string
-  image?: string | null // 👈 thêm dòng này
+  image?: string | null
+  tags?: string[]
 }
+
 
 export interface PostMeta {
   slug: string
