@@ -69,7 +69,7 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
               </a>
               <p className={styles.pubSubtitle}>{post.subtitle}</p>
               <div className={styles.pubAuthors}>
-                <FaUserEdit /> {post.author} | <MdDateRange /> {new Date(post.date).toISOString().slice(0, 10)}
+                <FaUserEdit /> {post.author} | <MdDateRange /> {typeof post.date === 'string' ? post.date : new Date(post.date).toISOString().slice(0, 10)}
               </div>
 
               {post.tags && post.tags.length > 0 && (
