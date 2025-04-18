@@ -3,14 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import {
   FaUser,
-  FaCertificate,
-  FaEnvelope,
-  FaGithub,
-  FaGitlab,
-  FaLinkedinIn,
-  FaStackOverflow,
-  FaSun,
-  FaMoon,
+  FaCertificate
 } from 'react-icons/fa';
 import { GiMagicPortal } from "react-icons/gi";
 import { ImBlog } from "react-icons/im";

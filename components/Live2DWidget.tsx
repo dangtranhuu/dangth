@@ -8,7 +8,7 @@ export default function Live2DWidget() {
     script.async = true;
 
     script.onload = () => {
-      // @ts-ignore
+      // @ts-expect-error
       window.L2Dwidget?.init({
         model: {
           jsonPath: '/models/histoire/model.json',
