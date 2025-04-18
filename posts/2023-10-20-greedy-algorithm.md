@@ -283,13 +283,13 @@ Ta có giả mã như sau:
 <div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
 
 <strong>GreedyFileOnTape:</strong><br/><br/>
-<span>$L = [1, 2, \dots, n]$</span><br/>
-<span>$S \gets \{1, 2, \dots, n\}$</span><br/>
+<span>L = [1, 2,..., n]</span><br/>
+<span>S ← \ 1,2,…,n </span><br/>
 <strong>repeat</strong><br/>
-chọn $s \in S$ với $L[s]$ nhỏ nhất<br/>
-ghi $s$ vào băng<br/>
-$S \gets S \setminus \{s\}$<br/>
-<strong>until</strong> $S = \emptyset$
+choose s∈S with minimum L[s]<br/>
+write s to the tape<br/>
+S←S∖s<br/>
+<strong>until</strong> S=∅
 </div>
 
 
@@ -297,20 +297,20 @@ $S \gets S \setminus \{s\}$<br/>
 
 Ta sẽ chứng minh cách lưu file theo thứ tự từ nhỏ đến lớn có chi phí nhỏ nhất. 
 
-Giả sử tồn tại một cách lưu trữ tối ưu $\pi$ và chỉ số $i$ sao cho $L[\pi(i)]>L[\pi(i+1)]$. 
+Giả sử tồn tại một cách lưu trữ tối ưu π và chỉ số i sao cho L[π(i)]>L[π(i+1)].
 
-Gọi $cost\pi$ là chi phí truy nhập của \pi. 
+Gọi costπ là chi phí truy nhập của $\pi$.
 
-Theo định nghĩa, ta có: 
-$$
+Theo định nghĩa, ta có:
+$
 cost_\pi=\sum_{\substack{i=1}}^nC(\pi(i)) 
-$$
+$
 
 Gọi $\pi\prime$ là hoán vị thu được từ $\pi$ bằng cách đổi chỗ $\pi(i)]$ và $\pi(i+1)$. Ta có:
 
-$$
+$
 cost_\pi−cost_\pi\prime=C(\pi(i))+C(\pi(i+1))−C(\pi\prime(i))−C(\pi\prime(i+1))=L[\pi(i)]−L[\pi(i+1)]<0
-$$
+$
 
 Do đó, $cost_\pi> cost_\pi\prime$, trái với giả thiết $\pi(i)$ là cách lưu trữ tối ưu.
 
