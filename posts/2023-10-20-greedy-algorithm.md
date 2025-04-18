@@ -2,7 +2,7 @@
 title: Tìm hiểu về giải thuật tham lam
 subtitle: Cấu trúc dữ liệu và giải thuật
 author: Trần Hữu Đang
-date: 2023-10-20
+date: "2023-10-20"
 image: https://github.com/dangtranhuu/davisupers/blob/main/blog/.vuepress/public/img/in-post/algorithm/greedy.png?raw=true
 tags:
   - Algorithm
