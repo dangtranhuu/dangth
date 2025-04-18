@@ -8,6 +8,8 @@ import rehypeStringify from 'rehype-stringify'
 import rehypeHighlight from 'rehype-highlight'
 import { notFound } from 'next/navigation'
 import rehypeRaw from 'rehype-raw'
+import rehypeKatex from 'rehype-katex'
+
 
 
 const postsDir = path.join(process.cwd(), 'posts')
@@ -59,6 +61,7 @@ export async function getPost(slug: string): Promise<PostData> {
       .use(remarkGfm)
       .use(remarkRehype, { allowDangerousHtml: true }) // 👈 cần có cái này nếu muốn xử lý HTML
       .use(rehypeRaw)                                  // 👈 cần thêm để "chấp nhận" HTML trong MD
+      .use(rehypeKatex) // 💡 xử lý $...$
       .use(rehypeHighlight)
       .use(rehypeStringify, { allowDangerousHtml: true }) // 👈 để giữ HTML khi stringify
       .process(content)
