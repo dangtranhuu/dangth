@@ -1104,6 +1104,19 @@ h3 {
   color: var(--primary-color);
 }
 
+/* Thụt dòng theo cấp độ heading */
+.post .toc-item.level-2 {
+  margin-left: 0px;
+}
+
+.post .toc-item.level-3 {
+  margin-left: 16px;
+}
+
+.post .toc-item.level-4 {
+  margin-left: 32px;
+}
+
 @keyframes slide-in-bottom {
   0% {
     transform: translateY(10px);
