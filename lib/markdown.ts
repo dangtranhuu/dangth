@@ -8,7 +8,10 @@ import rehypeStringify from 'rehype-stringify'
 import rehypeHighlight from 'rehype-highlight'
 import { notFound } from 'next/navigation'
 import rehypeRaw from 'rehype-raw'
+import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
+import 'katex/dist/katex.min.css' // nhớ import CSS này ở đâu đó trong project (vd. _app.tsx)
+
 
 
 
@@ -59,11 +62,12 @@ export async function getPost(slug: string): Promise<PostData> {
     // const contentHtml = (await remark().use(html).process(content)).toString()
     const processed = await remark()
       .use(remarkGfm)
-      .use(remarkRehype, { allowDangerousHtml: true }) // 👈 cần có cái này nếu muốn xử lý HTML
-      .use(rehypeRaw)                                  // 👈 cần thêm để "chấp nhận" HTML trong MD
-      .use(rehypeKatex) // 💡 xử lý $...$
+      .use(remarkMath)                                 // 👈 xử lý cú pháp toán học
+      .use(remarkRehype, { allowDangerousHtml: true })
+      .use(rehypeRaw)
+      .use(rehypeKatex)                                // 👈 render LaTeX bằng KaTeX
       .use(rehypeHighlight)
-      .use(rehypeStringify, { allowDangerousHtml: true }) // 👈 để giữ HTML khi stringify
+      .use(rehypeStringify, { allowDangerousHtml: true })
       .process(content)
 
     const contentHtml = processed.toString()
