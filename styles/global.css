@@ -430,13 +430,9 @@ font-family: 'Ubuntu', sans-serif; */
 footer {
   text-align: center;
   color: var(--contact-bc-dark);
-  /* font-family: 'Ubuntu', sans-serif; */
   font-size: 15px;
   line-height: 27.9px;
-  margin: 18px 0px;
   font-weight: 400;
-  margin-top: 50px;
-  margin-bottom: 100px;
 }
 
 .dark-mode footer {
