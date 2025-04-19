@@ -1,6 +1,11 @@
 import { getPost, getAllPostSlugs } from '../../../lib/markdown'
+import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/GiscusComments'
+import TOC from '@/components/post/TOC'
 import React from 'react'
+
+import { MdDateRange } from "react-icons/md"
+import { IoTimerOutline } from "react-icons/io5";
 
 interface Props {
   params: { slug: string }
@@ -14,15 +19,53 @@ export default async function PostPage({ params }: Props) {
     /<pre><code class="[^"]*language-(\w+)"/g,
     `<pre data-lang="$1"><code class="hljs language-$1"`
   )
-  return (
-    <article className="markdown-body container prose">
-      <h1>{post.title}</h1>
-      <p>{post.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: contentWithLang }} />
 
-      <hr style={{ margin: '2rem 0' }} />
-      <GiscusComments />
-    </article>
+  const headings = extractHeadings(contentWithLang)
+
+  return (
+    <div className='post' >
+
+      {/* TOC bên trái */}
+      <TOC headings={headings} />
+
+      <article className="markdown-body container prose "   >
+        <h1>{post.title}</h1>
+        <p style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <MdDateRange />
+            {post.date}
+          </span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <IoTimerOutline />
+            {post.readingTime} phút
+          </span>
+          {post.tags && post.tags.length > 0 && (
+            <span style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+              {post.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  style={{
+                    backgroundColor: '#f0f0f0',
+                    borderRadius: '0.5rem',
+                    padding: '0.2rem 0.6rem',
+                    fontSize: '0.85rem',
+                    color: '#333',
+                  }}
+                >
+                  #{tag}
+                </span>
+              ))}
+            </span>
+          )}
+        </p>
+
+
+        <div dangerouslySetInnerHTML={{ __html: contentWithLang }} />
+
+        <hr style={{ margin: '2rem 0' }} />
+        <GiscusComments />
+      </article>
+    </div >
   )
 }
 

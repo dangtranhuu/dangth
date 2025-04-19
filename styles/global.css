@@ -1064,6 +1064,47 @@ h3 {
   animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+/*========== POST ======*/
+
+.post {
+  margin-top: 50px;
+}
+
+.post aside {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  min-width: 200px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  font-size: 0.875rem;
+  color: #888
+}
+
+.post aside strong {
+  font-size: 1rem;
+  color: #333
+}
+
+.post aside ul {
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.post aside ul li {
+  margin-left: 2rem;
+  list-style: none;
+}
+
+.post aside ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+.post aside ul li a:hover {
+  color: var(--primary-color);
+}
+
 @keyframes slide-in-bottom {
   0% {
     transform: translateY(10px);

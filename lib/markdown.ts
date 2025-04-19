@@ -11,6 +11,9 @@ import rehypeRaw from 'rehype-raw'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import 'katex/dist/katex.min.css' // nhớ import CSS này ở đâu đó trong project (vd. _app.tsx)
+import { estimateReadingTime } from '@/utils/readingTime'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 
 
 
@@ -26,6 +29,7 @@ export interface PostData {
   contentHtml: string
   image?: string | null
   tags?: string[]
+  readingTime?: number // 👈 thêm trường mới
 }
 
 
@@ -67,6 +71,8 @@ export async function getPost(slug: string): Promise<PostData> {
       .use(rehypeRaw)
       .use(rehypeKatex)                                // 👈 render LaTeX bằng KaTeX
       .use(rehypeHighlight)
+      .use(rehypeSlug) // 👈 Tạo id cho h1, h2, h3...
+      .use(rehypeAutolinkHeadings, { behavior: 'wrap' }) // 👈 Link tự động vào heading
       .use(rehypeStringify, { allowDangerousHtml: true })
       .process(content)
 
@@ -75,6 +81,9 @@ export async function getPost(slug: string): Promise<PostData> {
     // 🖼️ Trích ảnh đầu tiên (nếu có)
     const imgMatch = contentHtml.match(/<img[^>]+src="([^">]+)"/)
     const firstImage = imgMatch ? imgMatch[1] : "@/public/images/avt.png"
+
+    const contentText = content.replace(/[#_*>\-\n`]/g, '') // loại bỏ markdown đơn giản
+    const readingTime = estimateReadingTime(contentText)
 
     return {
       slug,
@@ -85,6 +94,7 @@ export async function getPost(slug: string): Promise<PostData> {
       contentHtml: contentHtml,
       image: firstImage,
       tags: data.tags ?? [],
+      readingTime: readingTime
     }
 
   } catch (err) {
