@@ -1,8 +1,9 @@
+import React from 'react'
 import { getPost, getAllPostSlugs } from '../../../lib/markdown'
 import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/GiscusComments'
 import TOC from '@/components/post/TOC'
-import React from 'react'
+import { SITE_CONFIG } from '@/lib/config'
 
 import { MdDateRange } from "react-icons/md"
 import { IoTimerOutline } from "react-icons/io5";
@@ -76,7 +77,7 @@ export default async function PostPage({ params }: Props) {
         }}>
           {/* Link chỉnh sửa trên GitHub */}
           <a
-            href={`https://github.com/dangtranhuu/dangth/edit/main/posts/${post.slug}.md`}
+            href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.postDir}/${post.slug}.md`}
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: '#409eff', textDecoration: 'none' }}
