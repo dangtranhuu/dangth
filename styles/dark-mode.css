@@ -1,8 +1,8 @@
-body {
+body.dark-mode {
   background-color: var(--background-color-dark);
 }
 
-a {
+.darkm-mode a {
   color: var(--primary-color-dark);
 }
 

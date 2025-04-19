@@ -6,6 +6,8 @@ import React from 'react'
 
 import { MdDateRange } from "react-icons/md"
 import { IoTimerOutline } from "react-icons/io5";
+import { MdHistory } from "react-icons/md";
+import { MdRebaseEdit } from "react-icons/md";
 
 interface Props {
   params: { slug: string }
@@ -61,6 +63,32 @@ export default async function PostPage({ params }: Props) {
 
 
         <div dangerouslySetInnerHTML={{ __html: contentWithLang }} />
+        <hr style={{ margin: '3rem 0' }} />
+
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          fontSize: '0.9rem',
+          color: '#888',
+          flexWrap: 'wrap',
+          gap: '1rem'
+        }}>
+          {/* Link chỉnh sửa trên GitHub */}
+          <a
+            href={`https://github.com/dangtranhuu/dangth/edit/main/posts/${post.slug}.md`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#409eff', textDecoration: 'none' }}
+          >
+            <MdRebaseEdit /> Edit this page on GitHub
+          </a>
+
+          {/* Ngày cập nhật */}
+          <span>
+            <MdHistory /> Last updated: {new Date(post.lastUpdated ?? post.date).toLocaleString()}
+          </span>
+        </div>
 
         <hr style={{ margin: '2rem 0' }} />
         <GiscusComments />

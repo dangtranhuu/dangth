@@ -29,7 +29,8 @@ export interface PostData {
   contentHtml: string
   image?: string | null
   tags?: string[]
-  readingTime?: number // 👈 thêm trường mới
+  readingTime?: number
+  lastUpdated?: string
 }
 
 
@@ -85,6 +86,10 @@ export async function getPost(slug: string): Promise<PostData> {
     const contentText = content.replace(/[#_*>\-\n`]/g, '') // loại bỏ markdown đơn giản
     const readingTime = estimateReadingTime(contentText)
 
+    const stat = fs.statSync(filePath)
+    const lastUpdated = stat.mtime.toISOString() // hoặc format tùy ý
+
+
     return {
       slug,
       title: data.title ?? 'Untitled',
@@ -94,6 +99,7 @@ export async function getPost(slug: string): Promise<PostData> {
       contentHtml: contentHtml,
       image: firstImage,
       tags: data.tags ?? [],
+      lastUpdated: lastUpdated,
       readingTime: readingTime
     }
 
