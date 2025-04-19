@@ -78,6 +78,8 @@ export async function getPost(slug: string): Promise<PostData> {
       .process(content)
 
     const contentHtml = processed.toString()
+    const contentHtmlWithZoom = contentHtml.replace(/<img /g, '<img class="zoom-img" ')
+
 
     // 🖼️ Trích ảnh đầu tiên (nếu có)
     const imgMatch = contentHtml.match(/<img[^>]+src="([^">]+)"/)
@@ -96,7 +98,7 @@ export async function getPost(slug: string): Promise<PostData> {
       subtitle: data.subtitle ?? '',
       author: data.author ?? '',
       date: data.date ?? '',
-      contentHtml: contentHtml,
+      contentHtml: contentHtmlWithZoom,
       image: firstImage,
       tags: data.tags ?? [],
       lastUpdated: lastUpdated,

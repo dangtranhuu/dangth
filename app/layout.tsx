@@ -6,10 +6,12 @@ import 'highlight.js/styles/github.css' // hoặc: vs2015.css, atom-one-dark.css
 import '../styles/markdown.css'
 import 'katex/dist/katex.min.css'
 
+import { useEffect } from 'react'
 import { ReactNode } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Live2DWidget from '@/components/Live2DWidget'
+import ImageZoomClient from '@/components/ImageZoomClient'
 
 export const metadata = {
   title: 'Tran Huu Dang',
@@ -17,6 +19,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+
   return (
     <html lang="en">
       <head>
@@ -29,6 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
       </head>
       <body>
+        <ImageZoomClient />
         <Navbar />
         <main>{children}</main>
         <Footer />
