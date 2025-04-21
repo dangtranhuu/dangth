@@ -1,5 +1,8 @@
 /* styles/markdown.css */
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   --primary-color: #0074e4;
   --primary-color-dark: #d41d45;
@@ -12,83 +15,17 @@
   --contact-bc-dark: #4A5363;
 }
 
+.post {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Kanit", sans-serif;
+}
+
 .markdown-body {
   background-color: var(--background-color);
-  font-family: "Computer Modern Sans", sans-serif;
-  /* font-family: 'CMUSans', sans-serif; */
+  /* font-family: "Computer Modern Sans", sans-serif; */
   font-size: 18px;
   color: var(--text-color);
-  /* margin: 0;
-  font-family: system-ui, sans-serif;
-  line-height: 1.75;
-  color: #333;
-  font-size: 1rem;
-  word-break: break-word; */
 }
-
-/* 
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3 {
-  font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.markdown-body h1 {
-  font-size: 2rem;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 0.3rem;
-}
-
-.markdown-body h2 {
-  font-size: 1.5rem;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.2rem;
-}
-
-.markdown-body h3 {
-  font-size: 1.25rem;
-}
-
-.markdown-body p {
-  margin: 1rem 0;
-}
-
-.markdown-body ul,
-.markdown-body ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.markdown-body pre {
-  background: #f6f8fa;
-  padding: 1rem;
-  overflow-x: auto;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-.markdown-body code {
-  background: #f0f0f0;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: monospace;
-}
-
-.markdown-body blockquote {
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  border-left: 4px solid #ddd;
-  background-color: #f9f9f9;
-  color: #555;
-  font-style: italic;
-}
-
-.markdown-body a {
-  color: #0070f3;
-  text-decoration: underline;
-} */
 
 .markdown-body img {
   max-width: 100%;
@@ -109,12 +46,21 @@
 .prose a {
   text-decoration: none;
   text-underline-offset: 4px;
-  color: var(--color-primary);
+  color: var(--primary-color);
   font-weight: 400;
 }
 
 .prose a:hover {
   text-decoration: underline;
+}
+
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a,
+.prose h5 a,
+.prose h6 a {
+  color: var(--text-color);
 }
 
 .prose img,

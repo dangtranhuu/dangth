@@ -11,8 +11,25 @@
 }
 
 body {
+  font-family: var(--font-cmusans), sans-serif;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bolditalic {
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
   background-color: var(--background-color);
-  font-family: "Computer Modern Sans", sans-serif;
+  /* font-family: "Computer Modern Sans", sans-serif; */
   /* font-family: 'CMUSans', sans-serif; */
   font-size: 18px;
   color: var(--text-color);
@@ -564,9 +581,9 @@ h3 {
   background-color: #6b72801d;
 }
 
-h3 {
+/* h3 {
   font-family: "Computer Modern Sans", sans-serif;
-}
+} */
 
 .box {
   margin-bottom: 20px;
@@ -874,7 +891,7 @@ h3 {
 
   #desc {
     text-align: center;
-    font-family: Computer Modern Sans;
+    /* font-family: Computer Modern Sans; */
     font-weight: 700;
     line-height: 24.8px;
     margin: 0px 0px 12px;
