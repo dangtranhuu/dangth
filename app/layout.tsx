@@ -7,7 +7,7 @@ import '../styles/markdown.css'
 import 'katex/dist/katex.min.css'
 
 import { ReactNode } from 'react'
-import { cmuSans, iBMPlexSans } from './fonts'
+import { cmuSans } from './fonts'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Live2DWidget from '@/components/Live2DWidget'
@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
-    <html lang="en" className={iBMPlexSans.variable}>
+    <html lang="en" className={cmuSans.variable}>
       <head>
         {/* Font Computer Modern */}
         <link
