@@ -12,38 +12,31 @@ export default function Home() {
   useEffect(() => {
     const items = document.querySelectorAll('.item');
 
-    const handleClick = (item: Element) => {
+    const handlers: { title: HTMLElement; handler: () => void }[] = [];
+
+    items.forEach((item) => {
       const title = item.querySelector('.title') as HTMLElement;
       const details = item.querySelector('.details') as HTMLElement;
       const icon = item.querySelector('.icon-wrap svg') as HTMLElement;
 
       if (title && details && icon) {
-        title.addEventListener('click', () => {
+        const handler = () => {
           icon.classList.toggle('rotate');
           details.classList.toggle('show');
-        });
-      }
-    };
+        };
 
-    // Adding event listeners to all items
-    items.forEach(handleClick);
+        title.addEventListener('click', handler);
+        handlers.push({ title, handler }); // lưu lại để cleanup
+      }
+    });
 
     return () => {
-      // Cleanup listeners when component unmounts
-      items.forEach((item) => {
-        const title = item.querySelector('.title') as HTMLElement;
-        const details = item.querySelector('.details') as HTMLElement;
-        const icon = item.querySelector('.icon-wrap svg') as HTMLElement;
-
-        if (title && details && icon) {
-          title.removeEventListener('click', () => {
-            icon.classList.toggle('rotate');
-            details.classList.toggle('show');
-          });
-        }
+      handlers.forEach(({ title, handler }) => {
+        title.removeEventListener('click', handler);
       });
     };
   }, []);
+
 
   return (
     <div className='container'>
@@ -108,13 +101,12 @@ export default function Home() {
 
       {/* About */}
       <div className="about item">
-        <p>Hi, I&apos;m Tran Huu Dang. You can call me Davis.</p>
+        {/* <p>Hi, I&apos;m Tran Huu Dang. You can call me Davis.</p> */}
         <p>
-          I like technology and other work with computers. I am a developer in the back-end website fields
-          (NodeJS and Spring Boot)
+          I’m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly. My experience spans frontend and backend technologies, including Angular, Spring Boot, NodeJS, and modern cloud services like AWS and Firebase.
         </p>
         <p>
-          I also have knowledge of Angular, VueJS, TailwindCSS, JavaSwing. I understand tools like Git, Postman, Debug...
+          I’ve led and contributed to several real-world projects such as a social media platform (DESTINY), an online movie ticket booking system (DAVITICKETS), and a retail management app (DAVISY). I've also worked across different roles — from backend lead to WordPress developer — gaining a solid understanding of both product and team workflows.
         </p>
         <p style={{ paddingRight: '30px' }}>
           Connect with my Linkedin to discuss about work or my Github to share interesting knowledge ^^
@@ -124,87 +116,120 @@ export default function Home() {
       {/* EXPERIENCE section */}
       <div className="experience title section">
         <h1>Experience</h1>
-        {[1, 4].map((_, idx) => (
-          <div className="item" key={idx}>
-            <div className="title">
-              <div className="left col">
-                <div className="left">
-                  <img className="logo" src="/images/exp/fpoly.jpg" alt="fpoly" />
-                </div>
-                <div className="right">
-                  <div className="top">
-                    Davlands
-                    <span className="icon-wrap">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 24 24"
-                        className="text-black inline transform transition-transform duration-200"
-                        height="18"
-                        width="18"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path fill="none" d="M0 0h24v24H0V0z"></path>
-                        <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
-                      </svg>
-                    </span>
-                  </div>
-                  <div className="bot">Fullstack developer</div>
-                </div>
+        <div className="item">
+          <div className="title">
+            <div className="left col">
+              <div className="left">
+                <img className="logo" src="/images/exp/devlands.jpg" alt="devlands" />
               </div>
-              <div className="right">2021–2023</div>
+              <div className="right">
+                <div className="top">
+                  Devlands
+                  <span className="icon-wrap">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 24 24"
+                      className="text-black inline transform transition-transform duration-200"
+                      height="18"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="none" d="M0 0h24v24H0V0z"></path>
+                      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div className="bot">Designer & Content creator</div>
+              </div>
             </div>
-            <div className="details">
-              <p>
-                Built and maintained web applications for internal company systems. Collaborated with frontend and backend teams to ensure scalable architecture and responsive UI/UX.
-              </p>
-            </div>
+            <div className="right">2021–2023</div>
           </div>
-        ))}
+          <div className="details">
+            <p>
+              Devlands is a personal brand project designed as a social learning platform for aspiring developers. It combines educational content with community interaction, offering tutorials, coding challenges, and collaborative features to facilitate programming education in an engaging environment.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* EDUCATION section */}
       <div className="education title section">
         <h1>Education</h1>
-        {[1, 2].map((_, idx) => (
-          <div className="item" key={idx}>
-            <div className="title">
-              <div className="left col">
-                <div className="left">
-                  <img className="logo" src="/images/education/ctu.png" alt="ctu" />
-                </div>
-                <div className="right">
-                  <div className="top">
-                    Can Tho University
-                    <span className="icon-wrap">
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth="0"
-                        viewBox="0 0 24 24"
-                        className="text-black inline transform transition-transform duration-200"
-                        height="18"
-                        width="18"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path fill="none" d="M0 0h24v24H0V0z"></path>
-                        <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
-                      </svg>
-                    </span>
-                  </div>
-                  <div className="bot">Information Technology</div>
-                </div>
+        <div className="item">
+          <div className="title">
+            <div className="left col">
+              <div className="left">
+                <img className="logo" src="/images/education/ctu.png" alt="ctu" />
               </div>
-              <div className="right times">Sep 2021 – Jan 2024</div>
+              <div className="right">
+                <div className="top">
+                  Can Tho University
+                  <span className="icon-wrap">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 24 24"
+                      className="text-black inline transform transition-transform duration-200"
+                      height="18"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="none" d="M0 0h24v24H0V0z"></path>
+                      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div className="bot">Information Technology</div>
+              </div>
             </div>
-            <div className="details">
-              <p>
-                Studied fundamental and advanced courses in software development, including algorithms, data structures, databases, and web programming.
-              </p>
-            </div>
+            <div className="right times">Sep 2021 – Jan 2024</div>
           </div>
-        ))}
+          <div className="details">
+            <p>
+              Studied Information Technology at Can Tho University, focusing on programming, databases, and software development.
+            </p>
+          </div>
+        </div>
+
+        <div className="item">
+          <div className="title">
+            <div className="left col">
+              <div className="left">
+                <img className="logo" src="/images/education/fpoly.jpg" alt="fpl" />
+              </div>
+              <div className="right">
+                <div className="top">
+                  FPT Polytechnic
+                  <span className="icon-wrap">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 24 24"
+                      className="text-black inline transform transition-transform duration-200"
+                      height="18"
+                      width="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="none" d="M0 0h24v24H0V0z"></path>
+                      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div className="bot">Software development</div>
+              </div>
+            </div>
+            <div className="right times">Sep 2021 – Jan 2024</div>
+          </div>
+          <div className="details">
+            <p>
+              Studied Software Development at FPT Polytechnic, with experience as a teaching assistant supporting student learning.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* PROJECTS section */}
@@ -283,6 +308,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
