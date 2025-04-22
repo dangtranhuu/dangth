@@ -87,6 +87,10 @@ main:not(.post) a.header-anchor {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem 0;
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  white-space: nowrap;
 }
 
 .prose th,
