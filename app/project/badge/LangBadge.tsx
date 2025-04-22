@@ -18,7 +18,7 @@ const toIconName = (lang: string): string => {
 export const LangBadge = ({ lang }: LangBadgeProps) => {
   const color = lang in githubColors ? githubColors[lang as keyof typeof githubColors] : '#ccc';
   const iconName = toIconName(lang);
-  const IconComponent = (SIIcons as any)[iconName];
+  const IconComponent = (SIIcons as Record<string, React.ComponentType>)?.[iconName];
 
   return (
     <span
