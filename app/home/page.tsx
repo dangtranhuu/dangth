@@ -101,12 +101,11 @@ export default function Home() {
 
       {/* About */}
       <div className="about item">
-        {/* <p>Hi, I&apos;m Tran Huu Dang. You can call me Davis.</p> */}
         <p>
-          I’m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly. My experience spans frontend and backend technologies, including Angular, Spring Boot, NodeJS, and modern cloud services like AWS and Firebase.
+          I&rsquo;m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly. My experience spans frontend and backend technologies, including Angular, Spring Boot, NodeJS, and modern cloud services like AWS and Firebase.
         </p>
         <p>
-          I’ve led and contributed to several real-world projects such as a social media platform (DESTINY), an online movie ticket booking system (DAVITICKETS), and a retail management app (DAVISY). I've also worked across different roles — from backend lead to WordPress developer — gaining a solid understanding of both product and team workflows.
+          I&rsquo;ve led and contributed to several real-world projects such as a social media platform (DESTINY), an online movie ticket booking system (DAVITICKETS), and a retail management app (DAVISY). I&apos;ve also worked across different roles — from backend lead to WordPress developer — gaining a solid understanding of both product and team workflows.
         </p>
         <p style={{ paddingRight: '30px' }}>
           Connect with my Linkedin to discuss about work or my Github to share interesting knowledge ^^
