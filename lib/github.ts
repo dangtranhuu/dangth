@@ -1,3 +1,10 @@
+type Repo = {
+  name: string;
+  stargazers_count: number;
+  forks_count: number;
+  commits_url: string;
+};
+
 export async function getGithubRepos(username: string, token: string) {
   const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`, {
     headers: {
@@ -6,9 +13,9 @@ export async function getGithubRepos(username: string, token: string) {
     }
   });
 
-  const repos = await res.json();
+  const repos: Repo[] = await res.json();
 
-  const detailedRepos = await Promise.all(repos.map(async (repo: any) => {
+  const detailedRepos = await Promise.all(repos.map(async (repo) => {
     const commitsRes = await fetch(repo.commits_url.replace('{/sha}', ''), {
       headers: {
         Authorization: `Bearer ${token}`,
