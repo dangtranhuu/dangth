@@ -113,7 +113,7 @@ export default function CertPage() {
             <div className={`${styles.item} item`} key={org}>
               <div className="title">
                 <div className={styles.title}>
-                  <img className={styles.logo} src={logo} alt={`${org} logo`} />
+                  <img className={`${styles.logo} zoom-img`} src={logo} alt={`${org} logo`} />
                   <div className={styles.orgName}>{org}</div>
                 </div>
 
@@ -128,7 +128,7 @@ export default function CertPage() {
                         alt={cert.name}
                         width={120}
                         height={80}
-                        className={styles.certImage}
+                        className={`${styles.certImage} zoom-img`}
                       />
                       <div className={styles.certCaption}>{cert.name || <em>Untitled</em>}</div>
                     </div>
