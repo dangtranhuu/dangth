@@ -213,7 +213,7 @@ code {
 
 :not(pre)>code {
   line-height: 23.12px;
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: 600;
 }
 
