@@ -123,7 +123,7 @@ export default function CertPage() {
                 <div className={styles.certGrid}>
                   {certs.map(cert => (
                     <div className={styles.certItem} key={cert.name}>
-                      <Image
+                      <img
                         src={cert.image}
                         alt={cert.name}
                         width={120}
