@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import styles from '@/styles/CertPage.module.css';
 
 export default function CertPage() {
