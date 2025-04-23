@@ -7,7 +7,7 @@ image: https://github.com/dangtranhuu/davisupers/blob/main/blog/.vuepress/public
 tags:
   - Backend
   - Authentication
-  - Authoriztion
+  - Authorization
 ---
 
 [JWT]() là một hình thức xác thực người dùng rất bảo mật, hiệu quả và phổ biến trong mô hình [CSR]()

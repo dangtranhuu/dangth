@@ -31,9 +31,13 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
 
   const allTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]) // [tag, count]
 
+  const sortedPosts = [...posts].sort((a, b) =>
+    new Date(a.date).getTime() - new Date(b.date).getTime()
+  )
+
   const filteredPosts = selectedTag
-    ? posts.filter((post) => post.tags?.includes(selectedTag))
-    : posts
+    ? sortedPosts.filter((post) => post.tags?.includes(selectedTag))
+    : sortedPosts
 
   return (
     <div className='container'>
