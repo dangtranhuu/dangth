@@ -74,7 +74,6 @@
 }
 
 .prose hr {
-  border: none;
   border-top: 1px solid hsl(var(--border));
 }
 

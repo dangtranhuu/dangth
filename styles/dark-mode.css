@@ -70,7 +70,8 @@ body.dark-mode {
 
 .dark-mode footer {
   color: var(--contact-bc);
-  background-color: var(--contact-bc-dark);
+  border-top: solid 1px #84878c;
+  /* background-color: var(--contact-bc-dark); */
 }
 
 .dark-mode .bottom-nav {

@@ -85,6 +85,10 @@ body {
   /* background: #f8f8f8; */
 }
 
+main {
+  padding-bottom: 50px;
+}
+
 /*============ MENU ==========*/
 .bottom-nav-wrapper {
   position: fixed;
@@ -497,7 +501,8 @@ footer {
   font-size: 15px;
   line-height: 27.9px;
   font-weight: 400;
-  padding: 80px 0px;
+  padding: 50px 0px;
+  border-top: solid 1px #d4d7dd;
 }
 
 .box .left .bot {

@@ -91,7 +91,6 @@ export default async function PostPage({ params }: Props) {
           </span>
         </div>
 
-        <hr style={{ margin: '2rem 0' }} />
         <GiscusComments />
       </article>
     </div >
