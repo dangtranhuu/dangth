@@ -2,37 +2,30 @@
 
 import { useEffect, useState } from 'react'
 import Giscus from '@giscus/react'
-import { updateGiscusTheme } from '../lib/giscus-theme' // 👈 import hàm dùng chung
 
 export default function GiscusComments() {
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
-    const saved = localStorage.getItem('modeByThean')
-    const initialTheme = saved === 'dark' ? '/styles/giscus-dark.css' : 'light'
+    // Lấy theme ban đầu từ localStorage (nếu có)
+    const stored = localStorage.getItem('modeByThean')
+    const initialTheme = stored === 'dark' ? '/styles/giscus-dark.css' : 'light'
     setTheme(initialTheme)
-    updateGiscusTheme(initialTheme)
 
-    const handleStorage = (e: StorageEvent) => {
-      if (e.key === 'modeByThean') {
-        const newTheme = e.newValue === 'dark' ? '/styles/giscus-dark.css' : 'light'
-        setTheme(newTheme)
-        updateGiscusTheme(newTheme)
-      }
+    // Nghe sự kiện 'theme-changed' từ Navbar
+    const handleThemeChange = (e: Event) => {
+      const customEvent = e as CustomEvent
+      const newTheme = customEvent.detail === 'dark' ? '/styles/giscus-dark.css' : 'light'
+      setTheme(newTheme)
     }
 
-    window.addEventListener('storage', handleStorage)
-    return () => window.removeEventListener('storage', handleStorage)
+    window.addEventListener('theme-changed', handleThemeChange)
+    return () => window.removeEventListener('theme-changed', handleThemeChange)
   }, [])
-
-  useEffect(() => {
-    if (theme) {
-      updateGiscusTheme(theme)
-    }
-  }, [theme])
 
   return (
     <Giscus
+      key={theme}
       id="comments"
       repo="dangth12/blog-giscus-comments"
       repoId="R_kgDOJpeyjQ"

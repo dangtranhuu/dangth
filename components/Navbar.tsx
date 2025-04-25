@@ -22,15 +22,16 @@ export default function Navbar() {
     const nextDark = !isDark
     setIsDark(nextDark)
 
-    document.documentElement.setAttribute('data-theme', nextDark ? 'dark' : 'light')
     document.body.classList.toggle('dark-mode', nextDark)
-
-    const theme = nextDark ? '/styles/giscus-dark.css' : 'light'
     localStorage.setItem('modeByThean', nextDark ? 'dark' : 'light')
 
-    // 👇 Gọi trực tiếp để đổi theme Giscus
-    updateGiscusTheme(theme)
+    // 👉 Gửi sự kiện theme-changed
+    window.dispatchEvent(new CustomEvent('theme-changed', {
+      detail: nextDark ? 'dark' : 'light'
+    }))
+    console.log('send success!!!')
   }
+
 
 
 
