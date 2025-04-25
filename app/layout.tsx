@@ -11,8 +11,8 @@ import { ReactNode } from 'react'
 import { cmuSans } from './fonts'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import Live2DWidget from '@/components/Live2DWidget'
 import ImageZoomClient from '@/components/ImageZoomClient'
+// import Live2DWidget from '@/components/Live2DWidget'
 
 export const metadata = {
   title: 'Tran Huu Dang',
@@ -24,11 +24,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={cmuSans.variable}>
       <head>
-        {/* Font Computer Modern */}
-        {/* <link
-          rel="stylesheet"
-          href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css"
-        /> */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -39,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <Live2DWidget />
+        {/* <Live2DWidget /> */}
       </body>
     </html>
   )

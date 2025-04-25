@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/markdown'
 import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/GiscusComments'
@@ -110,16 +111,16 @@ export default async function PostPage({ params }: Props) {
           >
             <div>
               {previous && (
-                <a href={`/post/${previous.slug}`} style={{ textDecoration: 'none', color: '#409eff' }}>
+                <Link href={`/post/${previous.slug}`} style={{ textDecoration: 'none', color: '#409eff' }}>
                   ← {previous.title}
-                </a>
+                </Link>
               )}
             </div>
             <div>
               {next && (
-                <a href={`/post/${next.slug}`} style={{ textDecoration: 'none', color: '#409eff' }}>
+                <Link href={`/post/${next.slug}`} style={{ textDecoration: 'none', color: '#409eff' }}>
                   {next.title} →
-                </a>
+                </Link>
               )}
             </div>
           </div>

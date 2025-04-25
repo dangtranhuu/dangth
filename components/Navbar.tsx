@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fa';
 import { GiMagicPortal } from "react-icons/gi";
 import { ImBlog } from "react-icons/im"
+import Link from 'next/link';
 
 
 export default function Navbar() {
@@ -99,12 +100,12 @@ export default function Navbar() {
           {/* 👤 Cá nhân */}
           <div className="nav-item">
             <span>Home</span>
-            <a href="/"><FaUser /></a>
+            <Link href="/"><FaUser /></Link>
           </div>
 
           <div className="nav-item">
             <span>Projects</span>
-            <a href="/project">
+            <Link href="/project">
               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 149.999998" preserveAspectRatio="xMidYMid meet">
                 <defs>
                   <clipPath id="e2a71f3491">
@@ -114,22 +115,22 @@ export default function Navbar() {
                 <path fill="#9a9a9a" className="blinking" d="M 179.710938 122.058594 L 147.332031 122.058594 C 144.351562 122.058594 141.9375 119.644531 141.9375 116.671875 C 141.9375 113.699219 144.351562 111.285156 147.332031 111.285156 L 179.667969 111.285156 C 182.644531 111.285156 185.085938 113.699219 185.085938 116.671875 C 185.085938 119.644531 182.6875 122.058594 179.710938 122.058594 Z M 179.710938 122.058594 " fillOpacity="1" fillRule="nonzero" />
                 <path fill="#9a9a9a" d="M 96.964844 125.648438 C 95.296875 125.648438 93.65625 124.878906 92.597656 123.421875 C 90.851562 121.015625 91.382812 117.648438 93.792969 115.902344 L 150.511719 74.777344 L 115.761719 37.769531 C 113.722656 35.601562 113.832031 32.199219 116.011719 30.160156 C 118.191406 28.121094 121.59375 28.234375 123.636719 30.402344 L 162.066406 71.328125 C 163.003906 72.328125 163.519531 73.648438 163.519531 75.011719 L 163.519531 75.925781 C 163.519531 77.648438 162.695312 79.273438 161.296875 80.277344 L 100.140625 124.613281 C 99.183594 125.308594 98.066406 125.648438 96.964844 125.648438 Z M 96.964844 125.648438 " fillOpacity="1" fillRule="nonzero" />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <div className="nav-item">
             <span>Cert</span>
-            <a href="/cert"><FaCertificate /></a>
+            <Link href="/cert"><FaCertificate /></Link>
           </div>
 
           <div className="nav-item">
             <span>Blog</span>
-            <a href="/blog"><ImBlog /></a>
+            <Link href="/blog"><ImBlog /></Link>
           </div>
 
           <div className="nav-item">
             <span>Posts</span>
-            <a href="/post"><GiMagicPortal /></a>
+            <Link href="/post"><GiMagicPortal /></Link>
           </div>
 
           {/* 

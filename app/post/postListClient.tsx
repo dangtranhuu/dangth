@@ -2,6 +2,7 @@
 
 
 import React, { useState } from 'react'
+import Link from 'next/link'
 import styles from "./postList.module.css"
 import { FaUserEdit } from "react-icons/fa"
 import { MdDateRange } from "react-icons/md"
@@ -68,9 +69,9 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
             <img src={post.image} alt={post.title} className={styles.thumbnail} />
 
             <div className={styles.pubContent}>
-              <a href={`/post/${post.slug}`} className={styles.pubTitle}>
+              <Link href={`/post/${post.slug}`} className={styles.pubTitle}>
                 {post.title}
-              </a>
+              </Link>
               <p className={styles.pubSubtitle}>{post.subtitle}</p>
               <div className={styles.pubAuthors}>
                 <FaUserEdit /> {post.author} | <MdDateRange /> {typeof post.date === 'string' ? post.date : new Date(post.date).toISOString().slice(0, 10)}
@@ -96,14 +97,14 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
               )}
 
               {post.arxiv && (
-                <a
+                <Link
                   href={post.arxiv}
                   className={styles.pubLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   arXiv
-                </a>
+                </Link>
               )}
             </div>
           </div>
