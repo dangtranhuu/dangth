@@ -1,5 +1,5 @@
 import React from 'react'
-import { getPost, getAllPostSlugs } from '../../../lib/markdown'
+import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/markdown'
 import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/GiscusComments'
 import TOC from '@/components/post/TOC'
@@ -17,7 +17,13 @@ interface Props {
 export default async function PostPage({ params }: Props) {
 
   const post = await getPost(params.slug)
-  // ✅ Gán data-lang cho <pre>
+  const allPosts = await getAllPostsMeta()
+  allPosts.sort((a, b) => a.slug.localeCompare(b.slug))
+  const currentIndex = allPosts.findIndex(p => p.slug === params.slug)
+  const previous = currentIndex > 0 ? allPosts[currentIndex - 1] : null
+  const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null
+
+
   const contentWithLang = post.contentHtml.replace(
     /<pre><code class="[^"]*language-(\w+)"/g,
     `<pre data-lang="$1"><code class="hljs language-$1"`
@@ -75,7 +81,7 @@ export default async function PostPage({ params }: Props) {
           flexWrap: 'wrap',
           gap: '1rem'
         }}>
-          {/* Link chỉnh sửa trên GitHub */}
+          {/* a chỉnh sửa trên GitHub */}
           <a
             href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.postDir}/${post.slug}.md`}
             target="_blank"
@@ -90,6 +96,34 @@ export default async function PostPage({ params }: Props) {
             <MdHistory /> Last updated: {new Date(post.lastUpdated ?? post.date).toLocaleString()}
           </span>
         </div>
+
+        {(previous || next) && (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              marginTop: '2rem',
+              fontSize: '1rem',
+              paddingTop: '1rem',
+              borderTop: '1px solid #e0e0e0'
+            }}
+          >
+            <div>
+              {previous && (
+                <a href={`/post/${previous.slug}`} style={{ textDecoration: 'none', color: '#409eff' }}>
+                  ← {previous.title}
+                </a>
+              )}
+            </div>
+            <div>
+              {next && (
+                <a href={`/post/${next.slug}`} style={{ textDecoration: 'none', color: '#409eff' }}>
+                  {next.title} →
+                </a>
+              )}
+            </div>
+          </div>
+        )}
 
 
         <div style={{ margin: '2rem 0' }}></div>
