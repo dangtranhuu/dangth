@@ -122,13 +122,19 @@ export default function Navbar() {
           {/* 👤 Cá nhân */}
           <div className="nav-item">
             <span>Home</span>
-            <Link href="/"><FaUser /></Link>
+            <a onClick={() => handleNavClick('/')}>
+              {activeNav === '/' ? (
+                <i className="fa-solid fa-spinner fa-spin" />
+              ) : (
+                <FaUser />
+              )}
+            </a>
           </div>
 
           <div className="nav-item">
             <span>Projects</span>
-            <a onClick={() => handleNavClick('/projects')}>
-              {activeNav === '/projects' ? (
+            <a onClick={() => handleNavClick('/project')}>
+              {activeNav === '/project' ? (
                 <i className="fa-solid fa-spinner fa-spin" />
               ) : (
                 <Projects />
