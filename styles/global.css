@@ -140,6 +140,10 @@ main {
   overflow: visible;
 }
 
+.nav-item:hover {
+  cursor: pointer;
+}
+
 .nav-item span {
   position: absolute;
   /* transition: margin-top 0.5s; */
