@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation'; // ✅ App Router
 
 import {
