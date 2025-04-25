@@ -6,8 +6,7 @@ import {
   FaCertificate
 } from 'react-icons/fa';
 import { GiMagicPortal } from "react-icons/gi";
-import { ImBlog } from "react-icons/im";
-import { updateGiscusTheme } from '../lib/giscus-theme'
+import { ImBlog } from "react-icons/im"
 
 
 export default function Navbar() {
@@ -32,14 +31,6 @@ export default function Navbar() {
       detail: nextDark ? 'dark' : 'light'
     }))
   }
-
-
-
-
-
-
-
-
 
   useEffect(() => {
     const saved = localStorage.getItem("modeByThean");

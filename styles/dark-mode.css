@@ -46,7 +46,8 @@ body.dark-mode {
 .dark-mode .prose h3 a,
 .dark-mode .prose h4 a,
 .dark-mode .prose h5 a,
-.dark-mode .prose h6 a {
+.dark-mode .prose h6 a,
+.dark-mode .prose strong {
   color: var(--color-btn-primary-text);
 }
 
