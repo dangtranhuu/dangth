@@ -26,18 +26,6 @@ Mình có một số lưu ý sau đây:
 
 Okay bắt đầu thoy !!! 
 
-:::details <b>Nội dung chính</b>
-
-Sẽ cập nhật sau ^^
-<!-- ![Nguyên lý](https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/2.png?raw=true)
-![Thành phần](https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/3.png?raw=true)
-![Tính chất lựa ](https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/4.png?raw=truee)
-![Ưu điểm](https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/5.png?raw=true)
-![Nhược điểm](https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/6.png?raw=true)
-![Bài tập](https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/7.png?raw=true)
-![Bài giải](https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/8.png?raw=true) -->
-:::
-
 ## Xây dựng CSDL
 
 ![Diagram DB](https://github.com/theanishtar/images/blob/main/angurvad/backend/jwt/diagram.png?raw=true)
@@ -540,5 +528,3 @@ Chúc các bạn học tập vui vẻ.
 - **JQuery**: thư viện của **JavaScript**
 - **Ajax**: là phương thức trao đổi dữ liệu với máy chủ và cập nhật một hay nhiều phần của trang web, hoàn toàn *không reload lại toàn bộ trang*. 
 - **HTML**: ngôn ngữ đánh dấu, xây dựng website
------
-

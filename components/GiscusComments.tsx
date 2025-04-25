@@ -1,21 +1,22 @@
 'use client'
 
 import Giscus from '@giscus/react'
+import { GISCUS } from '@/lib/config';
 
 export default function GiscusComments() {
   const initialTheme = typeof window !== 'undefined' && localStorage.getItem('modeByThean') === 'dark'
-    ? '/styles/giscus-dark.css'
-    : 'light'
+    ? GISCUS.dark
+    : GISCUS.light
 
 
   return (
     <Giscus
-      id="comments"
-      repo="dangth12/blog-giscus-comments"
-      repoId="R_kgDOJpeyjQ"
-      category="Announcements"
-      categoryId="DIC_kwDOJpeyjc4CW2KO"
-      mapping="pathname"
+      id={GISCUS.id}
+      repo={GISCUS.repo}
+      repoId={GISCUS.repoId}
+      category={GISCUS.category}
+      categoryId={GISCUS.categoryId}
+      mapping={GISCUS.mapping}
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="bottom"

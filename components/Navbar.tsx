@@ -25,7 +25,7 @@ export default function Navbar() {
       setIsDark(nextDark);
       document.body.classList.toggle('dark-mode', nextDark);
       localStorage.setItem("modeByThean", nextDark ? "dark" : "light");
-      document.getElementById('comments')?.setAttribute('theme', nextDark ? '/styles/giscus-dark.css' : 'light')
+      document.getElementById('comments')?.setAttribute('theme', nextDark ? 'transparent_dark' : 'light')
       setIsLoading(false);
     }, 600);
   }
