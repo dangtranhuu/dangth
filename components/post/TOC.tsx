@@ -17,6 +17,9 @@ export default function TOC({ headings }: { headings: { id: string, text: string
             </a>
           </li>
         ))}
+        <li className='text-sm leading-relaxed' style={{ marginLeft: `0px` }}>
+          <a href="#comments">Thảo luận</a>
+        </li>
       </ul>
     </aside>
   )
