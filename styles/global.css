@@ -8,6 +8,53 @@
   --text-color-dark: #e5e7eb;
   --contact-bc: #dbdfe7;
   --contact-bc-dark: #4A5363;
+
+  --c-brand: #377bb5;
+  --c-bg: #fff;
+  --c-bg-light: #fafafa;
+  --c-bg-lighter: #f6f6f6;
+  --c-bg-transparent: rgba(255, 255, 255, .9);
+  --c-bg-navbar: var(--c-bg-transparent);
+  --c-bg-sidebar: var(--c-bg);
+  --c-bg-arrow: #cccccc;
+  --c-text: rgba(0, 0, 0, .9);
+  --c-text-accent: var(--c-brand);
+  --c-text-sub: #7f7f7f;
+  --c-border: #eaeaea;
+  --c-border-sub: #dadada;
+  --c-info: #007bff;
+  --c-tip: #42b983;
+  --c-tip-title: #359368;
+  --c-warning: #f4cd00;
+  --c-warning-title: #c1a200;
+  --c-danger: #f55;
+  --c-danger-title: #ff2222;
+  --c-badge-tip: var(--c-tip);
+  --c-badge-warning: var(--c-warning);
+  --c-badge-danger: var(--c-danger);
+  --t-color: .3s ease;
+  --t-transform: .3s ease;
+  --code-bg-color: #282c34;
+  --code-hl-bg-color: rgba(0, 0, 0, .66);
+  --code-ln-color: #9e9e9e;
+  --code-scroll-bar-color: #64748b;
+  --code-ln-wrapper-width: 3rem;
+  --inline-code-color: #c52950;
+  --inline-code-bg-color: #f9f2f4;
+  --image-mask-color: transparent;
+  --box-shadow: 0 1px 8px 0 rgba(27, 35, 47, .1);
+  --box-shadow-hover: 0 2px 16px 0 rgba(27, 35, 47, .2);
+  --box-shadow-inset: inset 2px 2px 4px #bab6b6, inset -1px -1px 4px rgba(255, 255, 255, .6);
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-code: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --navbar-height: 3.6rem;
+  --navbar-padding-v: .7rem;
+  --navbar-padding-h: 1.5rem;
+  --sidebar-width: 20rem;
+  --sidebar-width-mobile: calc(var(--sidebar-width) * .82);
+  --content-width: 800px;
+  --homepage-width: 1126px;
+  --catalog-width: 13rem;
 }
 
 body {

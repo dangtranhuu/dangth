@@ -1,96 +1,10 @@
-:root {
-  --c-brand: #74b3eb;
-  --c-bg: #2d3746;
-  --c-bg-light: #313d4e;
-  --c-bg-lighter: #404d61;
-  --c-bg-transparent: rgba(45, 55, 71, .9);
-  --c-text: rgba(255, 255, 255, .8);
-  --c-text-sub: #8b8b8b;
-  --c-border: #3c4a5f;
-  --c-border-sub: #4b5a70;
-  --code-hl-bg-color: #363b46;
-  --inline-code-color: #96c2eb;
-  --inline-code-bg-color: rgba(76, 86, 128, .4);
-  --image-mask-color: rgba(27, 35, 47, .3);
-  --box-shadow: 0 1px 8px 0 rgba(27, 35, 47, .6);
-  --box-shadow-hover: 0 2px 16px 0 rgba(27, 35, 47, .7);
-  --box-shadow-inset: inset 2px 2px 4px rgba(27, 35, 47, .9), inset -1px -1px 4px rgba(255, 255, 255, .2);
-}
-
-body.dark-mode {
-  background-color: var(--background-color-dark);
-}
-
-.dark-mode pre[class*="language-"] {
-  scrollbar-color: var(--code-scroll-bar-color) rgba(0, 0, 0, 0);
-}
-
-.dark-mode .prose pre {
-  background-color: #343f50;
-}
-
-.dark-mode pre code.hljs {
-  color: white;
-}
-
-/* .dark-mode a {
-  color: var(--primary-color-dark);
-} */
-
-.dark-mode .container {
-  background-color: var(--background-color-dark);
-}
-
-.dark-mode .prose h1 a,
-.dark-mode .prose h2 a,
-.dark-mode .prose h3 a,
-.dark-mode .prose h4 a,
-.dark-mode .prose h5 a,
-.dark-mode .prose h6 a {
-  color: var(--color-btn-primary-text);
-}
-
-.dark-mode .project .card-content {
-  background-color: var(--contact-bc-dark);
-  color: var(--text-color-dark);
-}
-
-.dark-mode .project .card-description {
-  color: var(--text-color-dark);
-}
-
-.dark-mode .project .tags span {
-  color: var(--text-color-dark);
-  background-color: var(--background-color-dark);
-}
-
-.dark-mode .cert .cert-org {
-  color: var(--text-color-dark);
-}
-
-.dark-mode footer {
-  color: var(--contact-bc);
-  background-color: var(--contact-bc-dark);
-}
-
-.dark-mode .bottom-nav {
-  background: #404b5d;
-  border-color: #5a5a5a;
-}
-
-.dark-mode .nav-item a {
-  background-color: var(--contact-bc-dark);
-}
-
-.dark-mode .nav-item a.hovered {
-  background-color: var(--contact-bc-dark);
-}
-
-/* GISCUS */
-/*! Modified from https://github.com/giscus/giscus/blob/main/styles/themes/transparent_dark.css
+/*! Modified from GitHub's dark theme in primer/primitives.
+ * MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
  */
 
-.dark-mode main .post {
+main {
   --color-prettylights-syntax-comment: #8b949e;
   --color-prettylights-syntax-constant: #79c0ff;
   --color-prettylights-syntax-entity: #d2a8ff;
@@ -122,15 +36,15 @@ body.dark-mode {
   --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
   --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
   --color-btn-text: #c9d1d9;
-  --color-btn-bg: transparent;
-  --color-btn-border: #4b5a70;
+  --color-btn-bg: hsl(0, 0%, 25%);
+  --color-btn-border: hsl(0, 0%, 35%);
   --color-btn-shadow: 0 0 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
-  --color-btn-hover-bg: rgb(35 44 56 / 80%);
-  --color-btn-hover-border: #8b949e;
+  --color-btn-hover-bg: hsl(0, 0%, 25%, 0.5);
+  --color-btn-hover-border: hsl(0, 0%, 50%);
   --color-btn-active-bg: hsl(212deg 12% 18% / 50%);
   --color-btn-active-border: #6e7681;
-  --color-btn-selected-bg: rgb(35 44 56 / 80%);
+  --color-btn-selected-bg: hsl(0, 0%, 25%, 0.5);
   --color-btn-primary-text: #fff;
   --color-btn-primary-bg: #238636;
   --color-btn-primary-border: rgb(240 246 252 / 10%);
@@ -143,24 +57,32 @@ body.dark-mode {
   --color-btn-primary-disabled-text: rgb(240 246 252 / 50%);
   --color-btn-primary-disabled-bg: rgb(35 134 54 / 60%);
   --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
+  --color-action-list-item-default-hover-bg: hsl(0, 0%, 30%);
+  --color-segmented-control-bg: hsl(0, 0%, 20%);
+  --color-segmented-control-button-bg: transparent;
+  --color-segmented-control-button-selected-border: hsl(0, 0%, 35%);
   --color-fg-default: #c9d1d9;
   --color-fg-muted: #8b949e;
   --color-fg-subtle: #484f58;
   --color-canvas-default: transparent;
   --color-canvas-overlay: rgb(22 27 34 / 90%);
-  --color-canvas-inset: #273141;
-  --color-canvas-subtle: #273141;
-  --color-border-default: #4b5a70;
-  --color-border-muted: #4b5a70;
-  --color-neutral-muted: rgb(110 118 129 / 40%);
-  --color-neutral-subtle: rgb(110 118 129 / 10%);
-  --color-accent-fg: #74b3eb;
-  --color-accent-emphasis: #316dca;
+  --color-canvas-inset: hsl(0, 0%, 20%);
+  --color-canvas-subtle: hsl(0, 0%, 20%);
+  --color-border-default: hsl(0, 0%, 35%);
+  --color-border-muted: hsl(0, 0%, 40%);
+  --color-neutral-muted: rgb(110 118 129 / 15%);
+  --color-neutral-subtle: rgb(110 118 129 / 20%);
+  --color-accent-fg: #58a6ff;
+  --color-accent-emphasis: #1f6feb;
   --color-accent-muted: rgb(56 139 253 / 40%);
-  --color-accent-subtle: rgb(56 139 253 / 15%);
+  --color-accent-subtle: rgb(65 132 228 / 10%);
   --color-success-fg: #3fb950;
+  --color-attention-fg: #c69026;
+  --color-attention-muted: rgb(174 124 20 / 40%);
+  --color-attention-subtle: rgb(174 124 20 / 15%);
   --color-danger-fg: #f85149;
-  --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
+  --color-danger-muted: rgb(229 83 75 / 40%);
+  --color-danger-subtle: rgb(229 83 75 / 10%);
   --color-primer-shadow-inset: 0 0 transparent;
   --color-scale-gray-7: #21262d;
   --color-scale-blue-8: #0c2d6b;
@@ -168,26 +90,21 @@ body.dark-mode {
   /*! Extensions from @primer/css/alerts/flash.scss */
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
-
-  color-scheme: dark;
 }
 
-.post .pagination-loader-container {
+main .pagination-loader-container {
   background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
 }
 
-.post .gsc-homepage-bg {
+.gsc-pagination-button {
+  background-color: var(--color-btn-bg);
+}
+
+.gsc-homepage-bg {
   background: linear-gradient(135deg, #05485c, #032e58, #2f0154);
   background-size: 600% 600%;
   animation: gradient 21s ease infinite;
 }
-
-.dark-mode :not(pre)>code {
-  color: var(--inline-code-color);
-  background-color: var(--inline-code-bg-color);
-  transition: background-color var(--t-color);
-}
-
 
 @keyframes gradient {
   0% {
@@ -201,4 +118,8 @@ body.dark-mode {
   100% {
     background-position: 2% 0%;
   }
+}
+
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-dark.gif");
 }

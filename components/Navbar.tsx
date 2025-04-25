@@ -7,6 +7,9 @@ import {
 } from 'react-icons/fa';
 import { GiMagicPortal } from "react-icons/gi";
 import { ImBlog } from "react-icons/im";
+import { updateGiscusTheme } from '../lib/giscus-theme'
+
+
 export default function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
 
@@ -14,78 +17,36 @@ export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const toggleTheme = () => {
-    setIsLoading(true);
 
-    setTimeout(() => {
-      const nextDark = !isDark;
-      setIsDark(nextDark);
-      document.body.classList.toggle('dark-mode', nextDark);
-      localStorage.setItem("modeByThean", nextDark ? "dark" : "light");
-      setIsLoading(false);
-    }, 600);
-  };
+  const toggleTheme = () => {
+    const nextDark = !isDark
+    setIsDark(nextDark)
+
+    document.documentElement.setAttribute('data-theme', nextDark ? 'dark' : 'light')
+    document.body.classList.toggle('dark-mode', nextDark)
+
+    const theme = nextDark ? '/styles/giscus-dark.css' : 'light'
+    localStorage.setItem('modeByThean', nextDark ? 'dark' : 'light')
+
+    // 👇 Gọi trực tiếp để đổi theme Giscus
+    updateGiscusTheme(theme)
+  }
+
+
+
+
+
+
 
   useEffect(() => {
-    const saved = localStorage.getItem("modeByThean");
-    const dark = saved === "dark";
+    const saved = localStorage.getItem('modeByThean')
+    const dark = saved === 'dark'
 
-    setIsDark(dark);
-    document.body.classList.toggle('dark-mode', dark);
+    setIsDark(dark)
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
+    document.body.classList.toggle('dark-mode', dark)
+  }, [])
 
-    // Check if navRef.current is available before continuing
-    const nav = navRef.current;
-    if (!nav) return;
-
-    const items = nav.querySelectorAll('.nav-item a');
-    const mouseEvents: { item: Element; enter: () => void; leave: () => void }[] = [];
-
-    items.forEach((item) => {
-      const enter = () => item.classList.add('hovered');
-      const leave = () => item.classList.remove('hovered');
-
-      item.addEventListener('mouseenter', enter);
-      item.addEventListener('mouseleave', leave);
-
-      mouseEvents.push({ item, enter, leave });
-    });
-
-    let lastScrollTop = 0;
-
-    const handleScroll = () => {
-      if (!navRef.current) return;
-
-      const currentScrollTop = window.scrollY;
-
-      if (currentScrollTop > 0) {
-        navRef.current.classList.add('h-shadow');
-      } else {
-        navRef.current.classList.remove('h-shadow');
-      }
-
-      if (currentScrollTop > lastScrollTop) {
-        navRef.current.classList.add('hidden');
-      } else {
-        navRef.current.classList.remove('hidden');
-      }
-
-      lastScrollTop = Math.max(currentScrollTop, 0);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-
-      // Cleanup: Remove event listeners for hover effects
-      mouseEvents.forEach(({ item, enter, leave }) => {
-        if (item) {
-          item.removeEventListener('mouseenter', enter);
-          item.removeEventListener('mouseleave', leave);
-        }
-      });
-    };
-  }, []);
 
   return (
     <div className="menu">
