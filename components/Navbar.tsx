@@ -18,18 +18,16 @@ export default function Navbar() {
 
 
   const toggleTheme = () => {
-    const nextDark = !isDark
-    setIsDark(nextDark)
+    setIsLoading(true);
 
-    document.body.classList.toggle('dark-mode', nextDark)
-    localStorage.setItem('modeByThean', nextDark ? 'dark' : 'light');
-    document.getElementById('comments')?.setAttribute('theme', nextDark ? '/styles/giscus-dark.css' : 'light')
-
-
-    // ✅ Gửi custom event
-    window.dispatchEvent(new CustomEvent('theme-changed', {
-      detail: nextDark ? 'dark' : 'light'
-    }))
+    setTimeout(() => {
+      const nextDark = !isDark;
+      setIsDark(nextDark);
+      document.body.classList.toggle('dark-mode', nextDark);
+      localStorage.setItem("modeByThean", nextDark ? "dark" : "light");
+      document.getElementById('comments')?.setAttribute('theme', nextDark ? '/styles/giscus-dark.css' : 'light')
+      setIsLoading(false);
+    }, 600);
   }
 
   useEffect(() => {
