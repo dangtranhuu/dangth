@@ -12,7 +12,6 @@ import { cmuSans } from './fonts'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ImageZoomClient from '@/components/ImageZoomClient'
-// import Live2DWidget from '@/components/Live2DWidget'
 
 export const metadata = {
   title: 'Tran Huu Dang',
@@ -34,7 +33,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
-        {/* <Live2DWidget /> */}
       </body>
     </html>
   )
