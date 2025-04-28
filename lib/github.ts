@@ -26,7 +26,7 @@ export async function searchReposByTopicAndUser(
   token: string
 ): Promise<ProcessedRepo[]> {
   const query = `topic:${topic}+user:${username}`;
-  const url = `https://api.github.com/search/repositories?q=${query}&per_page=100`;
+  const url = `https://api.github.com/search/repositories?q=${query}`;
 
   try {
     const res = await fetch(url, {
