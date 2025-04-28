@@ -6,6 +6,7 @@ import { LangBadge } from './badge/LangBadge'
 import { FaRegStar } from "react-icons/fa";
 
 type RepoCardProps = {
+  url: string;
   name: string;
   description: string | null;
   languages: string[];
@@ -15,6 +16,7 @@ type RepoCardProps = {
 };
 
 const RepoCard = ({
+  url,
   name,
   description,
   languages,
@@ -25,7 +27,9 @@ const RepoCard = ({
   return (
     <div className="repo-card">
       <div className="repo-header">
-        <h2 className="repo-name">{name}</h2>
+        <a href={url}>
+          <h2 className="repo-name">{name}</h2>
+        </a>
         <span className="repo-stars"><FaRegStar /> {stars}</span>
       </div>
       <p className="repo-desc">{description || "Không có mô tả"}</p>
@@ -47,7 +51,7 @@ export default async function Projects() {
   const repos = await searchReposByTopicAndUser('dangtranhuu', 'featured', process.env.GITHUB_TOKEN!);
 
   return (
-    <div className="max-w-3xl mx-auto py-12 container">
+    <div className="max-w-3xl mx-auto py-12 container repo-project">
       <h1 className="text-2xl font-bold mb-6">Projects</h1>
       {repos.map((repo) => (
         <RepoCard key={repo.name} {...repo} />

@@ -11,6 +11,7 @@ export interface GithubRepo {
 }
 
 export interface ProcessedRepo {
+  url: string;
   name: string;
   description: string | null;
   stars: number;
@@ -57,6 +58,7 @@ export async function searchReposByTopicAndUser(
         const languages = await languagesRes.json();
 
         return {
+          url: `https://github.com/${username}/${repo.name}`,
           name: repo.name,
           description: repo.description,
           stars: repo.stargazers_count,

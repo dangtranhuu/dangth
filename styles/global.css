@@ -499,6 +499,11 @@ font-family: 'Ubuntu', sans-serif; */
   margin-top: 50px;
 }
 
+.repo-project .repo-card a {
+  text-decoration: none;
+  color: var(--c-info)
+}
+
 footer {
   text-align: center;
   color: var(--contact-bc-dark);
