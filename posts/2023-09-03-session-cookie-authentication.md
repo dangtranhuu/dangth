@@ -43,7 +43,7 @@ Sau đây là một số thuộc tính của Session. Chỉ một số thôi nh�
 ### Cookie
 **Cookie** là một vùng nhớ được lưu trong **Browser** (*Chorme, Cốc Cốc, Edge,...*). **Cookie** cũng giống như *local storage* hay *ssession storage* điều khác biệt lớn nhất là **Cookie** có thể tự xóa đi nếu vượt quá thời hạn cho phép của nó.
 
-Ví dụ: Mình tạo một **Cookie** có tên là ==dangdepzai== và *set* thời gian tồn tại của nó là ==20m==. Thì sau đúng 20 phút nó sẽ bị xóa khỏi trình duyệt. 
+Ví dụ: Mình tạo một **Cookie** có tên là `dangdepzai` và *set* thời gian tồn tại của nó là `20m`. Thì sau đúng 20 phút nó sẽ bị xóa khỏi trình duyệt. 
 
 Sau đây là một số thuộc tính của **Cookie**. Chỉ một số thôi nhé (vì nó khá nhiều và bạn hoàn toàn có thể tìm hiểu thêm).
 |Tên (Name)|Giá Trị (Value)|Thời Gian Tồn Tại (Expires hoặc Max-Age)|Path|Domain|
@@ -79,7 +79,7 @@ Sau đây là một số thuộc tính của **Cookie**. Chỉ một số thôi 
 
 <div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
 <strong>💡 TIP</strong><br/>
-Nếu bạn hiểu về Session thì có lẻ bạn trả lời được ngay rằng ==Ta sẽ lưu dữ liệu User vào Session== và các **Request** sau đó *(mua hàng, đăng xuất)* ta cứ việc lấy Session đó ra.
+Nếu bạn hiểu về Session thì có lẻ bạn trả lời được ngay rằng `Ta sẽ lưu dữ liệu User vào Session` và các **Request** sau đó *(mua hàng, đăng xuất)* ta cứ việc lấy Session đó ra.
 </div>
 
 Đúng! rất đúng, nhưng có bao giờ bạn tự hỏi rằng vì sao Server có thể biết được Session nào sẽ lưu dữ liệu của User nào hay chưa ? 

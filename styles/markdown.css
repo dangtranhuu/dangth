@@ -89,7 +89,7 @@ main:not(.post) a.header-anchor {
   display: block;
   overflow-x: auto;
   max-width: 100%;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .prose th,
@@ -110,6 +110,7 @@ main:not(.post) a.header-anchor {
 .prose tr:last-child {
   border-bottom: 1px solid #e5e7eb;
 }
+
 
 /* KaTeX */
 .prose .katex-display {
