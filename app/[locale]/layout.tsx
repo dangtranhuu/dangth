@@ -6,6 +6,7 @@ import '../../styles/markdown.css'
 import '../../styles/project.css'
 import 'katex/dist/katex.min.css'
 
+import type { AbstractIntlMessages } from 'next-intl';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react'
@@ -31,7 +32,7 @@ export default async function RootLayout({
   params: { locale: string };
 }) {
 
-  let messages: any;
+  let messages: AbstractIntlMessages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {

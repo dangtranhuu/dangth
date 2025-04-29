@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useTransition } from 'react';
+import React, { useEffect } from 'react';
 import { FiGithub } from "react-icons/fi";
 import { SiLeetcode } from "react-icons/si";
 import { TbBrandHackerrank } from "react-icons/tb";
