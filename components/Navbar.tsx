@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
+import { useLocale } from "next-intl";
 import { FaUser, FaCertificate } from 'react-icons/fa';
 import { GiMagicPortal } from "react-icons/gi";
 import { ImBlog } from "react-icons/im"
@@ -9,6 +10,7 @@ import { Projects } from './icons'
 
 
 export default function Navbar() {
+  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -25,8 +27,8 @@ export default function Navbar() {
     if (pathname === href) return; // Nếu đang ở đúng route → không làm gì cả
 
     setActiveNav(href); // đánh dấu nav đang được click
-    router.push(href);
-    // router.push(`/${locale}${href}`);
+    // router.push(href);
+    router.push(`/${locale}${href}`);
   };
 
 
