@@ -32,12 +32,24 @@ export default async function RootLayout({
   params: { locale: string };
 }) {
 
-  let messages: AbstractIntlMessages;
+  let messages: AbstractIntlMessages | null = null;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
     console.log(error);
-    notFound();
+    // notFound();
+    // messages = null;
+  }
+
+  if (!messages) {
+    return (
+      <html lang="en">
+        <body>
+          <h1>404 - Not Found</h1>
+          <p>Locale {locale} is not supported.</p>
+        </body>
+      </html>
+    );
   }
 
   return (
