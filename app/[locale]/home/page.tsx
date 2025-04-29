@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useTransition } from 'react';
 import { FiGithub } from "react-icons/fi";
 import { SiLeetcode } from "react-icons/si";
 import { TbBrandHackerrank } from "react-icons/tb";
@@ -7,8 +7,12 @@ import { LuLinkedin } from "react-icons/lu";
 import { FiYoutube } from "react-icons/fi";
 import { LuFacebook } from "react-icons/lu";
 import { TbBrandTiktok } from "react-icons/tb";
+import { useTranslations } from 'next-intl';
 
 export default function Home() {
+
+  const t = useTranslations("home")
+
   useEffect(() => {
     const items = document.querySelectorAll('.item');
 
@@ -46,9 +50,9 @@ export default function Home() {
             <img src="/images/avt.png" id="avt" alt="" className="bounce" />
           </div>
           <h1 id="uname">
-            Tran Huu Dang <span id="subname"></span>
+            {t("fullName")} <span id="subname"></span>
           </h1>
-          <p id="desc">Java Developer</p>
+          <p id="desc">{t("role")}</p>
 
           <div className="contact">
             <div className="wrap">

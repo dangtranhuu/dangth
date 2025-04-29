@@ -1,4 +1,3 @@
-// app/fonts.ts
 import localFont from 'next/font/local'
 
 export const cmuSans = localFont({
