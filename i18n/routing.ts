@@ -7,6 +7,7 @@ export const routing = defineRouting({
 
   // Used when no locale matches
   defaultLocale: "vi",
+  localePrefix: 'as-needed', // <- tự ẩn locale nếu là default
   pathnames: {
     "/project": {
       en: "/project",
