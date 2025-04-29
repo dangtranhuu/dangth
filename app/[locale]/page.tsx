@@ -1,10 +1,11 @@
 import Home from "./home/page"
 import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing'; // Import routing bạn define
+import { routing } from '@/i18n/routing';
+import { type Locale } from '@/i18n/routing';
 
-export default function Root({ params: { locale } }: { params: { locale: any } }) {
+export default function Root({ params: { locale } }: { params: { locale: Locale } }) {
   if (!routing.locales.includes(locale)) {
-    notFound(); // ⚡ trigger chuẩn nextjs, tự render not-found.tsx
+    notFound();
   }
   return (
     <div>
