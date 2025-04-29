@@ -56,7 +56,7 @@ export default function Home() {
 
           <div className="contact">
             <div className="wrap">
-              <a target="_blank" href="https://github.com/theanishtar">
+              <a target="_blank" href="https://github.com/dangtranhuu">
                 <button>
                   <FiGithub />
                 </button>
@@ -79,7 +79,7 @@ export default function Home() {
                   <LuLinkedin />
                 </button>
               </a>
-              <a href="https://www.youtube.com/@froggydev" target="_blank">
+              <a href="https://www.youtube.com/@devlands" target="_blank">
                 <button>
                   <FiYoutube />
                 </button>
