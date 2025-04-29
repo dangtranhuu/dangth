@@ -46,7 +46,7 @@ const RepoCard = ({
   );
 };
 
-
+export const dynamic = 'force-dynamic';
 export default async function Projects() {
   const repos = await searchReposByTopicAndUser('dangtranhuu', 'featured', process.env.GITHUB_TOKEN!);
 
