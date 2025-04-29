@@ -2,6 +2,7 @@
 
 import React from "react";
 import { searchReposByTopicAndUser } from '@/lib/github';
+import { GITHUB } from '@/lib/config';
 import { LangBadge } from './badge/LangBadge'
 import { FaRegStar } from "react-icons/fa";
 
@@ -46,9 +47,8 @@ const RepoCard = ({
   );
 };
 
-export const dynamic = 'force-dynamic';
 export default async function Projects() {
-  const repos = await searchReposByTopicAndUser('dangtranhuu', 'featured', process.env.GITHUB_TOKEN!);
+  const repos = await searchReposByTopicAndUser(GITHUB.username, GITHUB.topic, process.env.GITHUB_TOKEN!);
 
   return (
     <div className="max-w-3xl mx-auto py-12 container repo-project">

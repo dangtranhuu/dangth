@@ -14,3 +14,8 @@ export const GISCUS = {
   light: "light",
   dark: "transparent_dark"
 }
+
+export const GITHUB = {
+  username: "dangtrahuu",
+  topic: "featured"
+}
