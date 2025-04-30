@@ -140,11 +140,10 @@ Kết quả:
 
 ### Tạo dự án với Spring Tools Sute
 
-:::tip <b>MẸO</b>
-Các bạn có thể tải [Spring Tools Sute](/post/backend/jwt-springboot/#spring) tại [đây]() nhé.
-
-Hoặc cũng có thể sử dụng [VS Code](/post/backend/jwt-springboot/#spring) thay thế!
-:::
+> [!TIP]
+> Các bạn có thể tải [Spring Tools Sute](/post/backend/jwt-springboot/#spring) tại [đây]() nhé.
+>
+> Hoặc cũng có thể sử dụng [VS Code](/post/backend/jwt-springboot/#spring) thay thế!
 
 Các bạn tạo dự `Spring Stater Project` và thêm các `dependencies` sau nhé (mình sẽ bỏ qua các _dependencies_ mặc định và chỉ đề cập đến những _dependencies_ cần thiết cho dự án hôm nay thôi nhé)
 
