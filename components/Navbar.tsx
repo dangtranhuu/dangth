@@ -27,8 +27,15 @@ export default function Navbar() {
     if (pathname === href) return; // Nếu đang ở đúng route → không làm gì cả
 
     setActiveNav(href); // đánh dấu nav đang được click
+
     // router.push(href);
     router.push(`/${locale}${href}`);
+
+    // Delay để cho animation hovered có thời gian chạy
+    setTimeout(() => {
+      const navItems = document.querySelectorAll('.nav-item a');
+      navItems.forEach(item => item.classList.remove('hovered'));
+    }, 300); // 300ms là thời gian đủ để thấy hiệu ứng phình to
   };
 
 
