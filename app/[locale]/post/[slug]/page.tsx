@@ -55,7 +55,7 @@ export default async function PostPage({ params }: Props) {
                 <span
                   key={index}
                   style={{
-                    backgroundColor: '#f0f0f0',
+                    backgroundColor: '#d0d0d0',
                     borderRadius: '0.5rem',
                     padding: '0.2rem 0.6rem',
                     fontSize: '0.85rem',

@@ -14,6 +14,7 @@ import 'katex/dist/katex.min.css' // nhớ import CSS này ở đâu đó trong 
 import { estimateReadingTime } from '@/utils/readingTime'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import remarkAdmonition from './plugins/remarkAdmonition'
 
 
 
@@ -68,6 +69,7 @@ export async function getPost(slug: string): Promise<PostData> {
     const processed = await remark()
       .use(remarkGfm)
       .use(remarkMath)                                 // 👈 xử lý cú pháp toán học
+      .use(remarkAdmonition)                          // render blockquote [TIP, INFO, WARNING]
       .use(remarkRehype, { allowDangerousHtml: true })
       .use(rehypeRaw)
       .use(rehypeKatex)                                // 👈 render LaTeX bằng KaTeX

@@ -3,7 +3,7 @@ title: Tìm hiểu về giải thuật tham lam
 subtitle: Cấu trúc dữ liệu và giải thuật
 author: Trần Hữu Đang
 date: "2023-10-20"
-image: /images/post/2023-10-20-greedy-algorithm/thump.png
+image: /images/post/2023-10-20-greedy-algorithm/1.png
 tags:
   - Algorithm
   - Thuật toán
@@ -17,19 +17,19 @@ Thuật toán tham lam được ứng dụng nhiều rất vào các bài toán 
 Thuật toán tham lam là gì, nó có tham lam thật không ???
 
 
-![](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/1.png?raw=true)
+![](/images/post/2023-10-20-greedy-algorithm/1.png)
 
 <details>
 <summary><strong>Nội dung chính</strong></summary>
 
-![Nguyên lý](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/2.png?raw=true)  
-![Thành phần](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/3.png?raw=true)  
-![Tính chất lựa](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/4.png?raw=truee)  
-![Ưu điểm](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/5.png?raw=true)  
-![Nhược điểm](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/6.png?raw=true)  
-![Bài tập](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/7.png?raw=true)  
-![Bài giải](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/8.png?raw=true)  
-![Lời cảm ơn](https://github.com/theanishtar/images/blob/main/frogcyber/post/greedy/9.png?raw=true)
+![Nguyên lý](/images/post/2023-10-20-greedy-algorithm/2.png)  
+![Thành phần](/images/post/2023-10-20-greedy-algorithm/3.png)  
+![Tính chất lựa](/images/post/2023-10-20-greedy-algorithm/4.png)  
+![Ưu điểm](/images/post/2023-10-20-greedy-algorithm/5.png)  
+![Nhược điểm](/images/post/2023-10-20-greedy-algorithm/6.png)  
+![Bài tập](/images/post/2023-10-20-greedy-algorithm/7.png)  
+![Bài giải](/images/post/2023-10-20-greedy-algorithm/8.png)  
+![Lời cảm ơn](/images/post/2023-10-20-greedy-algorithm/9.png)
 
 </details>
 
@@ -62,11 +62,15 @@ Tham lam thường là thuật toán dạng lặp, trong đó tại mỗi bướ
 
 Ý tưởng của tham lam, như cái tên đã gợi ý cho ta, là:
 
-<div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
+<!-- <div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
 
 <strong>Nguyên lý tham lam</strong><br/>
 Tại mỗi bước của thuật toán, trong số các lựa chọn khả thi, chọn một lựa chọn <strong>có lợi nhất</strong>.
-</div>
+</div> -->
+
+> [!INFO]
+> **Nguyên lý tham lam**
+> Tại mỗi bước của thuật toán, trong số các lựa chọn khả thi, chọn một lựa chọn **có lợi nhất**.
 
 
 Rất nhiều thuật toán nổi tiếng được thiết kế dựa trên tư tưởng của tham lam, ví dụ như thuật toán tìm đường đi ngắn nhất của **Dijkstra**, thuật toán cây khung nhỏ nhất của **Kruskal**, v.v. 
@@ -93,11 +97,16 @@ Theo đó thì thứ tự ưu tiên để chọn đồ vật là là B, A, D và
 
 Vật B được xét đầu tiên và ta chọn tối đa 3 cái vì mỗi cái vì trọng lượng mỗi cái là 10 và ba lô có trọng lượng 37. Sau khi đã chọn 3 vât loại B, trọng lượng còn lại trong ba lô là 37 – 3*10 = 7. Ta xét đến vật A, vì A có trọng lượng 15 mà trọng lượng còn lại của balô chỉ còn 7 nên không thể chọn vật A. Xét vật D và ta thấy có thể chọn 1 vật D, khi đó trọng lượng còn lại của ba lô là 7-4 = 3. Cuối cùng ta chọn được một vật C.
 
-<div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
+<!-- <div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
 <strong>📌 KẾT LUẬN</strong><br/>
 Như vậy chúng ta đã chọn 3 cái loại B, một cái loại D và 1 cái loại C.<br/>
 Tổng trọng lượng là <strong>3×10 + 4 + 2 = 36</strong> và tổng giá trị là <strong>3×25 + 6 + 2 = 83</strong>.
-</div>
+</div> -->
+
+> [!INFO]
+> **KẾT LUẬN**
+> Như vậy chúng ta đã chọn 3 cái loại B, một cái loại D và 1 cái loại C.
+> Tổng trọng lượng là **3×10 + 4 + 2 = 36** và tổng giá trị là **3×25 + 6 + 2 = 83**.
 
 
 ## Thuật toán
@@ -199,11 +208,10 @@ Mệnh giá tiền gồm có: **500, 200, 100, 50, 20, 10, 5, 2, 1**
 
 Hãy suy nghĩ cách giải rồi bấm vào xem code của mình dưới đây xem có giống nhau không nhé
 
-<div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
+<!-- <div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
 <strong>💡 SẼ THẬT LÀ TUYỆT</strong><br/>
 Nếu bạn để lại code của mình phía dưới comment bài viết này ^^
-</div>
-
+</div> -->
 
 #### Bài giải
 <details>
@@ -263,13 +271,18 @@ $$
 Tìm cách lưu trữ file sao cho việc truy xuất được hiệu quả nhất, biết rằng mỗi file được truy cập đúng 1 lần.
 
 
-<div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
+<!-- <div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
 
 <strong>💡 Ví dụ 1:</strong><br/>
 Giả sử các file đánh số $1,2,3$ có dung lượng lần lượt là $5,4,6$.<br/>
 Nếu ta sắp xếp file theo thứ tự $2,3,1$ thì chi phí truy nhập là $4+10+15=29$.<br/>
 Nếu ta sắp theo thứ tự $2,1,3$ thì chi phí truy nhập là $4+9+15=28$.
-</div>
+</div> -->
+
+> [!TIP] **Ví dụ 1:** <br/>
+> Giả sử các file đánh số $1,2,3$ có dung lượng lần lượt là $5,4,6$. <br/>
+> Nếu ta sắp xếp file theo thứ tự $2,3,1$ thì chi phí truy nhập là $4+10+15=29$. <br/>
+> Nếu ta sắp theo thứ tự $2,1,3$ thì chi phí truy nhập là $4+9+15=28$. <br/>
 
 
 Ý tưởng của **giải thuật tham lam** như sau: giả sử ta đang ắp xếp file vào vị trí thứ $i$, để giảm chi phí truy nhập file thứ $i$, ta nên lưu trữ các vị trí $1,2,…i−1$ bằng các file với tổng dung lượng nhỏ nhất. 
@@ -280,8 +293,17 @@ Trong ví dụ 1, cách lưu $2,1,3$ có chi phí nhỏ hơn là vì nó là cá
 
 Ta có giả mã như sau:
 
-<div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
+> [!TIP] **GreedyFileOnTape:**
+>
+> $L = [1, 2,..., n]$ <br/>
+> $S ← \ 1,2,…,n$ <br/>
+> **repeat**
+> **choose** $s∈S$ with minimum $L[s]$ <br/>
+> write $s$ to the tape <br/>
+> $S←S∖s$ <br/>
+> **until** $S=∅$
 
+<!-- <div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
 <strong>GreedyFileOnTape:</strong><br/><br/>
 <span>L = [1, 2,..., n]</span><br/>
 <span>S ← \ 1,2,…,n </span><br/>
@@ -290,14 +312,14 @@ choose s∈S with minimum L[s]<br/>
 write s to the tape<br/>
 S←S∖s<br/>
 <strong>until</strong> S=∅
-</div>
+</div> -->
 
 
 #### Tính đúng đắn của thuật toán
 
 Ta sẽ chứng minh cách lưu file theo thứ tự từ nhỏ đến lớn có chi phí nhỏ nhất. 
 
-Giả sử tồn tại một cách lưu trữ tối ưu π và chỉ số i sao cho L[π(i)]>L[π(i+1)].
+Giả sử tồn tại một cách lưu trữ tối ưu $\pi$ và chỉ số $i$ sao cho $L[π(i)]>L[π(i+1)]$.
 
 Gọi costπ là chi phí truy nhập của $\pi$.
 

@@ -456,3 +456,65 @@ html.dark .prose pre[data-lang]::after {
 .hljs-title {
   color: #6f42c1;
 }
+
+.admonition {
+  border-left: 8px solid #3fb950;
+  padding: 1rem;
+  margin: 1em 0;
+  background-color: #eaeaea;
+}
+
+.dark-mode .admonition {
+  background-color: #404D61;
+}
+
+.admonition p {
+  margin: 0;
+}
+
+.admonition-title {
+  height: 0;
+}
+
+.admonition .octicon {
+  position: relative;
+  top: 1rem;
+  left: -32px;
+  width: 15px;
+  height: 15px;
+  fill: #ffffff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.admonition.warning {
+  border-color: #d29922;
+}
+
+.admonition.tip {
+  border-color: #3fb950;
+}
+
+.admonition.info {
+  border-color: #007BFF;
+}
+
+.admonition.error {
+  border-color: #d22222;
+}
+
+.admonition .tip .octicon {
+  background: #3fb950;
+}
+
+.admonition .info .octicon {
+  background: #007BFF;
+}
+
+.admonition .warning .octicon {
+  background: #d29922;
+}
+
+.admonition .error .octicon {
+  background: #d22222;
+}
