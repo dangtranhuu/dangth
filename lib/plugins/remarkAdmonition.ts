@@ -34,15 +34,15 @@ const remarkAdmonition: Plugin = () => {
           node.children.unshift({
             type: 'html',
             value: `<div class="admonition-title ${title}">${svgIcon}</div>`
-          })
+          });
 
-            // HACK: mdast doesn't have `data`, but remark-rehype reads it
-            ; (node as any).data = {
-              hName: 'div',
-              hProperties: {
-                className: ['admonition', type],
-              }
+          // HACK: mdast doesn't have `data`, but remark-rehype reads it
+          (node as unknown as { data: any }).data = {
+            hName: 'div',
+            hProperties: {
+              className: ['admonition', type],
             }
+          }
         }
       }
     })
