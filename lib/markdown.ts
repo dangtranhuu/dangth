@@ -16,9 +16,6 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import remarkAdmonition from './plugins/remarkAdmonition'
 
-
-
-
 const postsDir = path.join(process.cwd(), 'posts')
 
 export interface PostData {
