@@ -38,8 +38,6 @@ export default function Navbar() {
     }, 300); // 300ms là thời gian đủ để thấy hiệu ứng phình to
   };
 
-
-
   const toggleTheme = () => {
     setIsLoading(true);
 
@@ -50,7 +48,7 @@ export default function Navbar() {
       localStorage.setItem("modeByThean", nextDark ? "dark" : "light");
       document.getElementById('comments')?.setAttribute('theme', nextDark ? 'transparent_dark' : 'light')
       setIsLoading(false);
-    }, 600);
+    }, 100);
   }
 
 
