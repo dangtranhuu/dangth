@@ -46,9 +46,10 @@ export default function Navbar() {
       setIsDark(nextDark);
       document.body.classList.toggle('dark-mode', nextDark);
       localStorage.setItem("modeByThean", nextDark ? "dark" : "light");
-      document.getElementById('comments')?.setAttribute('theme', nextDark ? 'transparent_dark' : 'light')
+      document.getElementById('comments')?.setAttribute('theme', nextDark ? 'transparent_dark' : 'light');
       setIsLoading(false);
     }, 100);
+    document.querySelector('#mode a')?.classList.remove('hovered');
   }
 
 
@@ -207,7 +208,7 @@ export default function Navbar() {
           </div> */}
 
           {/* 🌙 Theme toggle */}
-          <div className="nav-item">
+          <div className="nav-item" id={"mode"}>
             <a onClick={toggleTheme} style={{ cursor: 'pointer' }}>
               <i
                 className={`fa-solid sun-moon ${isLoading ? 'fa-spinner fa-spin' : isDark ? 'fa-moon' : 'fa-sun'
