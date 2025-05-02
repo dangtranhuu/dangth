@@ -8,6 +8,14 @@ const SVG_WARNING = `<svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16"
 const SVG_INFO = `<svg class="octicon octicon-alert mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-3 3.75a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v4.25h.75a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5h.75V12h-.75a.75.75 0 0 1-.75-.75Z"/><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></svg>`
 const SVG_ERROR = `<svg class="octicon octicon-alert mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM5.834 19.227A9.464 9.464 0 0 0 12 21.5a9.5 9.5 0 0 0 9.5-9.5 9.464 9.464 0 0 0-2.273-6.166ZM2.5 12a9.464 9.464 0 0 0 2.273 6.166L18.166 4.773A9.463 9.463 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"/></svg>`
 
+interface AdmonitionData {
+  hName?: string
+  hProperties?: {
+    className?: string[]
+    [key: string]: unknown
+  }
+}
+
 const remarkAdmonition: Plugin = () => {
   return (tree: Node) => {
     visit(tree, 'blockquote', (node: Blockquote) => {
@@ -37,7 +45,7 @@ const remarkAdmonition: Plugin = () => {
           });
 
           // HACK: mdast doesn't have `data`, but remark-rehype reads it
-          (node as unknown as { data: any }).data = {
+          (node as unknown as { data: AdmonitionData }).data = {
             hName: 'div',
             hProperties: {
               className: ['admonition', type],
