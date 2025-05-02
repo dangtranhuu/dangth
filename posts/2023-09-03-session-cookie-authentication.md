@@ -3,7 +3,7 @@ title: Tìm hiểu về Session, Cookie trong Xác thực người dùng
 subtitle: Session, Cookie là gì?
 author: Trần Hữu Đang
 date: "2023-09-03"
-image: https://github.com/dangtranhuu/davisupers/blob/main/blog/.vuepress/public/img/in-post/back-end/session-cookie.png?raw=true
+image: /img/2023-09-03-session-cookie-authentication/1.png
 tags:
   - Backend
   - Authentication
@@ -17,7 +17,7 @@ Trong mô hình [CSR]() hay Client-Side-Rendering việc lưu thông tin ngườ
 Vậy Session là gì và Cookie là thế nào? Sao lại phải cần đến tận hai khái niệm cho một công việc
 
 
-![](https://github.com/theanishtar/images/blob/main/angurvad/backend/session-cookie/banner.png?raw=true)
+![](/img/2023-09-03-session-cookie-authentication/1.png)
 ## Khái niệm
 
 Trước hết chúng ta sẽ tìm hiểu về các khái niệm trước và sẽ đi qua từng trường hợp cụ thể nhé!
@@ -27,10 +27,13 @@ Trước hết chúng ta sẽ tìm hiểu về các khái niệm trước và s�
 
 **Session** cho phép lưu trữ thông tin tạm thời liên quan đến một người dùng cụ thể giữa các yêu cầu HTTP (các lần truy cập trang web).
 
-<div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
+<!-- <div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
 <strong>💡 TÓM LẠI</strong><br/>
 Nói rõ hơn thì **Session** chính là một vùng nhớ của [Server]() và vùng nhớ này chỉ mất đi khi chạy lại Server hoặc bị xóa đi do hết hạn.
-</div>
+</div> -->
+
+> [!TIP] **TÓM LẠI**
+> Nói rõ hơn thì **Session** chính là một vùng nhớ của [Server]() và vùng nhớ này chỉ mất đi khi chạy lại Server hoặc bị xóa đi do hết hạn.
 
 Sau đây là một số thuộc tính của Session. Chỉ một số thôi nhé (vì nó khá nhiều và bạn hoàn toàn có thể tìm hiểu thêm).
 
@@ -77,10 +80,13 @@ Sau đây là một số thuộc tính của **Cookie**. Chỉ một số thôi 
 > Nếu bạn là một lập trình viên, bạn sẽ làm thế nào để biết là ai đang đăng nhập ở bước số 1 và ai đặt hàng ở bước số 2 ?
 
 
-<div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
+<!-- <div style="border-left: 4px solid #00cc88; padding-left: 1rem; background:rgba(240, 255, 248, 0);">
 <strong>💡 TIP</strong><br/>
 Nếu bạn hiểu về Session thì có lẻ bạn trả lời được ngay rằng `Ta sẽ lưu dữ liệu User vào Session` và các **Request** sau đó *(mua hàng, đăng xuất)* ta cứ việc lấy Session đó ra.
-</div>
+</div> -->
+
+> [!TIP]
+> Nếu bạn hiểu về Session thì có lẻ bạn trả lời được ngay rằng `Ta sẽ lưu dữ liệu User vào Session` và các **Request** sau đó *(mua hàng, đăng xuất)* ta cứ việc lấy Session đó ra.
 
 Đúng! rất đúng, nhưng có bao giờ bạn tự hỏi rằng vì sao Server có thể biết được Session nào sẽ lưu dữ liệu của User nào hay chưa ? 
 
@@ -137,7 +143,7 @@ Cơ chế trên được thự thi tự động hết sức đơn giản như sa
 
 Nếu vẫn chưa hiểu thì tham khảo ảnh sau đây:
 
-![](https://github.com/theanishtar/images/blob/main/angurvad/backend/session-cookie/jshgvrr.png?raw=true)
+![](/img/2023-09-03-session-cookie-authentication/2.png)
 
 ## Tổng kết
 

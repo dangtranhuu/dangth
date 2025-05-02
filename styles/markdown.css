@@ -457,6 +457,12 @@ html.dark .prose pre[data-lang]::after {
   color: #6f42c1;
 }
 
+blockquote {
+  margin: 0;
+  padding: 1px 10px;
+  border-left: 5px solid #b5b5b5;
+}
+
 .admonition {
   border-left: 8px solid #3fb950;
   padding: 1rem;
