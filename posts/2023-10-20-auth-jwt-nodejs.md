@@ -3,7 +3,7 @@ title: Xây dựng Json Web Token trong NodeJS
 subtitle: Phân quyền và đăng nhập trong NodeJS
 author: Trần Hữu Đang
 date: "2023-10-20"
-image: https://github.com/dangtranhuu/davisupers/blob/main/blog/.vuepress/public/img/in-post/back-end/jwtnodejs.png?raw=true
+image: /img/2023-10-20-auth-jwt-nodejs/1.png
 tags:
   - Backend
   - Authentication
@@ -12,7 +12,7 @@ tags:
 
 [JWT]() là một hình thức xác thực người dùng rất bảo mật, hiệu quả và phổ biến trong mô hình [CSR]()
 
-![](https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/1.png?raw=true)
+![](/img/2023-10-20-auth-jwt-nodejs/1.png)
 
 Trong lúc tự học NodeJS mình đã xây dựng một [SEAN app](#sean-app). Bạn có thể xem mã nguồn tại [đây](https://github.com/dangtranhuu/Rainbow-Flix)
 
@@ -32,25 +32,25 @@ Okay bắt đầu thoy !!!
 
 <div class="scroll" style="width: 100%; overflow-x: auto; white-space: nowrap;">
   <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/2.png?raw=true" alt="Nguyên lý" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <img src="/img/2023-10-20-auth-jwt-nodejs/2.png" alt="Nguyên lý" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/3.png?raw=true" alt="Thành phần" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <img src="/img/2023-10-20-auth-jwt-nodejs/3.png" alt="Thành phần" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/4.png?raw=true" alt="Tính chất lựa" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <img src="/img/2023-10-20-auth-jwt-nodejs/4.png" alt="Tính chất lựa" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/5.png?raw=true" alt="Ưu điểm" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <img src="/img/2023-10-20-auth-jwt-nodejs/5.png" alt="Ưu điểm" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/6.png?raw=true" alt="Nhược điểm" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <img src="/img/2023-10-20-auth-jwt-nodejs/6.png" alt="Nhược điểm" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/7.png?raw=true" alt="Bài tập" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <img src="/img/2023-10-20-auth-jwt-nodejs/7.png" alt="Bài tập" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/frogcyber/post/jwtnodejs/cont/8.png?raw=true" alt="Bài giải" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <img src="/img/2023-10-20-auth-jwt-nodejs/8.png" alt="Bài giải" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
 </div>
 
@@ -59,7 +59,7 @@ Okay bắt đầu thoy !!!
 
 ## Xây dựng CSDL
 
-![Diagram DB](https://github.com/theanishtar/images/raw/main/rainbow-flix/djagram-rolesuser.png?raw=true)
+![Diagram DB](/img/2023-10-20-auth-jwt-nodejs/djagram-rolesuser.png)
 
 Như bạn thấy ở hình trên ta cần 3 Table chính liên quan đến người dùng gồm: **User** hay **Account**, **Roles** và **UserRole**.
 
@@ -149,7 +149,7 @@ Kết quả:
 |Fullname|Email|Roles|
 |--------|-----|-----|
 |Trần Hữu Đang|dangtt135@gmail.com|ROLE_ADMIN, ROLE_MANAGER|
-|Frog Dev|frogdev@gmail.com|ROLE_USER|
+|Nguyễn Văn Du Sơ|sonvd@gmail.com|ROLE_USER|
 |Nguyễn Nhân Viên|viennn@gmail.com|ROLE_STAFF|
 
 
@@ -174,14 +174,13 @@ npm i -save jsonwebtoken
 npm i -save dotenv
 ```
 
-<div style="border-left: 4px solid #00aaff; padding-left: 1rem; background:rgba(249, 249, 249, 0);">
 
-**mysql**: kết nối và truy vấn CSDL
-
-**jsonwebtoken**: làm việc với Json Web Token
-
-**dotenv**: khởi tạo biến môi trường cho phần [SECRET KEY](/post/2023-10-20-auth-jwt-nodejs/#token) cho Token
-</div>
+> [!INFO]
+> **mysql**: kết nối và truy vấn CSDL
+>
+> **jsonwebtoken**: làm việc với Json Web Token
+>
+> **dotenv**: khởi tạo biến môi trường cho phần [SECRET KEY](/post/2023-10-20-auth-jwt-nodejs/#token) cho Token
 
 
 ## Lập trình back-end
@@ -191,7 +190,7 @@ npm i -save dotenv
 Tạo file `.env` trong package `server/.env`
 
 ```js
-ACCESS_TOKEN_SECRET = froggydev1210
+ACCESS_TOKEN_SECRET = dangth1210
 ```
 
 ### Xây dựng JWT Model
@@ -278,7 +277,7 @@ class UserController {
 	static async login(req, res) {
 		try {
 			const user = await UserModel.login(req.body);
-			if (user.length `= 0) {
+			if (user.length = 0) {
 				return res.status(404).json({ error: 'User not found' });
 			}
 			let userRes = {
@@ -383,7 +382,7 @@ $(document).ready(function () {
 			success: function (response) {
 				console.log(response)
 				//Này là thông báo với data nữa cần lưu data thì lây xài
-				// xuất thhong báo
+				// xuất thông báo
 				let lastname = response.fullname;
 				alert('Chào ' + lastname);
 				saveCookie('fullname', lastname.substring(lastname.lastIndexOf(" ")));
@@ -413,8 +412,8 @@ npm start
 ```
 Truy cập: [http://localhost:3000/](http://localhost:3000/)
 
-Có thể test trên Postman
-![](https://github.com/theanishtar/images/raw/main/rainbow-flix/loginapi.png?raw=true)
+Có thể test trên [Postman](/post/2023-10-20-auth-jwt-nodejs/#api)
+![](/img/2023-10-20-auth-jwt-nodejs/loginapi.png)
 
 ## Chú thích
 
@@ -433,6 +432,9 @@ Có thể test trên Postman
 - **JQuery**: thư viện của **JavaScript**
 - **Ajax**: là phương thức trao đổi dữ liệu với máy chủ và cập nhật một hay nhiều phần của trang web, hoàn toàn *không reload lại toàn bộ trang*. 
 - **HTML**: ngôn ngữ đánh dấu, xây dựng website
+
+#### API
+- **Postman** là một công cụ hỗ trợ gửi và kiểm thử API một cách trực quan, phổ biến với lập trình viên backend và frontend. `Postman = Gửi request → Nhận response → Xem dữ liệu → Test nhanh API`
 -----
 
 Xin cảm ơn vì đã đọc bài viết, các bạn có thể để lại bình luận bên dưới nhé
