@@ -3,7 +3,7 @@ title: Xây dựng Json Web Token trong NodeJS
 subtitle: Phân quyền và đăng nhập trong NodeJS
 author: Trần Hữu Đang
 date: "2023-10-20"
-image: /images/2023-10-20-auth-jwt-nodejs/1.png
+image: /images/post/2023-10-20-auth-jwt-nodejs/1.png
 tags:
   - Backend
   - Authentication
@@ -12,7 +12,7 @@ tags:
 
 [JWT]() là một hình thức xác thực người dùng rất bảo mật, hiệu quả và phổ biến trong mô hình [CSR]()
 
-![](/images/2023-10-20-auth-jwt-nodejs/1.png)
+![](/images/post/2023-10-20-auth-jwt-nodejs/1.png)
 
 Trong lúc tự học NodeJS mình đã xây dựng một [SEAN app](#sean-app). Bạn có thể xem mã nguồn tại [đây](https://github.com/dangtranhuu/Rainbow-Flix)
 
@@ -32,25 +32,25 @@ Okay bắt đầu thoy !!!
 
 <div class="scroll" style="width: 100%; overflow-x: auto; white-space: nowrap;">
   <div style="display: inline-block; margin-right: 15px;">
-    <images src="/images/2023-10-20-auth-jwt-nodejs/2.png" alt="Nguyên lý" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <images post/src="/images/post/2023-10-20-auth-jwt-nodejs/2.png" alt="Nguyên lý" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <images src="/images/2023-10-20-auth-jwt-nodejs/3.png" alt="Thành phần" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <images post/src="/images/post/2023-10-20-auth-jwt-nodejs/3.png" alt="Thành phần" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <images src="/images/2023-10-20-auth-jwt-nodejs/4.png" alt="Tính chất lựa" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <images post/src="/images/post/2023-10-20-auth-jwt-nodejs/4.png" alt="Tính chất lựa" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <images src="/images/2023-10-20-auth-jwt-nodejs/5.png" alt="Ưu điểm" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <images post/src="/images/post/2023-10-20-auth-jwt-nodejs/5.png" alt="Ưu điểm" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <images src="/images/2023-10-20-auth-jwt-nodejs/6.png" alt="Nhược điểm" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <images post/src="/images/post/2023-10-20-auth-jwt-nodejs/6.png" alt="Nhược điểm" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <images src="/images/2023-10-20-auth-jwt-nodejs/7.png" alt="Bài tập" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <images post/src="/images/post/2023-10-20-auth-jwt-nodejs/7.png" alt="Bài tập" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
   <div style="display: inline-block; margin-right: 15px;">
-    <images src="/images/2023-10-20-auth-jwt-nodejs/8.png" alt="Bài giải" style="width:500px; height:50%;object-fit: cover; margin:0px;">
+    <images post/src="/images/post/2023-10-20-auth-jwt-nodejs/8.png" alt="Bài giải" style="width:500px; height:50%;object-fit: cover; margin:0px;">
   </div>
 </div>
 
@@ -59,7 +59,7 @@ Okay bắt đầu thoy !!!
 
 ## Xây dựng CSDL
 
-![Diagram DB](/images/2023-10-20-auth-jwt-nodejs/djagram-rolesuser.png)
+![Diagram DB](/images/post/2023-10-20-auth-jwt-nodejs/djagram-rolesuser.png)
 
 Như bạn thấy ở hình trên ta cần 3 Table chính liên quan đến người dùng gồm: **User** hay **Account**, **Roles** và **UserRole**.
 
@@ -413,7 +413,7 @@ npm start
 Truy cập: [http://localhost:3000/](http://localhost:3000/)
 
 Có thể test trên [Postman](/post/2023-10-20-auth-jwt-nodejs/#api)
-![](/images/2023-10-20-auth-jwt-nodejs/loginapi.png)
+![](/images/post/2023-10-20-auth-jwt-nodejs/loginapi.png)
 
 ## Chú thích
 
