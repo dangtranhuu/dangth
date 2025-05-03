@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Projects = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 149.999998" preserveAspectRatio="xMidYMid meet">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={"46px"} viewBox="0 0 300 149.999998" preserveAspectRatio="xMidYMid meet">
       <defs>
         <clipPath id="e2a71f3491">
           <path d="M 60.632812 8.613281 L 237.632812 8.613281 L 237.632812 142 L 60.632812 142 Z M 60.632812 8.613281 " clipRule="nonzero" />
