@@ -5,6 +5,7 @@ import { searchReposByTopicAndUser } from '@/lib/github';
 import { GITHUB } from '@/lib/config';
 import { LangBadge } from './badge/LangBadge'
 import { FaRegStar } from "react-icons/fa";
+import { IoGitBranchOutline } from "react-icons/io5";
 
 type RepoCardProps = {
   url: string;
@@ -14,6 +15,7 @@ type RepoCardProps = {
   license?: string;
   lastUpdate: string;
   stars: number;
+  commitCount: number;
 };
 
 const RepoCard = ({
@@ -34,6 +36,9 @@ const RepoCard = ({
         <span className="repo-stars"><FaRegStar /> {stars}</span>
       </div>
       <p className="repo-desc">{description || "Không có mô tả"}</p>
+      <span className="repo-commits">
+        <IoGitBranchOutline /> {commitCount} commits
+      </span>
       <div className="repo-meta">
         {languages.map((lang) => (
           <LangBadge key={lang} lang={lang} />
