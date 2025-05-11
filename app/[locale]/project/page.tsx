@@ -25,7 +25,8 @@ const RepoCard = ({
   languages,
   license,
   lastUpdate,
-  stars
+  stars,
+  commitCount
 }: RepoCardProps) => {
   return (
     <div className="repo-card">
