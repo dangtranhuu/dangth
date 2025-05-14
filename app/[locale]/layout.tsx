@@ -1,3 +1,4 @@
+import '../globals.css'
 import '../../styles/global.css'
 import '../../styles/animation.css'
 import '../../styles/dark-mode.css'
