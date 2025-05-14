@@ -3,10 +3,13 @@ import React, { useState } from 'react';
 import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 
 const avatars = [
-  'https://i.pinimg.com/originals/5e/67/fa/5e67fa0bcd0230fb933e9c7a6169e953.jpg',
-  'https://tse1.mm.bing.net/th?id=OIP.ZQQJDoT2Agah9XAZs9y83AHaFj&pid=Api&P=0&h=220',
-  'https://i.pinimg.com/originals/97/ae/0a/97ae0a9049f3848639233ec1e7b2fa5e.jpg',
-  'https://img.hoidap247.com/picture/answer/20210427/large_1619529087425.jpg'
+  '/images/profile/1.JPG',
+  '/images/profile/2.JPG',
+  '/images/profile/3.JPG',
+  '/images/profile/4.JPG',
+  '/images/profile/5.JPG',
+  '/images/profile/6.JPG',
+  '/images/profile/7.JPG',
 ];
 
 export default function AvatarStack() {
@@ -43,9 +46,8 @@ export default function AvatarStack() {
           <motion.img
             key={src}
             src={src}
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ scale: 0.95 }}
             animate={{
-              opacity: 0.5,
               x: offsetX,
               y: offsetY,
               rotate,
