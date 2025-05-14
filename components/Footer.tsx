@@ -2,7 +2,7 @@
 import React from 'react';
 export default function Footer() {
   return (
-    <footer className="w-full border-t">
+    <footer className="w-full border-t dark:bg-[var(--background-color-dark)]">
       <div className="max-w-7xl mx-auto py-6 px-4 flex flex-col md:flex-row items-center justify-between text-sm text-muted-foreground">
         <p>
           © {new Date().getFullYear()} <a href="https://dangth.dev" className="underline hover:text-primary">Dangth.dev</a>
