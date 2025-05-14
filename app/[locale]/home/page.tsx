@@ -45,14 +45,18 @@ export default function Home() {
 
 
   return (
-    <div className="pt-[100px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
+    <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
       {/* Header */}
-      <div className="flex justify-between flex-wrap items-start mb-10">
+      <div className="relative mt-10 pt-[150px]">
+        <div className="absolute top-0 right-[100px] sm:right-0 w-[100px]">
+          <AvatarStack />
+        </div>
+
         <div className="flex flex-col gap-2">
           <h1 className="text-[50px] font-bold">{t("fullName")}</h1>
           <p className="text-[#2b2c2fa1]">{t("role")}</p>
 
-          <div className="mt-4 space-y-2">
+          <div className="mt-4 mb-4 space-y-2">
             <div className="flex gap-2">
               <a href="https://github.com/dangtranhuu" target="_blank">
                 <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
@@ -93,13 +97,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </div>
-
-        {/* <div className="pt-12 bounce_auto">
-          <img src="/images/avt.png" alt="avatar" className="w-[100px] rounded bounce" />
-        </div> */}
-        <div className="pt-12">
-          <AvatarStack />
         </div>
       </div>
 
