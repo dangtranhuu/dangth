@@ -43,54 +43,49 @@ export default function Home() {
 
 
   return (
-    <div className='container'>
-      <div className="head item">
-        <div className="left">
-          <div className="bounce_auto">
-            <img src="/images/avt.png" id="avt" alt="" className="bounce" />
-          </div>
-          <h1 id="uname">
-            {t("fullName")} <span id="subname"></span>
-          </h1>
-          <p id="desc">{t("role")}</p>
+    <div className="mt-[100px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
+      {/* Header */}
+      <div className="flex justify-between flex-wrap items-start mb-10">
+        <div className="flex flex-col gap-2">
+          <h1 className="text-[50px] font-bold">{t("fullName")}</h1>
+          <p className="text-[#2b2c2fa1]">{t("role")}</p>
 
-          <div className="contact">
-            <div className="wrap">
-              <a target="_blank" href="https://github.com/dangtranhuu">
-                <button>
+          <div className="mt-4 space-y-2">
+            <div className="flex gap-2">
+              <a href="https://github.com/dangtranhuu" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
                   <FiGithub />
                 </button>
               </a>
               <a href="https://leetcode.com/tranhuudang" target="_blank">
-                <button>
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
                   <SiLeetcode />
                 </button>
               </a>
               <a href="https://www.hackerrank.com/tranhuudang" target="_blank">
-                <button>
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
                   <TbBrandHackerrank />
                 </button>
               </a>
             </div>
-
-            <div className="wrap">
-              <a target="_blank" href="https://www.linkedin.com/in/tranhuudang">
-                <button>
+            <div className="flex gap-2">
+              <a href="https://www.linkedin.com/in/tranhuudang" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
                   <LuLinkedin />
                 </button>
               </a>
               <a href="https://www.youtube.com/@devlands" target="_blank">
-                <button>
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
                   <FiYoutube />
                 </button>
               </a>
-              <a target="_blank" href="https://www.facebook.com/dangdeveloper/">
-                <button>
+              <a href="https://www.facebook.com/dangdeveloper/" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
                   <LuFacebook />
                 </button>
               </a>
-              <a href="https://www.tiktok.com/@theanishtar" target="_blank" rel="noopener noreferrer">
-                <button>
+              <a href="https://www.tiktok.com/@theanishtar" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
                   <TbBrandTiktok />
                 </button>
               </a>
@@ -98,60 +93,73 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="right bounce_auto">
-          <img id="avatar" src="/images/avt.png" alt="" className="bounce" />
+        <div className="pt-12 bounce_auto">
+          <img src="/images/avt.png" alt="avatar" className="w-[100px] rounded bounce" />
         </div>
       </div>
 
       {/* About */}
-      <div className="about item">
+      <div className="space-y-4 mb-12">
         <p>
-          I&rsquo;m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly. My experience spans frontend and backend technologies, including Angular, Spring Boot, NodeJS, and modern cloud services like AWS and Firebase.
+          I’m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly...
         </p>
         <p>
-          I&rsquo;ve led and contributed to several real-world projects such as a social media platform (DESTINY), an online movie ticket booking system (DAVITICKETS), and a retail management app (DAVISY). I&apos;ve also worked across different roles — from backend lead to WordPress developer — gaining a solid understanding of both product and team workflows.
+          I’ve led and contributed to several real-world projects such as DESTINY, DAVITICKETS, DAVISY...
         </p>
-        <p style={{ paddingRight: '30px' }}>
+        <p>
           Connect with my Linkedin to discuss about work or my Github to share interesting knowledge ^^
         </p>
       </div>
 
       {/* EXPERIENCE section */}
-      <div className="experience title section">
-        <h1>Experience</h1>
+      <div className="experience title section mb-12">
+        <h1 className="text-[32px] font-semibold mb-4">Experience</h1>
+
+        {/* Item */}
         <div className="item">
-          <div className="title">
-            <div className="left col">
-              <div className="left">
-                <img className="logo" src="/images/exp/devlands.jpg" alt="devlands" />
+          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+            {/* LEFT: logo + info */}
+            <div className="left col flex">
+              {/* Avatar/logo */}
+              <div className="left w-[70px]">
+                <img
+                  src="/images/exp/devlands.jpg"
+                  className="w-[48px] h-[48px] object-cover rounded-md"
+                  alt="devlands"
+                />
               </div>
+
+              {/* Content */}
               <div className="right">
-                <div className="top">
+                <div className="top font-semibold text-[17px] flex items-center gap-1">
                   Devlands
                   <span className="icon-wrap">
                     <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      strokeWidth="0"
+                      className="w-4 h-4 transform transition-transform duration-200"
                       viewBox="0 0 24 24"
-                      className="text-black inline transform transition-transform duration-200"
-                      height="18"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
                     >
-                      <path fill="none" d="M0 0h24v24H0V0z"></path>
-                      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
                     </svg>
                   </span>
                 </div>
-                <div className="bot">Designer & Content creator</div>
+                <div className="bot text-sm text-gray-500 dark:text-gray-400">
+                  Designer & Content creator
+                </div>
               </div>
             </div>
-            <div className="right">2021–2023</div>
+
+            {/* Time */}
+            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
+              2021–2023
+            </div>
           </div>
-          <div className="details">
+
+          {/* Toggle content */}
+          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
             <p>
-              Devlands is a personal brand project designed as a social learning platform for aspiring developers. It combines educational content with community interaction, offering tutorials, coding challenges, and collaborative features to facilitate programming education in an engaging environment.
+              Devlands is a personal brand project designed as a social learning platform,
+              offering tutorials and coding challenges to support developers.
             </p>
           </div>
         </div>
@@ -159,75 +167,98 @@ export default function Home() {
 
       {/* EDUCATION section */}
       <div className="education title section">
-        <h1>Education</h1>
+        <h1 className="text-[32px] font-semibold mb-4">Education</h1>
+
+        {/* === Item 1 === */}
         <div className="item">
-          <div className="title">
-            <div className="left col">
-              <div className="left">
-                <img className="logo" src="/images/education/ctu.png" alt="ctu" />
+          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+            {/* LEFT: logo + info */}
+            <div className="left col flex">
+              {/* Logo */}
+              <div className="left w-[70px]">
+                <img
+                  src="/images/education/ctu.png"
+                  className="w-[48px] h-[48px] object-cover rounded-full"
+                  alt="ctu"
+                />
               </div>
+
+              {/* Content */}
               <div className="right">
-                <div className="top">
+                <div className="top font-semibold text-[17px] flex items-center gap-1">
                   Can Tho University
                   <span className="icon-wrap">
                     <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      strokeWidth="0"
+                      className="w-4 h-4 transform transition-transform duration-200"
                       viewBox="0 0 24 24"
-                      className="text-black inline transform transition-transform duration-200"
-                      height="18"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
                     >
-                      <path fill="none" d="M0 0h24v24H0V0z"></path>
-                      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
                     </svg>
                   </span>
                 </div>
-                <div className="bot">Information Technology</div>
+                <div className="bot text-sm text-gray-500 dark:text-gray-400">
+                  Information Technology
+                </div>
               </div>
             </div>
-            <div className="right times">Sep 2021 – Jan 2024</div>
+
+            {/* Time */}
+            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
+              Sep 2021 – Jan 2024
+            </div>
           </div>
-          <div className="details">
+
+          {/* Toggle content */}
+          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
             <p>
               Studied Information Technology at Can Tho University, focusing on programming, databases, and software development.
             </p>
           </div>
         </div>
 
+        {/* === Item 2 === */}
         <div className="item">
-          <div className="title">
-            <div className="left col">
-              <div className="left">
-                <img className="logo" src="/images/education/fpoly.jpg" alt="fpl" />
+          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+            {/* LEFT: logo + info */}
+            <div className="left col flex">
+              {/* Logo */}
+              <div className="left w-[70px]">
+                <img
+                  src="/images/education/fpoly.jpg"
+                  className="w-[48px] h-[48px] object-cover rounded-full"
+                  alt="fpt"
+                />
               </div>
+
+              {/* Content */}
               <div className="right">
-                <div className="top">
+                <div className="top font-semibold text-[17px] flex items-center gap-1">
                   FPT Polytechnic
                   <span className="icon-wrap">
                     <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      strokeWidth="0"
+                      className="w-4 h-4 transform transition-transform duration-200"
                       viewBox="0 0 24 24"
-                      className="text-black inline transform transition-transform duration-200"
-                      height="18"
-                      width="18"
-                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
                     >
-                      <path fill="none" d="M0 0h24v24H0V0z"></path>
-                      <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path>
+                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
                     </svg>
                   </span>
                 </div>
-                <div className="bot">Software development</div>
+                <div className="bot text-sm text-gray-500 dark:text-gray-400">
+                  Software development
+                </div>
               </div>
             </div>
-            <div className="right times">Sep 2021 – Jan 2024</div>
+
+            {/* Time */}
+            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
+              Sep 2021 – Jan 2024
+            </div>
           </div>
-          <div className="details">
+
+          {/* Toggle content */}
+          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
             <p>
               Studied Software Development at FPT Polytechnic, with experience as a teaching assistant supporting student learning.
             </p>
@@ -235,82 +266,48 @@ export default function Home() {
         </div>
       </div>
 
-      {/* PROJECTS section */}
-      <div className="project title section">
-        <h1>Projects</h1>
 
-        <div className="head">
-          <div className="container">
-            <div className="tabs">
-              <input type="radio" id="radio-1" name="tabs" defaultChecked />
-              <label className="tab" htmlFor="radio-1">
-                Website<span className="notification">2</span>
-              </label>
-              <input type="radio" id="radio-2" name="tabs" />
-              <label className="tab" htmlFor="radio-2">Desktop</label>
-              <input type="radio" id="radio-3" name="tabs" />
-              <label className="tab" htmlFor="radio-3">Mobile</label>
-              <span className="glider"></span>
-            </div>
-          </div>
-        </div>
-
-        <div className="body">
-          {[0, 1].map((rowIdx) => (
-            <div className="row" key={rowIdx}>
-              {[0, 1].map((colIdx) => (
-                <div className="card" key={colIdx}>
-                  <img
-                    src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-                    alt="Project image"
-                    className="card-img"
-                  />
-                  <div className="card-content">
-                    <h2 className="card-title">Todowy</h2>
-                    <p className="card-year">2024 – 2025</p>
-                    <p className="card-description">
-                      Designed and developed a custom to-do list website that helps organize tasks, set priorities, and boost productivity.
-                    </p>
-                    <div className="tags">
-                      <span>React</span>
-                      <span>TypeScript</span>
-                      <span>Tailwind</span>
-                    </div>
-                    <div className="buttons">
-                      <a href="#">🌐 Website</a>
-                      <a href="#">🔗 Source</a>
-                    </div>
-                  </div>
-                </div>
-              ))}
+      {/* CERTIFICATIONS section */}
+      <div className="cert title section">
+        <h1 className="text-[32px] font-semibold mb-4">Certifications</h1>
+        <div className="flex flex-wrap gap-10 justify-center text-center">
+          {[
+            {
+              img: 'udemy.png',
+              title: 'Master Microservices with Spring Boot & Spring Cloud',
+              org: 'Udemy',
+              date: '02/08/2024',
+            },
+            {
+              img: 'aws-cloudfoundations.png',
+              title: 'AWS Academy Cloud Foundations',
+              org: 'AWS',
+              date: '03/07/2022',
+            },
+            {
+              img: 'datacamp/statement-of-accomplishment.png',
+              title: 'Intermediate SQL Queries',
+              org: 'Data Camp',
+              date: 'APR 15, 2022',
+            },
+          ].map((cert, idx) => (
+            <div key={idx} className="w-[250px]">
+              <img
+                src={`/images/cert/${cert.img}`}
+                alt={cert.title}
+                className="w-[100px] mx-auto"
+              />
+              <div className="font-bold mt-2 text-[16px] whitespace-nowrap overflow-hidden text-ellipsis">
+                {cert.title}
+              </div>
+              <div className="text-[14px] text-[#555]">{cert.org}</div>
+              <div className="text-[13px] text-[#888] mt-1">Issued {cert.date}</div>
             </div>
           ))}
         </div>
       </div>
 
 
-      {/* CERTIFICATIONS section */}
-      <div className="cert title section">
-        <h1>Certifications</h1>
-        <div className="body">
-          <div className="cert-container">
-            {[
-              { img: 'udemy.png', title: 'Master Microservices with Spring Boot & Spring Cloud', org: 'Udemy', date: '02/08/2024' },
-              { img: 'aws-cloudfoundations.png', title: 'AWS Academy Cloud Foundations', org: 'AWS', date: '03/07/2022' },
-              { img: 'datacamp/statement-of-accomplishment.png', title: 'Intermediate SQL Queries', org: 'Data Camp', date: 'APR 15, 2022' },
-              // { img: 'programing_hub.png', title: 'Cybersecurity', org: 'Certiport', date: '20/06/2023' },
-              // { img: 'mos-ppt-2016.png', title: 'MOS PowerPoint 2016', org: 'Certiport', date: '03/07/2022' }
-            ].map((cert, idx) => (
-              <div className="cert" key={idx}>
-                <img src={`/images/cert/${cert.img}`} alt={cert.title} />
-                <div className="cert-title">{cert.title}</div>
-                <div className="cert-org">{cert.org}</div>
-                <div className="cert-date">Issued {cert.date}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div >
   );
 }
