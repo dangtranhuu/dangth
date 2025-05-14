@@ -29,25 +29,28 @@ const RepoCard = ({
   commitCount
 }: RepoCardProps) => {
   return (
-    <div className="repo-card">
-      <div className="repo-header">
-        <a href={url}>
-          <h2 className="repo-name">{name}</h2>
-        </a>
-        <span className="repo-stars"><FaRegStar /> {stars}</span>
-      </div>
-      <p className="repo-desc">{description || "Không có mô tả"}</p>
-      <span className="repo-commits">
+    <div>
+      <hr className="repo-bott" />
+      <div className="repo-card">
+        <div className="repo-header">
+          <a href={url}>
+            <h2 className="repo-name">{name}</h2>
+          </a>
+          <span className="repo-stars"><FaRegStar /> {stars}</span>
+        </div>
+        <p className="repo-desc">{description || "Không có mô tả"}</p>
+        {/* <span className="repo-commits">
         <IoGitBranchOutline /> {commitCount} commits
-      </span>
-      <div className="repo-meta">
-        {languages.map((lang) => (
-          <LangBadge key={lang} lang={lang} />
-        ))}
-        {license && <span className="repo-license">{license}</span>}
-        <span className="repo-updated">
-          Last updated {new Date(lastUpdate).toLocaleDateString("vi-VN")}
-        </span>
+      </span> */}
+        <div className="repo-meta">
+          {languages.map((lang) => (
+            <LangBadge key={lang} lang={lang} />
+          ))}
+          {license && <span className="repo-license">{license}</span>}
+          <span className="repo-updated">
+            Last updated {new Date(lastUpdate).toLocaleDateString("vi-VN")}
+          </span>
+        </div>
       </div>
     </div>
   );
