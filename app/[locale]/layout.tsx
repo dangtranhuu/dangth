@@ -4,7 +4,6 @@ import '../../styles/animation.css'
 import '../../styles/dark-mode.css'
 import 'highlight.js/styles/github.css' // hoặc: vs2015.css, atom-one-dark.css...
 import '../../styles/markdown.css'
-import '../../styles/project.css'
 import 'katex/dist/katex.min.css'
 
 import type { AbstractIntlMessages } from 'next-intl';

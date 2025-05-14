@@ -504,16 +504,6 @@ font-family: 'Ubuntu', sans-serif; */
   color: var(--c-info)
 }
 
-/* footer {
-  text-align: center;
-  color: var(--contact-bc-dark);
-  font-size: 15px;
-  line-height: 27.9px;
-  font-weight: 400;
-  padding: 50px 0px;
-  border-top: solid 1px #d4d7dd;
-} */
-
 .box .left .bot {
   color: var(--contact-bc);
   font-size: 16px;
