@@ -29,7 +29,7 @@ const RepoCard = ({
 }: RepoCardProps) => {
   return (
     <div>
-      <hr className="repo-bott" />
+      <div className="hr" />
       <div className="repo-card">
         <div className="repo-header">
           <a href={url}>

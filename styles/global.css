@@ -1239,3 +1239,7 @@ h3 {
   transition: all 0.4s ease;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+.hr {
+  border-bottom: 1px solid #ccc;
+}
