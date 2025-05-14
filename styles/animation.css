@@ -190,6 +190,12 @@
   }
 }
 
+/* Nếu bạn không dùng Tailwind plugin để hỗ trợ transform 3D */
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+
 /* .showtoTop {
 	opacity: 0;
 }

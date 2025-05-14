@@ -9,6 +9,8 @@ import { LuFacebook } from "react-icons/lu";
 import { TbBrandTiktok } from "react-icons/tb";
 import { useTranslations } from 'next-intl';
 
+import AvatarStack from '@/components/AvatarStack'
+
 export default function Home() {
 
   const t = useTranslations("home")
@@ -93,8 +95,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="pt-12 bounce_auto">
+        {/* <div className="pt-12 bounce_auto">
           <img src="/images/avt.png" alt="avatar" className="w-[100px] rounded bounce" />
+        </div> */}
+        <div className="pt-12">
+          <AvatarStack />
         </div>
       </div>
 
@@ -306,8 +311,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-
     </div >
   );
 }
