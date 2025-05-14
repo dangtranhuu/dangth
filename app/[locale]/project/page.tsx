@@ -5,7 +5,6 @@ import { searchReposByTopicAndUser } from '@/lib/github';
 import { GITHUB } from '@/lib/config';
 import { LangBadge } from './badge/LangBadge'
 import { FaRegStar } from "react-icons/fa";
-import { IoGitBranchOutline } from "react-icons/io5";
 
 type RepoCardProps = {
   url: string;

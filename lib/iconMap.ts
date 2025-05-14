@@ -3,7 +3,7 @@ import {
 } from 'react-icons/fa';
 import {
   SiJavascript, SiTypescript, SiCplusplus, SiGo, SiRust, SiPhp,
-  SiDart, SiCmake, SiSwift, SiC, SiKotlin, SiSass,
+  SiDart, SiCmake, SiSwift, SiKotlin, SiSass,
 } from 'react-icons/si';
 import { PiFileCSharpBold, PiFileSqlBold } from 'react-icons/pi';
 import { IconType } from 'react-icons';
