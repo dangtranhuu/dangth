@@ -30,9 +30,8 @@ const RepoCard = ({
   return (
     <div>
       <div className="hr" />
-
-      <div className="rounded-md group cursor-pointer transition-colors duration-200 hover:bg-muted">
-        <div className="py-[30px] px-6">
+      <div className="-mx-4 hover:bg-muted transition-colors duration-200 rounded-md">
+        <div className="px-6 py-[30px]">
           <div className="flex flex-col gap-2">
             {/* Header */}
             <div className="flex items-center justify-between">

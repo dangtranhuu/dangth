@@ -31,14 +31,15 @@ export const LangBadge = ({ lang }: LangBadgeProps) => {
 
   return (
     <span
-      className="repo-lang"
+      className="repo-lang flex items-center justify-center p-1 rounded-md"
       style={{
         color,
+        fontSize: '1.2rem',
       }}
       title={lang}
     >
       <IconComponent />
-      {/* <span>{lang}</span> nếu cần hiển thị tên ngôn ngữ */}
     </span>
   );
+
 };
