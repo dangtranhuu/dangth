@@ -101,9 +101,10 @@ export default function Navbar() {
   return (
     <div className="fixed bottom-5 left-1/2 z-[9999] -translate-x-1/2 px-3">
       <div
-        className="inline-flex gap-2 items-center bg-white dark:bg-zinc-900 px-4 py-2 rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-lg transition-all duration-300"
+        className="inline-flex gap-2 items-center bg-[#FFFFFF] dark:bg-[#404B5D] px-4 py-2 rounded-2xl border border-[#e4e4e4] dark:border-[##5a5a5a] shadow-lg transition-all duration-300"
         ref={navRef}
       >
+
         {navItems.map(({ label, href, icon }) => (
           <div className="nav-item relative" key={href}>
             <span className="absolute bottom-full mb-2 hidden group-hover:block bg-gray-100 text-gray-700 text-xs rounded px-2 py-1 border border-gray-400 whitespace-nowrap">
@@ -111,7 +112,7 @@ export default function Navbar() {
             </span>
             <a
               onClick={() => handleNavClick(href)}
-              className="group w-11 h-11 rounded-xl bg-gray-100 text-[#9a9a9a] dark:bg-zinc-800 dark:text-zinc-400 flex items-center justify-center transition-all ease-out duration-300 relative hover:scale-150 hover:mt-[-18px] hover:z-10 hover:mx-2 cursor-pointer"
+              className="group w-11 h-11 rounded-xl bg-[#EAEAEA] text-[#9A9A9A] dark:bg-[#4A5363] dark:text-[#9A9A9A] flex items-center justify-center transition-all ease-out duration-300 relative hover:scale-150 hover:mt-[-18px] hover:z-10 hover:mx-2 cursor-pointer"
             >
               {activeNav === href ? (
                 <i className="fa-solid fa-spinner fa-spin" />
@@ -125,8 +126,7 @@ export default function Navbar() {
         <div className="nav-item" id="mode">
           <a
             onClick={handleToggleTheme}
-            className="group w-11 h-11 rounded-xl bg-gray-100 text-[#9a9a9a] dark:bg-zinc-800 dark:text-zinc-400 flex items-center justify-center transition-all ease-out duration-300 relative hover:scale-150 hover:mt-[-18px] hover:z-10 hover:mx-2 cursor-pointer"
-            style={{ cursor: 'pointer' }}
+            className="group w-11 h-11 rounded-xl bg-[#EAEAEA] text-[#9A9A9A] dark:bg-[#4A5363] dark:text-[#9A9A9A] flex items-center justify-center transition-all ease-out duration-300 relative hover:scale-150 hover:mt-[-18px] hover:z-10 hover:mx-2 cursor-pointer"
           >
             <i
               className={`fa-solid ${isLoading ? 'fa-spinner fa-spin' : isDark ? 'fa-moon' : 'fa-sun'}`}
