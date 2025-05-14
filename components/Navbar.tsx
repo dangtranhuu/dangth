@@ -7,6 +7,7 @@ import { FaUser, FaCertificate } from 'react-icons/fa';
 import { GiMagicPortal } from 'react-icons/gi';
 import { ImBlog } from 'react-icons/im';
 import { Projects } from './icons';
+import useDarkMode from '@/hooks/useDarkMode';
 
 export default function Navbar() {
   const locale = useLocale();
@@ -15,8 +16,9 @@ export default function Navbar() {
   const navRef = useRef<HTMLDivElement>(null);
 
   const [activeNav, setActiveNav] = useState<string | null>(null);
-  const [isDark, setIsDark] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  const { isDark, toggleDarkMode } = useDarkMode();
 
   const handleNavClick = (href: string) => {
     if (pathname === href) return;
@@ -28,17 +30,12 @@ export default function Navbar() {
     }, 300);
   };
 
-  const toggleTheme = () => {
+  const handleToggleTheme = () => {
     setIsLoading(true);
     setTimeout(() => {
-      const nextDark = !isDark;
-      setIsDark(nextDark);
-      document.body.classList.toggle('dark-mode', nextDark);
-      localStorage.setItem('modeByThean', nextDark ? 'dark' : 'light');
-      document.getElementById('comments')?.setAttribute('theme', nextDark ? 'transparent_dark' : 'light');
+      toggleDarkMode();
       setIsLoading(false);
     }, 100);
-    document.querySelector('#mode a')?.classList.remove('hovered');
   };
 
   useEffect(() => {
@@ -46,10 +43,8 @@ export default function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
-    const saved = localStorage.getItem('modeByThean');
+    const saved = localStorage.getItem('dar-mode');
     const dark = saved === 'dark';
-    setIsDark(dark);
-    document.body.classList.toggle('dark-mode', dark);
 
     const nav = navRef.current;
     if (!nav) return;
@@ -129,14 +124,13 @@ export default function Navbar() {
 
         <div className="nav-item" id="mode">
           <a
-            onClick={toggleTheme}
+            onClick={handleToggleTheme}
             className="group w-11 h-11 rounded-xl bg-gray-100 text-[#9a9a9a] dark:bg-zinc-800 dark:text-zinc-400 flex items-center justify-center transition-all ease-out duration-300 relative hover:scale-150 hover:mt-[-18px] hover:z-10 hover:mx-2 cursor-pointer"
             style={{ cursor: 'pointer' }}
           >
             <i
-              className={`fa-solid sun-moon ${isLoading ? 'fa-spinner fa-spin' : isDark ? 'fa-moon' : 'fa-sun'
-                }`}
-            ></i>
+              className={`fa-solid ${isLoading ? 'fa-spinner fa-spin' : isDark ? 'fa-moon' : 'fa-sun'}`}
+            />
           </a>
         </div>
       </div>
