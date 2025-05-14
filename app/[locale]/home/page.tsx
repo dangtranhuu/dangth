@@ -43,7 +43,7 @@ export default function Home() {
 
 
   return (
-    <div className="mt-[100px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
+    <div className="pt-[100px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
       {/* Header */}
       <div className="flex justify-between flex-wrap items-start mb-10">
         <div className="flex flex-col gap-2">

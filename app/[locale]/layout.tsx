@@ -64,7 +64,7 @@ export default async function RootLayout({
         <body>
           <ImageZoomClient />
           <Navbar />
-          <main>{children}</main>
+          <main className='dark:bg-[var(--background-color-dark)]'>{children}</main>
           <Footer />
         </body>
       </html>
