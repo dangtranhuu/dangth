@@ -5,7 +5,7 @@ import { SITE_CONFIG } from './config'
 import { getAllPostsMeta } from './markdown'; // hoặc đường dẫn đúng tới logic đọc bài viết của bạn
 
 export async function generateRssFeed() {
-  const siteUrl = 'https://dangth.dev';
+  const siteUrl = SITE_CONFIG.url;
 
   const feed = new RSS({
     title: 'Dangth.dev',
