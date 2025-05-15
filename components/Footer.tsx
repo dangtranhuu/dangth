@@ -4,22 +4,41 @@ import { FaCode, FaRss } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="pt-[20px] pb-[20px] text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)] border-t border-gray-200 dark:border-[#9a9a9a7c">
-      <div className="max-w-[700px] mx-auto px-4 text-sm text-muted-foreground flex flex-col md:flex-row items-center justify-between">
-        <p>
-          © Davis 2025 · Developer at <a href="https://devlands.io.vn" className="underline hover:text-primary">Devlands</a>
+    <footer className="pt-[20px] pb-[20px] text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)] border-t border-gray-200 dark:border-[#9a9a9a7c]">
+      <div className="max-w-[700px] mx-auto px-4 text-sm text-muted-foreground flex justify-between items-center">
+
+        <p className="text-left">
+          <span>© Davis 2025</span>{" "}
+          <span className="hidden md:inline">
+            · Developer at{" "}
+            <a
+              href="https://devlands.io.vn"
+              className="underline hover:text-primary"
+            >
+              Devlands
+            </a>
+          </span>
         </p>
+
         <p className="flex items-center gap-4">
-          <a href={SITE_CONFIG.githubRepo} className="flex items-center gap-1 underline hover:text-primary">
-            <FaCode /> <span>Code</span>
+          <a
+            href={SITE_CONFIG.githubRepo}
+            className="flex items-center gap-1 underline hover:text-primary"
+          >
+            <FaCode />
+            <span className="hidden md:inline">SRC</span>
           </a>
-          <a href="#" className="flex items-center gap-1 underline hover:text-primary">
-            <FaRss /> <span>RSS</span>
+          <a
+            href="#"
+            className="flex items-center gap-1 underline hover:text-primary"
+          >
+            <FaRss />
+            <span className="hidden md:inline">RSS</span>
           </a>
         </p>
+
       </div>
     </footer>
-
 
   );
 }
