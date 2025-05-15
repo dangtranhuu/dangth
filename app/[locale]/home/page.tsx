@@ -47,15 +47,21 @@ export default function Home() {
   return (
     <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
       {/* Header */}
-      <div className="relative mt-10 pt-[150px]">
-        <div className="absolute top-0 right-[100px] sm:right-0 w-[100px]">
-          <AvatarStack />
+      <div className="relative mt-10">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          {/* AvatarStack */}
+          <div className="order-2 md:order-1">
+            <h1 className="text-[40px] md:text-[50px] font-bold">{t("fullName")}</h1>
+            <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">{t("role")}</p>
+          </div>
+
+          <div className="md:static mx-auto mb-[50px] ml-[30%] md:ml-0 md:mb-0 md:mx-0">
+            <AvatarStack />
+          </div>
+
         </div>
 
         <div className="flex flex-col gap-2">
-          <h1 className="text-[50px] font-bold">{t("fullName")}</h1>
-          <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB]">{t("role")}</p>
-
           <div className="mt-4 mb-4 space-y-2">
             <div className="flex gap-2">
               <a href="https://github.com/dangtranhuu" target="_blank">
