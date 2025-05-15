@@ -3,8 +3,13 @@ import localFont from 'next/font/local'
 export const cmuSans = localFont({
   src: [
     {
-      path: '../public/fonts/cmu/sans/cmunss.woff',
+      path: '../public/fonts/cmu/vi/CMUSansSerifVietnamized.woff',
       weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/cmu/sans/cmunss.woff',
+      weight: '500',
       style: 'normal',
     },
     {

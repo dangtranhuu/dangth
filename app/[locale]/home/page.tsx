@@ -50,7 +50,7 @@ export default function Home() {
       <div className="relative mt-10">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           {/* AvatarStack */}
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-none">
             <h1 className="text-[40px] md:text-[50px] font-bold">{t("fullName")}</h1>
             <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">{t("role")}</p>
           </div>
