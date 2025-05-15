@@ -75,8 +75,10 @@ function DraggableImage({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const rotateX = useTransform(y, [-10, 10], [15, -15]);
-  const rotateY = useTransform(x, [-10, 10], [-15, 15]);
+  // Góc lật mạnh hơn khi kéo
+  const rotateX = useTransform(y, [-100, 100], [30, -30]);
+  const rotateY = useTransform(x, [-100, 100], [-30, 30]);
+
 
   return (
     <motion.img
@@ -95,7 +97,7 @@ function DraggableImage({
         rotateX,
         rotateY,
         zIndex,
-        transformPerspective: 1000,
+        transformPerspective: 1500,
       }}
       transition={{ type: 'spring', stiffness: 250, damping: 20 }}
     />
