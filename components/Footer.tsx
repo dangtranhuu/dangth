@@ -29,7 +29,7 @@ export default function Footer() {
             <span className="hidden md:inline">SRC</span>
           </a>
           <a
-            href="#"
+            href={SITE_CONFIG.url + '/rss.xml'}
             className="flex items-center gap-1 underline hover:text-primary"
           >
             <FaRss />

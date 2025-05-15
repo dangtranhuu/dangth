@@ -1,4 +1,5 @@
 export const SITE_CONFIG = {
+  url: 'dangth.dev',
   githubRepo: 'https://github.com/dangtranhuu/dangth',
   githubBranch: 'main', // Hoặc 'dev', 'next' tùy bạn
   postDir: 'posts',

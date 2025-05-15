@@ -13,6 +13,7 @@ import { cmuSans } from '../fonts'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import ImageZoomClient from '../../components/ImageZoomClient'
+import { generateRssFeed } from '@/lib/generateRssFeed'
 
 export const metadata = {
   title: 'Tran Huu Dang',
@@ -39,6 +40,8 @@ export default async function RootLayout({
     // notFound();
     // messages = null;
   }
+
+  await generateRssFeed()
 
   if (!messages) {
     return (
