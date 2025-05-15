@@ -70,7 +70,6 @@ const RepoCard = ({
 };
 
 
-
 export default async function Projects() {
   const repos = await searchReposByTopicAndUser(GITHUB.username, GITHUB.topic, process.env.GITHUB_TOKEN!);
 

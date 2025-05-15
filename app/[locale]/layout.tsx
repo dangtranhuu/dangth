@@ -41,8 +41,6 @@ export default async function RootLayout({
     // messages = null;
   }
 
-  await generateRssFeed()
-
   if (!messages) {
     return (
       <html lang="en">
