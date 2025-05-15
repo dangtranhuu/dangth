@@ -4,7 +4,7 @@ import { FaCode, FaRss } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="pt-[20px] pb-[20px] text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)] border-t border-gray-200 dark:border-[#9a9a9a7c]">
+    <footer className="mt-[50px] pt-[20px] pb-[20px] text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)] border-t border-gray-200 dark:border-[#9a9a9a7c]">
       <div className="max-w-[700px] mx-auto px-4 text-sm text-muted-foreground flex justify-between items-center">
 
         <p className="text-left">
