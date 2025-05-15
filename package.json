@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postbuild": "node scripts/generate-rss.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
