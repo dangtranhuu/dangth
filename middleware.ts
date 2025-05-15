@@ -5,5 +5,5 @@ export default createMiddleware(routing);
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/((?!_next|favicon.ico|images|api).*)"],
+  matcher: ["/((?!_next|favicon.ico|images|rss.xml|api).*)"],
 };
