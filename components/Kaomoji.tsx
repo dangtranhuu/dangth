@@ -37,7 +37,7 @@ const Kaomoji = () => {
   const kaomoji = getRandomKaomoji();
 
   return (
-    <span className="text-3xl select-none font-semibold text-[2.5rem]" title="Kaomoji ngẫu nhiên">
+    <span className="text-3xl select-none font-semibold text-[2.5rem] dark:text-white" title="Kaomoji ngẫu nhiên">
       {kaomoji}
     </span>
   );
