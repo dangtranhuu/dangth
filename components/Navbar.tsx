@@ -61,20 +61,31 @@ export default function Navbar() {
     });
 
     let lastScrollTop = 0;
+    let hideTimeout: ReturnType<typeof setTimeout> | null = null;
+
     const handleScroll = () => {
-      if (!navRef.current) return;
+      const nav = navRef.current;
+      if (!nav) return;
+
       const currentScrollTop = window.scrollY;
 
-      if (currentScrollTop > 0) {
-        navRef.current.classList.add('border-b', 'shadow-sm');
-      } else {
-        navRef.current.classList.remove('border-b', 'shadow-sm');
-      }
-
       if (currentScrollTop > lastScrollTop) {
-        navRef.current.classList.add('translate-y-[150%]');
+        // Scroll xuống → trượt rồi ẩn
+        nav.classList.add('translate-y-[150%]');
+
+        if (hideTimeout) clearTimeout(hideTimeout);
+        hideTimeout = setTimeout(() => {
+          nav.classList.add('hidden');
+        }, 300); // đúng thời gian transition
       } else {
-        navRef.current.classList.remove('translate-y-[150%]');
+        // Scroll lên → hiện lại và trượt vào
+        if (hideTimeout) clearTimeout(hideTimeout);
+        nav.classList.remove('hidden');
+
+        // Delay nhỏ để browser render lại trước khi remove translate
+        requestAnimationFrame(() => {
+          nav.classList.remove('translate-y-[150%]');
+        });
       }
 
       lastScrollTop = Math.max(currentScrollTop, 0);
