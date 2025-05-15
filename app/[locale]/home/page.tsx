@@ -54,7 +54,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-2">
           <h1 className="text-[50px] font-bold">{t("fullName")}</h1>
-          <p className="text-[#2b2c2fa1]">{t("role")}</p>
+          <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB]">{t("role")}</p>
 
           <div className="mt-4 mb-4 space-y-2">
             <div className="flex gap-2">
