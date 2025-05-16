@@ -56,6 +56,19 @@ export default async function PostPage({ params }: Props) {
 
       {/* Main content */}
       <article className="prose lg:prose-lg dark:prose-invert max-w-4xl mx-auto w-full">
+        {/* Tags */}
+        {Array.isArray(post.tags) && post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-6">
+            {post.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-2 py-0.5 rounded-full text-xs font-medium"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* Title */}
         <h1 className="mb-4 leading-[normal]">{post.title}</h1>
@@ -72,19 +85,6 @@ export default async function PostPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Tags */}
-        {Array.isArray(post.tags) && post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-6">
-            {post.tags.map((tag, idx) => (
-              <span
-                key={idx}
-                className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-2 py-0.5 rounded-full text-xs font-medium"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        )}
 
         {/* Markdown */}
         <div dangerouslySetInnerHTML={{ __html: contentWithLang }} className="mt-10" />
@@ -130,7 +130,9 @@ export default async function PostPage({ params }: Props) {
         )}
 
         {/* Comments */}
-        <GiscusComments />
+        <div className='mt-[100px]'>
+          <GiscusComments />
+        </div>
       </article>
     </div>
   )
