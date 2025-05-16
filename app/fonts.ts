@@ -52,22 +52,22 @@ export const cmuSansVi = localFont({
       style: 'normal',
     },
     {
-      path: '../public/fonts/cmu/vi/CMUSansSerifVietnamized.woff',
+      path: '../public/fonts/cmu/sans/cmunss.woff',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../public/fonts/cmu/vi/CMUSansSerifVietnamized.woff',
+      path: '../public/fonts/cmu/sans/cmunsx.woff',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../public/fonts/cmu/vi/CMUSansSerifVietnamized.woff',
+      path: '../public/fonts/cmu/sans/cmunsi.woff',
       weight: '400',
       style: 'italic',
     },
     {
-      path: '../public/fonts/cmu/vi/CMUSansSerifVietnamized.woff',
+      path: '../public/fonts/cmu/sans/cmunso.woff',
       weight: '700',
       style: 'italic',
     },
