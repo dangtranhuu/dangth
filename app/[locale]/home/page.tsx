@@ -1,159 +1,319 @@
-import React from 'react'
-import Link from 'next/link'
-import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/markdown'
-import { extractHeadings } from '@/utils/extractHeadings'
-import GiscusComments from '@/components/GiscusComments'
-import { SITE_CONFIG } from '@/lib/config'
+'use client';
+import React, { useEffect } from 'react';
+import { FiGithub } from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
+import { TbBrandHackerrank } from "react-icons/tb";
+import { LuLinkedin } from "react-icons/lu";
+import { FiYoutube } from "react-icons/fi";
+import { LuFacebook } from "react-icons/lu";
+import { TbBrandTiktok } from "react-icons/tb";
+import { useTranslations } from 'next-intl';
 
-import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
-import { IoTimerOutline } from "react-icons/io5"
+import AvatarStack from '@/components/AvatarStack'
 
-interface Props {
-  params: { slug: string }
-}
+export default function Home() {
 
-export default async function PostPage({ params }: Props) {
-  const post = await getPost(params.slug)
-  const allPosts = await getAllPostsMeta()
-  allPosts.sort((a, b) => a.slug.localeCompare(b.slug))
-  const currentIndex = allPosts.findIndex(p => p.slug === params.slug)
-  const previous = currentIndex > 0 ? allPosts[currentIndex - 1] : null
-  const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null
+  const t = useTranslations("home")
 
-  const contentWithLang = post.contentHtml.replace(
-    /<pre><code class="[^"]*language-(\w+)"/g,
-    `<pre data-lang="$1"><code class="hljs language-$1"`
-  )
+  useEffect(() => {
+    const items = document.querySelectorAll('.item');
 
-  const headings = extractHeadings(contentWithLang)
+    const handlers: { title: HTMLElement; handler: () => void }[] = [];
+
+    items.forEach((item) => {
+      const title = item.querySelector('.title') as HTMLElement;
+      const details = item.querySelector('.details') as HTMLElement;
+      const icon = item.querySelector('.icon-wrap svg') as HTMLElement;
+
+      if (title && details && icon) {
+        const handler = () => {
+          icon.classList.toggle('rotate');
+          details.classList.toggle('show');
+        };
+
+        title.addEventListener('click', handler);
+        handlers.push({ title, handler }); // lưu lại để cleanup
+      }
+    });
+
+    return () => {
+      handlers.forEach(({ title, handler }) => {
+        title.removeEventListener('click', handler);
+      });
+    };
+  }, []);
+
 
   return (
     <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
-      {/* Table of Contents */}
-      {headings.length > 0 && (
-        <aside className="mb-8 text-sm text-gray-500 dark:text-gray-400 border-l-4 border-blue-400 pl-4">
-          <strong className="block mb-2 text-[16px] text-gray-800 dark:text-gray-200">Mục lục</strong>
-          <ul className="space-y-1">
-            {headings.map((heading, idx) => (
-              <li
-                key={idx}
-                className={`toc-item ml-${(heading.level - 2) * 4}`}
-              >
-                <a
-                  href={`#${heading.id}`}
-                  className="hover:text-blue-500 no-underline"
-                >
-                  {heading.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </aside>
-      )}
-
-      {/* Main article */}
-      <article className="prose lg:prose-lg max-w-none">
-        {/* Title */}
-        <h1>{post.title}</h1>
-
-        {/* Metadata */}
-        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-          <div className="flex items-center gap-1">
-            <MdDateRange />
-            <span>{post.date}</span>
+      {/* Header */}
+      <div className="relative mt-10">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          {/* AvatarStack */}
+          <div className="order-2 md:order-none">
+            <h1 className="text-[40px] md:text-[50px] font-bold">{t("fullName")}</h1>
+            <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">{t("role")}</p>
           </div>
-          <div className="flex items-center gap-1">
-            <IoTimerOutline />
-            <span>{post.readingTime} phút đọc</span>
+
+          <div className="md:static mx-auto mb-[50px] ml-[30%] md:ml-0 md:mb-0 md:mx-0">
+            <AvatarStack />
           </div>
-          {(post.tags && post.tags.length > 0) && (
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag, idx) => (
-                <span
-                  key={idx}
-                  className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-2 py-0.5 rounded-full text-xs font-medium"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          )}
+
         </div>
 
-        {/* Markdown Content */}
-        <div
-          className="mt-6"
-          dangerouslySetInnerHTML={{ __html: contentWithLang }}
-        />
+        <div className="flex flex-col gap-2">
+          <div className="mt-4 mb-4 space-y-2">
+            <div className="flex gap-2">
+              <a href="https://github.com/dangtranhuu" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
+                  <FiGithub />
+                </button>
+              </a>
+              <a href="https://leetcode.com/tranhuudang" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
+                  <SiLeetcode />
+                </button>
+              </a>
+              <a href="https://www.hackerrank.com/tranhuudang" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
+                  <TbBrandHackerrank />
+                </button>
+              </a>
+            </div>
+            <div className="flex gap-2">
+              <a href="https://www.linkedin.com/in/tranhuudang" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
+                  <LuLinkedin />
+                </button>
+              </a>
+              <a href="https://www.youtube.com/@devlands" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
+                  <FiYoutube />
+                </button>
+              </a>
+              <a href="https://www.facebook.com/dangdeveloper/" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
+                  <LuFacebook />
+                </button>
+              </a>
+              <a href="https://www.tiktok.com/@theanishtar" target="_blank">
+                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
+                  <TbBrandTiktok />
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        {/* Edit + Last Updated */}
-        <div className="mt-10 flex flex-wrap justify-between items-center text-sm text-gray-500 dark:text-gray-400 border-t pt-6 gap-4">
-          <a
-            href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.postDir}/${post.slug}.md`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 text-blue-500 hover:underline"
-          >
-            <MdRebaseEdit />
-            Chỉnh sửa trên GitHub
-          </a>
+      {/* About */}
+      <div className="space-y-4 mb-12">
+        <p>
+          I’m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly...
+        </p>
+        <p>
+          I’ve led and contributed to several real-world projects such as DESTINY, DAVITICKETS, DAVISY...
+        </p>
+        <p>
+          Connect with my Linkedin to discuss about work or my Github to share interesting knowledge ^^
+        </p>
+      </div>
 
-          <div className="flex items-center gap-1">
-            <MdHistory />
-            <span>
-              Cập nhật: {new Date(post.lastUpdated ?? post.date).toLocaleString()}
-            </span>
+      {/* EXPERIENCE section */}
+      <div className="experience title section mb-12">
+        <h1 className="text-[32px] font-semibold mb-4">Experience</h1>
+
+        {/* Item */}
+        <div className="item">
+          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+            {/* LEFT: logo + info */}
+            <div className="left col flex">
+              {/* Avatar/logo */}
+              <div className="left w-[70px]">
+                <img
+                  src="/images/exp/devlands.jpg"
+                  className="w-[48px] h-[48px] object-cover rounded-md"
+                  alt="devlands"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="right">
+                <div className="top font-semibold text-[17px] flex items-center gap-1">
+                  Devlands
+                  <span className="icon-wrap">
+                    <svg
+                      className="w-4 h-4 transform transition-transform duration-200"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                  </span>
+                </div>
+                <div className="bot text-sm text-gray-500 dark:text-gray-400">
+                  Designer & Content creator
+                </div>
+              </div>
+            </div>
+
+            {/* Time */}
+            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
+              2021–2023
+            </div>
+          </div>
+
+          {/* Toggle content */}
+          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
+            <p>
+              Devlands is a personal brand project designed as a social learning platform,
+              offering tutorials and coding challenges to support developers.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* EDUCATION section */}
+      <div className="education title section">
+        <h1 className="text-[32px] font-semibold mb-4">Education</h1>
+
+        {/* === Item 1 === */}
+        <div className="item">
+          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+            {/* LEFT: logo + info */}
+            <div className="left col flex">
+              {/* Logo */}
+              <div className="left w-[70px]">
+                <img
+                  src="/images/education/ctu.png"
+                  className="w-[48px] h-[48px] object-cover rounded-full"
+                  alt="ctu"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="right">
+                <div className="top font-semibold text-[17px] flex items-center gap-1">
+                  Can Tho University
+                  <span className="icon-wrap">
+                    <svg
+                      className="w-4 h-4 transform transition-transform duration-200"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                  </span>
+                </div>
+                <div className="bot text-sm text-gray-500 dark:text-gray-400">
+                  Information Technology
+                </div>
+              </div>
+            </div>
+
+            {/* Time */}
+            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
+              Sep 2021 – Jan 2024
+            </div>
+          </div>
+
+          {/* Toggle content */}
+          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
+            <p>
+              Studied Information Technology at Can Tho University, focusing on programming, databases, and software development.
+            </p>
           </div>
         </div>
 
-        {/* Pagination */}
-        {(previous || next) && (
-          <div className="mt-10 pt-6 border-t flex justify-between text-blue-500 text-sm">
-            <div>
-              {previous && (
-                <Link href={`/post/${previous.slug}`} className="hover:underline">
-                  ← {previous.title}
-                </Link>
-              )}
+        {/* === Item 2 === */}
+        <div className="item">
+          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+            {/* LEFT: logo + info */}
+            <div className="left col flex">
+              {/* Logo */}
+              <div className="left w-[70px]">
+                <img
+                  src="/images/education/fpoly.jpg"
+                  className="w-[48px] h-[48px] object-cover rounded-full"
+                  alt="fpt"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="right">
+                <div className="top font-semibold text-[17px] flex items-center gap-1">
+                  FPT Polytechnic
+                  <span className="icon-wrap">
+                    <svg
+                      className="w-4 h-4 transform transition-transform duration-200"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+                    </svg>
+                  </span>
+                </div>
+                <div className="bot text-sm text-gray-500 dark:text-gray-400">
+                  Software development
+                </div>
+              </div>
             </div>
-            <div>
-              {next && (
-                <Link href={`/post/${next.slug}`} className="hover:underline">
-                  {next.title} →
-                </Link>
-              )}
+
+            {/* Time */}
+            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
+              Sep 2021 – Jan 2024
             </div>
           </div>
-        )}
 
-        {/* Comments */}
-        <div className="mt-12">
-          <GiscusComments />
+          {/* Toggle content */}
+          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
+            <p>
+              Studied Software Development at FPT Polytechnic, with experience as a teaching assistant supporting student learning.
+            </p>
+          </div>
         </div>
-      </article>
-    </div>
-  )
-}
+      </div>
 
-export async function generateStaticParams() {
-  const slugs = getAllPostSlugs()
-  return slugs.map(({ params }) => ({ slug: params.slug }))
-}
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug)
-
-  return {
-    title: post.title,
-    openGraph: {
-      title: post.title,
-      type: 'article',
-      images: post.image ? [post.image] : [],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      images: post.image ? [post.image] : [],
-    }
-  }
+      {/* CERTIFICATIONS section */}
+      <div className="cert title section">
+        <h1 className="text-[32px] font-semibold mb-4">Certifications</h1>
+        <div className="flex flex-wrap gap-10 justify-center text-center">
+          {[
+            {
+              img: 'udemy.png',
+              title: 'Master Microservices with Spring Boot & Spring Cloud',
+              org: 'Udemy',
+              date: '02/08/2024',
+            },
+            {
+              img: 'aws-cloudfoundations.png',
+              title: 'AWS Academy Cloud Foundations',
+              org: 'AWS',
+              date: '03/07/2022',
+            },
+            {
+              img: 'datacamp/statement-of-accomplishment.png',
+              title: 'Intermediate SQL Queries',
+              org: 'Data Camp',
+              date: 'APR 15, 2022',
+            },
+          ].map((cert, idx) => (
+            <div key={idx} className="w-[250px]">
+              <img
+                src={`/images/cert/${cert.img}`}
+                alt={cert.title}
+                className="w-[100px] mx-auto"
+              />
+              <div className="font-bold mt-2 text-[16px] whitespace-nowrap overflow-hidden text-ellipsis">
+                {cert.title}
+              </div>
+              <div className="text-[14px] text-[#555]">{cert.org}</div>
+              <div className="text-[13px] text-[#888] mt-1">Issued {cert.date}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div >
+  );
 }
