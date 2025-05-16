@@ -3,27 +3,22 @@ import Link from 'next/link'
 import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/markdown'
 import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/GiscusComments'
-import TOC from '@/components/post/TOC'
 import { SITE_CONFIG } from '@/lib/config'
 
-import { MdDateRange } from "react-icons/md"
-import { IoTimerOutline } from "react-icons/io5";
-import { MdHistory } from "react-icons/md";
-import { MdRebaseEdit } from "react-icons/md";
+import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
+import { IoTimerOutline } from "react-icons/io5"
 
 interface Props {
   params: { slug: string }
 }
 
 export default async function PostPage({ params }: Props) {
-
   const post = await getPost(params.slug)
   const allPosts = await getAllPostsMeta()
   allPosts.sort((a, b) => a.slug.localeCompare(b.slug))
   const currentIndex = allPosts.findIndex(p => p.slug === params.slug)
   const previous = currentIndex > 0 ? allPosts[currentIndex - 1] : null
   const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null
-
 
   const contentWithLang = post.contentHtml.replace(
     /<pre><code class="[^"]*language-(\w+)"/g,
@@ -33,92 +28,104 @@ export default async function PostPage({ params }: Props) {
   const headings = extractHeadings(contentWithLang)
 
   return (
-    <div className='post' >
+    <div className="relative flex gap-6 mt-12 px-4 dark:text-[var(--text-color-dark)]">
+      {/* Table of Contents (TOC) */}
+      <aside className="hidden xl:block fixed top-[100px] right-8 min-w-[200px] max-h-[calc(100vh-120px)] overflow-y-auto text-sm text-gray-500">
+        <strong className="block text-base text-gray-800 mb-4">Mục lục</strong>
+        <ul className="space-y-1">
+          {headings.map((heading, idx) => (
+            <li
+              key={idx}
+              className={`toc-item list-none ${heading.level === 2
+                ? 'ml-0'
+                : heading.level === 3
+                  ? 'ml-4'
+                  : 'ml-8'
+                }`}
+            >
+              <a
+                href={`#${heading.id}`}
+                className="text-gray-600 hover:text-blue-500 no-underline"
+              >
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </aside>
 
-      {/* TOC bên trái */}
-      <TOC headings={headings} />
+      {/* Main article */}
+      <article className="prose lg:prose-lg dark:prose-invert max-w-4xl mx-auto w-full">
 
-      <article className="markdown-body container prose "   >
-        <h1>{post.title}</h1>
-        <p style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+        {/* TAG */}
+        {(post.tags && post.tags.length > 0) && (
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="bg-gray-200 text-gray-800 px-2 py-0.5 rounded-full text-xs font-medium"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Title */}
+        <h1 className='article-title'>{post.title}</h1>
+
+        {/* Metadata */}
+        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+          <div className="flex items-center gap-1">
             <MdDateRange />
-            {post.date}
-          </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <span>{post.date}</span>
+          </div>
+          <div className="flex items-center gap-1">
             <IoTimerOutline />
-            {post.readingTime} phút
-          </span>
-          {post.tags && post.tags.length > 0 && (
-            <span style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-              {post.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  style={{
-                    backgroundColor: '#d0d0d0',
-                    borderRadius: '0.5rem',
-                    padding: '0.2rem 0.6rem',
-                    fontSize: '0.85rem',
-                    color: '#333',
-                  }}
-                >
-                  #{tag}
-                </span>
-              ))}
-            </span>
-          )}
-        </p>
+            <span>{post.readingTime} phút đọc</span>
+          </div>
 
+        </div>
 
-        <div dangerouslySetInnerHTML={{ __html: contentWithLang }} />
-        <hr style={{ margin: '3rem 0' }} />
+        {/* Markdown Content */}
+        <div
+          className="mt-[100px]"
+          dangerouslySetInnerHTML={{ __html: contentWithLang }}
+        />
 
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          fontSize: '0.9rem',
-          color: '#888',
-          flexWrap: 'wrap',
-          gap: '1rem'
-        }}>
-          {/* a chỉnh sửa trên GitHub */}
+        {/* Edit + Last Updated */}
+        <div className="mt-10 flex flex-wrap justify-between items-center text-sm text-gray-500 border-t pt-6 gap-4">
           <a
             href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.postDir}/${post.slug}.md`}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: '#409eff', textDecoration: 'none' }}
+            className="flex items-center gap-1 text-blue-500 hover:underline"
           >
-            <MdRebaseEdit /> Edit this page on GitHub
+            <MdRebaseEdit />
+            Chỉnh sửa trên GitHub
           </a>
 
-          {/* Ngày cập nhật */}
-          <span>
-            <MdHistory /> Last updated: {new Date(post.lastUpdated ?? post.date).toLocaleString()}
-          </span>
+          <div className="flex items-center gap-1">
+            <MdHistory />
+            <span>
+              Cập nhật: {new Date(post.lastUpdated ?? post.date).toLocaleString()}
+            </span>
+          </div>
         </div>
 
+        {/* Navigation */}
         {(previous || next) && (
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              marginTop: '2rem',
-              fontSize: '1rem',
-              paddingTop: '1rem',
-              borderTop: '1px solid #e0e0e0'
-            }}
-          >
+          <div className="mt-10 pt-6 border-t flex justify-between text-blue-500 text-sm">
             <div>
               {previous && (
-                <Link href={`/post/${previous.slug}`} style={{ textDecoration: 'none', color: '#409eff' }}>
+                <Link href={`/post/${previous.slug}`} className="hover:underline">
                   ← {previous.title}
                 </Link>
               )}
             </div>
             <div>
               {next && (
-                <Link href={`/post/${next.slug}`} style={{ textDecoration: 'none', color: '#409eff' }}>
+                <Link href={`/post/${next.slug}`} className="hover:underline">
                   {next.title} →
                 </Link>
               )}
@@ -126,12 +133,12 @@ export default async function PostPage({ params }: Props) {
           </div>
         )}
 
-
-        <div style={{ margin: '2rem 0' }}></div>
-
-        <GiscusComments />
+        {/* Comments */}
+        <div className="mt-12">
+          <GiscusComments />
+        </div>
       </article>
-    </div >
+    </div>
   )
 }
 
@@ -157,4 +164,3 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
   }
 }
-

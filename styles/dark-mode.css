@@ -1,83 +1,59 @@
-body.dark-mode {
-  background-color: var(--background-color-dark);
+.dark pre[class*="language-"] {
+  scrollbar-color: var(--code-scroll-bar-color) #282C34;
 }
 
-.dark-mode pre[class*="language-"] {
-  scrollbar-color: var(--code-scroll-bar-color) rgba(0, 0, 0, 0);
-}
 
-.dark-mode .prose pre {
-  background-color: #343f50;
-}
-
-.dark-mode pre code.hljs {
+.dark pre code.hljs {
   color: white;
+}
+
+.dark .admonition,
+.dark .admonition p {
+  background-color: #404D61;
 }
 
 /* .dark-mode a {
   color: var(--primary-color-dark);
 } */
 
-.dark-mode .container {
-  background-color: var(--background-color-dark);
-}
 
-.dark-mode .prose h1 a,
-.dark-mode .prose h2 a,
-.dark-mode .prose h3 a,
-.dark-mode .prose h4 a,
-.dark-mode .prose h5 a,
-.dark-mode .prose h6 a,
-.dark-mode strong {
+.dark .prose h1 a,
+.dark .prose h2 a,
+.dark .prose h3 a,
+.dark .prose h4 a,
+.dark .prose h5 a,
+.dark .prose h6 a,
+.dark strong {
   color: var(--color-btn-primary-text);
 }
 
-.dark-mode .post aside strong {
+.dark .post aside strong {
   color: var(--color-btn-primary-text);
 }
 
-.dark-mode .project .card-content {
+.dark .project .card-content {
   background-color: var(--contact-bc-dark);
   color: var(--text-color-dark);
 }
 
-.dark-mode .project .card-description {
+.dark .project .card-description {
   color: var(--text-color-dark);
 }
 
-.dark-mode .project .tags span {
+.dark .project .tags span {
   color: var(--text-color-dark);
   background-color: var(--background-color-dark);
 }
 
-.dark-mode .cert .cert-org {
+.dark .cert .cert-org {
   color: var(--text-color-dark);
-}
-
-.dark-mode footer {
-  color: var(--contact-bc);
-  border-top: solid 1px #84878c;
-  /* background-color: var(--contact-bc-dark); */
-}
-
-.dark-mode .bottom-nav {
-  background: #404b5d;
-  border-color: #5a5a5a;
-}
-
-.dark-mode .nav-item a {
-  background-color: var(--contact-bc-dark);
-}
-
-.dark-mode .nav-item a.hovered {
-  background-color: var(--contact-bc-dark);
 }
 
 /* GISCUS */
 /*! Modified from https://github.com/giscus/giscus/blob/main/styles/themes/transparent_dark.css
  */
 
-.dark-mode main .post {
+.dark main .post {
   --color-prettylights-syntax-comment: #8b949e;
   --color-prettylights-syntax-constant: #79c0ff;
   --color-prettylights-syntax-entity: #d2a8ff;
@@ -168,13 +144,6 @@ body.dark-mode {
   background-size: 600% 600%;
   animation: gradient 21s ease infinite;
 }
-
-.dark-mode :not(pre)>code {
-  color: var(--inline-code-color);
-  background-color: var(--inline-code-bg-color);
-  transition: background-color var(--t-color);
-}
-
 
 @keyframes gradient {
   0% {
