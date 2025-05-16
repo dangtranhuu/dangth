@@ -4,7 +4,6 @@ import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/markdown'
 import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/GiscusComments'
 import { SITE_CONFIG } from '@/lib/config'
-
 import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
 import { IoTimerOutline } from "react-icons/io5"
 
@@ -28,36 +27,41 @@ export default async function PostPage({ params }: Props) {
   const headings = extractHeadings(contentWithLang)
 
   return (
-    <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
-      {/* Table of Contents */}
+    <div className="post relative flex gap-6 mt-12 px-4 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
+
+      {/* TOC fixed right */}
       {headings.length > 0 && (
-        <aside className="mb-8 text-sm text-gray-500 dark:text-gray-400 border-l-4 border-blue-400 pl-4">
-          <strong className="block mb-2 text-[16px] text-gray-800 dark:text-gray-200">Mục lục</strong>
+        <aside className="hidden xl:block fixed top-[100px] right-8 min-w-[200px] max-h-[calc(100vh-120px)] overflow-y-auto text-sm text-gray-500 dark:text-gray-400">
+          <strong className="block text-base text-gray-800 dark:text-gray-100 mb-4">Mục lục</strong>
           <ul className="space-y-1">
             {headings.map((heading, idx) => (
               <li
                 key={idx}
-                className={`toc-item ml-${(heading.level - 2) * 4}`}
+                className={`toc-item level-${heading.level} list-none`}
               >
                 <a
                   href={`#${heading.id}`}
-                  className="hover:text-blue-500 no-underline"
+                  className="text-gray-600 hover:text-blue-500 no-underline dark:text-gray-300"
                 >
                   {heading.text}
                 </a>
               </li>
             ))}
+            <li className="toc-item list-none level-2">
+              <a href="#comments" className="hover:text-blue-500">Thảo luận</a>
+            </li>
           </ul>
         </aside>
       )}
 
-      {/* Main article */}
-      <article className="prose lg:prose-lg max-w-none">
+      {/* Main content */}
+      <article className="prose lg:prose-lg dark:prose-invert max-w-4xl mx-auto w-full">
+
         {/* Title */}
-        <h1>{post.title}</h1>
+        <h1 className="mb-4 leading-[normal]">{post.title}</h1>
 
         {/* Metadata */}
-        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
           <div className="flex items-center gap-1">
             <MdDateRange />
             <span>{post.date}</span>
@@ -66,27 +70,26 @@ export default async function PostPage({ params }: Props) {
             <IoTimerOutline />
             <span>{post.readingTime} phút đọc</span>
           </div>
-          {(post.tags && post.tags.length > 0) && (
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag, idx) => (
-                <span
-                  key={idx}
-                  className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-2 py-0.5 rounded-full text-xs font-medium"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
 
-        {/* Markdown Content */}
-        <div
-          className="mt-6"
-          dangerouslySetInnerHTML={{ __html: contentWithLang }}
-        />
+        {/* Tags */}
+        {Array.isArray(post.tags) && post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-6">
+            {post.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-2 py-0.5 rounded-full text-xs font-medium"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
 
-        {/* Edit + Last Updated */}
+        {/* Markdown */}
+        <div dangerouslySetInnerHTML={{ __html: contentWithLang }} className="mt-10" />
+
+        {/* Edit & Update Info */}
         <div className="mt-10 flex flex-wrap justify-between items-center text-sm text-gray-500 dark:text-gray-400 border-t pt-6 gap-4">
           <a
             href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.postDir}/${post.slug}.md`}
@@ -127,9 +130,7 @@ export default async function PostPage({ params }: Props) {
         )}
 
         {/* Comments */}
-        <div className="mt-12">
-          <GiscusComments />
-        </div>
+        <GiscusComments />
       </article>
     </div>
   )
@@ -142,7 +143,6 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug)
-
   return {
     title: post.title,
     openGraph: {

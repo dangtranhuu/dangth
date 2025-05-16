@@ -15,8 +15,10 @@
   --contact-bc-dark: #4A5363;
 }
 
-.post {
-  font-family: "Kanit", sans-serif;
+.prose {
+  /* font-family: var(--font-cmusans), sans-serif; */
+  font-size: 1.125rem;
+  line-height: 1.8;
 }
 
 .markdown-body {
