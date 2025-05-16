@@ -62,9 +62,9 @@ export default async function PostPage({ params }: Props) {
             {post.tags.map((tag, idx) => (
               <span
                 key={idx}
-                className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-2 py-0.5 rounded-full text-xs font-medium"
+                className="rounded-full border border-[#414141] text-[#414141] bg-[#4141410] text-[12px] leading-6 px-[10px] py-0 dark:border-[#b1b1b1] dark:text-[#cfcfcf]"
               >
-                #{tag}
+                {tag}
               </span>
             ))}
           </div>
