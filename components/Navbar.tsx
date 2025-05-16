@@ -43,7 +43,7 @@ export default function Navbar() {
   }, [pathname]);
 
   useEffect(() => {
-    const saved = localStorage.getItem('dar-mode');
+    const saved = localStorage.getItem('dark-mode');
     const dark = saved === 'dark';
 
     const nav = navRef.current;

@@ -15,7 +15,7 @@ export default function useDarkMode() {
     const newTheme = !isDark;
     setIsDark(newTheme);
     document.documentElement.classList.toggle('dark', newTheme);
-    localStorage.setItem('dar-mode', newTheme ? 'dark' : 'light');
+    localStorage.setItem('dark-mode', newTheme ? 'dark' : 'light');
     document.getElementById('comments')?.setAttribute('theme', newTheme ? 'transparent_dark' : 'light');
   };
 

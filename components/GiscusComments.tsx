@@ -4,7 +4,7 @@ import Giscus from '@giscus/react'
 import { GISCUS } from '@/lib/config';
 
 export default function GiscusComments() {
-  const initialTheme = typeof window !== 'undefined' && localStorage.getItem('modeByThean') === 'dark'
+  const initialTheme = typeof window !== 'undefined' && localStorage.getItem('dark-mode') === 'dark'
     ? GISCUS.dark
     : GISCUS.light
 
