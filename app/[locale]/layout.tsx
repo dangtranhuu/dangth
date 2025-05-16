@@ -9,7 +9,7 @@ import 'katex/dist/katex.min.css'
 import type { AbstractIntlMessages } from 'next-intl';
 import { NextIntlClientProvider } from 'next-intl';
 import { ReactNode } from 'react'
-import { cmuSans } from '../fonts'
+import { cmuSans, cmuSansVi } from '../fonts'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import ImageZoomClient from '../../components/ImageZoomClient'
@@ -55,7 +55,7 @@ export default async function RootLayout({
   return (
 
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <html lang={locale} className={cmuSans.variable}>
+      <html lang={locale} className={cmuSansVi.variable}>
         <head>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
