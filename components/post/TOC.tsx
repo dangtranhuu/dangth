@@ -2,23 +2,39 @@
 
 import React from 'react'
 
-export default function TOC({ headings }: { headings: { id: string, text: string, level: number }[] }) {
+interface Heading {
+  id: string
+  text: string
+  level: number
+}
+
+export default function TOC({ headings }: { headings: Heading[] }) {
   return (
-    <aside>
-      <strong>On this page</strong>
-      <ul>
+    <aside className="hidden xl:block fixed top-[100px] right-8 min-w-[200px] max-h-[calc(100vh-120px)] overflow-y-auto text-sm text-gray-600 dark:text-[#E5E7EB] mb-3">
+      <strong className="block text-base text-gray-800 dark:text-[#E5E7EB] mb-3">Mục lục</strong>
+      <ul className="space-y-1">
         {headings.map((heading, index) => (
-          <li key={index} className={`text-sm leading-relaxed ${heading.level === 3 ? 'ml-4' : heading.level === 4 ? 'ml-8' : ''}`}
-            style={{
-              marginLeft: `${(heading.level - 2) * 16}px`, // 👈 Thụt theo cấp (h2 = 0, h3 = 16px, ...)
-            }}>
-            <a href={`#${heading.id}`} >
+          <li
+            key={index}
+            className="list-none leading-relaxed dark:text-[#E5E7EB]"
+            style={{ marginLeft: `${(heading.level - 2) * 16}px` }}
+          >
+            <a
+              href={`#${heading.id}`}
+              className="hover:text-blue-500 no-underline transition-colors duration-150 dark:text-[#E5E7EB]"
+            >
               {heading.text}
             </a>
           </li>
         ))}
-        <li className='text-sm leading-relaxed' style={{ marginLeft: `0px` }}>
-          <a href="#comments">Thảo luận</a>
+
+        <li className="list-none leading-relaxed mt-2">
+          <a
+            href="#comments"
+            className="hover:text-blue-500 no-underline transition-colors duration-150 dark:text-[#E5E7EB]"
+          >
+            Thảo luận
+          </a>
         </li>
       </ul>
     </aside>
