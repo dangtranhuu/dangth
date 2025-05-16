@@ -1,12 +1,9 @@
 'use client'
 
-
 import React, { useState } from 'react'
 import Link from 'next/link'
-import styles from "./postList.module.css"
-import { FaUserEdit } from "react-icons/fa"
-import { MdDateRange } from "react-icons/md"
-import { FaTags } from "react-icons/fa"
+import { FaUserEdit, FaTags } from 'react-icons/fa'
+import { MdDateRange } from 'react-icons/md'
 
 interface Post {
   slug: string
@@ -20,7 +17,6 @@ interface Post {
 }
 
 export default function PostListClient({ posts }: { posts: Post[] }) {
-
   const [selectedTag, setSelectedTag] = useState<string>('')
 
   const tagCounts: Record<string, number> = {}
@@ -30,86 +26,113 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
     })
   })
 
-  const allTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1]) // [tag, count]
-
-  const sortedPosts = [...posts].sort((a, b) =>
-    new Date(b.date).getTime() - new Date(a.date).getTime()
-  )
+  const allTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1])
+  const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   const filteredPosts = selectedTag
     ? sortedPosts.filter((post) => post.tags?.includes(selectedTag))
     : sortedPosts
 
   return (
-    <div className='container'>
-      <h1>Post</h1>
+    <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)]">
+      <h1 className="text-[40px] md:text-[50px] font-bold mb-6">Post</h1>
 
-      <div className={styles.tagBar}>
+      {/* Tag filter bar */}
+      <div className="flex flex-wrap gap-2 mb-10">
         <button
           onClick={() => setSelectedTag('')}
-          className={`${styles.tagFilterBtn} ${selectedTag === '' ? styles.activeTag : ''}`}
+          className={`px-3 py-1 rounded-full border text-sm transition ${selectedTag === ''
+            ? 'bg-white text-blue-600 border-blue-600 font-semibold'
+            : 'bg-indigo-400 text-white border-indigo-500 hover:bg-indigo-500'
+            }`}
         >
-          Show All <span>{posts.length}</span>
+          Show All <span className="ml-1 font-bold">{posts.length}</span>
         </button>
 
         {allTags.map(([tag, count]) => (
           <button
             key={tag}
             onClick={() => setSelectedTag(tag)}
-            className={`${styles.tagFilterBtn} ${selectedTag === tag ? styles.activeTag : ''}`}
+            className={`px-3 py-1 rounded-full border text-sm transition ${selectedTag === tag
+              ? 'bg-white text-blue-600 border-blue-600 font-semibold'
+              : 'bg-indigo-400 text-white border-indigo-500 hover:bg-indigo-500'
+              }`}
           >
-            {tag} <span>{count}</span>
+            {tag} <span className="ml-1 font-bold">{count}</span>
           </button>
         ))}
       </div>
 
-      <div className={styles.publicationList}>
-        {filteredPosts.map((post) => (
-          <div key={post.slug} className={styles.publication}>
-            <img src={post.image} alt={post.title} className={styles.thumbnail} />
-
-            <div className={styles.pubContent}>
-              <Link href={`/post/${post.slug}`} className={styles.pubTitle}>
-                {post.title}
-              </Link>
-              <p className={styles.pubSubtitle}>{post.subtitle}</p>
-              <div className={styles.pubAuthors}>
-                <FaUserEdit /> {post.author} | <MdDateRange /> {typeof post.date === 'string' ? post.date : new Date(post.date).toISOString().slice(0, 10)}
-              </div>
-
-              {post.tags && post.tags.length > 0 && (
-                <div className={styles.tagContainer}>
-                  <div className={styles.tagHeader}>
-                    <FaTags /> Tags:
-                  </div>
-                  <div className={styles.tagList}>
-                    {post.tags.map((tag: string) => (
-                      <button
-                        key={tag}
-                        className={styles.tagButton}
-                        onClick={() => console.log(`Filter by tag: ${tag}`)}
-                      >
-                        {tag}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {post.arxiv && (
-                <Link
-                  href={post.arxiv}
-                  className={styles.pubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  arXiv
-                </Link>
-              )}
-            </div>
+      {filteredPosts.map((post) => (
+        <div
+          key={post.slug}
+          className="flex flex-col sm:flex-row gap-4 border-b pb-6 mt-6"
+        >
+          {/* Thumbnail */}
+          <div className="w-full sm:w-[220px] flex-shrink-0">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-[140px] sm:h-[120px] object-cover rounded-md border dark:border-gray-700"
+            />
           </div>
-        ))}
-      </div>
+
+          {/* Post Info */}
+          <div className="flex-1 flex flex-col gap-2">
+            <Link
+              href={`/post/${post.slug}`}
+              className="text-[20px] font-semibold text-blue-600 hover:underline"
+            >
+              {post.title}
+            </Link>
+
+            {post.subtitle && (
+              <p className="text-sm text-gray-600 dark:text-gray-300">{post.subtitle}</p>
+            )}
+
+            <div className="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 gap-4">
+              <span className="flex items-center gap-1">
+                <FaUserEdit />
+                {post.author}
+              </span>
+              <span className="flex items-center gap-1">
+                <MdDateRange />
+                {typeof post.date === 'string'
+                  ? post.date
+                  : new Date(post.date).toISOString().slice(0, 10)}
+              </span>
+            </div>
+
+            {/* Tags */}
+            {post.tags && (
+              <div className="flex flex-wrap gap-2 mt-1">
+                {post.tags.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => setSelectedTag(tag)}
+                    className="px-2 py-1 text-xs rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600"
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* Arxiv link */}
+            {post.arxiv && (
+              <Link
+                href={post.arxiv}
+                target="_blank"
+                className="text-sm text-blue-500 mt-1 hover:underline"
+              >
+                Xem trên arXiv →
+              </Link>
+            )}
+          </div>
+        </div>
+      ))}
+
+
     </div>
   )
 }
