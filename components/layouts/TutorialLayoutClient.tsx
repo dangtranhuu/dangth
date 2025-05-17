@@ -41,7 +41,7 @@ export default function TutorialLayoutClient({
         )}
 
 
-        <main className="flex-1 px-6 py-10 mx-auto pt-20 lg:max-w-full">
+        <main className="flex-1 px-6 lg:px-0 py-10 mx-auto pt-20 lg:w-full w-full">
           {!isMobileSidebarOpen && (
             <button
               className="lg:hidden fixed top-0 left-0 w-full z-50 px-4 py-3 bg-white dark:bg-gray-800 text-left border-b border-gray-200 dark:border-gray-700 shadow"

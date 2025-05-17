@@ -1,6 +1,3 @@
-<img src="https://count-viewer.vercel.app//api/blog/view?url=https://davisupers.web.app/github/session1.html" alt="Image 1" style="float: left">
-
----
 
 # Bài 1. Setup môi trường
 
@@ -39,7 +36,7 @@ Tóm lại :
 Khi nào *click chuột phải* và thấy 2 dòng này thì đã cài **Git** thành công
 
 
- <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/session1/09d15404acfc79a220ed.jpg?raw=true" title="" alt="Professor Male.png" width="300">
+ <!-- <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/session1/09d15404acfc79a220ed.jpg?raw=true" title="" alt="Professor Male.png" width="300"> -->
 
 ## Tạo tài khoản GitHub
 
