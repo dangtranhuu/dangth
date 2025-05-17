@@ -24,12 +24,12 @@ export default function TutorialSidebar({ activeSlug, tree }: Props) {
   }, [activeSlug, tree])
 
   const renderItems = (items: TutorialConfigItem[], level = 0) => (
-    <ul className={`space-y-1 ${level > 1 ? 'ml-[0.5rem] mt-[0.5rem] pl-3 border-l border-gray-500 dark:border-gray-900' : ''}`}>
+    <ul className={`space-y-1 ${level > 1 ? 'ml-2 mt-2 pl-3 border-l border-gray-500 dark:border-gray-900' : ''}`}>
       {items.map((item, idx) => {
         const key = `${item.text}-${idx}`
         const isOpen = openMap[key]
         const hasChildren = !!item.children?.length
-        const isCollapsible = item.collapsible && hasChildren
+        const isCollapsible = item.collapsible !== false && hasChildren
 
         if (isCollapsible) {
           return (
@@ -47,7 +47,6 @@ export default function TutorialSidebar({ activeSlug, tree }: Props) {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
@@ -98,7 +97,7 @@ function findOpenKeysForSlug(
     const item = items[i]
     const key = `${item.text}-${i}`
 
-    if (item.link === targetSlug || item.link === `/tutorial/${targetSlug}`) {
+    if (item.link === `/tutorial/${targetSlug}` || item.link === targetSlug) {
       return path
     }
 
