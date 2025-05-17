@@ -2,6 +2,7 @@
 import { getTutorial, getAllTutorialSlugs } from '@/lib/tutorial'
 import TutorialLayout from '@/components/layouts/TutorialLayout'
 import { notFound } from 'next/navigation'
+import GiscusComments from '@/components/GiscusComments'
 import { flattenSidebar, findNavContext } from '@/lib/tutorialNav'
 import { tutorialSidebar } from '@/config/tutorial.config'
 
@@ -58,6 +59,10 @@ export default async function TutorialPage({ params }: Params) {
           <a href={navContext.next.link}>{navContext.next.text} &rarr;</a>
         )}
       </div>
+
+      {/* Giscus comment */}
+      <GiscusComments />
+
     </TutorialLayout>
   )
 }
