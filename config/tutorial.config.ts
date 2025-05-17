@@ -14,11 +14,12 @@ export const tutorialSidebar: TutorialConfigItem[] = [
     icon: "fa-home"
   },
   {
-    text: "Interviews",
-    collapsible: true, // dropdown
+    text: "Technical",
+    collapsible: false, // dropdown
     children: [
       {
         text: "Java Core",
+        icon: "fa-java",
         collapsible: true, // dropdown tiếp
         children: [
           { text: "Java Basic", link: "/tutorial/java-basic" },
@@ -30,11 +31,21 @@ export const tutorialSidebar: TutorialConfigItem[] = [
     ]
   },
   {
-    text: "NoSQL",
-    collapsible: false,
+    text: "Tool",
+    collapsible: false, // dropdown
     children: [
-      { text: "MongoDB", link: "/tutorial/mongodb" },
-      { text: "Redis", link: "/tutorial/redis" },
+      {
+        text: "Git",
+        collapsible: true, // dropdown tiếp
+        children: [
+          { text: "Setup môi trường", link: "/tutorial/tools/git/setup" },
+          { text: "Đẩy code lên GitHub", link: "/tutorial/tools/git/push-code" },
+          { text: "Undo khi gặp một commit sai", link: "/tutorial/tools/git/undo-commit" },
+          { text: "Làm việc nhóm", link: "/tutorial/tools/git/collaborators" },
+          { text: "Làm việc với nhánh", link: "/tutorial/tools/git/branch" },
+        ]
+      },
+      { text: "Interview Question", link: "/tutorial/interview-question" }
     ]
   },
   {

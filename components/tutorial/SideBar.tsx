@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { tutorialSidebar, TutorialConfigItem } from '@/config/tutorial.config'
+import { useEffect, useState } from 'react'
 
 interface Props {
   activeSlug: string
@@ -57,8 +57,8 @@ export default function TutorialSidebar({ activeSlug }: Props) {
             <Link
               href={item.link ?? '#'}
               className={`block text-sm px-2 py-1 rounded transition-all ${activeSlug === item.link?.replace('/tutorial/', '')
-                  ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
-                  : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
+                ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
+                : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
                 }`}
             >
               {item.text}
@@ -69,9 +69,38 @@ export default function TutorialSidebar({ activeSlug }: Props) {
     </ul>
   )
 
+  useEffect(() => {
+    const openKeys = findOpenKeysForSlug(tutorialSidebar, activeSlug) ?? []
+    const initialMap = Object.fromEntries(openKeys.map((key) => [key, true]))
+    setOpenMap(initialMap)
+  }, [activeSlug])
+
+
   return (
     <nav className="p-4">
       {renderItems(tutorialSidebar)}
     </nav>
   )
+}
+
+function findOpenKeysForSlug(
+  items: TutorialConfigItem[],
+  targetSlug: string,
+  path: string[] = []
+): string[] | null {
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i]
+    const key = `${item.text}-${i}`
+
+    if (item.link === `/tutorial/${targetSlug}`) {
+      return path // đã đến node đích, trả về đường dẫn cha
+    }
+
+    if (item.children) {
+      const result = findOpenKeysForSlug(item.children, targetSlug, [...path, key])
+      if (result) return result
+    }
+  }
+
+  return null
 }
