@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 
 interface Props {
   activeSlug: string,
-  tree: TutorialNode[]
+  tree: TutorialConfigItem[]
 }
 
 export default function TutorialSidebar({ activeSlug }: Props) {

@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { GiEvilBook } from "react-icons/gi";
 import TutorialSidebar from '../tutorial/SideBar'
+import { TutorialConfigItem } from '@/config/tutorial.config';
 
 export default function TutorialLayoutClient({
   children,
@@ -13,7 +14,7 @@ export default function TutorialLayoutClient({
 }: {
   children: React.ReactNode
   activeSlug: string
-  tree: any
+  tree: TutorialConfigItem[]
 }) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
 
