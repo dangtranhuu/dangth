@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { tutorialSidebar, TutorialConfigItem } from '@/config/tutorial.config'
+import { SidebarIcon } from './SidebarIcon'
 import { useEffect, useState } from 'react'
 
 interface Props {
@@ -37,7 +38,7 @@ export default function TutorialSidebar({ activeSlug }: Props) {
                 className="cursor-pointer flex justify-between items-center text-xs font-semibold uppercase text-gray-600 dark:text-gray-300 mt-4 hover:text-black dark:hover:text-white"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-sm">📁</span>
+                  <SidebarIcon icon={item.icon} />
                   {item.text}
                 </div>
                 <svg
@@ -70,11 +71,12 @@ export default function TutorialSidebar({ activeSlug }: Props) {
           <li key={key}>
             <Link
               href={item.link ?? '#'}
-              className={`block text-sm px-2 py-1 rounded transition-all ${activeSlug === item.link?.replace('/tutorial/', '')
+              className={`flex items-center gap-2 text-sm px-2 py-1 rounded transition-all ${activeSlug === item.link?.replace('/tutorial/', '')
                   ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
                   : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
                 }`}
             >
+              <SidebarIcon icon={item.icon} />
               {item.text}
             </Link>
           </li>

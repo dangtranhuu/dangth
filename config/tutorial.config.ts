@@ -19,7 +19,7 @@ export const tutorialSidebar: TutorialConfigItem[] = [
     children: [
       {
         text: "Java Core",
-        icon: "fa-java",
+        icon: "FaJava",
         collapsible: true, // dropdown tiếp
         children: [
           { text: "Java Basic", link: "/tutorial/java-basic" },
@@ -36,6 +36,7 @@ export const tutorialSidebar: TutorialConfigItem[] = [
     children: [
       {
         text: "Git",
+        icon: "FaGitAlt",
         collapsible: true, // dropdown tiếp
         children: [
           { text: "Setup môi trường", link: "/tutorial/tools/git/setup" },
