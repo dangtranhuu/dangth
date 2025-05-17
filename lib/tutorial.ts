@@ -24,6 +24,7 @@ export interface TutorialData {
 export interface TutorialNode {
   title: string
   slug: string
+  icon?: string
   children?: TutorialNode[]
 }
 

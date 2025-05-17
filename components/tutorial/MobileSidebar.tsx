@@ -1,10 +1,10 @@
 import { useSidebarStore } from './sidebarStore'
 import TutorialSidebar from '../tutorial/SideBar'
-import { TutorialConfigItem } from '@/config/tutorial.config'
+import { TutorialNode } from '@/lib/tutorial'
 
 interface MobileSidebarProps {
   activeSlug: string
-  tree: TutorialConfigItem[]
+  tree: TutorialNode[]
 }
 
 export function MobileSidebar({ activeSlug, tree }: MobileSidebarProps) {
