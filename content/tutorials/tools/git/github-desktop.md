@@ -2,6 +2,6 @@
 
 ---
 
-# Bài 6. Thao tác bằng GitHub Desktop
+# Bài 7. Thao tác bằng GitHub Desktop
 
 Chưa cập nhật

@@ -2,7 +2,7 @@
 
 ---
 
-# Bài 7 Viết commits chuyên nghiệp
+# Bài 6 Viết commits chuyên nghiệp
 
 
 <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/1.png?raw=true" alt="Image 1" style="width:500px; height:50%;">

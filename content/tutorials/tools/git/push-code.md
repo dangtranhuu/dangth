@@ -10,7 +10,7 @@
 	- `git commit –m "<mô tả>"` để thực hiện một thay đổi trên git
 	- `git push` để đẩy code lên nhánh chính (***main*** hoặc ***master***)
 
-![Tạo repo GitHub](https://github.com/theanishtar/images/blob/main/angurvad/github/session2/quytrinh.png?raw=true)
+![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/quytrinh.png?raw=true)
 
 ## Tạo Repository tại GitHub.com
 
@@ -20,7 +20,7 @@ Repository là một kho lưu trữ của GitHub, bạn có thể xem Repository
 
 **Tạo Repo mới [tại đây](https://github.com/new)**
 
-![Tạo repo GitHub](https://github.com/theanishtar/images/blob/main/angurvad/github/session2/taorepo.png?raw=true)
+![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/taorepo.png?raw=true)
 
 :::info
 Repository name: là tên kho lưu trữ của bạn
@@ -34,28 +34,28 @@ Public hay Private là trạng thái của Repo
 
 Khi tạo xong repo giao diện sẽ thay đổi thành thế này:
 
-![Tạo repo GitHub](https://github.com/theanishtar/images/blob/main/angurvad/github/session2/07b786ea9711424f1b00.jpg?raw=true)
+![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/07b786ea9711424f1b00.jpg?raw=true)
 
 Bạn hãy coppy đường link sau:
 
-![Tạo repo GitHub](https://github.com/theanishtar/images/blob/main/angurvad/github/session2/5d7a5c5a4ea19bffc2b0.jpg?raw=true)
+![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/5d7a5c5a4ea19bffc2b0.jpg?raw=true)
 
 Vào [Git Bash](/github/session1.html#đang-nhap-vao-git) và gõ lệnh sau:
 
 ```bash
 $ git clone //dán đường dẫn vừa coppy vào đây
 ```
-![Tạo repo GitHub](https://github.com/theanishtar/images/blob/main/angurvad/github/session2/clonerepo.png?raw=true)
+![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/clonerepo.png?raw=true)
 
 **Paste code vào Repo clone**
 
 Bạn sẽ thấy một thư mục trống như này:
 
-![Tạo repo GitHub](https://github.com/theanishtar/images/blob/main/angurvad/github/session2/pastecode.png?raw=true)
+![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/pastecode.png?raw=true)
 
 Sau đó cứ tiến hành paste hết những đoạn code bạn muốn đẩy lên Git vào thư mục trống này
 
-![Tạo repo GitHub](https://github.com/theanishtar/images/blob/main/angurvad/github/session2/pastedone.png?raw=true)
+![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/pastedone.png?raw=true)
 
 
 **Đẩy code lên GitHub**
@@ -83,6 +83,6 @@ Với trường hợp bạn đã clone repo và muốn cập nhật lại các c
 ```bash
 $ git pull
 ```
-![Tạo repo GitHub](https://github.com/theanishtar/images/blob/main/angurvad/github/session2/pull.png?raw=true)
+![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/pull.png?raw=true)
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/RV_jojt_2bo?si=KhYiTBJdNeHYFfMa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

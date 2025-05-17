@@ -79,6 +79,7 @@ CREATE TABLE user_role(
 	userid INT NOT NULL FOREIGN KEY REFERENCES users(userid), --id ng dung
 	role_id INT NOT NULL FOREIGN KEY REFERENCES roles(role_id)--Vai trò người dùng
 )
+```
 
 
 #### Thêm dữ liệu

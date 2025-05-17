@@ -22,12 +22,29 @@ export const tutorialSidebar: TutorialConfigItem[] = [
         icon: "FaJava",
         collapsible: true, // dropdown tiếp
         children: [
-          { text: "Java Basic", link: "/tutorial/java-basic" },
-          { text: "Collection", link: "/tutorial/collection" },
-          { text: "Concurrency", link: "/tutorial/concurrency" },
+          { text: "Tìm hiểu về Java", link: "/tutorial/programing/java-core/introduction" },
+          { text: "Biến, toán tử và các kiểu dữ liệu", link: "/tutorial/programing/java-core/vars-ops-types" },
+          { text: "Cấu trúc rẽ nhánh", link: "/tutorial/programing/java-core/conditionals" },
+          { text: "Vòng lặp", link: "/tutorial/programing/java-core/loops" },
+          { text: "Mảng", link: "/tutorial/programing/java-core/array" },
+          { text: "Chuỗi", link: "/tutorial/programing/java-core/string" },
+          { text: "Phương thức", link: "/tutorial/programing/java-core/method" },
         ]
       },
-      { text: "Interview Question", link: "/tutorial/interview-question" }
+      {
+        text: "Java OOP",
+        icon: "RiJavaLine",
+        collapsible: true, // dropdown tiếp
+        children: [
+          { text: "Tổng quan", link: "/tutorial/programing/java-oop/introduction" },
+          { text: "Lập trình Hướng đối tượng", link: "/tutorial/programing/java-oop/oop" },
+          { text: "Tính đa hình", link: "/tutorial/programing/java-oop/poly-morphism" },
+          { text: "Tính kế thừa", link: "/tutorial/programing/java-oop/Inheritance" },
+          { text: "Tính đóng gói", link: "/tutorial/programing/java-oop/encapsulation" },
+          { text: "Tính trừu tượng", link: "/tutorial/programing/java-oop/abstract" },
+          { text: "Những câu hỏi phỏng vấn", link: "/tutorial/programing/java-oop/interview" },
+        ]
+      },
     ]
   },
   {
@@ -39,18 +56,17 @@ export const tutorialSidebar: TutorialConfigItem[] = [
         icon: "FaGitAlt",
         collapsible: true, // dropdown tiếp
         children: [
+          { text: "Tổng quan", link: "/tutorial/tools/git/readme" },
           { text: "Setup môi trường", link: "/tutorial/tools/git/setup" },
           { text: "Đẩy code lên GitHub", link: "/tutorial/tools/git/push-code" },
           { text: "Undo khi gặp một commit sai", link: "/tutorial/tools/git/undo-commit" },
           { text: "Làm việc nhóm", link: "/tutorial/tools/git/collaborators" },
           { text: "Làm việc với nhánh", link: "/tutorial/tools/git/branch" },
+          { text: "Viết commit message", link: "/tutorial/tools/git/commit-message" },
+          { text: "Github Desktop", link: "/tutorial/tools/git/github-desktop" },
+          { text: "Đóng góp mã nguồn", link: "/tutorial/tools/git/contribution" },
         ]
       },
-      { text: "Interview Question", link: "/tutorial/interview-question" }
     ]
-  },
-  {
-    text: "OOP",
-    link: "/tutorial/oop"
   }
 ]
