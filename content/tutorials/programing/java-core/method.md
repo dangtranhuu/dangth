@@ -80,7 +80,7 @@ Bạn có thể xem các phương thức này như một [biến](/post/2023/06/
 
 ### Tham số
 
-Tham số là những giá trị được định nghĩa sẵng trong phương thức, nằm trong dấu ==()== và cách nhau bởi dấu ==,==. Phía trước tham số sẽ chứa kiểu dữ liệu.
+Tham số là những giá trị được định nghĩa sẵng trong phương thức, nằm trong dấu `()` và cách nhau bởi dấu `,`. Phía trước tham số sẽ chứa kiểu dữ liệu.
 
 ```java
 public static int sum(int a, int b) {
@@ -119,7 +119,7 @@ public static String fullname(String firstname, String lastname){
 // Output: "Tran Huu Dang"
 ```
 
-Phương thức sẽ **_dừng_** và **_trả về giá trị_** ngay lặp tức khi thấy lệnh ==return==
+Phương thức sẽ **_dừng_** và **_trả về giá trị_** ngay lặp tức khi thấy lệnh `return`
 
 :::details Bonus
 - Các lệnh sau return là vô nghĩa vì vậy Java sẽ báo lỗi nếu sau return là một lệnh khi return không nằm trong IF
@@ -140,7 +140,7 @@ Ngoài ra thì có những từ khóa như *public*, *private* có thể cấu h
 
 ![b29.gif](https://github.com/danqth/images/blob/main/angurvad/java-core/session7/01-12-45-30-b29.gif?raw=true)
 
-> 😭 Đệ quy rất khó để hiểu, và cách duy nhất để làm tốt nó là ==thực hành thật nhiều với nó==.
+> 😭 Đệ quy rất khó để hiểu, và cách duy nhất để làm tốt nó là `thực hành thật nhiều với nó`.
 
 
 ### Thành phần trong hàm đệ quy gồm những gì?

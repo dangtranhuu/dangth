@@ -14,21 +14,24 @@
 
 ## Tạo Repository tại GitHub.com
 
-:::details Repository là gì
+<details>
+<summary><b> Repository là gì</b></summary>
+
 Repository là một kho lưu trữ của GitHub, bạn có thể xem Repository là một nơi chứa project của bạn trực tuyến
-:::
+
+</details>
 
 **Tạo Repo mới [tại đây](https://github.com/new)**
 
 ![Tạo repo GitHub](https://github.com/danqth/images/blob/main/angurvad/github/session2/taorepo.png?raw=true)
 
-:::info
-Repository name: là tên kho lưu trữ của bạn
+>[INFO]
+>Repository name: là tên kho lưu trữ của bạn
+>
+>Public hay Private là trạng thái của Repo
+>- Public là ai cũng xem được
+>- Private là chỉ bạn và những người được thêm vào repo mới được xem
 
-Public hay Private là trạng thái của Repo
-- Public là ai cũng xem được
-- Private là chỉ bạn và những người được thêm vào repo mới được xem
-:::
 
 ## Clone Repo về máy tính của bạn
 

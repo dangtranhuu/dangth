@@ -1,41 +1,6 @@
-<img src="https://count-viewer.vercel.app//api/blog/view?url=https://davisupers.web.app/github/session7.html" alt="Image 1" style="float: left">
-
----
-
 # Bài 6 Viết commits chuyên nghiệp
 
-
-<img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/1.png?raw=true" alt="Image 1" style="width:500px; height:50%;">
-
-:::details <b>Nội dung chính</b>
-
-<br>
-
-<div class="scroll" style="width: 100%; overflow-x: auto; white-space: nowrap;">
-  <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/1.png?raw=true" alt="Image 1" style="width:500px; height:50%;object-fit: cover; margin:0px;">
-  </div>
-  <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/2.png?raw=true" alt="Image 2" style="width:500px; height:50%;object-fit: cover; margin:0px;">
-  </div>
-  <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/3.png?raw=true" alt="Image 3" style="width:500px; height:50%;object-fit: cover; margin:0px;">
-  </div>
-  <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/4.png?raw=true" alt="Image 1" style="width:500px; height:50%;object-fit: cover; margin:0px;">
-  </div>
-  <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/5.png?raw=true" alt="Image 1" style="width:500px; height:50%;object-fit: cover; margin:0px;">
-  </div>
-  <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/6.png?raw=true" alt="Image 1" style="width:500px; height:50%;object-fit: cover; margin:0px;">
-  </div>
-  <div style="display: inline-block; margin-right: 15px;">
-    <img src="https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/7.png?raw=true" alt="Image 1" style="width:500px; height:50%;object-fit: cover; margin:0px;">
-  </div>
-  <!-- Add more slides as needed -->
-</div>
-::: 
+![](https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/1.png?raw=true)
 
 
 ## Một câu chuyện tại công ty nọ
@@ -100,12 +65,11 @@ Type là các kiểu commits phổ biến, bạn có thể tham khảo bảng sa
 - Type sẽ được viết bằng chữ in thường, trước dấu hai chấm
 
 
-:::info Một số ví dụ:
-
-- feat: .....
-- fix: ....
-- refactor: ...
-:::
+>[!INFO]Một số ví dụ:
+>
+>- feat: .....
+>- fix: ....
+>- refactor: ...
 
 
 ## Description
@@ -123,19 +87,20 @@ Không sử dụng dấu chấm ở cuối câu
 
 
 
-:::info Một số ví dụ:
 
-- feat: add Facebook login feature.
-- fix: resolve issue with incorrect password preventing login.
-- refactor: optimize code for login processing.
-- perf: improve main page loading speed.
+>[!INFO] Một số ví dụ:
+>
+>- feat: add Facebook login feature.
+>- fix: resolve issue with incorrect password preventing login.
+>- refactor: optimize code for login processing.
+>- perf: improve main page loading speed.
+>
+>--------------------
+>- feat: Thêm chức năng đăng nhập bằng Facebook.
+>- fix: Sửa lỗi không thể đăng nhập khi mật khẩu sai.
+>- refactor: Tối ưu hóa mã nguồn cho việc xử lý đăng nhập.
+>- perf: Cải thiện tốc độ tải trang chính.
 
---------------------
-- feat: Thêm chức năng đăng nhập bằng Facebook.
-- fix: Sửa lỗi không thể đăng nhập khi mật khẩu sai.
-- refactor: Tối ưu hóa mã nguồn cho việc xử lý đăng nhập.
-- perf: Cải thiện tốc độ tải trang chính.
-:::
 
 ## Body
 

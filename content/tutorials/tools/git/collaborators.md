@@ -43,8 +43,7 @@ Có thể kiểm tra email hoặc truy cập tại [đây](https://github.com/no
 Hoặc xác nhận bằng email đã đăng ký GitHub
 ![](https://github.com/theanishtar/images/blob/main/angurvad/github/session4/pic3.2.jpg?raw=true)
 
-:::info
-Khi đã xác nhận tham gia vào Repo, bạn có các quyền như một **Owner**, có thể add, commit, push, create branch như các thành viên khác
-:::
+>[!INFO]
+>Khi đã xác nhận tham gia vào Repo, bạn có các quyền như một **Owner**, có thể add, commit, push, create branch như các thành viên khác
 
 

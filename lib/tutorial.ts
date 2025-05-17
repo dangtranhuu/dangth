@@ -11,9 +11,8 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeRaw from 'rehype-raw'
 import rehypeKatex from 'rehype-katex'
+import remarkAdmonition from './plugins/remarkAdmonition'
 import 'katex/dist/katex.min.css'
-
-// lib/tutorial.ts
 
 export interface TutorialData {
   slug: string
@@ -98,6 +97,7 @@ export async function getTutorial(slug: string): Promise<TutorialData | null> {
   const processed = await remark()
     .use(remarkGfm)
     .use(remarkMath)
+    .use(remarkAdmonition)                          // render blockquote [TIP, INFO, WARNING]
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeKatex)

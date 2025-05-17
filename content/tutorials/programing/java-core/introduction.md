@@ -1,38 +1,21 @@
-<!-- ---
-layout: Post
-title: Bài 1. Giới thiệu về Java Core
-subtitle: Lập trình Java căn bản
-author: Theanishtar
-date: 2023-06-02
-useHeaderImage: false
-headerImage: https://github.com/danqth/images/blob/main/angurvad/java-core/session1/banner.png?raw=true
-headerMask: rgba(39, 77, 61, 0.61)
-permalinkPattern: /ebook/java/java-core/:slug/
-tags:
-  - Java Core
----
 
-Java là ngôn ngữ chuyên về Hướng đối tượng và rất thông dụng. Cùng mình tìm hiểu về Java cơ bản trong bài viết này !!! -->
-
-<!-- more -->
 # Bài 1. Giới thiệu về Java
 ## 1. Đôi nét về Java
 
-::: info
-- **Java** là một ngôn ngữ lập trình có từ **1995** bởi **Sun Microsystems**, hiện thuộc sở hữu của [Oracle Corporation](https://vi.wikipedia.org/wiki/Oracle_Corporation).
-- **Java** được phát triển từ **C** và **C++** là chủ yếu
-- **Java** từng được Microsoft rất thích, nhưng vì vấn đề bản quyền, và Microsoft đã tạo ra **C#** có cấu trúc tương đướng với **Java**
+> [!INFO]
+> - **Java** là một ngôn ngữ lập trình có từ **1995** bởi **Sun Microsystems**, hiện thuộc sở hữu của [Oracle Corporation](https://vi.wikipedia.org/wiki/Oracle_Corporation).
+> - **Java** được phát triển từ **C** và **C++** là chủ yếu
+> - **Java** từng được Microsoft rất thích, nhưng vì vấn đề bản quyền, và Microsoft đã tạo ra **C#** có cấu trúc tương đướng với **Java**
 
-:::
 
-::: tip
-**Java** có thể làm được mọi thứ như : **Web, Mobilde App, Desktop App, AI, Server, Database** ... và đặt trưng của **Java là OOP** ([*Object-oriented Programing*](https://vi.wikipedia.org/wiki/L%E1%BA%ADp_tr%C3%ACnh_h%C6%B0%E1%BB%9Bng_%C4%91%E1%BB%91i_t%C6%B0%E1%BB%A3ng))
+> [!TIP]
+> **Java** có thể làm được mọi thứ như : **Web, Mobilde App, Desktop App, AI, Server, Database** ... và đặt trưng của **Java là OOP** ([*Object-oriented Programing*](https://vi.wikipedia.org/wiki/L%E1%BA%ADp_tr%C3%ACnh_h%C6%B0%E1%BB%9Bng_%C4%91%E1%BB%91i_t%C6%B0%E1%BB%A3ng))
 
-:::
 
-::: warning
-**Java** và **Javascript** hoàn toàn không giống nhau và có quan hệ nhau một tý gì. (**JavaScript** ra đời sau, lúc đó **Java** đang là ngôn ngữ phổ biến nhất và có lẻ nói tới đây bạn đã hiểu vì sao **JavaScript** có từ **Java** trong tên rồi đó)
-:::
+
+> [!WARNING]
+> **Java** và **Javascript** hoàn toàn không giống nhau và có quan hệ nhau một tý gì. (**JavaScript** ra đời sau, lúc đó **Java** đang là ngôn ngữ phổ biến nhất và có lẻ nói tới đây bạn đã hiểu vì sao **JavaScript** có từ **Java** trong tên rồi đó)
+
 
 
 ---
@@ -94,10 +77,9 @@ java --version
 ## 4. Cài đặt Công cụ lập trình
 
 
-::: tip
-Bạn có thể cài đặt cái [IDE](https://topdev.vn/blog/ide-la-gi/#ide-la-gi) dành cho **Java** như **Netbeans**, **Eclipse**,... hoặc các  [Code Editor](https://www.dictionary4it.com/term/code-editor-2424/) như **Visual Studio Code**, **Sublime Text**,...
+>[!TIP]
+>Bạn có thể cài đặt cái [IDE](https://topdev.vn/blog/ide-la-gi/#ide-la-gi) dành cho **Java** như **Netbeans**, **Eclipse**,... hoặc các  [Code Editor](https://www.dictionary4it.com/term/code-editor-2424/) như **Visual Studio Code**, **Sublime Text**,...
 
-:::
 
 Ở các bài viết sau về Java mình sẽ sử dụng [Netbeans](https://netbeans.apache.org/) nhé, các bạn tải và cài đặt phần mềm tại [đây](https://netbeans.apache.org/)
 
@@ -105,16 +87,18 @@ Bạn có thể cài đặt cái [IDE](https://topdev.vn/blog/ide-la-gi/#ide-la-
 
 ## 5. Tạo một chương tình Java đơn giản
 
-::: warning
-Hãy đảm bảo rằng máy bạn đã được cài JJDK và một IDE có thể viết được code Java nhé !!!
-:::
+>[!WARNING]
+> Hãy đảm bảo rằng máy bạn đã được cài JDK và một IDE có thể viết được code Java nhé !!!
+
 
 - **B1** : Hãy tạo mới một dự án bằng cách thực hiện 
-	- New -> New Project -> (Tab bên trái chọn Java with Ant, bên phải chọn Java Application) -> Next và đặt tên tại **project name** và nhấn Finish
+	- `New` -> `New Project` -> (Tab bên trái chọn Java with Ant, bên phải chọn `Java Application`) -> `Next` và đặt tên tại **project name** và nhấn `Finish`
 <video src="https://github.com/danqth/images/blob/main/angurvad/java-core/create_prj.mp4?raw=true" width="100%" controls></video>
 
 ---
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/HRTQUU18qYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
 
 - **B2** : Netbeans sẽ tự tạo cho bạn package có tên **project_demo**, bên trong sẽ có file **Project_demo** như hình dưới đây
   ![2021-01-29 09.43.09.gif](https://github.com/danqth/images/blob/main/angurvad/java-core/project-java.png?raw=true)
@@ -145,7 +129,7 @@ public static void main(String[] args)
 - **main** là hàm chính trong chương trình.
 - Tên **class** phải trùng với tên **file.java** của bạn.
 
-> [!WARNING] Hãy luôn nhớ kết thúc mỗi lệnh phải có dấu **;** nhé
+> [!WARNING] Hãy luôn nhớ kết thúc mỗi lệnh phải có dấu `;` nhé
 
 ---
 
@@ -231,4 +215,4 @@ public class Demo {
   
   > 🤪 Vậy là bạn đã chạy code một cách **thủ công**.
 
-Bạn hiểu chứ, ta vậy thì ta chỉ cần lấy file **Demo.class** đem qua bất kỳ hệ điều hành nào chỉ cần chạy **java Demo** là chạy được.
+Bạn hiểu chứ, ta vậy thì ta chỉ cần lấy file `Demo.class` đem qua bất kỳ hệ điều hành nào chỉ cần chạy **java Demo** là chạy được.

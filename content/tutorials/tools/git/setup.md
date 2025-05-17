@@ -16,11 +16,11 @@ bất kì người nào có tài khoản Github.
 
 - Các chức năng thêm vào của Github: UI, Document, bug tracking, feature request, pull request… và nhiều hơn!
 
-:::info
-Tóm lại :
-- **Git** là phần mềm quản lí mã nguồn
-- **GitHub** là website để mọi người sử dụng trên nền tảng của **Git**
-:::
+>[!INFO]
+>Tóm lại :
+>- **Git** là phần mềm quản lí mã nguồn
+>- **GitHub** là website để mọi người sử dụng trên nền tảng của **Git**
+
 
 ## Cài đặt Git và Tạo tài khoản GitHub
 
@@ -58,13 +58,11 @@ $ git config --global user.email myemail@example.com
 $ git config --global user.password mypassword
 ```
 
-:::warning
-Thay thế các từ sau:
-- **myname** -> Username đã đăng ký GitHub
-- **myemail@example.com** -> Địa chỉ email đã đăng ký tài khoản
-- **mypassword** -> Mật khẩu tài khoản GitHub của bạn
-
-:::
+>[!WARNING]
+>Thay thế các từ sau:
+>- **myname** -> Username đã đăng ký GitHub
+>- **myemail@example.com** -> Địa chỉ email đã đăng ký tài khoản
+>- **mypassword** -> Mật khẩu tài khoản GitHub của bạn
 
 ![Bash Git](https://github.com/theanishtar/images/blob/main/angurvad/github/session1/dangnhap.png?raw=true)
 

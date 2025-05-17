@@ -1,28 +1,10 @@
-<!-- ---
-layout: Post
-title: Bài 2. Sử dụng biến, toán tử và các kiểu dữ liệu trong Java 
-subtitle: Lập trình Java căn bản
-author: Theanishtar
-date: 2023-06-03
-useHeaderImage: false
-headerImage: https://github.com/dangtranhuu/images/blob/main/angurvad/java-core/session2/banner.png?raw=true
-headerMask: rgba(39, 62, 77, 0.61)
-permalinkPattern: /ebook/java/java-core/:slug/
-tags:
-  - Java Core
----
-
- Biến là đối tượng cơ bản nhất trong lập trình, dùng để lưu giá trị. Vậy biến trong Java là gì ta 🤔 -->
-
-<!-- more -->
-
 # Bài 2. Sử dụng biến, toán tử và các kiểu dữ liệu
 ## 1. Các kiểu dữ liệu nguyên thủy
 
-::: info
-- Kiểu dữ liệu nguyên thủy là kiểu dữ liệu cơ bản nhất (chỉ dùng để lưu giá trị)
-- Nâng cấp hơn ta có kiểu dữ liệu hướng đối tượng, là các kiểu dữ liệu cung cấp các phương thức cho sẵng để tính toán các giá trị
-:::
+>[!INFO]
+>- Kiểu dữ liệu nguyên thủy là kiểu dữ liệu cơ bản nhất (chỉ dùng để lưu giá trị)
+>- Nâng cấp hơn ta có kiểu dữ liệu hướng đối tượng, là các kiểu dữ liệu cung cấp các phương thức cho sẵng để tính toán các giá trị
+
 
 ### Tổng hợp các kiểu dữ liệu nguyên thủy trong Java
 ---
@@ -49,17 +31,17 @@ tags:
 | char         | **2** *bytes* | Chứa 1 ký tự **ASCII**                       |
 ---
 
-::: info
- **1 Byte** = **8bit** và **1MB = 1024B** nhé các bạn 
-:::
+>[!INFO] info
+>**1 Byte** = **8bit** và **1MB = 1024B** nhé các bạn 
 
-::: warning
-**B** là viết tắt của **Byte**, còn **b** là viết tắt của **bit**, vậy nên **4GB** với **4Gb** khác nhau hoàn toàn nhé.
-:::
 
-::: tip
-Bên trên có khá nhiều kiểu, nhưng bạn chỉ cần nhớ **int**, **boolean**, **char**, **double**. vì những thứ này hay dùng nhất
-:::
+>[!WARNING]
+>**B** là viết tắt của **Byte**, còn **b** là viết tắt của **bit**, vậy nên **4GB** với **4Gb** khác nhau hoàn toàn nhé.
+
+
+>[!TIP]
+>Bên trên có khá nhiều kiểu, nhưng bạn chỉ cần nhớ **int**, **boolean**, **char**, **double**. vì những thứ này hay dùng nhất
+
 
 #### Nên sử dụng số thực là **float** hay **double** : 
 
@@ -193,7 +175,7 @@ Tên tôi là : Tran Huu Dang
 
 
 
- Như bạn đã thấy tôi đã tự động thêm chuỗi ==" "== để tạo khoảng cách cho tên của tôi.
+ Như bạn đã thấy tôi đã tự động thêm chuỗi `" "` để tạo khoảng cách cho tên của tôi.
 
 Và bạn cũng có thể tính toán thẳng trong đó như sau : 
 
@@ -204,7 +186,7 @@ System.out.println("a + b = " + (a + b));
 // output : a + b = 9
 ```
 
-Với những phép toán bạn phải bọc nó lại bằng dấu ==()== nha.
+Với những phép toán bạn phải bọc nó lại bằng dấu `()` nha.
 
 
 ## 4. Toán tử
@@ -289,11 +271,11 @@ Có các loại toán tử sau :
 | >>>     | Phép **dịch phải với Zero** | A **>>>** 1 ⇨ 1          |
 
 
-::: tip
- Bạn không cần phải hiểu quá nhiều về vấn đề này
+>[!TIP]
+>Bạn không cần phải hiểu quá nhiều về vấn đề này
+>
+>Nếu bạn muốn tìm hiểu, hãy xem [tại đây](https://openplanning.net/12281/cac-toan-tu-bitwise)
 
- Nếu bạn muốn tìm hiểu, hãy xem [tại đây](https://openplanning.net/12281/cac-toan-tu-bitwise)
-:::
 
 ## 5. Bài tập
 
@@ -301,9 +283,10 @@ Nếu bạn chưa biết gì về Java có thể note các bài này và giải 
 
 ### Tính lãi xuất kép
 Trong bài này chúng ta sẽ viết một chương trình để tính lãi xuất kép bằng ngôn ngữ Java, đây là công thức được sử dụng nhiều trong ngành kế toán tài chính.
-:::info
-P (1 + R/n) (nt) - P
-:::
+
+>[!INFO]
+>P (1 + R/n) (nt) - P
+
 Ở đây chúng ta có :
 
 P là số tiền gốc.
@@ -327,7 +310,9 @@ t = 5
 Lãi kép = 2000(1 + 0.08 / 12)(12 x 5) - 2000 = 979.69$.
 
 
-:::details Bài giải
+<details>
+<summary><b>Bài giải</b></summary>
+
 ```java
 public class TinhLaiKep {
     public void calculate(int p, int t, double r, int n) {
@@ -347,4 +332,5 @@ public class TinhLaiKep {
 	Số tiền có được sau 5 năm là: 2979.321
 */
 ```
-:::
+
+</details>

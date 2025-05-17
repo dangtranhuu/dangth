@@ -1,21 +1,3 @@
-<!-- ---
-layout: Post
-title: Bài 5. Mảng trong Java
-subtitle: Lập trình Java căn bản
-author: Theanishtar
-date: 2023-06-06
-useHeaderImage: false
-headerImage: https://github.com/dangtranhuu/images/blob/main/angurvad/java-core/session5/banner.png?raw=true
-headerMask: rgba(30, 69, 110, 0.61)
-permalinkPattern: /ebook/java/java-core/:slug/
-tags:
-  - Java Core
----
-
-Mảng là cấu trúc có các phần tử cùng kiểu và liền kề nhau trong bộ nhớ. Cùng mình tìm hiểu thông qua bài viết này nhé !!! -->
-
-<!-- more -->
-
 # Bài 5. Mảng
 
 ## 1. Khái niệm
@@ -48,18 +30,27 @@ String myName = {"Đang","Hữu","Trần"}; //mảng chuỗi gồm 3 phần tử
 ---
 ## 3. Các tính chất
 
-::: details 1. Vị trí bắt đầu là 0
+<details>
+<summary><b>1. Vị trí bắt đầu là 0</b></summary>
+
 - Hình như có mỗi [Passcal](). là bắt đầu từ 1 đúng không ta 😆
-:::
 
-::: details 2. Mảng không thể tự co dãn (có nghĩa là không thêm hay bớt phần tử được)
+</details>
+
+<details>
+<summary><b>2. Mảng không thể tự co dãn (có nghĩa là không thêm hay bớt phần tử được)</b></summary>
+
 - Các phần tử là cố định vì vậy bạn phải xác định đúng số lượng ngay từ khi khai báo mảng, để tránh việc dư thừa hay thiếu bộ nhớ nhé!!
-:::
 
-::: details 3. Dữ liệu của mảng nằm liền kề nhau
+</details>
+
+<details>
+<summary><b>3. Dữ liệu của mảng nằm liền kề nhau</b></summary> 
+
 - Các địa chỉ phần tử nằm tuần tự thanh ghi và cách nhau **4 byte**, vì kích thước của **int** là **4 byte** ([*xem thêm*](/post/2023/06/02/java-core-session2/))
 - Vì vậy bạn hoàn toàn có thể truy xuất tới phần tử bất kì trong mảng khi biết vị trí (index) của phần tử đó
-:::
+
+</details>
 
 Chúng ta có thể thay đổi giá trị bằng cách truy xuất lại phần tử đó như sau : 
 
@@ -76,9 +67,13 @@ for(int i : myNum){
 
 ## 4. Độ dài của mảng 
 
-::: details 🤔 Như mình đã nói ở trên Mảng có chỉ số phần tử đầu tiên là 0. Vậy chỉ số cuối cùng là mấy ? 
+<details>
+<summary><b>🤔 Như mình đã nói ở trên Mảng có chỉ số phần tử đầu tiên là 0. Vậy chỉ số cuối cùng là mấy ? </b></summary>
+
 - Java cung cấp cho ta một phương thức xác định vị trí cuối cùng của Mảng đó là **length**
-:::
+
+</details>
+
 Sử dụng *phương thức* **length** để kiểm tra độ dài của mảng như sau :
 
 ```java
@@ -170,7 +165,9 @@ int[][][] myNumbers = { { {1,2,3}, {1,2,3} }, { {2,4,6}, {1,6,8}, {1,5,7} } };
 
 Đơn giản nhất các bạn chỉ cần dùng dòng lặp For hoặc ForEach để duyệt qua mảng, và dùng một biến tổng để cộng dồn các giá trị sau mỗi lần duyệt là xong
 
-::: details Bài giải 7.1
+<details>
+<summary><b>Bài giải 7.1</b></summary> 
+
 ```java
 class TinhTongTrongMang{
     public static void main(String args[]){
@@ -186,7 +183,7 @@ class TinhTongTrongMang{
 
 // Ouput: Tổng là 160
 ```
-:::
+</details>
 
 ### 7.2 Đảo ngược các phần tử trong mảng.
 
@@ -196,7 +193,9 @@ Cụ thể trong chương trình này chúng ta sẽ thực hiện một chươn
 
 Ở ví dụ này chúng ta sẽ sử dụng vòng lặp For để yêu cầu người dùng nhập vào giá trị cho các phần tử, sau đó dùng vòng lặp While để đảo ngược các vị trí của các phần tử trong mảng.
 
-::: details Bài giải 7.2
+<details>
+<summary><b>Bài giải 7.2</b></summary> 
+
 ```java
 public class DaoNguocTrongMang{
     public static void main(String args[]){
@@ -220,7 +219,8 @@ public class DaoNguocTrongMang{
 }
 // Output: Mảng sau khi đảo ngược: 10 50 40 30 20 10
 ```
-:::
+
+</details>
 
 ### 7.3 In các phần tử trùng nhau trong mảng
 Để in ra các phần tử trùng nhau thì chúng ta thực hiện trong 4 bước:
@@ -233,7 +233,8 @@ public class DaoNguocTrongMang{
 
 Tiếp theo chúng ta triển khai code theo thuật toán vừa nêu.
 
-::: details Bài giải 7.3
+<details>
+<summary><b>Bài giải 7.3</b></summary> 
 
 ```java
 public class DuplicateElement {   
@@ -253,4 +254,5 @@ public static void  main(String[] args) {
 
 // Output: Các phần tử trùng nhau trong mảng đã cho: 2 3 8
 ```
-:::
+
+</details>

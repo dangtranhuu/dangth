@@ -58,8 +58,8 @@ Các ký tự đặc biệt gồm:
 | ------------ | ------------- |------------- |
 | \t           | Ký tự tab     | Theo quy ước: 1Tab = 3 khoảng trắng   | 
 | \r           | Về đầu dòng   | Trở về đầu dòng     | 
-| \n           | Xuống dòng    | Tương tự phím ==Enter== hay ký tự ==\n==     | 
-| \\\           | \             | Để hiện thị các ký tự đặc biệt bạn cần dùng ==\\== ở trước|
+| \n           | Xuống dòng    | Tương tự phím `Enter` hay ký tự `\n`     | 
+| \\\           | \             | Để hiện thị các ký tự đặc biệt bạn cần dùng `\\` ở trước|
 | \\"           | "             | |
 
 Ví dụ:
@@ -209,9 +209,12 @@ Nhập vào họ tên một người, in hoa các ký tự đầu trong mỗi th
 Ví dụ:    "trần hữu đang" ⟹ "Trần Hữu Đang"
 Nâng cấp: "tRầN hữU đAnG" ⟹ "Trần Hữu Đang"
 
-:::details Bài giải
+
+<details>
+<summary><b>Bài giải</b></summary> 
 - Tự làm đi chòi 😆😆
-:::
+
+</details>
 
 ### 9.2 Xuất tên chuẩn hóa cấp độ 2
 
@@ -220,9 +223,10 @@ Nhập vào họ tên một người, xóa các khoảng trắng thừa
 Ví dụ:    "   trần     hữu    đang" ⟹ "Trần Hữu Đang"
 Nâng cấp: "    tRầN   hữU    đAnG  " ⟹ "Trần Hữu Đang"
 
-:::details Bài giải
+<summary><b>Bài giải</b></summary> 
 - Tự làm đi chòi 😆😆
-:::
+
+</details>
 
 ### 9.3 Xuất tên chuẩn hóa cấp độ 3
 
@@ -230,9 +234,10 @@ Nhập vào họ tên một người, xóa các ký tự thừa
 
 Ví dụ:    "   trầ35n $^  hữ%^99u  đa498%%ng" ⟹ "Trần Hữu Đang"
 
-:::details Bài giải
+<summary><b>Bài giải</b></summary> 
 - Tự làm đi chòi 😆😆
-:::
+
+</details>
 
 ### 9.4 Xuất tên chuẩn hóa cấp độ 4
 
@@ -240,6 +245,7 @@ Nhập vào họ tên một người, chuẩn hóa theo tiếng Việt
 
 Ví dụ:    "   trrrrầnnnn     hhữuuuu    đaaang" ⟹ "Trần Hữu Đang"
 
-:::details Bài giải
+<summary><b>Bài giải</b></summary> 
 - Tự làm đi chòi 😆😆
-:::
+
+</details>

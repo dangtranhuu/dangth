@@ -172,7 +172,9 @@ Bước 4: Sử dụng vòng lặp while với điều kiển True để lặp c
 
 Số bắt đầu kiểm tra sẽ là số lớn nhất trong hai số a và b. Sau khi kiểm tra nếu không thỏa mãn với điều kiện thì tăng lcm lên 1 rồi tiếp tục kiểm tra.
 
-:::details Bài giải
+<details>
+<summary><b> Bài giải</b></summary>
+
 ```java
 import java.util.Scanner;
 public class Main {
@@ -209,7 +211,7 @@ Kết quả:
 	Bội chung nhỏ nhất của 6 và 12 là 12
 */
 ```
-:::
+</details>
 
 ### 7.2 Đảo ngược một số nguyên N
 Giả sử chúng ta có reversed = 0 và num1 = 1234 là số cần đảo ngược. Bây giờ mình sẽ chạy vòng lặp while này từng bước cho các bạn thấy cách thức thuật toán này hoạt động nhé.
@@ -232,7 +234,10 @@ Bước 4: Thực hiện vòng lặp lần 4, num1 = 1, reversed = 432. Kết th
 
 Đến đây, num1 = 0 không thỏa mãn điều kiện vòng lặp while nên kết thúc vòng lặp. Ta được kết quả cuối cùng là reversed = 4321 là số đảo ngược của num1 = 1234.
 
-:::details Bài giải
+
+<details>
+<summary><b>Bài giải</b></summary>
+
 ```java
 import java.util.Scanner;
 public class Main {
@@ -262,13 +267,16 @@ public class Main {
 		Số sau khi đảo ngược là: 30022111
 */
 ```
-:::
+</details>
+
 
 ### 7.3 Tính căn bậc hai
 
 Trong ví dụ này chúng ta sẽ tạo một phương thức là CanBacHai() để tính căn bậc hai, sau đó gọi nó ra ở phương thức main() để thực hiện công việc tính căn của số được nhập vào từ người dùng.
 
-::: details Bài giải
+<details>
+<summary><b>Bài giải</b></summary> 
+
 ```java
 import java.util.Scanner;
 class CanBacHai {
@@ -299,4 +307,4 @@ class CanBacHai {
 		Căn bậc hai của 3 là: 1.73205
 */
 ```
-:::
+</details>

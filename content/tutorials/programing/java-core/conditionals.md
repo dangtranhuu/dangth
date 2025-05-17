@@ -1,20 +1,4 @@
-<!-- ---
-layout: Post
-title: Bài 3. Cấu trúc rẽ nhánh trong Java
-subtitle: Lập trình Java căn bản
-author: Theanishtar
-date: 2023-06-04
-useHeaderImage: false
-headerImage: https://github.com/dangtranhuu/images/blob/main/angurvad/java-core/session3/banner.png?raw=true
-headerMask: rgba(39, 71, 77, 0.61)
-permalinkPattern: /ebook/java/java-core/:slug/
-tags:
-  - Java Core
----
 
-IF ELSE thì ngôn ngữ nào cũng có, mà không biết trong Java có khác gì không ta 🤔 -->
-
-<!-- more -->
 # Bài 3. Cấu trúc rẽ nhánh
 ## Câu lệnh điều kiện
 
@@ -92,20 +76,24 @@ default:
 }
 // output : Date là 3
 ```
-::: warning
- 🚀 Như bạn có thể thấy thì **switch..case** có những lưu ý sau :
+> [!WARNING]
+>🚀 Như bạn có thể thấy thì **switch..case** có những lưu ý sau :
+>
+>- Các **case** là trường hợp của biến **date** và chỉ chấp nhận **số nguyên**
+>- Cuối **case** phải có **break** để thoát vòng điều kiện
+>**default** tương ứng với **else** là các trường hợp còn lại
+>Có thể gộp nhiều **case** lại, như **case 1,2,3:**
 
- - Các **case** là trường hợp của biến **date** và chỉ chấp nhận **số nguyên**
- - Cuối **case** phải có **break** để thoát vòng điều kiện
- - **default** tương ứng với **else** là các trường hợp còn lại
- - Có thể gộp nhiều **case** lại, như **case 1,2,3:**
-:::
 
 ## 3. Bài tập 
 Cùng mình giải quyết các bài tập sau nhé, để hiệu quả hơn bạn nên code trước rồi quay lại xem kết quả có giống mình không nha
 ### If..Else
+
 #### Kiểm tra số N nhập từ bàn phím là số âm hay dương.
-::: details Cách 1: Sử dụng If..Else lồng nhau 
+
+<details>
+<summary><b>Cách 1: Sử dụng If..Else lồng nhau </b></summary> 
+
 ``` java
 public class CauLenhReNhanh {
 
@@ -129,10 +117,13 @@ public class CauLenhReNhanh {
     }
 }
 ```
-:::
+</details>
 
 
-::: details Cách 2: Sử dụng If..Else if..Else 
+
+<details>
+<summary><b>Cách 2: Sử dụng If..Else if..Else </b></summary>
+
 ``` java
 public class CauLenhReNhanh {
 
@@ -154,11 +145,14 @@ public class CauLenhReNhanh {
     }
 }
 ```
-:::
+
+</details>
 
 #### Kiểm tra số chẵn hay số lẻ
 
-:::details Bài giải
+<details>
+<summary><b>Bài giải</b></summary> 
+
 ```java
 public class KiemTraSoChanLe {
     public static void main(String[] args) {
@@ -174,11 +168,13 @@ public class KiemTraSoChanLe {
     }
 }
 ```
-:::
+</details>
 
 
 #### Kiểm tra năm nhuận
-:::details Bài giải
+<details>
+<summary><b>Bài giải</b></summary> 
+
 ```java
 import java.util.Scanner;
 public class NamNhuan {
@@ -212,12 +208,14 @@ public class NamNhuan {
     }
 }
 ```
-:::
+</details>
 
 ### Switch..Case
 #### Đọc số từ 0 đến 10
 Nhập vào số a, nếu 0<=a<=10 xuất ra phát âm của số đó, ngược lại xuất ra "khong doc duoc"
-::: details Bài giải
+<details>
+<summary><b>Bài giải</b></summary>
+
 ``` java
 public class CauLenhReNhanh {
 
@@ -269,7 +267,8 @@ public class CauLenhReNhanh {
     }
 }
 ```
-:::
+
+</details>
 
 
 
