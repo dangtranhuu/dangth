@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { FaUser, FaCertificate } from 'react-icons/fa';
-import { GiMagicPortal } from 'react-icons/gi';
-import { ImBlog } from 'react-icons/im';
+import { GiMagicPortal, GiEvilBook } from 'react-icons/gi';
 import { Projects } from './icons';
 import useDarkMode from '@/hooks/useDarkMode';
 
@@ -104,8 +103,8 @@ export default function Navbar() {
   const navItems = [
     { label: 'Home', href: '/', icon: <FaUser /> },
     { label: 'Projects', href: '/project', icon: <Projects /> },
-    { label: 'Cert', href: '/cert', icon: <FaCertificate /> },
-    { label: 'Blog', href: '/blog', icon: <ImBlog /> },
+    { label: 'Certs', href: '/cert', icon: <FaCertificate /> },
+    { label: 'Tutorials', href: '/tutorial', icon: <GiEvilBook /> },
     { label: 'Posts', href: '/post', icon: <GiMagicPortal /> },
   ];
 
