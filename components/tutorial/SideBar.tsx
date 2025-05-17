@@ -23,7 +23,7 @@ export default function TutorialSidebar({ activeSlug }: Props) {
   }, [activeSlug])
 
   const renderItems = (items: TutorialConfigItem[], level = 0) => (
-    <ul className={`space-y-1 ${level > 0 ? 'pl-3 border-l border-gray-200 dark:border-gray-700' : ''}`}>
+    <ul className={`space-y-1 ${level > 1 ? 'ml-[0.5rem] mt-[0.5rem] pl-3 border-l border-gray-500 dark:border-gray-900' : ''}`}>
       {items.map((item, idx) => {
         const key = `${item.text}-${idx}`
         const isOpen = openMap[key]
@@ -72,8 +72,8 @@ export default function TutorialSidebar({ activeSlug }: Props) {
             <Link
               href={item.link ?? '#'}
               className={`flex items-center gap-2 text-sm px-2 py-1 rounded transition-all ${activeSlug === item.link?.replace('/tutorial/', '')
-                  ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
-                  : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
+                ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
+                : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
                 }`}
             >
               <SidebarIcon icon={item.icon} />
