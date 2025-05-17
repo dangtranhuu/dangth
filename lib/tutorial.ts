@@ -14,57 +14,12 @@ import rehypeKatex from 'rehype-katex'
 import remarkAdmonition from './plugins/remarkAdmonition'
 import 'katex/dist/katex.min.css'
 
-import { TutorialConfigItem } from '@/config/tutorial.config'
 
 export interface TutorialData {
   slug: string
   title: string
   subtitle?: string
   contentHtml: string
-}
-
-export interface TutorialNode {
-  title: string
-  slug: string
-  icon?: string
-  children?: TutorialNode[]
-}
-
-export function getTutorialTreeDeep(): TutorialConfigItem[] {
-  const tree: TutorialConfigItem[] = []
-
-  const walk = (dir: string, parentSlug = '', level = tree) => {
-    const entries = fs.readdirSync(dir)
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry)
-      const stat = fs.statSync(fullPath)
-
-      if (stat.isDirectory()) {
-        const newNode: TutorialConfigItem = {
-          text: entry,
-          icon: 'folder', // hoặc để undefined nếu không dùng icon
-          collapsible: true,
-          children: [],
-        }
-        level.push(newNode)
-        walk(fullPath, parentSlug, newNode.children!)
-      } else if (entry.endsWith('.md')) {
-        const relativePath = path.relative(tutorialsDir, fullPath)
-        const slug = relativePath.replace(/\.md$/, '').replace(/\\/g, '/')
-        const raw = fs.readFileSync(fullPath, 'utf-8')
-        const { data } = matter(raw)
-
-        level.push({
-          text: data.title ?? path.basename(entry, '.md'),
-          link: `/tutorial/${slug}`,
-          icon: 'file', // hoặc bỏ
-        })
-      }
-    }
-  }
-
-  walk(tutorialsDir)
-  return tree
 }
 
 const tutorialsDir = path.join(process.cwd(), 'content/tutorials')
