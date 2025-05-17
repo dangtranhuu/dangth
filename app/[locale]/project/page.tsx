@@ -1,5 +1,3 @@
-// app/projects/page.tsx (ví dụ)
-
 import React from "react";
 import { searchReposByTopicAndUser } from '@/lib/github';
 import { GITHUB } from '@/lib/config';

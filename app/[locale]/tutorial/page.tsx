@@ -1,4 +1,3 @@
-// app/tutorials/page.tsx
 import TutorialLayout from '@/components/layouts/TutorialLayout'
 
 export default function TutorialsHomePage() {

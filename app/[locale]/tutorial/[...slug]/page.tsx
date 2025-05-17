@@ -1,4 +1,3 @@
-// app/tutorials/[...slug]/page.tsx
 import { getTutorial, getAllTutorialSlugs } from '@/lib/tutorial'
 import TutorialLayout from '@/components/layouts/TutorialLayout'
 import { notFound } from 'next/navigation'

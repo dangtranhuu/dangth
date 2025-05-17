@@ -1,4 +1,3 @@
-// components/TutorialSearchBar.tsx
 'use client'
 
 import { useState } from 'react'

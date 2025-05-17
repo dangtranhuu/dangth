@@ -2,18 +2,17 @@ import '../globals.css'
 import '../../styles/global.css'
 import '../../styles/animation.css'
 import '../../styles/dark-mode.css'
-import 'highlight.js/styles/github.css' // hoặc: vs2015.css, atom-one-dark.css...
+import 'highlight.js/styles/github.css'
 import '../../styles/markdown.css'
 import 'katex/dist/katex.min.css'
 
 import type { AbstractIntlMessages } from 'next-intl';
 import { NextIntlClientProvider } from 'next-intl';
 import { ReactNode } from 'react'
-import { cmuSans, cmuSansVi } from '../fonts'
+import { cmuSansVi } from '../fonts'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import ImageZoomClient from '../../components/ImageZoomClient'
-import { generateRssFeed } from '@/lib/generateRssFeed'
 
 export const metadata = {
   title: 'Tran Huu Dang',

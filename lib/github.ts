@@ -1,5 +1,3 @@
-// github.ts
-
 export interface GithubRepo {
   name: string;
   description: string | null;
@@ -19,7 +17,7 @@ export interface ProcessedRepo {
   topics: string[];
   lastUpdate: string;
   languages: string[];
-  commitCount: number; 
+  commitCount: number;
 }
 
 export async function searchReposByTopicAndUser(
@@ -49,38 +47,38 @@ export async function searchReposByTopicAndUser(
     const data: { items: GithubRepo[] } = await res.json();
 
     const detailedRepos: ProcessedRepo[] = await Promise.all(
-  data.items.map(async (repo): Promise<ProcessedRepo> => {
-    const [languagesRes, commitsRes] = await Promise.all([
-      fetch(repo.languages_url, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'User-Agent': 'next-app'
-        }
-      }),
-      fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?per_page=1`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'User-Agent': 'next-app'
-        }
+      data.items.map(async (repo): Promise<ProcessedRepo> => {
+        const [languagesRes, commitsRes] = await Promise.all([
+          fetch(repo.languages_url, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'User-Agent': 'next-app'
+            }
+          }),
+          fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?per_page=1`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'User-Agent': 'next-app'
+            }
+          })
+        ]);
+
+        const languages = await languagesRes.json();
+        const commitCount = getTotalCommitsFromLinkHeader(commitsRes.headers.get("link"));
+
+        return {
+          url: `https://github.com/${username}/${repo.name}`,
+          name: repo.name,
+          description: repo.description,
+          stars: repo.stargazers_count,
+          forks: repo.forks_count,
+          topics: repo.topics,
+          lastUpdate: repo.updated_at,
+          languages: Object.keys(languages),
+          commitCount
+        };
       })
-    ]);
-
-    const languages = await languagesRes.json();
-    const commitCount = getTotalCommitsFromLinkHeader(commitsRes.headers.get("link"));
-
-    return {
-      url: `https://github.com/${username}/${repo.name}`,
-      name: repo.name,
-      description: repo.description,
-      stars: repo.stargazers_count,
-      forks: repo.forks_count,
-      topics: repo.topics,
-      lastUpdate: repo.updated_at,
-      languages: Object.keys(languages),
-      commitCount
-    };
-  })
-);
+    );
 
 
     return detailedRepos;
