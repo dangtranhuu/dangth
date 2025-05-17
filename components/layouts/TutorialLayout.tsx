@@ -11,13 +11,16 @@ export default async function TutorialLayout({
   const tree = getTutorialTreeDeep()
 
   return (
-    <div className="flex justify-center px-4 md:px-8 lg:px-12">
+    <div className="flex justify-center px-4 md:px-8 lg:px-12 relative">
+      {/* wrapper toàn layout, giới hạn max width để căn giữa */}
       <div className="flex w-full max-w-[1280px] min-h-screen">
-        {/* Sidebar cố định */}
-        <aside className="hidden lg:block w-[260px] border-r border-gray-200 dark:border-gray-800">
-          <div className="sticky top-0 h-screen overflow-y-auto p-6">
-            <TutorialSidebar activeSlug={activeSlug} tree={tree} />
-          </div>
+
+        {/* khoảng trống để "chừa chỗ" cho sidebar fixed */}
+        <div className="hidden lg:block w-[260px]" />
+
+        {/* Sidebar fixed, không sát lề trái, mà căn theo layout */}
+        <aside className="hidden lg:block fixed top-0 left-[max(1rem,calc(50%-640px))] h-screen w-[260px] rounded-[10px] mt-[30px] border-r border-gray-200 dark:border-gray-800 overflow-y-auto px-6 py-8 bg-white dark:bg-[var(--background-color-dark)]">
+          <TutorialSidebar activeSlug={activeSlug} tree={tree} />
         </aside>
 
         {/* Nội dung cuộn */}
@@ -25,6 +28,6 @@ export default async function TutorialLayout({
           {children}
         </main>
       </div>
-    </div>
+    </div >
   )
 }
