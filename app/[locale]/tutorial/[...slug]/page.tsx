@@ -2,7 +2,7 @@ import { getTutorial, getAllTutorialSlugs } from '@/lib/tutorial'
 import TutorialLayout from '@/components/layouts/TutorialLayout'
 import { notFound } from 'next/navigation'
 import GiscusComments from '@/components/GiscusComments'
-import { flattenSidebar, findNavContext } from '@/lib/tutorialNav'
+import { flattenSidebar, findNavContext } from '@/lib/tutorial'
 import { tutorialSidebar } from '@/config/tutorial.config'
 
 interface Params {
