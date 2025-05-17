@@ -10,8 +10,8 @@ export interface TutorialConfigItem {
 export const tutorialSidebar: TutorialConfigItem[] = [
   {
     text: "Welcome",
-    link: "/tutorial/welcome",
-    icon: "fa-home"
+    link: "/tutorial",
+    icon: "GiEvilBook"
   },
   {
     text: "Technical",
