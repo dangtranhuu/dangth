@@ -14,6 +14,8 @@ import rehypeKatex from 'rehype-katex'
 import remarkAdmonition from './plugins/remarkAdmonition'
 import 'katex/dist/katex.min.css'
 
+import { TutorialConfigItem } from '@/config/tutorial.config'
+
 export interface TutorialData {
   slug: string
   title: string
@@ -28,8 +30,8 @@ export interface TutorialNode {
   children?: TutorialNode[]
 }
 
-export function getTutorialTreeDeep(): TutorialNode[] {
-  const tree: TutorialNode[] = []
+export function getTutorialTreeDeep(): TutorialConfigItem[] {
+  const tree: TutorialConfigItem[] = []
 
   const walk = (dir: string, parentSlug = '', level = tree) => {
     const entries = fs.readdirSync(dir)
@@ -38,13 +40,14 @@ export function getTutorialTreeDeep(): TutorialNode[] {
       const stat = fs.statSync(fullPath)
 
       if (stat.isDirectory()) {
-        const newNode: TutorialNode = {
-          title: entry,
-          slug: path.relative(tutorialsDir, fullPath).replace(/\\/g, '/'),
+        const newNode: TutorialConfigItem = {
+          text: entry,
+          icon: 'folder', // hoặc để undefined nếu không dùng icon
+          collapsible: true,
           children: [],
         }
         level.push(newNode)
-        walk(fullPath, newNode.slug, newNode.children!)
+        walk(fullPath, parentSlug, newNode.children!)
       } else if (entry.endsWith('.md')) {
         const relativePath = path.relative(tutorialsDir, fullPath)
         const slug = relativePath.replace(/\.md$/, '').replace(/\\/g, '/')
@@ -52,8 +55,9 @@ export function getTutorialTreeDeep(): TutorialNode[] {
         const { data } = matter(raw)
 
         level.push({
-          title: data.title ?? path.basename(entry, '.md'),
-          slug,
+          text: data.title ?? path.basename(entry, '.md'),
+          link: `/tutorial/${slug}`,
+          icon: 'file', // hoặc bỏ
         })
       }
     }
