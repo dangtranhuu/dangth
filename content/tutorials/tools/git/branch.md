@@ -1,5 +1,7 @@
 <img src="https://count-viewer.vercel.app//api/blog/view?url=https://davisupers.web.app/github/session5.html" alt="Image 1" style="float: left">
 
+---
+
 # Bài 5. Làm việc với nhánh
 
 Một dự án gồm rất nhiều chức năng, trong thực tế mỗi thành viên sẽ đảm nhận ít nhất một chức năng. 

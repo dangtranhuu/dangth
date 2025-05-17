@@ -1,5 +1,7 @@
 <img src="https://count-viewer.vercel.app//api/blog/view?url=https://davisupers.web.app/github/session3.html" alt="Image 1" style="float: left">
 
+---
+
 # Bài 3 Undo khi gặp một commit sai
 
 Ta đã biết làm sao để lưu một lịch sử thay đổi (commit) trong repo.

@@ -15,31 +15,46 @@ export default function TutorialSidebar({ activeSlug }: Props) {
     setOpenMap(prev => ({ ...prev, [key]: !prev[key] }))
   }
 
+  useEffect(() => {
+    const openKeys = findOpenKeysForSlug(tutorialSidebar, activeSlug) ?? []
+    const initialMap = Object.fromEntries(openKeys.map((key) => [key, true]))
+    setOpenMap(initialMap)
+  }, [activeSlug])
+
   const renderItems = (items: TutorialConfigItem[], level = 0) => (
-    <ul className={`space-y-1 ${level > 0 ? 'pl-4' : ''}`}>
+    <ul className={`space-y-1 ${level > 0 ? 'pl-3 border-l border-gray-200 dark:border-gray-700' : ''}`}>
       {items.map((item, idx) => {
         const key = `${item.text}-${idx}`
         const isOpen = openMap[key]
         const hasChildren = !!item.children?.length
         const isCollapsible = item.collapsible && hasChildren
 
-        // ✅ Nếu là folder có thể mở/đóng
         if (isCollapsible) {
           return (
             <li key={key}>
               <div
                 onClick={() => toggle(key)}
-                className="cursor-pointer flex items-center gap-2 font-bold text-xs uppercase text-gray-600 dark:text-gray-300 mt-4"
+                className="cursor-pointer flex justify-between items-center text-xs font-semibold uppercase text-gray-600 dark:text-gray-300 mt-4 hover:text-black dark:hover:text-white"
               >
-                <span>{isOpen ? '📂' : '📁'}</span>
-                {item.text}
+                <div className="flex items-center gap-2">
+                  <span className="text-sm">📁</span>
+                  {item.text}
+                </div>
+                <svg
+                  className={`w-3 h-3 transform transition-transform duration-200 ${isOpen ? 'rotate-90' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </div>
               {isOpen && renderItems(item.children!, level + 1)}
             </li>
           )
         }
 
-        // ✅ Nếu là nhóm tĩnh (không collapsible nhưng có con)
         if (hasChildren) {
           return (
             <li key={key}>
@@ -51,14 +66,13 @@ export default function TutorialSidebar({ activeSlug }: Props) {
           )
         }
 
-        // ✅ Nếu là link thường
         return (
           <li key={key}>
             <Link
               href={item.link ?? '#'}
               className={`block text-sm px-2 py-1 rounded transition-all ${activeSlug === item.link?.replace('/tutorial/', '')
-                ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
-                : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
+                  ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
+                  : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
                 }`}
             >
               {item.text}
@@ -69,18 +83,7 @@ export default function TutorialSidebar({ activeSlug }: Props) {
     </ul>
   )
 
-  useEffect(() => {
-    const openKeys = findOpenKeysForSlug(tutorialSidebar, activeSlug) ?? []
-    const initialMap = Object.fromEntries(openKeys.map((key) => [key, true]))
-    setOpenMap(initialMap)
-  }, [activeSlug])
-
-
-  return (
-    <nav className="p-4">
-      {renderItems(tutorialSidebar)}
-    </nav>
-  )
+  return <nav className="p-4">{renderItems(tutorialSidebar)}</nav>
 }
 
 function findOpenKeysForSlug(
@@ -93,7 +96,7 @@ function findOpenKeysForSlug(
     const key = `${item.text}-${i}`
 
     if (item.link === `/tutorial/${targetSlug}`) {
-      return path // đã đến node đích, trả về đường dẫn cha
+      return path
     }
 
     if (item.children) {
