@@ -49,7 +49,7 @@ export default async function TutorialPage({ params }: Params) {
 
 
       {/* Navigation */}
-      <div className="mt-10 flex justify-between text-sm text-blue-600 dark:text-blue-400">
+      <div className="mt-10 flex justify-between text-[18px] text-blue-600 dark:text-blue-400">
         {navContext?.previous && (
           <a href={navContext.previous.link}>&larr; {navContext.previous.text}</a>
         )}
