@@ -109,7 +109,7 @@ export async function getTutorial(slug: string): Promise<TutorialData | null> {
 
   return {
     slug,
-    title: data.title ?? 'Untitled',
+    title: data.title ?? '',
     subtitle: data.subtitle ?? '',
     contentHtml: processed.toString()
   }
