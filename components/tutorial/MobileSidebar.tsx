@@ -1,7 +1,13 @@
 import { useSidebarStore } from './sidebarStore'
 import TutorialSidebar from '../tutorial/SideBar'
+import { TutorialConfigItem } from '@/config/tutorial.config'
 
-export function MobileSidebar({ activeSlug, tree }: any) {
+interface MobileSidebarProps {
+  activeSlug: string
+  tree: TutorialConfigItem[]
+}
+
+export function MobileSidebar({ activeSlug, tree }: MobileSidebarProps) {
   const { isOpen, close } = useSidebarStore()
 
   if (!isOpen) return null
