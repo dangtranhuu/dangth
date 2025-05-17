@@ -6,6 +6,7 @@ export const SITE_CONFIG = {
 }
 
 export const GISCUS = {
+  termPrefix: "dangth",
   id: "comments",
   repo: "dangth12/blog-giscus-comments" as `${string}/${string}`,
   repoId: "R_kgDOJpeyjQ",
