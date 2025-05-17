@@ -3,6 +3,7 @@
 import TutorialLayout from '@/components/layouts/TutorialLayout'
 import Image from 'next/image'
 import Link from 'next/link'
+import GiscusComments from '@/components/GiscusComments'
 
 export default function TutorialsHomePage() {
   return (
@@ -112,6 +113,8 @@ export default function TutorialsHomePage() {
           <li>✉️ Email: <a href="mailto:dangtt135@gmail.com">dangtt135@gmail.com</a></li>
         </ul>
       </div>
+
+      <GiscusComments />
     </TutorialLayout>
   )
 }
