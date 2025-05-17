@@ -3,7 +3,7 @@
 import Giscus from '@giscus/react'
 import { useParams, usePathname } from 'next/navigation'
 import { useLocale } from 'next-intl'
-import { GISCUS } from '@/lib/config'
+import { GISCUS } from '@/config/config'
 
 export default function GiscusComments() {
   const locale = useLocale()

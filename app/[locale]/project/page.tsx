@@ -1,6 +1,6 @@
 import React from "react";
 import { searchReposByTopicAndUser } from '@/lib/github';
-import { GITHUB } from '@/lib/config';
+import { GITHUB } from '@/config/config';
 import { LangBadge } from './badge/LangBadge'
 import { FaRegStar } from "react-icons/fa";
 
