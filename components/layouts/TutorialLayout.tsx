@@ -8,13 +8,18 @@ export default async function TutorialLayout({
   children: React.ReactNode
   activeSlug: string
 }) {
-  const tree = getTutorialTreeDeep() // ✅ Lấy luôn trên server
+  const tree = getTutorialTreeDeep()
 
   return (
     <div className="flex min-h-screen">
-      <aside className="hidden lg:block w-[260px] p-6 border-r border-gray-200 dark:border-gray-800">
-        <TutorialSidebar activeSlug={activeSlug} tree={tree} />
+      {/* Sidebar cố định */}
+      <aside className="hidden lg:block w-[260px] border-r border-gray-200 dark:border-gray-800">
+        <div className="sticky top-0 h-screen overflow-y-auto p-6">
+          <TutorialSidebar activeSlug={activeSlug} tree={tree} />
+        </div>
       </aside>
+
+      {/* Nội dung cuộn */}
       <main className="flex-1 px-6 py-10 max-w-4xl mx-auto">
         {children}
       </main>

@@ -2,11 +2,13 @@
 
 import Link from 'next/link'
 import { tutorialSidebar, TutorialConfigItem } from '@/config/tutorial.config'
+import { TutorialNode } from '@/lib/tutorial'
 import { SidebarIcon } from './SidebarIcon'
 import { useEffect, useState } from 'react'
 
 interface Props {
-  activeSlug: string
+  activeSlug: string,
+  tree: TutorialNode[]
 }
 
 export default function TutorialSidebar({ activeSlug }: Props) {
