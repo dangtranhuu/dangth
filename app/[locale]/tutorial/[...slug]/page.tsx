@@ -42,7 +42,11 @@ export default async function TutorialPage({ params }: Params) {
         </p>
       )}
 
-      <div dangerouslySetInnerHTML={{ __html: tutorial.contentHtml }} />
+      <div
+        className="prose lg:prose-lg dark:prose-invert max-w-none"
+        dangerouslySetInnerHTML={{ __html: tutorial.contentHtml }}
+      />
+
 
       {/* Navigation */}
       <div className="mt-10 flex justify-between text-sm text-blue-600 dark:text-blue-400">
