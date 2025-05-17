@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import RSS from 'rss';
-import { SITE_CONFIG } from './config'
+import { SITE_CONFIG } from '../config/config'
 import { getAllPostsMeta } from './markdown'; // hoặc đường dẫn đúng tới logic đọc bài viết của bạn
 
 export async function generateRssFeed() {

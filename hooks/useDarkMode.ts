@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GISCUS } from '@/lib/config';
+import { GISCUS } from '@/config/config';
 
 export default function useDarkMode() {
   const [isDark, setIsDark] = useState(false);

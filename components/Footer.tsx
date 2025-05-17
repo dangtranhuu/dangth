@@ -1,5 +1,5 @@
 import React from 'react';
-import { SITE_CONFIG } from '@/lib/config';
+import { SITE_CONFIG } from '@/config/config';
 import { FaCode, FaRss } from "react-icons/fa";
 
 export default function Footer() {
