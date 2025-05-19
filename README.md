@@ -4,20 +4,35 @@ This is the source code for [dangth.dev](https://dangth.dev), the personal websi
 
 ## 🚀 Features
 
-- Clean and responsive design
-- Built with Next.js App Router
-- Static blog powered by MDX
-- Font integration using `next/font`
-- SEO-friendly and performant
-- Deployed via Vercel
+- ✨ **Modern App Router (Next.js 14)** with file-based routing
+- 🌍 **Internationalized content** using `next-intl` (`/[locale]/`)
+- 📚 **Tutorial system with nested sidebar navigation**
+- 🧠 **Markdown & MDX rendering** with support for:
+  - Math (`KaTeX`)
+  - Syntax Highlighting (`highlight.js`)
+  - GitHub Flavored Markdown (`remark-gfm`)
+- 💬 **Comment system** with Giscus (GitHub Discussions)
+- 🌗 **Dark mode** support via `next-themes`
+- ⚡ **SEO-optimized**, fast first load (static pages, shared JS chunks)
+- 📸 **Medium-style image zoom** (custom enhancements via `cheerio`)
+- 🧩 **Skeleton loader** for smoother UX during content transitions
+- 📦 **Structured content architecture** for posts, projects, tutorials
 
 ## 🛠 Tech Stack
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- MDX
-- Vercel
+| Area                  | Tech Used                                   |
+|-----------------------|---------------------------------------------|
+| Framework             | [Next.js 14](https://nextjs.org)            |
+| Styling               | [Tailwind CSS](https://tailwindcss.com)     |
+| Language              | TypeScript                                  |
+| Theming               | `next-themes`                               |
+| Markdown Processing   | `remark`, `rehype`, `gray-matter`, `cheerio` |
+| Math Support          | `remark-math`, `rehype-katex`               |
+| Syntax Highlighting   | `rehype-highlight`, `highlight.js`          |
+| Comments              | Giscus (`@giscus/react`)                    |
+| State Management      | `zustand`                                   |
+| Animation             | `framer-motion`                             |
+| Deployment            | [Vercel](https://vercel.com)                |
 
 ## 📦 Getting Started
 
