@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation'
 import GiscusComments from '@/components/GiscusComments'
 import { flattenSidebar, findNavContext } from '@/lib/tutorial'
 import { tutorialSidebar } from '@/config/tutorial.config'
+import { SITE_CONFIG } from '@/config/config'
+import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
 
 interface Params {
   params: { slug: string[] }
@@ -47,6 +49,25 @@ export default async function TutorialPage({ params }: Params) {
         dangerouslySetInnerHTML={{ __html: tutorial.contentHtml }}
       />
 
+      {/* Edit & Update Info */}
+      <div className="mt-10 flex flex-wrap justify-between items-center text-sm text-gray-500 dark:text-gray-400 border-t pt-6 gap-4">
+        <a
+          href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.tutorialDir}/${tutorial.slug}.md`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 text-blue-500 hover:underline"
+        >
+          <MdRebaseEdit />
+          Chỉnh sửa trên GitHub
+        </a>
+
+        <div className="flex items-center gap-1">
+          <MdHistory />
+          <span>
+            Cập nhật: {new Date(tutorial.lastUpdated ?? 'chưa rõ').toLocaleString()}
+          </span>
+        </div>
+      </div>
 
       {/* Navigation */}
       <div className="mt-10 flex justify-between text-[18px] text-blue-600 dark:text-blue-400">

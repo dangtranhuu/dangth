@@ -19,7 +19,8 @@ export interface TutorialData {
   slug: string
   title: string
   subtitle?: string
-  contentHtml: string
+  contentHtml: string,
+  lastUpdated: string
 }
 
 import { TutorialConfigItem } from '../config/tutorial.config'
@@ -76,11 +77,18 @@ export async function getTutorial(slug: string): Promise<TutorialData | null> {
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content)
 
+
+  const contentHtml = processed.toString()
+  const contentHtmlWithZoom = contentHtml.replace(/<img /g, '<img class="zoom-img" ')
+  const stat = fs.statSync(fullPath)
+  const lastUpdated = stat.mtime.toISOString() // hoặc format tùy ý
+
   return {
     slug,
     title: data.title ?? '',
     subtitle: data.subtitle ?? '',
-    contentHtml: processed.toString()
+    contentHtml: processed.toString(),
+    lastUpdated: lastUpdated
   }
 }
 
