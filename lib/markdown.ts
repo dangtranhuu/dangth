@@ -10,7 +10,7 @@ import { notFound } from 'next/navigation'
 import rehypeRaw from 'rehype-raw'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
-import 'katex/dist/katex.min.css' // nhớ import CSS này ở đâu đó trong project (vd. _app.tsx)
+import 'katex/dist/katex.min.css'
 import { estimateReadingTime } from '@/utils/readingTime'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'

@@ -5,7 +5,8 @@ import GiscusComments from '@/components/GiscusComments'
 import { flattenSidebar, findNavContext } from '@/lib/tutorial'
 import { tutorialSidebar } from '@/config/tutorial.config'
 import { SITE_CONFIG } from '@/config/config'
-import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
+import { MdHistory, MdRebaseEdit } from "react-icons/md"
+import { IoTimerOutline } from "react-icons/io5"
 
 interface Params {
   params: { slug: string[] }
@@ -43,6 +44,14 @@ export default async function TutorialPage({ params }: Params) {
           {tutorial.subtitle}
         </p>
       )}
+
+      {/* Metadata */}
+      <div className="flex flex-wrap items-center gap-4 text-[18px] text-gray-600 dark:text-gray-400 mb-4">
+        <div className="flex items-center gap-1">
+          <IoTimerOutline />
+          <span>{tutorial.readingTime} phút đọc</span>
+        </div>
+      </div>
 
       <div
         className="prose lg:prose-lg dark:prose-invert max-w-none"

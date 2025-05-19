@@ -11,6 +11,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeRaw from 'rehype-raw'
 import rehypeKatex from 'rehype-katex'
+import { estimateReadingTime } from '@/utils/readingTime'
 import remarkAdmonition from './plugins/remarkAdmonition'
 import 'katex/dist/katex.min.css'
 
@@ -20,6 +21,7 @@ export interface TutorialData {
   title: string
   subtitle?: string
   contentHtml: string,
+  readingTime: number,
   lastUpdated: string
 }
 
@@ -80,6 +82,15 @@ export async function getTutorial(slug: string): Promise<TutorialData | null> {
 
   const contentHtml = processed.toString()
   const contentHtmlWithZoom = contentHtml.replace(/<img /g, '<img class="zoom-img" ')
+
+
+  // 🖼️ Trích ảnh đầu tiên (nếu có)
+  const imgMatch = contentHtml.match(/<img[^>]+src="([^">]+)"/)
+  const firstImage = imgMatch ? imgMatch[1] : "@/public/images/avt.png"
+
+  const contentText = content.replace(/[#_*>\-\n`]/g, '') // loại bỏ markdown đơn giản
+  const readingTime = estimateReadingTime(contentText)
+
   const stat = fs.statSync(fullPath)
   const lastUpdated = stat.mtime.toISOString() // hoặc format tùy ý
 
@@ -88,6 +99,7 @@ export async function getTutorial(slug: string): Promise<TutorialData | null> {
     title: data.title ?? '',
     subtitle: data.subtitle ?? '',
     contentHtml: contentHtmlWithZoom,
+    readingTime: readingTime,
     lastUpdated: lastUpdated
   }
 }
