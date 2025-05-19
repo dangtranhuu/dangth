@@ -50,7 +50,7 @@ export default async function TutorialPage({ params }: Params) {
       />
 
       {/* Edit & Update Info */}
-      <div className="mt-10 flex flex-wrap justify-between items-center text-sm text-gray-500 dark:text-gray-400 border-t pt-6 gap-4">
+      <div className="mt-10 flex flex-wrap justify-between items-center text-[18px] text-gray-500 dark:text-gray-400 border-t pt-6 gap-4">
         <a
           href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.tutorialDir}/${tutorial.slug}.md`}
           target="_blank"
