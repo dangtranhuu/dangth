@@ -75,7 +75,7 @@ export const tutorialSidebar: TutorialConfigItem[] = [
     children: [
       {
         text: "Java",
-        icon: "FaJavaAlt",
+        icon: "FaJava",
         link: "/tutorial/interview/java"
       },
     ]
