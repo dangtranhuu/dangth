@@ -87,7 +87,7 @@ export async function getTutorial(slug: string): Promise<TutorialData | null> {
     slug,
     title: data.title ?? '',
     subtitle: data.subtitle ?? '',
-    contentHtml: processed.toString(),
+    contentHtml: contentHtmlWithZoom,
     lastUpdated: lastUpdated
   }
 }
