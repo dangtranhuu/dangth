@@ -68,5 +68,16 @@ export const tutorialSidebar: TutorialConfigItem[] = [
         ]
       },
     ]
+  },
+  {
+    text: "Interview",
+    collapsible: false, // dropdown
+    children: [
+      {
+        text: "Java",
+        icon: "FaJavaAlt",
+        link: "/tutorial/interview/java"
+      },
+    ]
   }
 ]
