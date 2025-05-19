@@ -46,7 +46,7 @@ Khi tạo xong tiến hành đăng nhập vào GitHub luôn nhé
 
 ## Đăng nhập vào Git
 
-**Bước 1: Click chuột phải vào màn hình và chọn ==Git Bash Here==**
+**Bước 1: Click chuột phải vào màn hình và chọn `Git Bash Here` ** 
 
 ![Bash Git](https://github.com/theanishtar/images/blob/main/angurvad/github/session1/ab23d3822f7afa24a36b.jpg?raw=true)
 
@@ -61,7 +61,9 @@ $ git config --global user.password mypassword
 >[!WARNING]
 >Thay thế các từ sau:
 >- **myname** -> Username đã đăng ký GitHub
+>
 >- **myemail@example.com** -> Địa chỉ email đã đăng ký tài khoản
+>
 >- **mypassword** -> Mật khẩu tài khoản GitHub của bạn
 
 ![Bash Git](https://github.com/theanishtar/images/blob/main/angurvad/github/session1/dangnhap.png?raw=true)
