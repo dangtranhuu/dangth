@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useEffect } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
 import { GiEvilBook } from 'react-icons/gi'
@@ -17,6 +18,17 @@ export default function TutorialLayoutClient({
   tree: TutorialConfigItem[]
 }) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
+  const [isContentLoading, setIsContentLoading] = useState(false)
+
+  useEffect(() => {
+    setIsContentLoading(true)
+  }, [activeSlug])
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsContentLoading(false), 300)
+    return () => clearTimeout(timeout)
+  }, [activeSlug])
+
 
   return (
     <div className="flex justify-center px-4 md:px-8 lg:px-12 relative">
@@ -54,7 +66,25 @@ export default function TutorialLayoutClient({
             </button>
           )}
 
-          {children}
+          {isContentLoading ? (
+            <div className="prose dark:prose-invert animate-pulse max-w-none">
+              <div className="h-10 bg-gray-300 dark:bg-gray-700 rounded w-2/3 mb-6" /> {/* tiêu đề lớn */}
+              <div className="space-y-3 mb-10">
+                <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded w-full" />
+                <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded w-5/6" />
+                <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded w-3/4" />
+              </div>
+              <div className="h-6 bg-gray-300 dark:bg-gray-700 rounded w-1/2 mb-4" />
+              <div className="grid gap-3 mb-6">
+                <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded w-11/12" />
+                <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded w-4/5" />
+                <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded w-9/12" />
+              </div>
+              <div className="h-64 bg-gray-300 dark:bg-gray-700 rounded w-full" />
+            </div>
+          ) : (
+            children
+          )}
         </main>
       </div>
     </div>
