@@ -29,7 +29,7 @@ const remarkAdmonition: Plugin = () => {
         const text = firstChild.children[0].value
         const match = text.match(/^\[\!(\w+)\]/)
         if (match) {
-          const type = match[1].toLowerCase()
+          let type = match[1].toLowerCase()
           let title = type
 
           firstChild.children[0].value = text.replace(/^\[\!\w+\]\s*/, '')
@@ -41,6 +41,7 @@ const remarkAdmonition: Plugin = () => {
           else if (title === 'caution') svgIcon = SVG_CAUTION
           else {
             title = "important"
+            type = "important"
             svgIcon = SVG_IMPORTANT
           }
           node.children.unshift({
