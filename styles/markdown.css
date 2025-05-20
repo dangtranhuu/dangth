@@ -218,7 +218,7 @@ mark {
 
 code {
   background-color: #39435D;
-  padding: 2px 6px;
+  /* padding: 2px 6px; */
   border-radius: 4px;
   color: #38bdf8;
 }
@@ -314,6 +314,12 @@ pre {
   padding-bottom: 0.75rem;
   gap: 1.25rem;
   border-top: 1px solid #e5e7eb;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 40px;
+  list-style-type: disc;
 }
 
 @media (max-width: 640px) {

@@ -1,50 +1,39 @@
-🧠 Redis Từ Zero Tới Gà Nướng Nguyên Con 🍗
+Redis Từ Zero Tới Gà Nướng Nguyên Con
 ===========================================
 
 **1\. Redis Là Cái Quái Gì Vậy?**
 ---------------------------------
 
-### 📘 Kiến thức xịn xò:
+###  Kiến thức xịn xò:
 
 *   Redis là NoSQL dạng **key-value**, hoạt động chủ yếu trên **RAM** => nhanh kinh hoàng.
-    
 *   Đơn luồng (single-threaded) => dễ predict nhưng không scale theo CPU core.
-    
 *   Có khả năng **persistence**, **replication**, **pub/sub**, **Lua scripting**, **stream**, **transactions**, **cluster**, đủ cả bộ combo.
-    
 
-### 🤔 Khi nào không nên dùng Redis?
+###  Khi nào không nên dùng Redis?
 
 *   Khi dữ liệu **quá lớn** (RAM mắc hơn vợ bạn shopping cuối tháng)
-    
 *   Cần **ACID mạnh** (Redis chỉ có A và phần nào I)
-    
 *   Cần truy vấn phức tạp (join, filter, aggregation → không ai dùng Redis làm BI)
-    
 
 ### ✅ Bài tập lý thuyết:
 
 So sánh Redis vs Memcached vs MongoDB (ghi 3 dòng thôi, kẻ bảng nếu thích).
 
-### ❓ Phỏng vấn:
+###  Phỏng vấn:
 
 **Q**: Tại sao Redis nhanh vậy?
-
 **A**: Vì:
 
 1.  Chạy trên RAM
-    
 2.  Đơn luồng nên không có lock, không context switch
-    
 3.  Cấu trúc dữ liệu được tối ưu ở mức C-level
-    
 4.  Command cực kỳ đơn giản và native
-    
 
 **2\. Redis Lưu Gì Và Lưu Kiểu Gì?**
 ------------------------------------
 
-### 📘 6 món ăn đặc sản của Redis:
+###  6 món ăn đặc sản của Redis:
 
 | Kiểu   | Dùng để làm gì?            | Ví dụ                  |
 | ------ | -------------------------- | ---------------------- |
@@ -59,11 +48,9 @@ So sánh Redis vs Memcached vs MongoDB (ghi 3 dòng thôi, kẻ bảng nếu th�
 🧠 Ghi nhớ:
 
 *   ZSET là vũ khí bí mật → làm leaderboard cực xịn
-    
 *   HASH nhỏ hơn 512 entries được Redis lưu như **ziplist** (tốn ít RAM hơn)
-    
 
-### ✅ Bài tập:
+###  Bài tập:
 
 Lưu thông tin user với HSET, sau đó tăng điểm nếu điểm mới cao hơn:
 
@@ -79,34 +66,31 @@ return current
 " 1 user:1 120
 ```
 
-### ❓ Phỏng vấn:
+###  Phỏng vấn:
 
 **Q**: Dùng Set, List, ZSet khác nhau thế nào?
 
 **A**:
 
 *   **Set**: unique, không thứ tự
-    
 *   **List**: có thứ tự, trùng lặp ok
-    
 *   **ZSet**: có thứ tự + score => xếp hạng
-    
 
 **3\. Redis Làm Sao Không Mất Dữ Liệu Khi Tắt Server?**
 -------------------------------------------------------
 
-### 📘 Các chế độ lưu trữ:
+###  Các chế độ lưu trữ:
 
 | Tên    | Đặc điểm         | Ưu              | Nhược                       |
 | ------ | ---------------- | --------------- | --------------------------- |
-| RDB    | Snapshot định kỳ | Nhẹ, load nhanh | Có thể mất vài phút dữ liệu |
-| AOF    | Ghi từng lệnh    | Ít mất dữ liệu  | File lớn, chậm              |
-| Hybrid | Kết hợp          | Linh hoạt       | Phức tạp hơn                |
+| `RDB`    | Snapshot định kỳ | Nhẹ, load nhanh | Có thể mất vài phút dữ liệu |
+| `AOF`    | Ghi từng lệnh    | Ít mất dữ liệu  | File lớn, chậm              |
+| `Hybrid` | Kết hợp          | Linh hoạt       | Phức tạp hơn                |
 
 
 🔍 Redis 7.0 trở lên mặc định dùng hybrid để tối ưu hiệu năng + an toàn.
 
-### ✅ Bài tập:
+###  Bài tập:
 
 Cấu hình file redis.conf để bật AOF:
 
@@ -115,23 +99,20 @@ appendonly yes
 appendfsync everysec
 ```
 
-### ❓ Phỏng vấn:
+###  Phỏng vấn:
 
 **Q**: Khi nào nên dùng RDB, khi nào dùng AOF?
 
 **A**:
 
-*   RDB: thích hợp cho backup định kỳ
-    
-*   AOF: dùng khi không được phép mất dữ liệu, ví dụ giao dịch tài chính
-    
+*   `RDB`: thích hợp cho backup định kỳ
+*   `AOF`: dùng khi không được phép mất dữ liệu, ví dụ giao dịch tài chính
 *   Kết hợp cả hai = best practice
-    
 
 **4\. Redis Trong Thế Giới Thực Tế (Có Drama)**
 -----------------------------------------------
 
-### 📘 Ứng dụng thực tế:
+###  Ứng dụng thực tế:
 
 
 | Tình huống            | Redis làm gì                    |
@@ -145,7 +126,7 @@ appendfsync everysec
 
 📌 **Lưu ý**: Pub/Sub không lưu lại message nếu client disconnect. Dùng Stream nếu cần durability.
 
-### ✅ Bài tập:
+###  Bài tập:
 
 Viết rate limit login: tối đa 5 lần/phút
 
@@ -172,7 +153,7 @@ def login(ip):
 ---
 
 
-### ❓ Phỏng vấn:
+###  Phỏng vấn:
 
 **Q**: Pub/Sub khác gì Stream?
 
@@ -188,16 +169,14 @@ def login(ip):
 **5\. Redis Cluster & High Availability (Không Down Phát Là Xong Game)**
 ------------------------------------------------------------------------
 
-### 📘 Redis HA kiểu gì?
+###  Redis HA kiểu gì?
 
-*   Redis Sentinel: tự động failover (master/slave)
-    
-*   Redis Cluster: phân mảnh dữ liệu → scale ngang
-    
+*   **Redis Sentinel**: tự động failover (master/slave)
+*   **Redis Cluster**: phân mảnh dữ liệu → scale ngang
 
-🎯 Redis Cluster chia key theo slot (16,384 slot) → map từng node
+Redis Cluster chia key theo slot (16,384 slot) → map từng node
 
-### ✅ Bài tập:
+###  Bài tập:
 
 Giải thích bằng hình vẽ hoặc câu chữ:
 
@@ -205,7 +184,7 @@ Giải thích bằng hình vẽ hoặc câu chữ:
 
 **Gợi ý**: Sentinel sẽ promote 1 trong 2 slave → master mới → client tự động reconnect
 
-### ❓ Phỏng vấn:
+### Phỏng vấn:
 
 **Q**: Redis có phân tán không?
 
