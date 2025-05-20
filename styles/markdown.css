@@ -482,7 +482,7 @@ blockquote {
 }
 
 .admonition {
-  border-left: 8px solid #3fb950;
+  border-left: 10px solid #3fb950;
   padding: 1rem;
   margin: 1em 0;
   background-color: #eaeaea;
@@ -501,7 +501,7 @@ blockquote {
 }
 
 .admonition .octicon {
-  transform: scale(0.5);
+  transform: scale(0.4);
   position: relative;
   top: 0;
   fill: #ffffff;
