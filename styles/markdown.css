@@ -520,12 +520,16 @@ blockquote {
   border-color: #3fb950;
 }
 
-.admonition.info {
+.admonition.note {
   border-color: #007BFF;
 }
 
-.admonition.error {
+.admonition.caution {
   border-color: #d22222;
+}
+
+.admonition.important {
+  border-color: #8957E5;
 }
 
 .admonition .tip .octicon {
