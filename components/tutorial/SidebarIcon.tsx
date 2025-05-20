@@ -8,6 +8,7 @@ import * as TbIcons from 'react-icons/tb'
 import { IconType } from 'react-icons'
 import * as ALtIcons from "react-icons/fa6";
 import * as GiIcons from "react-icons/gi";
+import * as DiIcons from "react-icons/di";
 
 const ICON_PACKS: Record<string, Record<string, IconType>> = {
   Fa: FaIcons,
@@ -18,7 +19,8 @@ const ICON_PACKS: Record<string, Record<string, IconType>> = {
   Ri: RiIcons,
   Tb: TbIcons,
   Alt: ALtIcons,
-  Gi: GiIcons
+  Gi: GiIcons,
+  Di: DiIcons
 }
 
 interface Props {
