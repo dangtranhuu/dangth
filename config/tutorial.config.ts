@@ -78,6 +78,11 @@ export const tutorialSidebar: TutorialConfigItem[] = [
         icon: "FaJava",
         link: "/tutorial/interview/java"
       },
+      {
+        text: "Redis",
+        icon: "DiRedis",
+        link: "/tutorial/interview/redis"
+      },
     ]
   }
 ]
