@@ -532,7 +532,7 @@ blockquote {
   background: #3fb950;
 }
 
-.admonition .info .octicon {
+.admonition .note .octicon {
   background: #007BFF;
 }
 
@@ -540,8 +540,12 @@ blockquote {
   background: #d29922;
 }
 
-.admonition .error .octicon {
+.admonition .caution .octicon {
   background: #d22222;
+}
+
+.admonition .important .octicon {
+  background: #8957E5;
 }
 
 .prose h1 {
