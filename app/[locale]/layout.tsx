@@ -33,7 +33,7 @@ export default async function RootLayout({
 
   let messages: AbstractIntlMessages | null = null;
   try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
+    messages = (await import(`@/i18n/messages/${locale}.json`)).default;
   } catch (error) {
     console.log(error);
     // notFound();
