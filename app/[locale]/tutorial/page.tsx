@@ -53,7 +53,7 @@ export default function TutorialsHomePage() {
             <li>🌐 GitHub: <Link href="https://github.com/Theanishtar" target="_blank">Theanishtar</Link></li>
           </ul>
         </section>
-
+        <div className='mt-[5rem]' />
         <GiscusComments />
       </div>
     </TutorialLayout>

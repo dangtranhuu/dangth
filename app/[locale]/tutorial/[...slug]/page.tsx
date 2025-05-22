@@ -7,6 +7,7 @@ import { MarkdownContent } from '@/lib/mdx'
 import { flattenSidebar, findNavContext } from '@/lib/tutorial-nav'
 import { tutorialSidebar } from '@/config/tutorial.config'
 import TutorialLayoutClient from '@/components/layouts/TutorialLayoutClient'
+import GiscusComments from '@/components/GiscusComments'
 
 export default function TutorialPageClient() {
   const { slug } = useParams() as { slug: string[] }
@@ -43,6 +44,8 @@ export default function TutorialPageClient() {
             className="prose lg:prose-lg dark:prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: tutorial.contentHtml }}
           />
+          <div className='mt-[5rem]' />
+          <GiscusComments />
         </div>
       )}
     </TutorialLayoutClient>
