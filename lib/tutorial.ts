@@ -1,6 +1,10 @@
-import { getMarkdownContent } from './mdx'
 import fs from 'fs'
 import path from 'path'
+import { TutorialConfigItem } from '../config/tutorial.config'
+import { getMarkdownContent } from './mdx'
+
+
+const tutorialsDir = path.join(process.cwd(), 'content/tutorials')
 
 export interface TutorialData {
   slug: string
@@ -11,16 +15,11 @@ export interface TutorialData {
   lastUpdated: string
 }
 
-import { TutorialConfigItem } from '../config/tutorial.config'
-
 export interface TutorialNavItem {
   text: string
   link?: string
   path: string[] // breadcrumb
 }
-
-
-const tutorialsDir = path.join(process.cwd(), 'content/tutorials')
 
 export function getAllTutorialSlugs(): { slug: string[] }[] {
   const slugs: { slug: string[] }[] = []
