@@ -48,6 +48,27 @@ export const tutorialSidebar: TutorialConfigItem[] = [
     ]
   },
   {
+    text: "Back end",
+    collapsible: false,
+    children: [
+      {
+        text: "NodeJS",
+        icon: "TbBrandNodejs",
+        link: "/tutorial/back-end/nodejs",
+        children: [
+          { text: "Tìm hiểu về NodeJS", link: "/tutorial/back-end/nodejs/introduction-to-nodejs" },
+          { text: "Tìm hiểu về Ejs", link: "/tutorial/back-end/nodejs/introduction-to-ejs" },
+          { text: "Làm việc với MySQL", link: "/tutorial/back-end/nodejs/working-with-mysql" },
+          { text: "Lập trình MVC", link: "/tutorial/back-end/nodejs/mvc-pattern" },
+          { text: "Giới thiệu Restful API", link: "/tutorial/back-end/nodejs/introduction-to-restful-api" },
+          { text: "Xây dựng Restful API", link: "/tutorial/back-end/nodejs/building-restful-api" },
+          { text: "Xác thực và xác nhận người dùng", link: "/tutorial/back-end/nodejs/authentication-and-authorization" },
+          { text: "Làm việc với MongoDB", link: "/tutorial/back-end/nodejs/working-with-mongodb" }
+        ]
+      }
+    ]
+  },
+  {
     text: "Database",
     collapsible: false,
     children: [
