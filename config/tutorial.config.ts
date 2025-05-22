@@ -48,6 +48,27 @@ export const tutorialSidebar: TutorialConfigItem[] = [
     ]
   },
   {
+    text: "Database",
+    collapsible: false,
+    children: [
+      {
+        text: "SQL Server",
+        icon: "DiMsqlServer",
+        link: "/tutorial/database/sql-server",
+        children: [
+          { text: "Giới thiệu SQL Server", link: "/tutorial/database/sql-server/introduction" },
+          { text: "Tạo CSDL & T-SQL", link: "/tutorial/database/sql-server/db-and-tsql" },
+          { text: "Hàm hệ thống & xử lý chuỗi", link: "/tutorial/database/sql-server/functions-and-strings" },
+          { text: "Điều kiện & vòng lặp", link: "/tutorial/database/sql-server/conditions-and-loops" },
+          { text: "Stored Procedures", link: "/tutorial/database/sql-server/stored-procedures" },
+          { text: "Trigger", link: "/tutorial/database/sql-server/trigger" },
+          { text: "Hàm người dùng & View", link: "/tutorial/database/sql-server/user-functions-and-views" },
+          { text: "Sao lưu & phục hồi CSDL", link: "/tutorial/database/sql-server/database-backup-and-recovery" }
+        ]
+      }
+    ]
+  },
+  {
     text: "Tool",
     collapsible: false, // dropdown
     children: [
@@ -56,7 +77,6 @@ export const tutorialSidebar: TutorialConfigItem[] = [
         icon: "FaGitAlt",
         collapsible: true, // dropdown tiếp
         children: [
-          { text: "Tổng quan", link: "/tutorial/tools/git/readme" },
           { text: "Setup môi trường", link: "/tutorial/tools/git/setup" },
           { text: "Đẩy code lên GitHub", link: "/tutorial/tools/git/push-code" },
           { text: "Undo khi gặp một commit sai", link: "/tutorial/tools/git/undo-commit" },
