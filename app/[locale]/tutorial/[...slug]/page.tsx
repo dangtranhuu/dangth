@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { getTutorial, getAllTutorialSlugs } from '@/lib/tutorial'
 import TutorialLayout from '@/components/layouts/TutorialLayout'
 import { notFound } from 'next/navigation'
@@ -81,11 +82,11 @@ export default async function TutorialPage({ params }: Params) {
       {/* Navigation */}
       <div className="mt-10 flex justify-between text-[18px] text-blue-600 dark:text-blue-400">
         {navContext?.previous && (
-          <a href={navContext.previous.link}>&larr; {navContext.previous.text}</a>
+          <Link href={navContext.previous.link || '#'}>&larr; {navContext.previous.text}</Link>
         )}
         <div className="flex-1" />
         {navContext?.next && (
-          <a href={navContext.next.link}>{navContext.next.text} &rarr;</a>
+          <Link href={navContext.next.link || '#'}>{navContext.next.text} &rarr;</Link>
         )}
       </div>
 
