@@ -18,7 +18,7 @@ Hướng đối tượng là phương pháp lập trình phổ biến nhất hi�
 # Bài 1. Lập trình hướng đối tượng
 ## 1. Khái niệm
 
-==OOP== là viết tắt của **Object-Oriented Programing** (*Lập trình hướng đối tượng*), nó cấu trúc code phân chia theo **Classes** → **Objects** → **Attributes** → **Methods**
+**OOP** là viết tắt của **Object-Oriented Programing** (*Lập trình hướng đối tượng*), nó cấu trúc code phân chia theo **Classes** → **Objects** → **Attributes** → **Methods**
 
 ## 2. Phân biệt lập trình cấu trúc và hướng đối tượng
 
@@ -44,36 +44,36 @@ So với lập trình cấu trúc thì hướng đối tượng sẽ:
 Nhìn ảnh trên có lẽ bạn đã hiểu khá tổng quát về hướng đối tượng rồi
 
 Mình sẽ nói theo cách mình hiểu nhé:
-:::details  <b>Object</b> <i>(đối tượng)</i>
-- Object là một đối tượng cụ thể (ở đây là Mèo Crosby)
-- Đối tượng phải là cụ thể nhé, nghĩa là phải rõ ràng 1 đối tượng nào đó chứ các đối tượng như **Dog** *(chó)*, **Tree** *(cây cối)* là các [lớp]() vì nó không chỉ rõ một sự vật nào cả mà nói chung chung
-:::
+> [!TIP] <b>Object</b> <i>(đối tượng)</i>
+> - Object là một đối tượng cụ thể (ở đây là Mèo Crosby)
+> - Đối tượng phải là cụ thể nhé, nghĩa là phải rõ ràng 1 đối tượng nào đó chứ các đối tượng như **Dog** *(chó)*, **Tree** *(cây cối)* là các [lớp]() vì nó không chỉ rõ một sự vật nào cả mà nói chung chung
 
-:::details <b>Attribute</b> <i>(thuộc tính)</i> 
-- Là các thuộc tính của đối tượng (thường là danh từ)
-	- Tên: Crosby
-	- Tuổi: 3
-	- Giới tính: cái
-	- Màu mắt: đen vàng
-- Lưu ý: Các thuộc tính này là thuộc tính của đối tượng Cat Crosby bên trên
-:::
 
-:::details <b>Methods</b>  <i>(phương thức)</i> 
-- Methods là các phương thức của đối tượng (thường là động từ)
-	- Chạy: 
-	- Bắt chuột:
-	- Kêu: Meow-meow
-- Lưu ý: Các phương thức này là phương thức của đối tượng Cat Crosby bên trên
-:::
+> [!TIP] <b>Attribute</b> <i>(thuộc tính)</i> 
+> - Là các thuộc tính của đối tượng (thường là danh từ)
+>	- Tên: Crosby
+>	- Tuổi: 3
+>	- Giới tính: cái
+>	- Màu mắt: đen vàng
+> - Lưu ý: Các thuộc tính này là thuộc tính của đối tượng Cat Crosby bên trên
 
-:::details <b>Classes</b> <i>(lớp)</i> 
-- Classes là một lớp (gồm nhiều đối tượng)
-	- Đối tượng: Bronson
-	- Đối tượng: Chester
-	- Đối tượng: Bobby
-- Lưu ý: các lớp là gồm nhiều các đối tượng Cat bên trên
-- Có thể gọi đây là "lớp Cat" chứa các đối tượng Bronson, Chester, Bobby 
-:::
+
+> [!TIP] <b>Methods</b>  <i>(phương thức)</i> 
+> - Methods là các phương thức của đối tượng (thường là động từ)
+>	- Chạy: 
+>	- Bắt chuột:
+>	- Kêu: Meow-meow
+> - Lưu ý: Các phương thức này là phương thức của đối tượng Cat Crosby bên trên
+
+
+> [!TIP] <b>Classes</b> <i>(lớp)</i> 
+> - Classes là một lớp (gồm nhiều đối tượng)
+>	- Đối tượng: Bronson
+>	- Đối tượng: Chester
+>	- Đối tượng: Bobby
+> - Lưu ý: các lớp là gồm nhiều các đối tượng Cat bên trên
+> - Có thể gọi đây là "lớp Cat" chứa các đối tượng Bronson, Chester, Bobby 
+
 
 ### Ví dụ: 
 Lớp Hoa gồm: hoa lan, hoa hồng, hoa cẩm tú cầu, ...
@@ -101,7 +101,7 @@ Giải thích:
 
 Tạo một Java Class trong package **_javaoop.objects_**, ví dụ ở đây mình tạo lớp *Cat*
 
-- Lưu ý: tên lớp phải viết hoa chữ đầu tiên nha ==Cat.java==
+- Lưu ý: tên lớp phải viết hoa chữ đầu tiên nha **Cat.java**
 
 ![object-class-diagrame-1.png](https://github.com/dangtranhuu/images/blob/main/angurvad/java-oop/session1/create-obj.png?raw=true)
 
@@ -136,9 +136,9 @@ public class Cat {
 }
 ```
 
-:::details Giải thích về <b>public</b>
-- Từ khóa **public** giúp mình có thể gọi trực tiếp thuộc tính trong lớp khác
-:::
+> [!TIP] Giải thích về <b>public</b>
+> - Từ khóa **public** giúp mình có thể gọi trực tiếp thuộc tính trong lớp khác
+
 
 ### Tạo đối tượng từ lớp khác 
 
