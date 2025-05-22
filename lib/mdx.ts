@@ -65,7 +65,7 @@ export async function getMarkdownContent(
 
   return {
     slug,
-    title: data.title ?? 'Untitled',
+    title: data.title ?? '',
     subtitle: data.subtitle ?? '',
     author: data.author ?? '',
     date: typeof data.date === 'string' ? data.date : undefined,

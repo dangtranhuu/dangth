@@ -58,7 +58,7 @@ export async function getAllPostsMeta() {
 
       return {
         slug,
-        title: data.title ?? 'Untitled',
+        title: data.title ?? '',
         subtitle: data.subtitle ?? '',
         author: data.author ?? '',
         date: typeof data.date === 'string' ? data.date : new Date(data.date).toISOString().slice(0, 10),
