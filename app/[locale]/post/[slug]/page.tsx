@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/post'
 import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/GiscusComments'
@@ -13,6 +14,7 @@ interface Props {
 
 export default async function PostPage({ params }: Props) {
   const post = await getPost(params.slug)
+  if (!post) notFound()
   const allPosts = await getAllPostsMeta()
   allPosts.sort((a, b) => a.slug.localeCompare(b.slug))
   const currentIndex = allPosts.findIndex(p => p.slug === params.slug)
@@ -145,6 +147,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug)
+  if (!post) notFound()
   return {
     title: post.title,
     openGraph: {
