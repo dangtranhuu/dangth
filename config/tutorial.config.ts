@@ -39,7 +39,7 @@ export const tutorialSidebar: TutorialConfigItem[] = [
           { text: "Tổng quan", link: "/tutorial/programing/java-oop/introduction" },
           { text: "Lập trình Hướng đối tượng", link: "/tutorial/programing/java-oop/oop" },
           { text: "Tính đa hình", link: "/tutorial/programing/java-oop/poly-morphism" },
-          { text: "Tính kế thừa", link: "/tutorial/programing/java-oop/Inheritance" },
+          { text: "Tính kế thừa", link: "/tutorial/programing/java-oop/inheritance" },
           { text: "Tính đóng gói", link: "/tutorial/programing/java-oop/encapsulation" },
           { text: "Tính trừu tượng", link: "/tutorial/programing/java-oop/abstract" },
           { text: "Những câu hỏi phỏng vấn", link: "/tutorial/programing/java-oop/interview" },
