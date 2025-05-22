@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/markdown'
+import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/post'
 import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/GiscusComments'
 import { SITE_CONFIG } from '@/config/config'

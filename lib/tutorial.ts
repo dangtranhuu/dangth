@@ -1,20 +1,6 @@
+import { getMarkdownContent } from './mdx'
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
-import { remark } from 'remark'
-import remarkGfm from 'remark-gfm'
-import remarkMath from 'remark-math'
-import remarkRehype from 'remark-rehype'
-import rehypeStringify from 'rehype-stringify'
-import rehypeHighlight from 'rehype-highlight'
-import rehypeSlug from 'rehype-slug'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeRaw from 'rehype-raw'
-import rehypeKatex from 'rehype-katex'
-import { estimateReadingTime } from '@/utils/readingTime'
-import remarkAdmonition from './plugins/remarkAdmonition'
-import 'katex/dist/katex.min.css'
-
 
 export interface TutorialData {
   slug: string
@@ -59,49 +45,8 @@ export function getAllTutorialSlugs(): { slug: string[] }[] {
   return slugs
 }
 
-export async function getTutorial(slug: string): Promise<TutorialData | null> {
-  const fullPath = path.join(tutorialsDir, `${slug}.md`)
-  if (!fs.existsSync(fullPath)) return null
-
-  const raw = fs.readFileSync(fullPath, 'utf-8')
-  const { content, data } = matter(raw)
-
-  const processed = await remark()
-    .use(remarkGfm)
-    .use(remarkMath)
-    .use(remarkAdmonition)                          // render blockquote [TIP, INFO, WARNING]
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeRaw)
-    .use(rehypeKatex)
-    .use(rehypeHighlight)
-    .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
-    .use(rehypeStringify, { allowDangerousHtml: true })
-    .process(content)
-
-
-  const contentHtml = processed.toString()
-  const contentHtmlWithZoom = contentHtml.replace(/<img /g, '<img class="zoom-img" ')
-
-
-  // 🖼️ Trích ảnh đầu tiên (nếu có)
-  const imgMatch = contentHtml.match(/<img[^>]+src="([^">]+)"/)
-  const firstImage = imgMatch ? imgMatch[1] : "@/public/images/avt.png"
-
-  const contentText = content.replace(/[#_*>\-\n`]/g, '') // loại bỏ markdown đơn giản
-  const readingTime = estimateReadingTime(contentText)
-
-  const stat = fs.statSync(fullPath)
-  const lastUpdated = stat.mtime.toISOString() // hoặc format tùy ý
-
-  return {
-    slug,
-    title: data.title ?? '',
-    subtitle: data.subtitle ?? '',
-    contentHtml: contentHtmlWithZoom,
-    readingTime: readingTime,
-    lastUpdated: lastUpdated
-  }
+export function getTutorial(slug: string) {
+  return getMarkdownContent('tutorials', slug)
 }
 
 
