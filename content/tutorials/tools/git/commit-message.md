@@ -67,9 +67,9 @@ Type là các kiểu commits phổ biến, bạn có thể tham khảo bảng sa
 
 >[!INFO]Một số ví dụ:
 >
->- feat: .....
->- fix: ....
->- refactor: ...
+>- **feat**: .....
+>- **fix**: ....
+>- **refactor**: ...
 
 
 ## Description
@@ -90,25 +90,24 @@ Không sử dụng dấu chấm ở cuối câu
 
 >[!INFO] Một số ví dụ:
 >
->- feat: add Facebook login feature.
->- fix: resolve issue with incorrect password preventing login.
->- refactor: optimize code for login processing.
->- perf: improve main page loading speed.
+>- **feat**: add Facebook login feature.
+>- **fix**: resolve issue with incorrect password preventing login.
+>- **refactor**: optimize code for login processing.
+>- **perf**: improve main page loading speed.
 >
 >--------------------
->- feat: Thêm chức năng đăng nhập bằng Facebook.
->- fix: Sửa lỗi không thể đăng nhập khi mật khẩu sai.
->- refactor: Tối ưu hóa mã nguồn cho việc xử lý đăng nhập.
->- perf: Cải thiện tốc độ tải trang chính.
+>- **feat**: Thêm chức năng đăng nhập bằng Facebook.
+>- **fix**: Sửa lỗi không thể đăng nhập khi mật khẩu sai.
+>- **refactor**: Tối ưu hóa mã nguồn cho việc xử lý đăng nhập.
+>- **perf**: Cải thiện tốc độ tải trang chính.
 
 
 ## Body
 
 Là phần TÙY CHỌN, mô tả một cách chi tiết hơn nếu cần
 
-Phần BODY cách `<type>: <description>` bởi một ký tự xuống dòng (blank line)
+Phần `BODY` cách `<type>: <description>` bởi một ký tự xuống dòng (blank line)
 
-Nên dùng để giair thích câu hỏi **What (để làm gì?)** hoặc **Why (tại sao cần? )**, chứ không phải **How (làm thế nào?)**
+Nên dùng để giải thích câu hỏi **What (để làm gì?)** hoặc **Why (tại sao cần? )**, chứ không phải **How (làm thế nào?)**
 
-<img src="https://count-viewer.vercel.app//api/blog/view?url=https://davisupers.web.app/github/session7.html" alt="Image 1" style="float: left">
 
