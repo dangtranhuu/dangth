@@ -12,23 +12,14 @@ export default function TutorialLayoutClient({
   children,
   activeSlug,
   tree,
+  isContentLoading,
 }: {
   children: React.ReactNode
   activeSlug: string
   tree: TutorialConfigItem[]
+  isContentLoading?: boolean
 }) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false)
-  const [isContentLoading, setIsContentLoading] = useState(false)
-
-  useEffect(() => {
-    setIsContentLoading(true)
-  }, [activeSlug])
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setIsContentLoading(false), 300)
-    return () => clearTimeout(timeout)
-  }, [activeSlug])
-
 
   return (
     <div className="flex justify-center px-4 md:px-8 lg:px-12 relative">
