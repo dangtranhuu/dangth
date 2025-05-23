@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/post'
 import { extractHeadings } from '@/utils/extractHeadings'
-import GiscusComments from '@/components/GiscusComments'
+import GiscusComments from '@/components/github/GiscusComments'
 import { SITE_CONFIG } from '@/config/config'
 import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
 import { IoTimerOutline } from "react-icons/io5"

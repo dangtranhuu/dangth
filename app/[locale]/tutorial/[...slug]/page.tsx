@@ -9,7 +9,7 @@ import { SITE_CONFIG } from '@/config/config'
 import { flattenSidebar, findNavContext } from '@/lib/tutorial-nav'
 import { tutorialSidebar } from '@/config/tutorial.config'
 import TutorialLayoutClient from '@/components/layouts/TutorialLayoutClient'
-import GiscusComments from '@/components/GiscusComments'
+import GiscusComments from '@/components/github/GiscusComments'
 import { MdHistory, MdRebaseEdit } from "react-icons/md"
 
 export default function TutorialPageClient() {
