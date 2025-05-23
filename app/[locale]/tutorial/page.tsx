@@ -2,7 +2,7 @@
 
 import TutorialLayout from '@/components/layouts/TutorialLayout'
 import Link from 'next/link'
-import GiscusComments from '@/components/GiscusComments'
+import GiscusComments from '@/components/github/GiscusComments'
 
 export default function TutorialsHomePage() {
   return (
