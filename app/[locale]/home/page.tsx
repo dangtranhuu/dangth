@@ -9,6 +9,8 @@ import { LuFacebook } from "react-icons/lu";
 import { TbBrandTiktok } from "react-icons/tb";
 import { useTranslations } from 'next-intl';
 
+import GithubContributions from '@/components/github/GithubContributions'
+
 import AvatarStack from '@/components/AvatarStack'
 
 export default function Home() {
@@ -272,6 +274,13 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </div>
+
+
+      {/* GithubContributions section */}
+      <div className="github-contributions title section">
+        <h1 className="text-[32px] font-semibold mb-4">Github Contributions</h1>
+        <GithubContributions />
       </div>
 
 
