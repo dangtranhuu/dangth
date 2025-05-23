@@ -8,10 +8,27 @@ import { FiYoutube } from "react-icons/fi";
 import { LuFacebook } from "react-icons/lu";
 import { TbBrandTiktok } from "react-icons/tb";
 import { useTranslations } from 'next-intl';
-
+import { iconMap } from '@/lib/iconMap';
 import GithubContributions from '@/components/github/GithubContributions'
-
 import AvatarStack from '@/components/AvatarStack'
+
+const frontendSkills = ['angular', 'nextjs'];
+const backendSkills = ['springboot', 'nodejs'];
+const dbSkills = ['mssql', 'postgresql', 'mongodb', 'redis'];
+const devopsSkills = ['dockerfile'];
+const otherSkills = ['dart', 'flutter', 'git'];
+
+const renderSkillIcons = (keys: string[]) =>
+  keys.map((key) => {
+    const entry = iconMap[key];
+    if (!entry) return null;
+    const Icon = entry.icon;
+    return (
+      <span key={key} title={key} style={{ color: entry.color, fontSize: '1.5rem', marginRight: '0.5rem' }}>
+        <Icon />
+      </span>
+    );
+  });
 
 export default function Home() {
 
@@ -116,6 +133,16 @@ export default function Home() {
         <p>
           I’ve led and contributed to several real-world projects such as DESTINY, DAVITICKETS, DAVISY...
         </p>
+        <p className='flex'>
+          My skills: {renderSkillIcons(backendSkills)} / {renderSkillIcons(frontendSkills)} / {renderSkillIcons(dbSkills)} / {renderSkillIcons(devopsSkills)} / {renderSkillIcons(otherSkills)}
+        </p>
+        {/* <ul>
+          <li className='flex'>BackEnd: <span className='mr-[10px]'></span> {renderSkillIcons(backendSkills)}</li>
+          <li className='flex'>FrontEnd:<span className='mr-[10px]'></span> {renderSkillIcons(frontendSkills)}</li>
+          <li className='flex'>Database:<span className='mr-[10px]'></span> {renderSkillIcons(dbSkills)}</li>
+          <li className='flex'>DevOps:<span className='mr-[10px]'></span> {renderSkillIcons(devopsSkills)}</li>
+          <li className='flex'>Others: <span className='mr-[10px]'></span>{renderSkillIcons(otherSkills)}</li>
+        </ul> */}
         <p>
           Connect with my Linkedin to discuss about work or my Github to share interesting knowledge ^^
         </p>
