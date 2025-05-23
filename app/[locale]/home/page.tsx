@@ -17,6 +17,7 @@ const backendSkills = ['springboot', 'nodejs'];
 const dbSkills = ['mssql', 'postgresql', 'mongodb', 'redis'];
 const devopsSkills = ['dockerfile'];
 const otherSkills = ['dart', 'flutter', 'git'];
+const mySkills = ['angular', 'nextjs', 'springboot', 'nodejs', 'mssql', 'postgresql', 'mongodb', 'redis', 'dockerfile']
 
 const renderSkillIcons = (keys: string[]) =>
   keys.map((key) => {
@@ -24,7 +25,7 @@ const renderSkillIcons = (keys: string[]) =>
     if (!entry) return null;
     const Icon = entry.icon;
     return (
-      <span key={key} title={key} style={{ color: entry.color, fontSize: '1.5rem', marginRight: '0.5rem' }}>
+      <span key={key} title={key} style={{ color: entry.color, fontSize: '1.5rem', marginLeft: '0.5rem' }}>
         <Icon />
       </span>
     );
@@ -133,9 +134,6 @@ export default function Home() {
         <p>
           I’ve led and contributed to several real-world projects such as DESTINY, DAVITICKETS, DAVISY...
         </p>
-        <p className='flex'>
-          My skills: {renderSkillIcons(backendSkills)} / {renderSkillIcons(frontendSkills)} / {renderSkillIcons(dbSkills)} / {renderSkillIcons(devopsSkills)} / {renderSkillIcons(otherSkills)}
-        </p>
         {/* <ul>
           <li className='flex'>BackEnd: <span className='mr-[10px]'></span> {renderSkillIcons(backendSkills)}</li>
           <li className='flex'>FrontEnd:<span className='mr-[10px]'></span> {renderSkillIcons(frontendSkills)}</li>
@@ -146,6 +144,10 @@ export default function Home() {
         <p>
           Connect with my Linkedin to discuss about work or my Github to share interesting knowledge ^^
         </p>
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', }}>
+          <span style={{ flexBasis: '100%' }}>My skills:</span>
+          {renderSkillIcons(mySkills)}
+        </div>
       </div>
 
       {/* EXPERIENCE section */}
