@@ -191,7 +191,9 @@ router.get('/danhsachuser', (req, res) => {
 fetch("http://localhost:3000/users/")  
 .then(function(res) {
     console.log(res); //xem thử trong console của trình duyệt nhé
-    if(!res.ok) {throw new Error("Lỗi = " + res.status); }
+    if(!res.ok) {
+      throw new Error("Lỗi = " + res.status); 
+    }
     return res.json();
 })
 .then(function(data) {

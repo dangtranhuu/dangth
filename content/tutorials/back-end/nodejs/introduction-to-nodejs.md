@@ -148,7 +148,7 @@ Cho phép trả về các trang HTML dựa vào các tham số
 ```bash
 npm install --save express
 ```
-Option ==–save== để đảm bảo ExpressJs được thêm vào package.json như là một dependency (một package cần để ứng dụng chạy được).  Chạy xong,  hãy xem trong folder project của bạn, sẽ thấy các module được thêm vào
+Option `–save` để đảm bảo ExpressJs được thêm vào package.json như là một dependency (một package cần để ứng dụng chạy được).  Chạy xong,  hãy xem trong folder project của bạn, sẽ thấy các module được thêm vào
 
 #### Tạo file server.js sử dụng module express
 

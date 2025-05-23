@@ -30,7 +30,7 @@
 
 **Authentication trong NodeJS** là bài hướng dẫn bạn cách triển khai chức năng liên quan đến người dùng như đăng nhập, kiểm tra đăng nhập, mã khóa mật khẩu …
 
-![gioi-thieu-authentication-trong-nodejs](https://longnv.name.vn/wp-content/uploads/2021/02/gioi-thieu-authentication-trong-nodejs-1024x477.png)
+![gioi-thieu-authentication-trong-nodejs](https://github.com/danqth/images/blob/main/angurvad/nodejs/section7/gioi-thieu-authentication-trong-nodejs-1024x477.png?raw=true)
 
 ### Tại sao có authentication?
 
@@ -38,7 +38,7 @@ Bởi vì trong website, có những chức năng mà người dùng phải đă
 
 ### Authentication trong NodeJS hoạt động như thế nào?
 
-![hoat-dong-cua-autentication](https://longnv.name.vn/wp-content/uploads/2021/02/hoat-dong-cua-autentication.png)
+![hoat-dong-cua-autentication](https://github.com/danqth/images/blob/main/angurvad/nodejs/section7/hoat-dong-cua-autentication.png?raw=true)
 
 Tổ chức hoạt động Autentication
 
@@ -49,7 +49,7 @@ B. Chuẩn bị học Authentication trong NodeJS
 
 Bạn cần có 1 table chứa thông tin của người dùng, table sẽ có các các cột như username, password, email, họ tên…để lưu thông tin. Dữ liệu trong table này được dùng để so sánh với thông tin mà người dùng gửi lên khi đăng nhập, từ đó bạn sẽ biết được họ nhập thông tin có đúng không.
 
-**Thực hiện:** Mời bạn tạo table có tên **users** trong database **shop** như đã thực hiện trong bài [Sử dụng Restful API NodeJS](https://longnv.name.vn/lap-trinh-nodejs/su-dung-restful-api-nodejs) , nếu đã tạo table **users** rồi thì thôi khỏi tạo lại, dùng nó để thực hiện bài này luôn nhé.
+**Thực hiện:** Mời bạn tạo table có tên **users** trong database **shop** như đã thực hiện trong bài [Sử dụng Restful API NodeJS]() , nếu đã tạo table **users** rồi thì thôi khỏi tạo lại, dùng nó để thực hiện bài này luôn nhé.
 
 ### 2\. Tạo project và cài module
 
@@ -89,7 +89,7 @@ module.exports = db;
 
 ### 1\. Đăng ký thành viên và mã hóa mật khẩu
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-38-1024x420.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section7/image-38-1024x420.png?raw=true)
 
 #### a. Tạo route
 
@@ -195,7 +195,7 @@ router.post('/luu', function(req, res) {
 
 ### 2\. Đăng nhập và xử lý đăng nhập
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-39-1024x330.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section7/image-39-1024x330.png?raw=true)
 
 #### a. Tạo route
 

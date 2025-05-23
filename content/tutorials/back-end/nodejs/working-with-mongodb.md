@@ -50,31 +50,31 @@ Làm việc với MongoDB trong NodeJS là bài hướng dẫn cơ bản về c�
 
 – Vào [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community) và download
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-1-1024x580.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-1-1024x580.png?raw=true)
 
 – Chạy file vừa cài đặt rồi nhắp **Next** trong hình để tiếp tục
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-2.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-2.png?raw=true)
 
 – Chọn **I accept the terms …** rồi nhắp **Next**
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-3.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-3.png?raw=true)
 
 – Chọn **Complete** rồi nhắp **Next**
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-5.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-5.png?raw=true)
 
 – Chọn **Run service…** để chạy mongo như là service trong máy rồi nhắp **Next**
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-6.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-6.png?raw=true)
 
 – Chọn **Install MongoDB Compass** – công cụ trực quan quản lý MongoDB rồi nhắp **Next**
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-7.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-7%20(1).png?raw=true)
 
 – Nhắp Install để cài đặt
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-8.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-8.png?raw=true)
 
 – Nhắp **Finish** để kết thúc
 
@@ -123,63 +123,63 @@ MongoDB hỗ trợ các kiểu dữ liệu sau: string, double, int, date, boole
 
 – Mở MongoDB Compass => nhắp Connect
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-9-1024x463.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-9-1024x463.png?raw=true)
 
 – Khi kết nối thành công, cột trái sẽ hiện thông tin kết nối như sau:
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-10-1024x512.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-10-1024x512.png?raw=true)
 
 ### 2\. Tạo database mongodb
 
 Nhắp nút Create Database (xem hình trên) rồi nhập tên Database + nhập tên collection đầu tiên trong database rồi nhắp nút Create Database
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-11-1024x625.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-11-1024x625.png?raw=true)
 
 Kêt quả tạo:
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-12-1024x470.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-12-1024x470.png?raw=true)
 
 ### 3. Tạo collection (table)
 
 Nhắp nút + ở phía sau tên database (xem hình trên) rồi nhập tên collection , rồi nhắp nút Create Collection
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-13.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-13.png?raw=true)
 
 ### 4\. Chèn document
 
 Mỗi document là 1 record dữ liệu cần lưu. Bạn nhắp tên collection rồi nhắp **Add Data** ==> Insert Document
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-14-1024x506.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-14-1024x506.png?raw=true)
 
 Rồi nhập dữ liệu vào , xong nhắp nít **Insert**
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-15-1024x614.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-15-1024x614.png?raw=true)
 
 ### 5\. Clone document , cập nhật, xóa document
 
 Nhắp các nút tương ứng như trong hình dưới
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-16-1024x375.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-16-1024x375.png?raw=true)
 
 ### 6\. Tạo index cho documents trong collection
 
 Tạo index để sắp xếp sẵn các record nhằm phục vụ tìm kiếm cho nhanh chóng. Thực hiện bằng cách nhắp tab **Indexs**  rồi nhắp nút **Create Index**
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-17-1024x330.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-17-1024x330.png?raw=true)
 
 Sau đó chọn field , kiểu Index và nhắp nút **Create index**
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-18.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-18.png?raw=true)
 
 ### 7\. Export documents trong collection
 
 – Nhắp nút **Export** như hình dưới
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-19-1024x378.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-19-1024x378.png?raw=true)
 
 – Chọn **JSON** rồi nhắp nút **Export**
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-21.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-21.png?raw=true)
 
 ## Một số hàm NodeJS dùng để tương tác với MongoDB
 -----------------------------------------------
@@ -316,9 +316,9 @@ router.get("/chenRecord", async (req, res) => {
 
 Test: xem trong trình duyệt http://localhost:3000/chenRecord sẽ thấy thông báo chèn thành công.
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-28-1024x131.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-28-1024x131.png?raw=true)
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-29-1024x281.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-29-1024x281.png?raw=true)
 
 ### 5\. Cập nhật document trong mongodb từ NodeJS:
 
@@ -344,9 +344,9 @@ router.get("/capnhat", async (req, res) => {
 
 Test: xem trong trình duyệt http://localhost:3000/capnhat sẽ thấy thông báo cập nhật thành công.
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-30-1024x139.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-30-1024x139.png?raw=true)
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-31-1024x280.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-31-1024x280.png?raw=true)
 
 ### 6\. Cập nhật nhiều document trong mongodb từ NodeJS
 
@@ -372,9 +372,9 @@ router.get("/capnhatn", async (req, res) => {
 
 Test: xem trong trình duyệt http://localhost:3000/capnhatn sẽ thấy thông báo cập nhật thành công.
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-32.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-32.png?raw=true)
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-33-1024x279.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-33-1024x279.png?raw=true)
 
 ### 7\. Xóa document trong mongodb từ NodeJS
 
@@ -398,9 +398,9 @@ router.get("/xoaRecord", async (req, res) => {
 
 Test: xem trong trình duyệt http://localhost:3000/xoaRecord sẽ thấy thông báo xóa thành công.
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-34-1024x135.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-34-1024x135.png?raw=true)
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-35-1024x255.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-35-1024x255.png?raw=true)
 
 ### 8\. Select document trong mongodb và hiện kết quả trong NodeJS
 
@@ -434,7 +434,7 @@ Tạo file views/loaitin.ejs
 
 Test: xem trong trình duyệt http://localhost:3000/layRecord sẽ thấy dữ liệu hiện ra
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-36-1024x380.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-36-1024x380.png?raw=true)
 
 ### 9\. Select 1 document trong mongodb từ NodeJS
 
@@ -469,7 +469,7 @@ Tạo file views/chitietloai.ejs và code
 
 Test: xem trong trình duyệt http://localhost:3000/layRecord/1 sẽ thấy dữ liệu hiện ra
 
-![](https://longnv.name.vn/wp-content/uploads/2024/02/image-37-1024x312.png)
+![](https://github.com/danqth/images/blob/main/angurvad/nodejs/section9/image-37-1024x312.png?raw=true)
 
 * * *
 
