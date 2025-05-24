@@ -55,7 +55,7 @@ export async function getMarkdownContent(
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(content)
 
-  const contentHtml = processed.toString().replace(/<img /g, '<img class="zoom-img" ')
+  const contentHtml = processed.toString().replace(/<img([^>]+?)>/g, '<img class="zoom-img"$1>')
   const contentText = content.replace(/[#_*>\-\n`]/g, '')
   const readingTime = estimateReadingTime(contentText)
   const stat = fs.statSync(filePath)
