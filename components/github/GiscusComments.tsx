@@ -8,7 +8,13 @@ import { GISCUS } from '@/config/config'
 export default function GiscusComments() {
   const locale = useLocale()
   const pathname = usePathname()
-  const params = useParams()
+
+  const lang = locale === 'en' ? 'en' : 'vi'
+
+  const initialTheme =
+    typeof window !== 'undefined' && localStorage.getItem('dark-mode') === 'dark'
+      ? GISCUS.dark
+      : GISCUS.light
 
   // Bỏ locale ('/en', '/vi') khỏi pathname
   const pathWithoutLocale = pathname.replace(/^\/(en|vi)/, '')
@@ -17,14 +23,14 @@ export default function GiscusComments() {
   const normalizedPath = pathWithoutLocale === '' ? '/' : pathWithoutLocale
 
   // term sẽ luôn là: dangth/... (ví dụ: dangth/post/a)
-  const term = `${GISCUS.termPrefix}+${normalizedPath}`
+  let term = `${GISCUS.termPrefix}${normalizedPath}`
 
-  const lang = locale === 'en' ? 'en' : 'vi'
+  switch (term) {
+    case "dangth/tutorial":
+      term = "dangth/tutorial/welcome"
+      break;
+  }
 
-  const initialTheme =
-    typeof window !== 'undefined' && localStorage.getItem('dark-mode') === 'dark'
-      ? GISCUS.dark
-      : GISCUS.light
 
   return (
     <Giscus
