@@ -9,11 +9,6 @@ export interface TutorialConfigItem {
 
 export const tutorialSidebar: TutorialConfigItem[] = [
   {
-    text: "Welcome",
-    link: "/tutorial",
-    icon: "GiEvilBook"
-  },
-  {
     text: "Technical",
     collapsible: false, // dropdown
     children: [

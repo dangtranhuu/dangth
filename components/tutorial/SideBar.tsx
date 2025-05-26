@@ -59,7 +59,7 @@ export default function TutorialSidebar({ activeSlug, tree }: Props) {
         if (hasChildren) {
           return (
             <li key={key}>
-              <div className="mt-4 mb-1 text-xs uppercase text-gray-500 dark:text-gray-400 font-semibold">
+              <div className="ml-[-0.5rem] mt-4 mb-1 text-xs uppercase text-gray-500 dark:text-gray-400 font-semibold">
                 {item.text}
               </div>
               {renderItems(item.children!, level + 1)}
@@ -72,8 +72,8 @@ export default function TutorialSidebar({ activeSlug, tree }: Props) {
             <Link
               href={item.link ?? '#'}
               className={`flex items-center gap-2 text-sm px-2 py-1 rounded transition-all ${activeSlug === item.link?.replace('/tutorial/', '')
-                  ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
-                  : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
+                ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-50 dark:bg-blue-900'
+                : 'text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white'
                 }`}
             >
               <SidebarIcon icon={item.icon} />
