@@ -33,7 +33,7 @@ const RepoCard = ({
           <div className="flex flex-col gap-2">
             {/* Header */}
             <div className="flex items-center justify-between">
-              <a href={url} className="text-lg font-semibold hover:underline">
+              <a href={url} className="text-lg font-semibold hover:underline dark:text-[#E5E7EB]">
                 {name}
               </a>
               <span className="text-sm flex items-center gap-1 text-muted-foreground">
@@ -73,7 +73,7 @@ export default async function Projects() {
 
   return (
     <div className="max-w-3xl mx-auto py-12 container repo-project">
-      <h1 className="text-[32px] font-semibold mb-4">Projects</h1>
+      <h1 className="text-[32px] font-semibold mb-4 dark:text-[#E5E7EB]">Projects</h1>
       {repos.map((repo) => (
         <RepoCard key={repo.name} {...repo} />
       ))}
