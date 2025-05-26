@@ -205,7 +205,7 @@ export default function Home() {
       </div>
 
       {/* EDUCATION section */}
-      <div className="education title section">
+      <div className="education title section mb-12">
         <h1 className="text-[32px] font-semibold mb-4">Education</h1>
 
         {/* === Item 1 === */}
@@ -307,14 +307,14 @@ export default function Home() {
 
 
       {/* GithubContributions section */}
-      <div className="github-contributions title section">
+      <div className="github-contributions title section mb-12">
         <h1 className="text-[32px] font-semibold mb-4">Github Contributions</h1>
         <GithubContributions />
       </div>
 
 
       {/* CERTIFICATIONS section */}
-      <div className="cert title section">
+      <div className="cert title section mb-12">
         <h1 className="text-[32px] font-semibold mb-4">Certifications</h1>
         <div className="flex flex-wrap gap-10 justify-center text-center">
           {[
