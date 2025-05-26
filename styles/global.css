@@ -152,7 +152,7 @@ body {
   stroke-width: 1;
 }
 
-.react-github-calendar svg {
+.react-github-calendar :not(.react-activity-calendar__legend-colors)>svg {
   padding: 0px 5px;
   margin-bottom: 5px;
 }
