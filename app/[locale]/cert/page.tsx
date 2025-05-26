@@ -105,7 +105,7 @@ export default function CertPage() {
   return (
     <div className="certifications">
       <div className={styles.certPage}>
-        <h1>Certifications</h1>
+        <h1 className='text-[32px] font-semibold mb-4'>Certifications</h1>
 
         <div className={styles.certSection}>
           {data.map(({ org, certs, logo }) => (

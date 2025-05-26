@@ -73,7 +73,7 @@ export default async function Projects() {
 
   return (
     <div className="max-w-3xl mx-auto py-12 container repo-project">
-      <h1 className="text-2xl font-bold mb-6">Projects</h1>
+      <h1 className="text-[32px] font-semibold mb-4">Projects</h1>
       {repos.map((repo) => (
         <RepoCard key={repo.name} {...repo} />
       ))}

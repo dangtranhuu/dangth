@@ -35,7 +35,7 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
 
   return (
     <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)]">
-      <h1 className="text-[40px] md:text-[50px] font-bold mb-6">Post</h1>
+      <h1 className="text-[32px] font-semibold mb-4">Post</h1>
 
       {/* Tag filter bar */}
       <div className="flex flex-wrap gap-2 mb-10">
