@@ -117,25 +117,26 @@ export default function CertPage() {
               <div className="text-[20px] font-semibold text-[#34495e] h-[60px] flex items-center dark:text-[#E5E7EB]">{org}</div>
             </div>
 
-            <div className="flex flex-wrap gap-6 justify-start sm:justify-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {certs.map((cert, index) => (
                 <div
-                  className="flex flex-col items-center w-[180px] p-3 rounded-[10px] transition-transform duration-200 hover:scale-[1.03] dark:text-[#E5E7EB]"
+                  className="flex flex-col items-center p-3 rounded-[10px] transition-transform duration-200 hover:scale-[1.03] dark:text-gray-200 bg-[#ffffff0]"
                   key={cert.name || `untitled-${index}`}
                 >
                   <img
                     src={cert.image}
                     alt={cert.name}
-                    width={160}
+                    // width={160}
                     height={100}
-                    className="rounded-lg object-cover w-[160px] h-auto zoom-img transition-transform duration-300 hover:scale-[1.05]"
+                    className="rounded-lg object-cover w-[100%] h-auto zoom-img transition-transform duration-300 hover:scale-[1.05]"
                   />
-                  <div className="mt-2 text-sm text-center text-[#555] dark:text-[#E5E7EB]">
+                  <div className="mt-2 text-sm text-center text-gray-600 dark:text-gray-300">
                     {cert.name || <em>Untitled</em>}
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
         ))}
       </div>
