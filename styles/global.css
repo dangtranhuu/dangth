@@ -26,89 +26,12 @@ body {
   /* background: #f8f8f8; */
 }
 
-/* PC */
-@media (min-width: 64em) {
-  #avt {
-    display: none;
-  }
-
-  #avatar {
-    padding-right: 30px;
-    margin-top: -30px;
-    width: 200px;
-  }
-
-  #desc {
-    margin-top: -40px;
-  }
-
-  .head-mb {
-    display: none;
-  }
-
-  .head-text {
-    display: block;
-  }
-
-  .dark-mode #desc {
-    margin-top: -40px;
-    color: #e5e7eba1;
-  }
-
-  .container .boxs {
-    display: flex;
-  }
-
-  .contact {
-    display: block;
-  }
-
-  .contact .wrap {
-    display: block;
-  }
+.hr {
+  border-bottom: 1px solid #ccc;
+  margin: 10px;
 }
 
-/*========== POST ======*/
-
-/* Thụt dòng theo cấp độ heading */
-.post .toc-item.level-2 {
-  margin-left: 0px;
-}
-
-.post .toc-item.level-3 {
-  margin-left: 16px;
-}
-
-.post .toc-item.level-4 {
-  margin-left: 32px;
-}
-
-@keyframes slide-in-bottom {
-  0% {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-#scrollToTopBtn {
-  display: none;
-}
-
-
-/* Tablet */
-@media (min-width: 46.25em) and (max-width: 63.9375em) {
-  #avatar {
-    width: 150px;
-  }
-}
-
-
-/* ZOOM IMAGES */
+/* ====== ZOOM IMAGES ====== */
 .zoom-img {
   cursor: zoom-in;
   transition: transform 0.3s ease;
@@ -131,12 +54,23 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.hr {
-  border-bottom: 1px solid #ccc;
-  margin: 10px;
+/*========== POST ======*/
+
+/* Thụt dòng theo cấp độ heading */
+.post .toc-item.level-2 {
+  margin-left: 0px;
 }
 
-/* GITHUB CONTRIBUTIONS */
+.post .toc-item.level-3 {
+  margin-left: 16px;
+}
+
+.post .toc-item.level-4 {
+  margin-left: 32px;
+}
+
+
+/*====== GITHUB CONTRIBUTIONS ======*/
 .react-github-calendar__block {
   transition: all 0.3s ease;
   border-radius: 2px;
@@ -165,7 +99,6 @@ body {
   stroke: rgba(255, 255, 255, 0.04) !important;
 }
 
-/* styles/github-calendar.css */
 .react-github-calendar rect[data-level="0"] {
   fill: #F0F0F0;
 }

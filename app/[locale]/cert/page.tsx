@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import styles from '@/styles/CertPage.module.css';
 
 export default function CertPage() {
   const data = [
@@ -103,40 +102,42 @@ export default function CertPage() {
   ];
 
   return (
-    <div className="certifications">
-      <div className={styles.certPage}>
-        <h1 className='text-[32px] font-semibold mb-4'>Certifications</h1>
+    <div className="certifications px-5 py-10 text-[#333] max-w-[1100px] mx-auto">
+      <h1 className="text-[32px] font-semibold mb-4 text-gray-900 dark:text-[#E5E7EB]">Certifications</h1>
 
-        <div className={styles.certSection}>
-          {data.map(({ org, certs, logo }) => (
-            <div className={`${styles.item} item`} key={org}>
-              <div className="title">
-                <div className={styles.title}>
-                  <img className={`${styles.logo} zoom-img`} src={logo} alt={`${org} logo`} />
-                  <div className={styles.orgName}>{org}</div>
-                </div>
-
-              </div>
-
-              <div className={`details show`}>
-                <div className={styles.certGrid}>
-                  {certs.map(cert => (
-                    <div className={styles.certItem} key={cert.name}>
-                      <img
-                        src={cert.image}
-                        alt={cert.name}
-                        width={120}
-                        height={80}
-                        className={`${styles.certImage} zoom-img`}
-                      />
-                      <div className={styles.certCaption}>{cert.name || <em>Untitled</em>}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+      <div className="flex flex-col gap-10">
+        {data.map(({ org, certs, logo }) => (
+          <div className="p-5" key={org}>
+            <div className="flex items-center gap-4 mb-5">
+              <img
+                src={logo}
+                alt={`${org} logo`}
+                className="w-[60px] h-[60px] object-contain rounded-lg shrink-0 zoom-img"
+              />
+              <div className="text-[20px] font-semibold text-[#34495e] h-[60px] flex items-center dark:text-[#E5E7EB]">{org}</div>
             </div>
-          ))}
-        </div>
+
+            <div className="flex flex-wrap gap-6 justify-start sm:justify-start">
+              {certs.map((cert, index) => (
+                <div
+                  className="flex flex-col items-center w-[180px] p-3 rounded-[10px] transition-transform duration-200 hover:scale-[1.03] dark:text-[#E5E7EB]"
+                  key={cert.name || `untitled-${index}`}
+                >
+                  <img
+                    src={cert.image}
+                    alt={cert.name}
+                    width={160}
+                    height={100}
+                    className="rounded-lg object-cover w-[160px] h-auto zoom-img transition-transform duration-300 hover:scale-[1.05]"
+                  />
+                  <div className="mt-2 text-sm text-center text-[#555] dark:text-[#E5E7EB]">
+                    {cert.name || <em>Untitled</em>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
