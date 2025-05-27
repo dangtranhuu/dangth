@@ -106,8 +106,7 @@ java --version
 - **B3** : Gõ đoạn code sau đây vào dòng chữ *// TODO code application logic here* 
   
 ``` java
-	System.out.println("Hello World");
-
+System.out.println("Hello World");
 ```
 - **B4** : Chạy chương trình bằng cách nhấn chuột phải chọn **Run file**
 
