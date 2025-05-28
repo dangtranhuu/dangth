@@ -61,9 +61,18 @@ Type là các kiểu commits phổ biến, bạn có thể tham khảo bảng sa
 | Security       | security   | Cải thiện bảo mật của mã nguồn.                         |
 | Style          | style      | Cải thiện định dạng, kiểu dáng, chuẩn mã nguồn.       |
 | Reverts        | revert     | Quay lại một số thay đổi trước đó.                     |
+| Enhancement    | enhance    | Cải thiện tính năng đã có, thường liên quan đến UI/UX, usability hoặc tương tác người dùng mà không thêm tính năng mới. |
+
 
 - Type sẽ được viết bằng chữ in thường, trước dấu hai chấm
 
+> [!TIP]
+> Nếu bạn dùng **lint-commit** *(husky + commitlint)*, bạn cần cấu hình thêm từ khóa `enhance` vào `commitlint.config.js` để không bị lỗi khi commit.
+> ```js
+> module.exports = {
+>   types: ['feat', 'fix', 'docs', 'style', 'refactor', 'perf', 'test', 'chore', 'build', 'ci', 'revert', 'enhance'],
+> };
+> ```
 
 >[!INFO]Một số ví dụ:
 >
