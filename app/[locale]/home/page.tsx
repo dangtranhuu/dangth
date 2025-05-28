@@ -11,6 +11,7 @@ import { useTranslations } from 'next-intl';
 import { iconMap } from '@/lib/iconMap';
 import GithubContributions from '@/components/github/GithubContributions'
 import AvatarStack from '@/components/AvatarStack'
+import useFadeInOnLoad from '@/hooks/useFadeInOnLoad';
 
 const frontendSkills = ['angular', 'nextjs'];
 const backendSkills = ['springboot', 'nodejs'];
@@ -33,7 +34,11 @@ const renderSkillIcons = (keys: string[]) =>
 
 export default function Home() {
 
-  const t = useTranslations("home")
+  const t = useTranslations("home");
+  const isVisible1 = useFadeInOnLoad(100);
+  const isVisible4 = useFadeInOnLoad(400);
+  const isVisible7 = useFadeInOnLoad(700);
+  const isVisible9 = useFadeInOnLoad(900);
 
   useEffect(() => {
     const items = document.querySelectorAll('.item');
@@ -67,7 +72,7 @@ export default function Home() {
   return (
     <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
       {/* Header */}
-      <div className="relative mt-10">
+      <div className={`fade-in-load ${isVisible1 ? 'visible' : ''} relative mt-10`}>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           {/* AvatarStack */}
           <div className="order-2 md:order-none">
@@ -127,7 +132,7 @@ export default function Home() {
       </div>
 
       {/* About */}
-      <div className="space-y-4 mb-12">
+      <div className={`fade-in-load ${isVisible4 ? 'visible' : ''} space-y-4 mb-12`}>
         <p>
           I’m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly...
         </p>
@@ -151,7 +156,7 @@ export default function Home() {
       </div>
 
       {/* EXPERIENCE section */}
-      <div className="experience title section mb-12">
+      <div className={`fade-in-load ${isVisible7 ? 'visible' : ''} experience title section mb-12`}>
         <h1 className="text-[32px] font-semibold mb-4">Experience</h1>
 
         {/* Item */}
@@ -205,7 +210,7 @@ export default function Home() {
       </div>
 
       {/* EDUCATION section */}
-      <div className="education title section mb-12">
+      <div className={`fade-in-load ${isVisible9 ? 'visible' : ''} education title section mb-12`}>
         <h1 className="text-[32px] font-semibold mb-4">Education</h1>
 
         {/* === Item 1 === */}
@@ -307,14 +312,14 @@ export default function Home() {
 
 
       {/* GithubContributions section */}
-      <div className="github-contributions title section mb-12">
+      <div className={`fade-in-load ${isVisible9 ? 'visible' : ''} github-contributions title section mb-12`}>
         <h1 className="text-[32px] font-semibold mb-4">Github Contributions</h1>
         <GithubContributions />
       </div>
 
 
       {/* CERTIFICATIONS section */}
-      <div className="cert title section mb-12">
+      <div className={`fade-in-load ${isVisible9 ? 'visible' : ''} cert title section mb-12`}>
         <h1 className="text-[32px] font-semibold mb-4">Certifications</h1>
         <div className="flex flex-wrap gap-10 justify-center text-center">
           {[
