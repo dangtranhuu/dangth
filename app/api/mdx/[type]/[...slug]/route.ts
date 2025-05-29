@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getMarkdownContent } from '@/lib/mdx'
+import { getMarkdownContent } from '@/lib/core/mdx'
 
 export async function GET(
   req: Request,

@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import { TutorialConfigItem } from '../config/tutorial.config'
-import { getMarkdownContent } from './mdx'
+import { TutorialConfigItem } from '../../config/tutorial.config'
+import { getMarkdownContent } from '../core/mdx'
 
 
 const tutorialsDir = path.join(process.cwd(), 'content/tutorials')

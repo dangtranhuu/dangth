@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import RSS from 'rss';
-import { SITE_CONFIG } from '../config/config';
-import { getAllPostsMeta } from './post';
-import { getAllTutorialSlugs, getTutorial } from './tutorial';
+import { SITE_CONFIG } from '../../config/config';
+import { getAllPostsMeta } from '../content/post';
+import { getAllTutorialSlugs, getTutorial } from '../content/tutorial';
 
 export async function generateRssFeed() {
   const siteUrl = SITE_CONFIG.url;

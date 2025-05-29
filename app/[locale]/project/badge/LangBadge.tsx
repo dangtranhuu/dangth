@@ -1,6 +1,6 @@
 // LangBadge.tsx
 import React from 'react';
-import { iconMap } from '@/lib/iconMap';
+import { iconMap } from '@/lib/utils/iconMap';
 
 type LangBadgeProps = {
   lang: string;

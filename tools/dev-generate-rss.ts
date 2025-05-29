@@ -1,3 +1,3 @@
-import { generateRssFeed } from '../lib/generateRssFeed';
+import { generateRssFeed } from '../lib/core/generateRssFeed';
 
 generateRssFeed().then(() => console.log('✅ Local RSS generated'));

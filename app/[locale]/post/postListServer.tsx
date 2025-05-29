@@ -1,4 +1,4 @@
-import { getAllPostsMeta } from '@/lib/post'
+import { getAllPostsMeta } from '@/lib/content/post'
 import PostListClient from './postListClient'
 
 export default async function PostListServer() {

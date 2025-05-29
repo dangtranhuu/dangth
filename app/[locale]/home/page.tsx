@@ -8,17 +8,12 @@ import { FiYoutube } from "react-icons/fi";
 import { LuFacebook } from "react-icons/lu";
 import { TbBrandTiktok } from "react-icons/tb";
 import { useTranslations } from 'next-intl';
-import { iconMap } from '@/lib/iconMap';
+import { iconMap } from '@/lib/utils/iconMap';
 import GithubContributions from '@/components/github/GithubContributions'
 import AvatarStack from '@/components/AvatarStack'
 import { useInView } from '@/hooks/useInView';
 import useFadeInOnLoad from '@/hooks/useFadeInOnLoad';
 
-const frontendSkills = ['angular', 'nextjs'];
-const backendSkills = ['springboot', 'nodejs'];
-const dbSkills = ['mssql', 'postgresql', 'mongodb', 'redis'];
-const devopsSkills = ['dockerfile'];
-const otherSkills = ['dart', 'flutter', 'git'];
 const mySkills = ['angular', 'nextjs', 'springboot', 'nodejs', 'mssql', 'postgresql', 'mongodb', 'redis', 'dockerfile']
 
 const renderSkillIcons = (keys: string[]) =>
@@ -42,8 +37,6 @@ export default function Home() {
   const isAboutVisible = useFadeInOnLoad(500);
   const isExpVisible = useFadeInOnLoad(900);
   const isEduVisible = useFadeInOnLoad(1200);
-
-
 
   useEffect(() => {
     const items = document.querySelectorAll('.item');

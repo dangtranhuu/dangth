@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { getMarkdownContent } from './mdx'
+import { getMarkdownContent } from '../core/mdx'
 import 'katex/dist/katex.min.css'
 
 const postsDir = path.join(process.cwd(), 'content/posts')

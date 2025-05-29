@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/post'
+import { getPost, getAllPostSlugs, getAllPostsMeta } from '@/lib/content/post'
 import { extractHeadings } from '@/utils/extractHeadings'
 import GiscusComments from '@/components/github/GiscusComments'
 import { SITE_CONFIG } from '@/config/config'

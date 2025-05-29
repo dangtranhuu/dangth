@@ -1,4 +1,4 @@
-import { generateRssFeed } from '../lib/generateRssFeed';
+import { generateRssFeed } from '../lib/core/generateRssFeed';
 
 generateRssFeed()
   .then(() => console.log('✅ RSS feed generated.'))

@@ -10,7 +10,7 @@ export default function TutorialsHomePage() {
       <div className="prose prose-lg dark:prose-invert max-w-none space-y-10">
 
         <section>
-          <h1>Tutorials — Tài liệu lập trình mở</h1>
+          <h1>Tutorials</h1>
           <p>
             Đây là nơi mình chia sẻ kiến thức lập trình một cách hệ thống, súc tích, dễ hiểu.
             Nội dung được trình bày theo phong cách documentation, tối ưu cho việc học và tra cứu.
@@ -50,7 +50,7 @@ export default function TutorialsHomePage() {
           </p>
           <ul>
             <li>📮 Email: <a href="mailto:dangtt135@gmail.com">dangtt135@gmail.com</a></li>
-            <li>🌐 GitHub: <Link href="https://github.com/Theanishtar" target="_blank">Theanishtar</Link></li>
+            <li>🌐 GitHub: <Link href="https://github.com/dangtranhuu" target="_blank">dangtranhuu</Link></li>
           </ul>
         </section>
         <div className='mt-[5rem]' />
