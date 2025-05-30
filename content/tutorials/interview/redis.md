@@ -1,4 +1,4 @@
-Redis Từ Zero Tới Gà Nướng Nguyên Con
+Redis Từ Zero Tới Hero
 ===========================================
 
 **1\. Redis Là Cái Quái Gì Vậy?**
