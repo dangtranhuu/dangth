@@ -133,7 +133,7 @@ export default function CertPage() {
                   />
                   <div className="mt-2 text-sm text-center text-gray-600 dark:text-gray-300">
                     {cert.name || <em>Untitled</em>}
-                    {cert.level && <CertLabel level={cert.level} />}
+                    {/* {cert.level && <CertLabel level={cert.level} />} */}
                   </div>
                 </div>
               ))}
