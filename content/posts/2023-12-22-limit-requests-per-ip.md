@@ -4,7 +4,7 @@ title: Hạn chế Request nhận được từ một IP trong khoảng thời g
 subtitle: Xây dựng server SpringBoot hạn chế Spam Request từ người dùng
 author: Trần Hữu Đang
 date: "2023-12-22"
-image: https://github.com/dangtranhuu/davisupers/blob/main/blog/.vuepress/public/img/in-post/back-end/spam-request-filter.png?raw=true
+image: /images/post/2023-12-22-limit-requests-per-ip/1.png
 tags: ["Backend","Redis","Security"]
 
 ---
@@ -75,7 +75,6 @@ Ta chỉ cần tạo ra một Object lưu lại các thông tin như:
 public class BlockSpam implements Serializable{
 	Long time;          // thòi gian gần nhất gọi Request
 	Integer requests;   // Số Request đã gọi trong 1s
-	
 }
 ```
 Như vậy ta sẽ ghi lại từng IP gọi API và cập nhật lại time đồng thời tăng biến `requests` lên sau mỗi lần gọi.
@@ -189,8 +188,6 @@ package com.davis.model;
 public class BlockSpam implements Serializable{
 	Long currenTime;
 	Integer countrequest;
-	
-	
 }
 ```
 
