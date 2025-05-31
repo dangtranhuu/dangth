@@ -41,11 +41,11 @@ Khi học NodeJS bạn có thể phát triển các webapp phía BackEnd bằng 
 
 - NodeJS hoạt động ở phía server, giúp tạo ra các trang web động. Viết bằng ngôn ngữ Javascript. Ưu điểm của NodeJS là hướng sự kiện, bất đồng bộ, chạy rất nhanh.
 
-![object-class-diagrame-1.png](https://github.com/dangtranhuu/images/blob/main/angurvad/nodejs/session1/mo-hinh-hoat-dong-cua-nodejs.png?raw=true)
+![object-class-diagrame-1.png](https://github.com/danqth/images/blob/main/angurvad/nodejs/session1/mo-hinh-hoat-dong-cua-nodejs.png?raw=true)
 
 - So sánh với mô hình PHP, NodeJS tương ứng với Apache + PHP. NodeJS cũng giúp tạo website động như PHP: tính toán, quản lý file, tương tác database, quản lý session..
 
-![object-class-diagrame-1.png](https://github.com/dangtranhuu/images/blob/main/angurvad/nodejs/session1/mo-hinh-hoat-dong-php.png?raw=true)
+![object-class-diagrame-1.png](https://github.com/danqth/images/blob/main/angurvad/nodejs/session1/mo-hinh-hoat-dong-php.png?raw=true)
 
 ## Download và cài đặt NodeJS
 
@@ -53,7 +53,7 @@ Khi học NodeJS bạn có thể phát triển các webapp phía BackEnd bằng 
 
 - Truy cập vào địa chỉ: [Node.js](https://nodejs.org/en/download/)
 
-![object-class-diagrame-1.png](https://github.com/dangtranhuu/images/blob/main/angurvad/nodejs/session1/download-nodejs.png?raw=true)
+![object-class-diagrame-1.png](https://github.com/danqth/images/blob/main/angurvad/nodejs/session1/download-nodejs.png?raw=true)
 
 - Download xong bạn có một file .msi. Chạy file này để bắt đầu cài.
 
@@ -61,7 +61,7 @@ Khi học NodeJS bạn có thể phát triển các webapp phía BackEnd bằng 
 
 - Cài đặt là việc cơ bản về NodeJS đầu tiên. Bạn chạy file download và cứ nhắp tuần tự các nút Next, không có gì quá đặt biệt.  Trong quá trình cài NodeJS, phần mềm NPM(Node Package Manager)  cũng được cài luôn vào máy của bạn (tốt),  đây là tool cần thiết quản lý các thư viện cho bạn.
 
-![object-class-diagrame-1.png](https://github.com/dangtranhuu/images/blob/main/angurvad/nodejs/session1/cai-dat-nodejs.png?raw=true)
+![object-class-diagrame-1.png](https://github.com/danqth/images/blob/main/angurvad/nodejs/session1/cai-dat-nodejs.png?raw=true)
 
 ### 3. Kiểm tra và cấu hình
 Mở cửa sổ CMD và thực thi các lệnh sau để kiểm tra phiên bản của NodeJS và NPM:
@@ -89,7 +89,7 @@ d. Gõ lệnh thực thi file chao.js
 node chao.js
 ```
 
-![object-class-diagrame-1.png](https://github.com/dangtranhuu/images/blob/main/angurvad/nodejs/session1/node-chao.png?raw=true)
+![object-class-diagrame-1.png](https://github.com/danqth/images/blob/main/angurvad/nodejs/session1/node-chao.png?raw=true)
 
 Thấy dòng chữ Chao ban! Chuc an lanh là thành công
 
