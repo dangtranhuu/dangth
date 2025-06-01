@@ -104,7 +104,7 @@ Ví dụ: cài module express:
 ```bash
 npm install express
 ```
-Khi muốn sử dụng module thì bạn gọi bằng lệnh require, ví dụ:  ==require(“express”);==
+Khi muốn sử dụng module thì bạn gọi bằng lệnh require, ví dụ:  `require(“express”);`
 
 Và bạn cũng có thể tự viết ra các module mới nếu muốn.
 
