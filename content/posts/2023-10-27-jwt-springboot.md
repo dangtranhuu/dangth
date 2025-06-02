@@ -81,6 +81,7 @@ CREATE TABLE user_role(
 )
 ```
 
+</details>
 
 #### Thêm dữ liệu
 
