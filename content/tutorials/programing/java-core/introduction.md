@@ -93,7 +93,7 @@ java --version
 
 - **B1** : Hãy tạo mới một dự án bằng cách thực hiện 
 	- `New` -> `New Project` -> (Tab bên trái chọn Java with Ant, bên phải chọn `Java Application`) -> `Next` và đặt tên tại **project name** và nhấn `Finish`
-<video src="https://github.com/danqth/images/blob/main/angurvad/java-core/create_prj.mp4?raw=true" width="100%" controls></video>
+<video 
 
 ---
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/HRTQUU18qYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
