@@ -6,16 +6,14 @@
 
 **Inheritance** (tính kế thừa) được hiểu như sau:
 
-> [!info] Định nghĩa
-> Là thừa hưởng các đặc trưng và hành động của một lớp khác
+**Định nghĩa :** Là thừa hưởng các đặc trưng và hành động của một lớp khác
 
 
-> [!question] Làm sao nhận biết được trong code có sử dụng tính kế thừa hay không? 
+Làm sao nhận biết được trong code có sử dụng tính kế thừa hay không? 
+*Ta sẽ tìm hiểu qua biểu hiện của Tính kế thừa nhé!*
 
-Ta sẽ tìm hiểu qua biểu hiện của Tính kế thừa nhé!
-
-> [!tip] Biểu hiện
-> Gồm ba thành phần: lớp con (subclass), lớp cha (superclass), interface 
+**Biểu hiện :**
+Gồm ba thành phần: lớp con *(subclass)*, lớp cha *(superclass)*, Giao diện *(interface)* 
 
 
 ## Các thành phần
