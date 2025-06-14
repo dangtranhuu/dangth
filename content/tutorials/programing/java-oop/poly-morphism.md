@@ -7,16 +7,17 @@ Tính đa hình cho phép các đối tượng khác nhau sử dụng chung mộ
 
 **Poly morphism** (tính đa hình) được hiểu như sau:
 
-:::info THÔNG TIN
-- Một đối tượng có nhiều hình dạng khác nhau tùy vào từng ngữ cảnh
-- Biểu hiện thông qua: **nạp chồng** và **ghi đè**
-:::
+
+> [!TIP] <b>THÔNG TIN</b>
+> - Một đối tượng có nhiều hình dạng khác nhau tùy vào từng ngữ cảnh
+> - Biểu hiện thông qua: **nạp chồng** và **ghi đè**
+
 
 ## Nạp chồng phương thức
 
 **Nạp chồng *(Overloading)*** là một cách biểu hiện của tính đa hình
 
-> Hiểu một cách đơn giản nhất thì mỗi **class** sẽ có nhiều phương thức ==cùng tên nhưng khác nhau về các tham số!==
+> Hiểu một cách đơn giản nhất thì mỗi **class** sẽ có nhiều phương thức **cùng tên nhưng khác nhau về các tham số!**
 
 Nạp chồng thể hiện tính đa hình tại thời điểm biên [dịch chương trình]() (compile time polymorphism).
 
@@ -67,10 +68,12 @@ public class PolyMorphism {
 ```
 
 
-
 Nếu ta xây dựng thêm các phương thức `speak()` khác nhưng truyền vào các kiểu dữ liệu khác `String` thì có được xem là nạp chồng không?
 
-:::details Trả lời ...
+
+<details>
+  <summary>👉 Trả lời ...</summary>
+    
 Đó vẫn là nạp chồng
 ```java 
 public void speak(){
@@ -87,7 +90,7 @@ public int speak(int old){
 }
 
 ```
-:::
+</details>
 
 ## Ghi đè phương thức
 
@@ -134,11 +137,11 @@ public class PolyMorphism {
 */
 ```
 
-:::warning CÓ VẤN ĐỀ !!!
-Ta thấy có một vấn đề là **Mèo nhưng lại ăn Kẹo 😰**
+> [!WARNING] <b>CÓ VẤN ĐỀ !!!</b>
+> Ta thấy có một vấn đề là **Mèo nhưng lại ăn Kẹo 😰**
+>
+> Và đây chính là lúc ta dùng đến **Ghi đè**
 
-Và đây chính là lúc ta dùng đến **Ghi đè**
-:::
 
 Chúng ta có thể định nghĩa lại phương thức `eat()` trong lớp `Cat.java`
 
@@ -176,20 +179,21 @@ Vậy là chúng ta đã cùng nhau tìm hiểu về tính chất Đa hình tron
 Có những nội dung sau mà mình muốn các bạn note lại để sau này phỏng vấn còn cần đến:
 
 #### Tính kế thừa là gì ?
-Trả lời: Là một trong 4 tính chất của **OOP *(lập trình hướng đối tượng)*** được hiểu là đối tượng có nhiều hình dạng tùy thuộc vào vai trò và ngữ cảnh khác nhau.
+
+- Trả lời: Là một trong 4 tính chất của **OOP *(lập trình hướng đối tượng)*** được hiểu là đối tượng có nhiều hình dạng tùy thuộc vào vai trò và ngữ cảnh khác nhau.
 
 #### Đặc điểm của tính đa hình là gì?
-Trả lời: Tính đa hình cho phép các đối tượng khác nhau sử dụng chung một `interface` (giao diện).
+- Trả lời: Tính đa hình cho phép các đối tượng khác nhau sử dụng chung một `interface` (giao diện).
 
 #### Tính kế thừa được biểu hiện như thế nào?
-Trả lời: Được biểu hiện thông qua **Nạp chồng *(Overloading)*** và **Ghi đè *(Overriding)***
+- Trả lời: Được biểu hiện thông qua **Nạp chồng *(Overloading)*** và **Ghi đè *(Overriding)***
 
 #### Tính nạp chồng là gì?
-Trả lời: 
-- Một đối tượng có thể có những phương thức trùng tên nhau, nhưng khác nhau về số lượng tham số, kiểu tham số
-- Nạp chồng thể hiện tính đa hình tại thời điểm biên [dịch chương trình]() (compile time polymorphism).
+- Trả lời: 
+    - Một đối tượng có thể có những phương thức trùng tên nhau, nhưng khác nhau về số lượng tham số, kiểu tham số
+    - Nạp chồng thể hiện tính đa hình tại thời điểm biên [dịch chương trình]() (compile time polymorphism).
 
 #### Tính ghi đè là gì?
-Trả lời: 
-- Một đối tượng được kế thừa từ đối tượng khác có thể định nghĩa lại các phương thức kế thừa nếu cần thiết
-- Ghi đè thể hiện tính đa hình tại thời điểm [chạy chương trình]() (runtime polymorphism).
+- Trả lời: 
+    - Một đối tượng được kế thừa từ đối tượng khác có thể định nghĩa lại các phương thức kế thừa nếu cần thiết
+    - Ghi đè thể hiện tính đa hình tại thời điểm [chạy chương trình]() (runtime polymorphism).
