@@ -6,17 +6,17 @@
 
 **Inheritance** (tính kế thừa) được hiểu như sau:
 
-:::info Định nghĩa
-Là thừa hưởng các đặc trưng và hành động của một lớp khác
-:::
+> [!info] Định nghĩa
+> Là thừa hưởng các đặc trưng và hành động của một lớp khác
 
-> Làm sao nhận biết được trong code có sử dụng tính kế thừa hay không? 
+
+> [!question] Làm sao nhận biết được trong code có sử dụng tính kế thừa hay không? 
 
 Ta sẽ tìm hiểu qua biểu hiện của Tính kế thừa nhé!
 
-:::tip Biểu hiện
-Gồm ba thành phần: lớp con (subclass), lớp cha (superclass), interface 
-:::
+> [!tip] Biểu hiện
+> Gồm ba thành phần: lớp con (subclass), lớp cha (superclass), interface 
+
 
 ## Các thành phần
 
@@ -64,9 +64,9 @@ Như ta thấy, ta có thể kế thừa lại phương thức `sleep()` từ l�
 Các ngôn ngữ lập trình như Java, C Sharp chỉ hỗ trợ [đơn kế thừa]().
 
 
-:::tip Đơn kế thừa
-Đơn kế thừa nghĩa là một lớp con (supclass) chỉ được kế thừa từ một lớp cha (superclass)
-:::
+> [!tip] Đơn kế thừa
+> Đơn kế thừa nghĩa là một lớp con (supclass) chỉ được kế thừa từ một lớp cha (superclass)
+
 
 Hiểu đơn giản thì mỗi đứa con chỉ có duy nhất một cha =)))
 
@@ -129,11 +129,11 @@ Vậy là ta đã sử dụng được đa kế thừa trong Java bằng cách t
 
 ### Một số lưu ý
 
-::: details Khi sử dụng đa kế thừa, ta phải khai báo lớp cha trước rồi mới triển khai các giao diện
+Khi sử dụng đa kế thừa, ta phải khai báo lớp cha trước rồi mới triển khai các giao diện
 |True ✅|False ❌|
 |---|----|
 |  `class FrogDev extends Animal implements Human` | `class FrogDev implements Human extends Animal` |
-:::
+
 
 
 
