@@ -545,6 +545,10 @@ blockquote {
   border-color: #8957E5;
 }
 
+.admonition.question {
+  border-color: #1E90FF;
+}
+
 .admonition .tip .octicon {
   background: #3fb950;
 }
@@ -563,6 +567,10 @@ blockquote {
 
 .admonition .important .octicon {
   background: #8957E5;
+}
+
+.admonition .question .octicon {
+  background: #1E90FF;
 }
 
 .prose h1 {

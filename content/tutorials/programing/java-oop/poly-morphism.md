@@ -67,8 +67,8 @@ public class PolyMorphism {
 */
 ```
 
-
-Nếu ta xây dựng thêm các phương thức `speak()` khác nhưng truyền vào các kiểu dữ liệu khác `String` thì có được xem là nạp chồng không?
+> [!question]
+> Nếu ta xây dựng thêm các phương thức `speak()` khác nhưng truyền vào các kiểu dữ liệu khác `String` thì có được xem là nạp chồng không?
 
 
 <details>
