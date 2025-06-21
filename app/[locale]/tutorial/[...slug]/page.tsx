@@ -37,7 +37,7 @@ export default function TutorialPageClient() {
       isContentLoading={loading}
     >
       {!tutorial || loading ? null : (
-        <div>
+        <div className='dark:text-[var(--text-color-dark)]'>
           {/* Breadcrumb + Title + Metadata */}
           <h1 className="text-3xl font-bold mb-4">{tutorial.title || ""}</h1>
           {tutorial.subtitle && (

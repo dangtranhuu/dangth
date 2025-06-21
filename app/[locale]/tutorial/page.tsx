@@ -7,7 +7,7 @@ import GiscusComments from '@/components/github/GiscusComments'
 export default function TutorialsHomePage() {
   return (
     <TutorialLayout activeSlug="">
-      <div className="prose prose-lg dark:prose-invert max-w-none space-y-10">
+      <div className="prose prose-lg dark:prose-invert max-w-none space-y-10 dark:text-[var(--text-color-dark)]">
 
         <section>
           <h1>Tutorials</h1>
