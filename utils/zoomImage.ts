@@ -9,7 +9,15 @@ export function enableImageZoom() {
 
       img.addEventListener('click', () => {
         const rect = img.getBoundingClientRect();
+        const wrapper = document.createElement('div');
+        wrapper.className = 'zoom-wrapper';
+
         const clone = img.cloneNode(true) as HTMLImageElement;
+        clone.classList.add('zoom-clone');
+
+        wrapper.appendChild(clone);
+        document.body.appendChild(wrapper);
+
         clone.classList.add('zoom-clone');
         clone.style.top = `${rect.top}px`;
         clone.style.left = `${rect.left}px`;
@@ -17,31 +25,46 @@ export function enableImageZoom() {
         clone.style.height = `${rect.height}px`;
         document.body.appendChild(clone);
 
+        // Thêm class vào overlay
         const overlay = document.createElement('div');
         overlay.className = 'zoom-overlay';
         document.body.appendChild(overlay);
 
+        // Apply initial styles
+        wrapper.style.position = 'fixed';
+        wrapper.style.top = `${rect.top}px`;
+        wrapper.style.left = `${rect.left}px`;
+        wrapper.style.width = `${rect.width}px`;
+        wrapper.style.height = `${rect.height}px`;
+        wrapper.style.zIndex = '1000';
+        wrapper.style.transition = 'all 0.3s ease';
+
+        clone.style.width = '100%';
+        clone.style.height = '100%';
+        clone.style.objectFit = 'contain';
+        clone.style.cursor = 'zoom-out';
+
+        // Animate to center
         requestAnimationFrame(() => {
-          clone.style.top = `50%`;
-          clone.style.left = `50%`;
-          clone.style.transform = `translate(-50%, -50%)`;
-          clone.style.width = `90vw`;
-          clone.style.height = `auto`;
-          clone.style.cursor = 'zoom-out';
+          wrapper.style.top = '50%';
+          wrapper.style.left = '50%';
+          wrapper.style.width = '90vw';
+          wrapper.style.height = 'auto';
+          wrapper.style.transform = 'translate(-50%, -50%)';
         });
 
         const closeZoom = () => {
-          clone.style.transition = 'all 0.3s ease';
-          clone.style.top = `${rect.top}px`;
-          clone.style.left = `${rect.left}px`;
-          clone.style.width = `${rect.width}px`;
-          clone.style.height = `${rect.height}px`;
-          clone.style.transform = `none`;
+          wrapper.style.transition = 'all 0.3s ease';
+          wrapper.style.top = `${rect.top}px`;
+          wrapper.style.left = `${rect.left}px`;
+          wrapper.style.width = `${rect.width}px`;
+          wrapper.style.height = `${rect.height}px`;
+          wrapper.style.transform = `none`;
 
           overlay.remove();
 
           setTimeout(() => {
-            clone.remove();
+            wrapper.remove();
           }, 300);
         };
 

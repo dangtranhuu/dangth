@@ -37,22 +37,38 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Overlay nền đen */
 .zoom-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
   z-index: 9999;
+}
+
+/* Wrapper bọc ảnh zoom */
+.zoom-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  /* Ngăn ảnh zoom ảnh hưởng đến layout bên dưới */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Ảnh zoom bên trong */
 .zoom-clone {
-  position: fixed;
-  z-index: 10000;
-  transition: all 0.4s ease;
+  max-width: 100%;
+  max-height: 90vh;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  cursor: zoom-out;
+  object-fit: contain;
+  transition: all 0.4s ease;
 }
+
 
 /*========= HOME ========*/
 /* SVG mặc định ẩn */
