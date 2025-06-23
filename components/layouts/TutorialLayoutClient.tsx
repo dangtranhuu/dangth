@@ -35,7 +35,7 @@ export default function TutorialLayoutClient({
               className="fixed top-0 left-0 w-full px-4 py-3 bg-white dark:bg-gray-800 text-left border-b border-gray-200 dark:border-gray-700 shadow"
               onClick={() => setIsMobileSidebarOpen(false)}
             >
-              <p className="flex items-start gap-2 font-semibold text-2xl">
+              <p className="flex items-start gap-2 font-semibold text-2xl dark:text-[var(--text-color-dark)] ">
                 <IoMdClose /> <GiEvilBook /> Tutorials
               </p>
             </button>
@@ -51,7 +51,7 @@ export default function TutorialLayoutClient({
               className="lg:hidden fixed top-0 left-0 w-full z-50 px-4 py-3 bg-white dark:bg-gray-800 text-left border-b border-gray-200 dark:border-gray-700 shadow"
               onClick={() => setIsMobileSidebarOpen(true)}
             >
-              <p className="flex items-start gap-2 font-semibold text-2xl">
+              <p className="flex items-start gap-2 font-semibold text-2xl dark:text-[var(--text-color-dark)] ">
                 <GiHamburgerMenu /> <GiEvilBook /> Tutorials
               </p>
             </button>
