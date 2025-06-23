@@ -1,15 +1,15 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 const avatars = [
-  '/images/profile/1.JPG',
-  '/images/profile/2.JPG',
-  '/images/profile/3.JPG',
-  '/images/profile/4.JPG',
-  '/images/profile/5.JPG',
-  '/images/profile/6.JPG',
-  '/images/profile/7.JPG',
+  { id: 1, src: '/images/profile/1.JPG' },
+  { id: 2, src: '/images/profile/2.JPG' },
+  { id: 3, src: '/images/profile/3.JPG' },
+  { id: 4, src: '/images/profile/4.JPG' },
+  { id: 5, src: '/images/profile/5.JPG' },
+  { id: 6, src: '/images/profile/6.JPG' },
+  { id: 7, src: '/images/profile/7.JPG' },
 ];
 
 export default function AvatarStack() {
@@ -22,40 +22,35 @@ export default function AvatarStack() {
 
   return (
     <div className="relative w-[120px] h-[120px]">
-      {images.map((src, idx) => {
-        const isTop = idx === 0;
-        const z = images.length - idx;
+      {images.map((img, idx) => {
+        const zIndex = images.length - idx;
 
-        if (isTop) {
-          return (
-            <DraggableImage
-              key={src}
-              src={src}
-              onDragEnd={handleDragEnd}
-              zIndex={z}
-            />
-          );
-        }
 
-        // Càng về sau thì xòe ra xa hơn + xoay nhẹ
         const offsetX = idx * 8;
         const offsetY = idx * 4;
         const rotate = idx * 3;
+        const scale = 0.95;
 
-        return (
+        return idx === 0 ? (
+          <DraggableImage
+            key={img.id}
+            img={img}
+            onDragEnd={handleDragEnd}
+            zIndex={zIndex}
+          />
+        ) : (
           <motion.img
-            key={src}
-            src={src}
-            initial={{ scale: 0.95 }}
+            key={img.id}
+            src={img.src}
             animate={{
               x: offsetX,
               y: offsetY,
               rotate,
-              scale: 0.95,
+              scale,
             }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.2 }}
             className="absolute top-0 left-0 w-full h-full rounded-lg object-cover pointer-events-none shadow-md"
-            style={{ zIndex: z }}
+            style={{ zIndex }}
           />
         );
       })}
@@ -64,25 +59,24 @@ export default function AvatarStack() {
 }
 
 function DraggableImage({
-  src,
+  img,
   onDragEnd,
   zIndex,
 }: {
-  src: string;
+  img: { id: number; src: string };
   onDragEnd: () => void;
   zIndex: number;
 }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Góc lật mạnh hơn khi kéo
   const rotateX = useTransform(y, [-100, 100], [30, -30]);
   const rotateY = useTransform(x, [-100, 100], [-30, 30]);
 
-
   return (
     <motion.img
-      src={src}
+      key={img.id}
+      src={img.src}
       drag
       dragElastic={0.5}
       onDragEnd={(_, info) => {
