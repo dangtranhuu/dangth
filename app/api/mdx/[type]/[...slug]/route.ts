@@ -1,15 +1,12 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { getMarkdownContent } from '@/lib/core/mdx'
 
-export async function GET(
-  req: Request,
-  {
-    params,
-  }: {
-    params: { type: string; slug: string[] }
-  }
-) {
-  const { type, slug } = params
+export async function GET(req: NextRequest) {
+  const url = new URL(req.url)
+  const pathnameParts = url.pathname.split('/')
+  // Giả định đường dẫn là /api/mdx/posts/your/post/slug
+  const type = pathnameParts[3] // "posts" hoặc "tutorials"
+  const slug = pathnameParts.slice(4) // ["your", "post", "slug"]
 
   if (type !== 'posts' && type !== 'tutorials') {
     return NextResponse.json({ error: 'Invalid type' }, { status: 400 })
