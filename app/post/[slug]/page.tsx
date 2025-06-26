@@ -7,9 +7,10 @@ import GiscusComments from '@/components/github/GiscusComments'
 import { SITE_CONFIG } from '@/config/config'
 import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
 import { IoTimerOutline } from "react-icons/io5"
+import type { Metadata } from "next";
 
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug)
   if (!post) notFound()
   const allPosts = await getAllPostsMeta()
@@ -142,20 +143,23 @@ export async function generateStaticParams() {
   return slugs.map(({ params }) => ({ slug: params.slug }))
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug)
-  if (!post) notFound()
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
+  const post = await getPost(params.slug);
+  if (!post) notFound();
+
   return {
     title: post.title,
     openGraph: {
       title: post.title,
-      type: 'article',
+      type: "article",
       images: post.image ? [post.image] : [],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post.title,
       images: post.image ? [post.image] : [],
-    }
-  }
+    },
+  };
 }
