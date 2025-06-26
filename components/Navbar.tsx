@@ -2,14 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
 import { FaUser, FaCertificate } from 'react-icons/fa';
 import { GiMagicPortal, GiEvilBook } from 'react-icons/gi';
 import { Projects } from './icons';
 import useDarkMode from '@/hooks/useDarkMode';
 
 export default function Navbar() {
-  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
@@ -22,7 +20,7 @@ export default function Navbar() {
   const handleNavClick = (href: string) => {
     if (pathname === href) return;
     setActiveNav(href);
-    router.push(`/${locale}${href}`);
+    router.push(`/${href}`);
     setTimeout(() => {
       const navItems = document.querySelectorAll('.nav-item a');
       navItems.forEach(item => item.classList.remove('hovered'));

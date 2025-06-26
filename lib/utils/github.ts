@@ -35,7 +35,7 @@ export async function searchReposByTopicAndUser(
         'User-Agent': 'next-app',
         Accept: 'application/vnd.github.mercy-preview+json' // cần để query topics
       },
-      cache: 'no-store'
+      cache: 'force-cache',
     });
 
     if (!res.ok) {

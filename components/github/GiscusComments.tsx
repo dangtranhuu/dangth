@@ -1,15 +1,11 @@
 'use client'
 
 import Giscus from '@giscus/react'
-import { useParams, usePathname } from 'next/navigation'
-import { useLocale } from 'next-intl'
+import { usePathname } from 'next/navigation'
 import { GISCUS } from '@/config/config'
 
 export default function GiscusComments() {
-  const locale = useLocale()
   const pathname = usePathname()
-
-  const lang = locale === 'en' ? 'en' : 'vi'
 
   const initialTheme =
     typeof window !== 'undefined' && localStorage.getItem('dark-mode') === 'dark'
@@ -45,7 +41,7 @@ export default function GiscusComments() {
       emitMetadata="0"
       inputPosition="bottom"
       theme={initialTheme}
-      lang={lang}
+      lang="vi"
       loading="lazy"
     />
   )
