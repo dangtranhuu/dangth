@@ -8,11 +8,8 @@ import { SITE_CONFIG } from '@/config/config'
 import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
 import { IoTimerOutline } from "react-icons/io5"
 
-type PageProps = {
-  params: { slug: string }
-}
 
-export default async function PostPage({ params }: PageProps) {
+export default async function PostPage({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug)
   if (!post) notFound()
   const allPosts = await getAllPostsMeta()
