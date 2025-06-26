@@ -109,7 +109,7 @@ export default function Navbar() {
   return (
     <div className="fixed bottom-5 left-1/2 z-[9999] -translate-x-1/2 px-3">
       <div
-        className="inline-flex gap-2 items-center bg-[#FFFFFF] dark:bg-[#404B5D] px-4 py-2 rounded-2xl border border-[#e4e4e4] dark:border-[##5a5a5a] shadow-lg transition-all duration-300"
+        className="inline-flex gap-2 items-center bg-[#FFFFFF] dark:bg-[#404B5D] px-4 py-2 rounded-2xl border border-[#e4e4e4] dark:border-[#5a5a5a] shadow-lg transition-all duration-300"
         ref={navRef}
       >
 
