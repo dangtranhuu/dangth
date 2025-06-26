@@ -2,14 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
 import { FaUser, FaCertificate } from 'react-icons/fa';
 import { GiMagicPortal, GiEvilBook } from 'react-icons/gi';
 import { Projects } from './icons';
 import useDarkMode from '@/hooks/useDarkMode';
 
 export default function Navbar() {
-  const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
@@ -22,7 +20,7 @@ export default function Navbar() {
   const handleNavClick = (href: string) => {
     if (pathname === href) return;
     setActiveNav(href);
-    router.push(`/${locale}${href}`);
+    router.push(href);
     setTimeout(() => {
       const navItems = document.querySelectorAll('.nav-item a');
       navItems.forEach(item => item.classList.remove('hovered'));
@@ -111,7 +109,7 @@ export default function Navbar() {
   return (
     <div className="fixed bottom-5 left-1/2 z-[9999] -translate-x-1/2 px-3">
       <div
-        className="inline-flex gap-2 items-center bg-[#FFFFFF] dark:bg-[#404B5D] px-4 py-2 rounded-2xl border border-[#e4e4e4] dark:border-[##5a5a5a] shadow-lg transition-all duration-300"
+        className="inline-flex gap-2 items-center bg-[#FFFFFF] dark:bg-[#404B5D] px-4 py-2 rounded-2xl border border-[#e4e4e4] dark:border-[#5a5a5a] shadow-lg transition-all duration-300"
         ref={navRef}
       >
 
