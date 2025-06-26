@@ -20,7 +20,7 @@ export default function Navbar() {
   const handleNavClick = (href: string) => {
     if (pathname === href) return;
     setActiveNav(href);
-    router.push(`/${href}`);
+    router.push(href);
     setTimeout(() => {
       const navItems = document.querySelectorAll('.nav-item a');
       navItems.forEach(item => item.classList.remove('hovered'));
