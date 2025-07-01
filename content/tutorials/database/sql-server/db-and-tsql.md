@@ -1,18 +1,17 @@
-<!-- ---
+---
 layout: Post
-title: Bài 2. Tạo CSDL quan hệ & ngôn ngữ truy vấn T-SQL
-subtitle: Cơ sở dữ liệu
+title: "Bài 2. Tạo CSDL quan hệ & ngôn ngữ truy vấn T-SQL"
+subtitle: "Cơ sở dữ liệu"
 author: KhanhDan
-date: 2023-07-21
+date: "2023-07-21"
 useHeaderImage: false
 headerImage: https://github.com/danqth/images/blob/main/angurvad/java-core/session1/banner.png?raw=true
-headerMask: rgba(39, 77, 61, 0.61)
+headerMask: "rgba(39, 77, 61, 0.61)"
 permalinkPattern: /ebook/sql-server/:slug/
 tags:
   - SQL Server
---- -->
+---
 
-# Tạo CSDL quan hệ và T-SQL
 
 Nội dung: <br>
 - Tổng quan về SQL Server.

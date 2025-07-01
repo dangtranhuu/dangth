@@ -1,21 +1,22 @@
-<!-- ---
+---
 layout: Post
-title: Bài 6. Trigger
-subtitle: Cơ sở dữ liệu
+title: "Bài 6. Trigger"
+subtitle: "Cơ sở dữ liệu"
 author: KhanhDan
-date: 2023-07-22
+date: "2023-07-22"
 useHeaderImage: false
 headerImage: https://github.com/danqth/images/blob/main/angurvad/java-core/session1/banner.png?raw=true
-headerMask: rgba(39, 77, 61, 0.61)
+headerMask: "rgba(39, 77, 61, 0.61)"
 permalinkPattern: /ebook/sql-server/:slug/
 tags:
   - SQL Server
---- -->
+---
+<!-- 
 # Trigger
 Nội dung: <br>
 
 - Tổng quan Trigger
-- Làm việc với trigger
+- Làm việc với trigger -->
 
 <!-- more -->
 

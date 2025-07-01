@@ -1,23 +1,24 @@
-<!-- ---
+---
 layout: Post
-title: Bài 7. Hàm người dùng định nghĩa & VIEW
-subtitle: Cơ sở dữ liệu
+title: "Bài 7. Hàm người dùng định nghĩa & VIEW"
+subtitle: "Cơ sở dữ liệu"
 author: KhanhDan
-date: 2023-07-22
+date: "2023-07-22"
 useHeaderImage: false
 headerImage: https://github.com/danqth/images/blob/main/angurvad/java-core/session1/banner.png?raw=true
-headerMask: rgba(39, 77, 61, 0.61)
+headerMask: "rgba(39, 77, 61, 0.61)"
 permalinkPattern: /ebook/sql-server/:slug/
 tags:
   - SQL Server
---- -->
+---
 
+<!-- 
 # Function và View
 
 Nội dung: <br>
 
 - Hàm người dùng định nghĩa
-- Khung nhìn View
+- Khung nhìn View -->
 
 <!-- more -->
 

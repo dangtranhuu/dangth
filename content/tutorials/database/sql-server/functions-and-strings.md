@@ -1,17 +1,17 @@
-<!-- ---
+---
 layout: Post
-title: Bài 3. Các hàm hệ thống & xử lý chuỗi
-subtitle: Cơ sở dữ liệu
+title: "Bài 3. Các hàm hệ thống & xử lý chuỗi"
+subtitle: "Cơ sở dữ liệu"
 author: KhanhDan
-date: 2023-07-21
+date: "2023-07-21"
 useHeaderImage: false
 headerImage: https://github.com/danqth/images/blob/main/angurvad/java-core/session1/banner.png?raw=true
-headerMask: rgba(39, 77, 61, 0.61)
+headerMask: "rgba(39, 77, 61, 0.61)"
 permalinkPattern: /ebook/sql-server/:slug/
 tags:
   - SQL Server
---- -->
-# Các hàm hệ thống và xử lý chuỗi
+---
+
 Nội dung: <br>
 - Các hàm hệ thống Sql
 - Xử lý chuỗi

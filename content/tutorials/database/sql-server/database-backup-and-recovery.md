@@ -1,18 +1,16 @@
-<!-- ---
+---
 layout: Post
-title: Bài 8. Quản trị CSDL với SQL Server
-subtitle: Cơ sở dữ liệu
+title: "Bài 8. Quản trị CSDL với SQL Server"
+subtitle: "Cơ sở dữ liệu"
 author: KhanhDan
-date: 2023-07-22
-useHeaderImage: false
+date: "2023-07-22"
 headerImage: https://github.com/danqth/images/blob/main/angurvad/java-core/session1/banner.png?raw=true
-headerMask: rgba(39, 77, 61, 0.61)
+headerMask: "rgba(39, 77, 61, 0.61)"
 permalinkPattern: /ebook/sql-server/:slug/
 tags:
   - SQL Server
---- -->
+---
 
-# Sao lưu và phục hồi CSDL
 
 Nội dung: <br>
 
