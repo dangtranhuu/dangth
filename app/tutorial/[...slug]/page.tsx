@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
+import { useParams, notFound } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getMarkdownClient } from '@/lib/core/mdx-client'
 import { MarkdownContent } from '@/lib/core/mdx'
@@ -11,6 +11,8 @@ import { tutorialSidebar } from '@/config/tutorial.config'
 import TutorialLayoutClient from '@/components/layouts/TutorialLayoutClient'
 import GiscusComments from '@/components/github/GiscusComments'
 import { MdHistory, MdRebaseEdit } from "react-icons/md"
+import type { Metadata } from "next";
+import { getTutorial } from '@/lib/content/tutorial'
 
 export default function TutorialPageClient() {
   const { slug } = useParams() as { slug: string[] }
@@ -85,4 +87,26 @@ export default function TutorialPageClient() {
       )}
     </TutorialLayoutClient>
   )
+}
+
+
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+): Promise<Metadata> {
+  const post = await getTutorial(params.slug);
+  if (!post) notFound();
+
+  return {
+    title: post.title,
+    openGraph: {
+      title: post.title,
+      type: "article",
+      images: post.image ? [post.image] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      images: post.image ? [post.image] : [],
+    },
+  };
 }
