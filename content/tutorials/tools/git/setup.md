@@ -1,5 +1,20 @@
+---
+layout: Post
+title: Bài 1. Setup môi trường
+subtitle: Cài đặt Git & tạo tài khoản GitHub
+author: "Trần Hữu Đang"
+date: "2023-07-10"
+headerImage: https://github.com/theanishtar/images/blob/main/angurvad/github/session1/downloadgit.png?raw=true
+headerMask: rgba(39, 77, 61, 0.61)
+permalinkPattern: /ebook/git/:slug/
+tags:
+  - Git
+  - GitHub
+  - Cài đặt môi trường
+  - Hướng dẫn cơ bản
+---
 
-# Bài 1. Setup môi trường
+<!-- # Bài 1. Setup môi trường -->
 
 ## Git là gì?
 

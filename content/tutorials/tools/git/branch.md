@@ -1,4 +1,19 @@
-# Bài 5. Làm việc với nhánh
+---
+layout: Post
+title: Bài 5. Làm việc với nhánh
+subtitle: Quản lý mã nguồn với Git
+author: "Trần Hữu Đang"
+date: "2023-07-28"
+headerImage: https://github.com/theanishtar/images/blob/main/angurvad/github/session5/pic1.png?raw=true
+headerMask: rgba(39, 77, 61, 0.61)
+permalinkPattern: /ebook/git/:slug/
+tags:
+  - Git
+  - Quản lý mã nguồn
+---
+
+
+<!-- # Bài 5. Làm việc với nhánh -->
 
 Một dự án gồm rất nhiều chức năng, trong thực tế mỗi thành viên sẽ đảm nhận ít nhất một chức năng. 
 

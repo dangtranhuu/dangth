@@ -1,4 +1,20 @@
-# Bài 6 Viết commits chuyên nghiệp
+---
+layout: Post
+title: Bài 6. Viết commits chuyên nghiệp
+subtitle: Làm chủ Git Commit Message
+author: "Trần Hữu Đang"
+date: "2023-08-01"
+headerImage: https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/commit-good.png?raw=true
+headerMask: rgba(39, 77, 61, 0.61)
+permalinkPattern: /ebook/git/:slug/
+tags:
+  - Git
+  - Commit
+  - Kỹ năng lập trình
+---
+
+
+<!-- # Bài 6 Viết commits chuyên nghiệp -->
 
 ![](https://github.com/theanishtar/images/blob/main/angurvad/github/sesstion7/list/1.png?raw=true)
 

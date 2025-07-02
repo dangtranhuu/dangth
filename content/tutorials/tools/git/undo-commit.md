@@ -1,8 +1,23 @@
-<img src="https://count-viewer.vercel.app//api/blog/view?url=https://davisupers.web.app/github/session3.html" alt="Image 1" style="float: left">
-
+---
+layout: Post
+title: Bài 3. Undo khi gặp một commit sai
+subtitle: Sửa commit lỗi bằng git reset và git revert
+author: "Trần Hữu Đang"
+date: "2023-07-18"
+headerImage: https://count-viewer.vercel.app//api/blog/view?url=https://davisupers.web.app/github/session3.html
+headerMask: rgba(39, 77, 61, 0.61)
+permalinkPattern: /ebook/git/:slug/
+tags:
+  - Git
+  - Commit
+  - Undo
+  - Git Reset
+  - Git Revert
 ---
 
-# Bài 3 Undo khi gặp một commit sai
+
+
+<!-- # Bài 3 Undo khi gặp một commit sai -->
 
 Ta đã biết làm sao để lưu một lịch sử thay đổi (commit) trong repo.
 

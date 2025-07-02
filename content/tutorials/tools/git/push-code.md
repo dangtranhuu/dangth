@@ -1,4 +1,21 @@
-# Bài 2. Đẩy code lên GitHub
+---
+layout: Post
+title: Bài 2. Đẩy code lên GitHub
+subtitle: Hướng dẫn quy trình làm việc với Repository
+author: "Trần Hữu Đang"
+date: "2023-07-15"
+headerImage: https://github.com/danqth/images/blob/main/angurvad/github/session2/quytrinh.png?raw=true
+headerMask: rgba(39, 77, 61, 0.61)
+permalinkPattern: /ebook/git/:slug/
+tags:
+  - Git
+  - GitHub
+  - Đẩy code
+  - Repository
+---
+
+
+<!-- # Bài 2. Đẩy code lên GitHub -->
 
 ## Quy trình đẩy code 
 

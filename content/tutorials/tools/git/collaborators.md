@@ -1,9 +1,20 @@
-<img src="https://count-viewer.vercel.app//api/blog/view?url=https://davisupers.web.app/github/session4.html" alt="Image 1" style="float: left">
-
+---
+layout: Post
+title: Bài 4. Làm việc nhóm
+subtitle: Quản lý cộng tác trong GitHub
+author: "Trần Hữu Đang"
+date: "2023-07-25"
+headerImage: https://github.com/theanishtar/images/blob/main/angurvad/github/session4/pic4.1.png?raw=true
+headerMask: rgba(39, 77, 61, 0.61)
+permalinkPattern: /ebook/git/:slug/
+tags:
+  - Git
+  - Làm việc nhóm
+  - GitHub
 ---
 
 
-# Bài 4 Làm việc nhóm
+<!-- # Bài 4 Làm việc nhóm -->
 
 Làm việc nhóm với Git là một phần quan trọng trong quá trình phát triển phần mềm hoặc dự án công nghệ thông tin. 
 
