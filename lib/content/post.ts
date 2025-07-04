@@ -29,6 +29,7 @@ export interface PostMeta {
   image?: string | null
   tags?: string[]
   arxiv?: string | null
+  published: boolean
 }
 
 
@@ -65,6 +66,7 @@ export async function getAllPostsMeta() {
         image: data.image ?? null,
         tags: data.tags ?? [],
         arxiv: data.arxiv ?? null,
+        published: data.published ?? true
       }
     })
 }

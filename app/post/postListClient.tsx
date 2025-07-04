@@ -14,6 +14,7 @@ interface Post {
   image?: string
   tags?: string[]
   arxiv?: string
+  published: boolean
 }
 
 export default function PostListClient({ posts }: { posts: Post[] }) {
@@ -27,7 +28,10 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
   })
 
   const allTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1])
-  const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const sortedPosts = [...posts]
+    .filter((post) => post.published) // 👈 lọc chỉ các bài viết đã được xuất bản
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
 
   const filteredPosts = selectedTag
     ? sortedPosts.filter((post) => post.tags?.includes(selectedTag))
