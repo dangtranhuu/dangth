@@ -89,6 +89,8 @@ Thuật ngữ **"Bezos Scrolling"** ám chỉ hiệu ứng scroll mượt như t
 
 📌 Tip: Kết hợp cùng `scroll-snap` hoặc thư viện `Lenis` để tăng trải nghiệm.
 
+
+![](/images/post/2025-07-02-top-web-design-trends-2025/scroll.gif)
 ---
 
 ## 5. **Minimalism Elevated – Tối giản có chiều sâu**
