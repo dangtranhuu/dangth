@@ -5,7 +5,10 @@ subtitle: Đa luồng trong Java
 author: Trần Hữu Đang
 date: "2025-08-15"
 image: /images/post/2024-04-11-laravel-socketio/1.png
-tags: ["Backend","Web","Java"]
+tags:
+  - Lập trình
+  - Lịch sử công nghệ
+  - Java
 published: false
 
 ---
