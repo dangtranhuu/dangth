@@ -3,6 +3,7 @@ import { searchReposByTopicAndUser } from "@/lib/utils/github";
 import { GITHUB } from "@/config/config";
 import { LangBadge } from "./badge/LangBadge";
 import { FaRegStar } from "react-icons/fa";
+import { ToolsSection } from "./Tools";
 
 type RepoCardProps = {
   url: string;
@@ -71,6 +72,8 @@ const RepoCard = ({
   );
 };
 
+
+
 export default async function Projects() {
   const repos = await searchReposByTopicAndUser(
     GITHUB.username,
@@ -83,10 +86,16 @@ export default async function Projects() {
       <h1 className="text-[32px] font-semibold mb-6 dark:text-[#E5E7EB]">
         Projects
       </h1>
+
       <div className="flex flex-col gap-4">
         {repos.map((repo) => (
           <RepoCard key={repo.name} {...repo} />
         ))}
+      </div>
+
+      <div id="tools">
+        {/* Tools (tĩnh) */}
+        <ToolsSection />
       </div>
     </div>
   );
