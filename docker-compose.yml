@@ -1,0 +1,18 @@
+services:
+  vpdt-tsc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dangth:2025-10-18
+    container_name: dangth
+    environment:
+      - NODE_ENV=production
+      - PORT=1210
+    ports:
+      - "1210:1210"
+    restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
