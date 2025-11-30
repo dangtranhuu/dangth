@@ -7,10 +7,10 @@ RUN npm ci --legacy-peer-deps || npm install --legacy-peer-deps
 
 # Copy toàn bộ source vào
 COPY . .
-COPY content ./content
 
 ENV NODE_ENV=production
 RUN npm run build
+
 
 # Stage 2: Runtime
 FROM node:20-alpine
@@ -20,7 +20,7 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/content ./content  
+
 
 ENV NODE_ENV=production
 ENV PORT=1210
