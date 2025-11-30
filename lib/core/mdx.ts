@@ -48,7 +48,7 @@ export async function getMarkdownContent(
     .use(remarkAdmonition)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
-    .use(rehypeKatex)
+    .use(rehypeKatex, { strict: false })
     .use(rehypeHighlight)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
