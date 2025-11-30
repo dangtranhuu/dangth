@@ -34,7 +34,7 @@ export async function getMarkdownContent(
   type: MarkdownType,
   slug: string
 ): Promise<MarkdownContent | null> {
-  const baseDir = path.join(process.cwd(), 'content', type)
+  const baseDir = path.resolve(process.cwd(), 'content', type)
   const filePath = path.join(baseDir, `${slug}.md`)
 
   if (!fs.existsSync(filePath)) return null
