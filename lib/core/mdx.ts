@@ -37,6 +37,7 @@ export async function getMarkdownContent(
   const baseDir = path.resolve(process.cwd(), 'content', type)
   const filePath = path.join(baseDir, `${slug}.md`)
 
+  console.log("📁 Looking for:", filePath)
   if (!fs.existsSync(filePath)) return null
 
   const raw = fs.readFileSync(filePath, 'utf-8')
