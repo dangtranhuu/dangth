@@ -246,7 +246,7 @@ export default function Home() {
 
             {/* Time */}
             <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
-              Sep 2021 – Jan 2024
+              Sep 2025 – Jan 2027
             </div>
           </header>
 

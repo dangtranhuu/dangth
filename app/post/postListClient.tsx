@@ -77,8 +77,9 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
             <img
               src={post.image}
               alt={post.title}
-              className="w-full h-[140px] sm:h-[120px] object-cover rounded-md border dark:border-gray-700"
+              className="w-full aspect-[16/9] sm:h-[120px] object-cover rounded-md border dark:border-gray-700"
             />
+
           </div>
 
           {/* Post Info */}
