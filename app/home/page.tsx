@@ -112,7 +112,7 @@ export default function Home() {
                   <FiYoutube />
                 </button>
               </a>
-              <a href="https://www.facebook.com/dangdeveloper/" target="_blank">
+              <a href="https://www.facebook.com/dangth.dev/" target="_blank">
                 <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
                   <LuFacebook />
                 </button>
@@ -128,7 +128,7 @@ export default function Home() {
       </div>
 
       {/* About */}
-      <div className={`fade-in-load scroll-fade ${isAboutVisible ? 'visible' : ''} space-y-4 mb-12`}>
+      <section className={`fade-in-load scroll-fade ${isAboutVisible ? 'visible' : ''} space-y-4 mb-12`}>
         <p>
           I’m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly...
         </p>
@@ -149,10 +149,10 @@ export default function Home() {
           <span style={{ flexBasis: '100%' }}>My skills:</span>
           {renderSkillIcons(mySkills)}
         </div>
-      </div>
+      </section>
 
       {/* EXPERIENCE section */}
-      <div className={`fade-in-load scroll-fade ${isExpVisible ? 'visible' : ''} experience title section mb-12`}>
+      <section className={`fade-in-load scroll-fade ${isExpVisible ? 'visible' : ''} experience title section mb-12`}>
         <h1 className="text-[32px] font-semibold mb-4">Experience</h1>
 
         {/* Item */}
@@ -203,10 +203,10 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* EDUCATION section */}
-      <div className={`fade-in-load scroll-fade ${isEduVisible ? 'visible' : ''} education title section mb-12`}>
+      <section className={`fade-in-load scroll-fade ${isEduVisible ? 'visible' : ''} education title section mb-12`}>
         <h1 className="text-[32px] font-semibold mb-4">Education</h1>
 
         {/* === Item 1 === */}
@@ -304,18 +304,18 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
 
       {/* GithubContributions section */}
-      <div ref={ghcRef} className={`fade-in-load scroll-fade ${ghcVisible ? 'visible' : ''} github-contributions title section mb-12`}>
+      <section ref={ghcRef} className={`fade-in-load scroll-fade ${ghcVisible ? 'visible' : ''} github-contributions title section mb-12`}>
         <h1 className="text-[32px] font-semibold mb-4">Github Contributions</h1>
         <GithubContributions />
-      </div>
+      </section>
 
 
       {/* CERTIFICATIONS section */}
-      <div ref={certRef} className={`fade-in-load scroll-fade ${certVisible ? 'visible' : ''} cert title section mb-12`}>
+      <section ref={certRef} className={`fade-in-load scroll-fade ${certVisible ? 'visible' : ''} cert title section mb-12`}>
         <h1 className="text-[32px] font-semibold mb-4">Certifications</h1>
         <div className="flex flex-wrap gap-10 justify-center text-center">
           {[
@@ -352,7 +352,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </div >
   );
 }
