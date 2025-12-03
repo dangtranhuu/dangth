@@ -128,7 +128,8 @@ export default function Home() {
       </div>
 
       {/* About */}
-      <section className={`fade-in-load scroll-fade ${isAboutVisible ? 'visible' : ''} space-y-4 mb-12`}>
+      <section id="about-title" className={`fade-in-load scroll-fade ${isAboutVisible ? 'visible' : ''} space-y-4 mb-12`} aria-labelledby="about-title">
+        <h2 className="text-[32px] font-semibold mb-4 mt-4 sr-only">About</h2>
         <p>
           I’m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly...
         </p>
@@ -152,12 +153,12 @@ export default function Home() {
       </section>
 
       {/* EXPERIENCE section */}
-      <section className={`fade-in-load scroll-fade ${isExpVisible ? 'visible' : ''} experience title section mb-12`}>
-        <h1 className="text-[32px] font-semibold mb-4">Experience</h1>
+      <section id="experience-title" className={`fade-in-load scroll-fade ${isExpVisible ? 'visible' : ''} experience title section mb-12`} aria-labelledby="experience-title">
+        <h2 className="text-[32px] font-semibold mb-4">Experience</h2>
 
         {/* Item */}
-        <div className="item">
-          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+        <article className="item">
+          <header className="title flex justify-between items-start py-2 cursor-pointer group">
             {/* LEFT: logo + info */}
             <div className="left col flex">
               {/* Avatar/logo */}
@@ -165,7 +166,7 @@ export default function Home() {
                 <img
                   src="/images/exp/devlands.jpg"
                   className="w-[48px] h-[48px] object-cover rounded-md"
-                  alt="devlands"
+                  alt="Devlands brand logo"
                 />
               </div>
 
@@ -193,7 +194,7 @@ export default function Home() {
             <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
               2021–2023
             </div>
-          </div>
+          </header>
 
           {/* Toggle content */}
           <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
@@ -202,16 +203,16 @@ export default function Home() {
               offering tutorials and coding challenges to support developers.
             </p>
           </div>
-        </div>
+        </article>
       </section>
 
       {/* EDUCATION section */}
-      <section className={`fade-in-load scroll-fade ${isEduVisible ? 'visible' : ''} education title section mb-12`}>
-        <h1 className="text-[32px] font-semibold mb-4">Education</h1>
+      <section id="education-title" className={`fade-in-load scroll-fade ${isEduVisible ? 'visible' : ''} education title section mb-12`} aria-labelledby="education-title">
+        <h2 className="text-[32px] font-semibold mb-4">Education</h2>
 
         {/* === Item 1 === */}
-        <div className="item">
-          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+        <article className="item">
+          <header className="title flex justify-between items-start py-2 cursor-pointer group">
             {/* LEFT: logo + info */}
             <div className="left col flex">
               {/* Logo */}
@@ -219,7 +220,7 @@ export default function Home() {
                 <img
                   src="/images/education/ctu.png"
                   className="w-[48px] h-[48px] object-cover rounded-full"
-                  alt="ctu"
+                  alt="Can Tho University logo"
                 />
               </div>
 
@@ -247,7 +248,7 @@ export default function Home() {
             <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
               Sep 2021 – Jan 2024
             </div>
-          </div>
+          </header>
 
           {/* Toggle content */}
           <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
@@ -255,11 +256,11 @@ export default function Home() {
               Studied Information Technology at Can Tho University, focusing on programming, databases, and software development.
             </p>
           </div>
-        </div>
+        </article>
 
         {/* === Item 2 === */}
-        <div className="item">
-          <div className="title flex justify-between items-start py-2 cursor-pointer group">
+        <article className="item">
+          <header className="title flex justify-between items-start py-2 cursor-pointer group">
             {/* LEFT: logo + info */}
             <div className="left col flex">
               {/* Logo */}
@@ -267,7 +268,7 @@ export default function Home() {
                 <img
                   src="/images/education/fpoly.jpg"
                   className="w-[48px] h-[48px] object-cover rounded-full"
-                  alt="fpt"
+                  alt="FPT Polytechnic logo"
                 />
               </div>
 
@@ -295,7 +296,7 @@ export default function Home() {
             <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
               Sep 2021 – Jan 2024
             </div>
-          </div>
+          </header>
 
           {/* Toggle content */}
           <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
@@ -303,20 +304,20 @@ export default function Home() {
               Studied Software Development at FPT Polytechnic, with experience as a teaching assistant supporting student learning.
             </p>
           </div>
-        </div>
+        </article>
       </section>
 
 
       {/* GithubContributions section */}
-      <section ref={ghcRef} className={`fade-in-load scroll-fade ${ghcVisible ? 'visible' : ''} github-contributions title section mb-12`}>
-        <h1 className="text-[32px] font-semibold mb-4">Github Contributions</h1>
+      <section id="github-contributions-title" ref={ghcRef} className={`fade-in-load scroll-fade ${ghcVisible ? 'visible' : ''} github-contributions title section mb-12`} aria-labelledby="github-contributions-title">
+        <h2 className="text-[32px] font-semibold mb-4">Github Contributions</h2>
         <GithubContributions />
       </section>
 
 
       {/* CERTIFICATIONS section */}
-      <section ref={certRef} className={`fade-in-load scroll-fade ${certVisible ? 'visible' : ''} cert title section mb-12`}>
-        <h1 className="text-[32px] font-semibold mb-4">Certifications</h1>
+      <section id="certifications-title" ref={certRef} className={`fade-in-load scroll-fade ${certVisible ? 'visible' : ''} cert title section mb-12`} aria-labelledby="certifications-title">
+        <h2 className="text-[32px] font-semibold mb-4">Certifications</h2>
         <div className="flex flex-wrap gap-10 justify-center text-center">
           {[
             {
@@ -338,7 +339,7 @@ export default function Home() {
               date: 'APR 15, 2022',
             },
           ].map((cert, idx) => (
-            <div key={idx} className="w-[250px]">
+            <article key={idx} className="w-[250px]">
               <img
                 src={`/images/cert/${cert.img}`}
                 alt={cert.title}
@@ -349,7 +350,7 @@ export default function Home() {
               </div>
               <div className="text-[14px] text-[#555]">{cert.org}</div>
               <div className="text-[13px] text-[#888] mt-1">Issued {cert.date}</div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
