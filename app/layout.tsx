@@ -37,13 +37,13 @@ export const metadata = {
     type: 'website',
     siteName: 'dangth.dev',
     locale: 'vi_VN',
-    images: ['/og-image.png'],
+    images: ['/images/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Trần Hữu Đang – Fullstack Developer',
     description: 'Portfolio lập trình viên fullstack.',
-    images: ['/og-image.png'],
+    images: ['/images/og-image.png'],
   },
   other: {
     'script:ld+json': JSON.stringify({
