@@ -1,6 +1,16 @@
 import React from "react"
 import Kaomoji from '@/components/Kaomoji';
 
+export const metadata = {
+  title: "404 - Không tìm thấy trang | dangth.dev",
+  description:
+    "Trang bạn tìm kiếm không tồn tại. Có thể đường dẫn đã thay đổi hoặc bạn nhập sai URL. Hãy quay về trang chủ để tiếp tục khám phá.",
+  robots: {
+    index: false,      // KHÔNG index trang lỗi
+    follow: false,
+  },
+};
+
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4" style={{ minHeight: 'calc(100vh - 120px)' }}>
