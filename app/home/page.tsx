@@ -37,7 +37,11 @@ export default function Home() {
             <h1 className="sr-only">
               Trần Hữu Đang – Fullstack Developer
             </h1>
-            <h1 className="text-[40px] md:text-[50px] font-bold">Tran Huu Dang</h1>
+
+            <p className="text-[40px] md:text-[50px] font-bold">
+              Tran Huu Dang
+            </p>
+
             <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">Fullstack developer</p>
           </div>
 
@@ -88,12 +92,23 @@ export default function Home() {
 
       {/* ABOUT */}
       <section className="mt-12 space-y-4 fade-in">
-        <p>I’m a fullstack developer with a strong interest in building web applications...</p>
-        <p>I’ve led and contributed to several real-world projects such as DESTINY, DAVITICKETS...</p>
-        <p>Connect with my Linkedin or Github to share knowledge ^^</p>
+        <p>Tôi là Trần Hữu Đang, một Fullstack Developer với kinh nghiệm xây dựng web app sử dụng công nghệ hiện đại như Next.js, Angular, Spring Boot, Node.js, PostgreSQL, MongoDB và Redis.</p>
+        <p>
+          Tôi tập trung vào việc xây dựng những ứng dụng web có hiệu năng cao, kiến trúc rõ ràng
+          và trải nghiệm người dùng mượt mà. Trong quá trình phát triển, tôi thường làm việc với
+          các hệ thống realtime, websocket, xử lý sự kiện qua webhook, tích hợp AI vào sản phẩm
+          và triển khai nhiều kỹ thuật tối ưu hiệu năng như caching, queue, lazy loading
+          và database indexing.
+        </p>
+        <p>
+          Tôi đảm nhiệm cả frontend và backend, từ thiết kế API, tối ưu server, xây dựng giao diện
+          tương tác cho đến việc triển khai hệ thống thực tế. Tôi luôn ưu tiên các giải pháp có khả năng
+          mở rộng, dễ bảo trì và tối ưu tài nguyên.
+        </p>
 
+        <p>Bên cạnh phát triển phần mềm, tôi còn quan tâm đến UI/UX, DevOps cơ bản và cloud computing. Tôi luôn học hỏi để cập nhật kiến thức, đồng thời chia sẻ qua Github và mạng xã hội.</p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <span>My skills:</span>
+          <span>Kỹ năng của tôi:</span>
           {renderSkillIcons(mySkills)}
         </div>
       </section>
@@ -108,7 +123,7 @@ export default function Home() {
           time="2021–2023"
           logo="/images/exp/devlands.jpg"
         >
-          Devlands is a personal brand project designed as a social learning platform...
+          Tôi xây dựng các bài học lập trình, hướng dẫn thiết kế giao diện và tạo ra một không gian chia sẻ kiến thức dành cho cộng đồng người học. Đây không phải là một dự án phần mềm, mà là hoạt động cá nhân giúp tôi cải thiện kỹ năng trình bày, thiết kế UI và viết nội dung kỹ thuật một cách rõ ràng, dễ tiếp cận.
         </ExpandItem>
       </section>
 
@@ -122,7 +137,7 @@ export default function Home() {
           time="Sep 2025 – Jan 2027"
           logo="/images/education/ctu.png"
         >
-          Studied Information Technology at Can Tho University...
+          Học về lập trình, cơ sở dữ liệu, phân tích hệ thống và nền tảng công nghệ thông tin.
         </ExpandItem>
 
         <ExpandItem
@@ -131,7 +146,7 @@ export default function Home() {
           time="Sep 2021 – Jan 2024"
           logo="/images/education/fpoly.jpg"
         >
-          Studied Software Development at FPT Polytechnic...
+          Tập trung thực hành trong các môn như OOP, thiết kế web, backend, test và phát triển ứng dụng thực tế.
         </ExpandItem>
       </section>
 
@@ -144,7 +159,7 @@ export default function Home() {
       {/* CERTIFICATIONS */}
       <section className="mt-12 fade-in text-center">
         <h2 className="text-[32px] font-semibold mb-4">Certifications</h2>
-
+        <p>Tôi đã hoàn thành một số chứng chỉ quốc tế như:</p>
         <div className="flex flex-wrap gap-10 justify-center">
           {[
             {
@@ -181,6 +196,8 @@ export default function Home() {
               <div className="text-[13px] text-[#888] mt-1">Issued {cert.date}</div>
             </article>
           ))}
+
+          <p>Những chứng chỉ này giúp tôi củng cố kiến thức backend, cloud, và xử lý dữ liệu.</p>
         </div>
       </section>
     </div>
