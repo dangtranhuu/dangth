@@ -1,9 +1,7 @@
-// app/page.tsx (SERVER COMPONENT)
-
 import Image from "next/image";
 import ExpandItem from "@/components/home/ExpandItem";
 import AvatarStack from "@/components/AvatarStack";
-import GithubContributions from "@/components/github/GithubContributions"; // DIRECT CLIENT IMPORT
+import GithubContributions from "@/components/github/GithubContributions";
 import { iconMap } from "@/lib/utils/iconMap";
 
 export default function Home() {

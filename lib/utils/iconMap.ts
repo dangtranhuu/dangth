@@ -1,38 +1,19 @@
 import {
-  FaVuejs, FaReact, FaPython, FaJava, FaNodeJs, FaHtml5, FaCss3Alt, FaDocker, FaGitAlt
+  FaVuejs, FaReact, FaPython, FaJava, FaNodeJs, FaDocker, FaGitAlt
 } from 'react-icons/fa';
 import { FaFlutter } from "react-icons/fa6";
 import {
   SiJavascript, SiTypescript, SiCplusplus, SiGo, SiRust, SiPhp,
   SiDart, SiCmake, SiSwift, SiKotlin, SiSass, SiAngular, SiMongodb, SiRedis
 } from 'react-icons/si';
-import { PiFileCSharpBold, PiFileSqlBold } from 'react-icons/pi';
+import { PiFileCSharpBold } from 'react-icons/pi';
 import { TbBrandNextjs, TbBrandMysql } from "react-icons/tb";
 import { BiLogoSpringBoot, BiLogoPostgresql } from "react-icons/bi";
 import { DiMsqlServer } from "react-icons/di";
-import {
-  FiGithub,
-  FiYoutube
-} from "react-icons/fi";
-
-import {
-  LuLinkedin,
-  LuFacebook
-} from "react-icons/lu";
-
-import {
-  SiLeetcode
-} from "react-icons/si";
-
-import {
-  TbBrandHackerrank,
-  TbBrandTiktok
-} from "react-icons/tb";
-// SKILL ICONS
-import {
-  SiNextdotjs, SiSpringboot,
-  SiPostgresql, SiDocker, SiNodedotjs,
-} from "react-icons/si";
+import { FiGithub, FiYoutube } from "react-icons/fi";
+import { LuLinkedin, LuFacebook } from "react-icons/lu";
+import { SiLeetcode } from "react-icons/si";
+import { TbBrandHackerrank, TbBrandTiktok } from "react-icons/tb";
 import { IconType } from 'react-icons';
 
 type IconEntry = {
