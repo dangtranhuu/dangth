@@ -1,349 +1,177 @@
-'use client';
-import React, { useEffect } from 'react';
-import { FiGithub } from "react-icons/fi";
-import { SiLeetcode } from "react-icons/si";
-import { TbBrandHackerrank } from "react-icons/tb";
-import { LuLinkedin } from "react-icons/lu";
-import { FiYoutube } from "react-icons/fi";
-import { LuFacebook } from "react-icons/lu";
-import { TbBrandTiktok } from "react-icons/tb";
-import { iconMap } from '@/lib/utils/iconMap';
-import GithubContributions from '@/components/github/GithubContributions'
-import AvatarStack from '@/components/AvatarStack'
-import { useInView } from '@/hooks/useInView';
-import useFadeInOnLoad from '@/hooks/useFadeInOnLoad';
+// app/page.tsx (SERVER COMPONENT)
 
-const mySkills = ['angular', 'nextjs', 'springboot', 'nodejs', 'mssql', 'postgresql', 'mongodb', 'redis', 'dockerfile']
-
-const renderSkillIcons = (keys: string[]) =>
-  keys.map((key) => {
-    const entry = iconMap[key];
-    if (!entry) return null;
-    const Icon = entry.icon;
-    return (
-      <span key={key} title={key} style={{ color: entry.color, fontSize: '1.5rem', marginLeft: '0.5rem' }}>
-        <Icon />
-      </span>
-    );
-  });
+import Image from "next/image";
+import ExpandItem from "@/components/home/ExpandItem";
+import AvatarStack from "@/components/AvatarStack";
+import GithubContributions from "@/components/github/GithubContributions"; // DIRECT CLIENT IMPORT
+import { iconMap } from "@/lib/utils/iconMap";
 
 export default function Home() {
+  const mySkills = [
+    "angular", "nextjs", "springboot", "nodejs",
+    "mssql", "postgresql", "mongodb", "redis", "dockerfile"
+  ];
 
-  const { ref: ghcRef, isVisible: ghcVisible } = useInView();
-  const { ref: certRef, isVisible: certVisible } = useInView();
-  const isHeaderVisible = useFadeInOnLoad(100);
-  const isAboutVisible = useFadeInOnLoad(500);
-  const isExpVisible = useFadeInOnLoad(900);
-  const isEduVisible = useFadeInOnLoad(1200);
-
-  useEffect(() => {
-    const items = document.querySelectorAll('.item');
-
-    const handlers: { title: HTMLElement; handler: () => void }[] = [];
-
-    items.forEach((item) => {
-      const title = item.querySelector('.title') as HTMLElement;
-      const details = item.querySelector('.details') as HTMLElement;
-      const icon = item.querySelector('.icon-wrap svg') as HTMLElement;
-
-      if (title && details && icon) {
-        const handler = () => {
-          icon.classList.toggle('rotate');
-          details.classList.toggle('show');
-        };
-
-        title.addEventListener('click', handler);
-        handlers.push({ title, handler }); // lưu lại để cleanup
-      }
+  const renderSkillIcons = (keys: string[]) =>
+    keys.map((key) => {
+      const entry = iconMap[key];
+      if (!entry) return null;
+      const Icon = entry.icon;
+      return (
+        <span
+          key={key}
+          title={key}
+          style={{ color: entry.color, fontSize: "1.5rem", marginLeft: "0.5rem" }}
+        >
+          <Icon />
+        </span>
+      );
     });
 
-    return () => {
-      handlers.forEach(({ title, handler }) => {
-        title.removeEventListener('click', handler);
-      });
-    };
-  }, []);
-
-
   return (
-    <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
-      {/* Header */}
-      <div className={`fade-in-load scroll-fade ${isHeaderVisible ? 'visible' : ''} relative mt-10`}>
+    <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)]">
+
+      {/* HEADER */}
+      <div className="mt-10 fade-in">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          {/* AvatarStack */}
-          <div className="order-2 md:order-none">
+          <div>
             <h1 className="text-[40px] md:text-[50px] font-bold">Tran Huu Dang</h1>
-            <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">Fullstack developer</p>
+            <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">
+              Fullstack developer
+            </p>
           </div>
 
-          <div className="md:static mx-auto mb-[50px] ml-[30%] md:ml-0 md:mb-0 md:mx-0">
+          <div>
             <AvatarStack />
           </div>
-
         </div>
 
-        <div className="flex flex-col gap-2">
-          <div className="mt-4 mb-4 space-y-2">
-            <div className="flex gap-2">
-              <a href="https://github.com/dangtranhuu" target="_blank">
-                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
-                  <FiGithub />
+        {/* SOCIAL */}
+        <div className="flex flex-wrap gap-2 mt-6">
+          {[
+            { icon: "github", link: "https://github.com/dangtranhuu" },
+            { icon: "leetcode", link: "https://leetcode.com/tranhuudang" },
+            { icon: "hackerrank", link: "https://www.hackerrank.com/tranhuudang" },
+            { icon: "linkedin", link: "https://www.linkedin.com/in/tranhuudang" },
+            { icon: "youtube", link: "https://www.youtube.com/@devlands" },
+            { icon: "facebook", link: "https://www.facebook.com/dangth.dev/" },
+            { icon: "tiktok", link: "https://www.tiktok.com/@theanishtar" },
+          ].map((s, i) => {
+            const Icon = iconMap[s.icon].icon;
+            return (
+              <a href={s.link} target="_blank" key={i}>
+                <button
+                  className="
+            bg-[var(--contact-bc)] 
+            dark:bg-[var(--contact-bc-dark)]
+
+            text-[var(--contact-bc-dark)] 
+            dark:text-[var(--contact-bc)]
+
+            px-3 py-1 rounded text-[18px]
+
+            transition-all duration-200 ease-out
+            hover:scale-110 hover:-translate-y-[2px]
+            hover:shadow-lg hover:shadow-[var(--contact-bc)/50]
+            dark:hover:shadow-[var(--contact-bc-dark)/50]
+          "
+                >
+                  <Icon size={20} />
                 </button>
               </a>
-              <a href="https://leetcode.com/tranhuudang" target="_blank">
-                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
-                  <SiLeetcode />
-                </button>
-              </a>
-              <a href="https://www.hackerrank.com/tranhuudang" target="_blank">
-                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
-                  <TbBrandHackerrank />
-                </button>
-              </a>
-            </div>
-            <div className="flex gap-2">
-              <a href="https://www.linkedin.com/in/tranhuudang" target="_blank">
-                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
-                  <LuLinkedin />
-                </button>
-              </a>
-              <a href="https://www.youtube.com/@devlands" target="_blank">
-                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
-                  <FiYoutube />
-                </button>
-              </a>
-              <a href="https://www.facebook.com/dangth.dev/" target="_blank">
-                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
-                  <LuFacebook />
-                </button>
-              </a>
-              <a href="https://www.tiktok.com/@theanishtar" target="_blank">
-                <button className="bg-[var(--contact-bc)] dark:bg-[var(--contact-bc-dark)] text-[var(--contact-bc-dark)] dark:text-[var(--contact-bc)] px-3 py-1 rounded text-[18px] flex items-center gap-2">
-                  <TbBrandTiktok />
-                </button>
-              </a>
-            </div>
-          </div>
+            );
+          })}
         </div>
+
       </div>
 
-      {/* About */}
-      <section id="about-title" className={`fade-in-load scroll-fade ${isAboutVisible ? 'visible' : ''} space-y-4 mb-12`} aria-labelledby="about-title">
-        <h2 className="text-[32px] font-semibold mb-4 mt-4 sr-only">About</h2>
-        <p>
-          I’m a fullstack developer with a strong interest in building web applications that are both functional and user-friendly...
-        </p>
-        <p>
-          I’ve led and contributed to several real-world projects such as DESTINY, DAVITICKETS, DAVISY...
-        </p>
-        {/* <ul>
-          <li className='flex'>BackEnd: <span className='mr-[10px]'></span> {renderSkillIcons(backendSkills)}</li>
-          <li className='flex'>FrontEnd:<span className='mr-[10px]'></span> {renderSkillIcons(frontendSkills)}</li>
-          <li className='flex'>Database:<span className='mr-[10px]'></span> {renderSkillIcons(dbSkills)}</li>
-          <li className='flex'>DevOps:<span className='mr-[10px]'></span> {renderSkillIcons(devopsSkills)}</li>
-          <li className='flex'>Others: <span className='mr-[10px]'></span>{renderSkillIcons(otherSkills)}</li>
-        </ul> */}
-        <p>
-          Connect with my Linkedin to discuss about work or my Github to share interesting knowledge ^^
-        </p>
-        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', }}>
-          <span style={{ flexBasis: '100%' }}>My skills:</span>
+      {/* ABOUT */}
+      <section className="mt-12 space-y-4 fade-in">
+        <p>I’m a fullstack developer with a strong interest in building web applications...</p>
+        <p>I’ve led and contributed to several real-world projects such as DESTINY, DAVITICKETS...</p>
+        <p>Connect with my Linkedin or Github to share knowledge ^^</p>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          <span>My skills:</span>
           {renderSkillIcons(mySkills)}
         </div>
       </section>
 
-      {/* EXPERIENCE section */}
-      <section id="experience-title" className={`fade-in-load scroll-fade ${isExpVisible ? 'visible' : ''} experience title section mb-12`} aria-labelledby="experience-title">
+      {/* EXPERIENCE */}
+      <section className="mt-12 fade-in">
         <h2 className="text-[32px] font-semibold mb-4">Experience</h2>
 
-        {/* Item */}
-        <article className="item">
-          <header className="title flex justify-between items-start py-2 cursor-pointer group">
-            {/* LEFT: logo + info */}
-            <div className="left col flex">
-              {/* Avatar/logo */}
-              <div className="left w-[70px]">
-                <img
-                  src="/images/exp/devlands.jpg"
-                  className="w-[48px] h-[48px] object-cover rounded-md"
-                  alt="Devlands brand logo"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="right">
-                <div className="top font-semibold text-[17px] flex items-center gap-1">
-                  Devlands
-                  <span className="icon-wrap">
-                    <svg
-                      className="w-4 h-4 transform transition-transform duration-200"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-                    </svg>
-                  </span>
-                </div>
-                <div className="bot text-sm text-gray-500 dark:text-gray-400">
-                  Designer & Content creator
-                </div>
-              </div>
-            </div>
-
-            {/* Time */}
-            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
-              2021–2023
-            </div>
-          </header>
-
-          {/* Toggle content */}
-          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
-            <p>
-              Devlands is a personal brand project designed as a social learning platform,
-              offering tutorials and coding challenges to support developers.
-            </p>
-          </div>
-        </article>
+        <ExpandItem
+          title="Devlands"
+          subtitle="Designer & Content creator"
+          time="2021–2023"
+          logo="/images/exp/devlands.jpg"
+        >
+          Devlands is a personal brand project designed as a social learning platform...
+        </ExpandItem>
       </section>
 
-      {/* EDUCATION section */}
-      <section id="education-title" className={`fade-in-load scroll-fade ${isEduVisible ? 'visible' : ''} education title section mb-12`} aria-labelledby="education-title">
+      {/* EDUCATION */}
+      <section className="mt-12 fade-in">
         <h2 className="text-[32px] font-semibold mb-4">Education</h2>
 
-        {/* === Item 1 === */}
-        <article className="item">
-          <header className="title flex justify-between items-start py-2 cursor-pointer group">
-            {/* LEFT: logo + info */}
-            <div className="left col flex">
-              {/* Logo */}
-              <div className="left w-[70px]">
-                <img
-                  src="/images/education/ctu.png"
-                  className="w-[48px] h-[48px] object-cover rounded-full"
-                  alt="Can Tho University logo"
-                />
-              </div>
+        <ExpandItem
+          title="Can Tho University"
+          subtitle="Information Technology"
+          time="Sep 2025 – Jan 2027"
+          logo="/images/education/ctu.png"
+        >
+          Studied Information Technology at Can Tho University...
+        </ExpandItem>
 
-              {/* Content */}
-              <div className="right">
-                <div className="top font-semibold text-[17px] flex items-center gap-1">
-                  Can Tho University
-                  <span className="icon-wrap">
-                    <svg
-                      className="w-4 h-4 transform transition-transform duration-200"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-                    </svg>
-                  </span>
-                </div>
-                <div className="bot text-sm text-gray-500 dark:text-gray-400">
-                  Information Technology
-                </div>
-              </div>
-            </div>
-
-            {/* Time */}
-            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
-              Sep 2025 – Jan 2027
-            </div>
-          </header>
-
-          {/* Toggle content */}
-          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
-            <p>
-              Studied Information Technology at Can Tho University, focusing on programming, databases, and software development.
-            </p>
-          </div>
-        </article>
-
-        {/* === Item 2 === */}
-        <article className="item">
-          <header className="title flex justify-between items-start py-2 cursor-pointer group">
-            {/* LEFT: logo + info */}
-            <div className="left col flex">
-              {/* Logo */}
-              <div className="left w-[70px]">
-                <img
-                  src="/images/education/fpoly.jpg"
-                  className="w-[48px] h-[48px] object-cover rounded-full"
-                  alt="FPT Polytechnic logo"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="right">
-                <div className="top font-semibold text-[17px] flex items-center gap-1">
-                  FPT Polytechnic
-                  <span className="icon-wrap">
-                    <svg
-                      className="w-4 h-4 transform transition-transform duration-200"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-                    </svg>
-                  </span>
-                </div>
-                <div className="bot text-sm text-gray-500 dark:text-gray-400">
-                  Software development
-                </div>
-              </div>
-            </div>
-
-            {/* Time */}
-            <div className="right times text-[15px] font-semibold tracking-tight whitespace-nowrap">
-              Sep 2021 – Jan 2024
-            </div>
-          </header>
-
-          {/* Toggle content */}
-          <div className="details text-[15px] leading-[27px] text-gray-700 dark:text-gray-300 max-h-0 overflow-hidden transition-all duration-300">
-            <p>
-              Studied Software Development at FPT Polytechnic, with experience as a teaching assistant supporting student learning.
-            </p>
-          </div>
-        </article>
+        <ExpandItem
+          title="FPT Polytechnic"
+          subtitle="Software Development"
+          time="Sep 2021 – Jan 2024"
+          logo="/images/education/fpoly.jpg"
+        >
+          Studied Software Development at FPT Polytechnic...
+        </ExpandItem>
       </section>
 
-
-      {/* GithubContributions section */}
-      <section id="github-contributions-title" ref={ghcRef} className={`fade-in-load scroll-fade ${ghcVisible ? 'visible' : ''} github-contributions title section mb-12`} aria-labelledby="github-contributions-title">
+      {/* GITHUB CONTRIBUTIONS */}
+      <section className="mt-12 fade-in">
         <h2 className="text-[32px] font-semibold mb-4">Github Contributions</h2>
         <GithubContributions />
       </section>
 
-
-      {/* CERTIFICATIONS section */}
-      <section id="certifications-title" ref={certRef} className={`fade-in-load scroll-fade ${certVisible ? 'visible' : ''} cert title section mb-12`} aria-labelledby="certifications-title">
+      {/* CERTIFICATIONS */}
+      <section className="mt-12 fade-in text-center">
         <h2 className="text-[32px] font-semibold mb-4">Certifications</h2>
-        <div className="flex flex-wrap gap-10 justify-center text-center">
+
+        <div className="flex flex-wrap gap-10 justify-center">
           {[
             {
-              img: 'udemy.png',
-              title: 'Master Microservices with Spring Boot & Spring Cloud',
-              org: 'Udemy',
-              date: '02/08/2024',
+              img: "udemy.png",
+              title: "Master Microservices with Spring Boot & Spring Cloud",
+              org: "Udemy",
+              date: "02/08/2024",
             },
             {
-              img: 'aws-cloudfoundations.png',
-              title: 'AWS Academy Cloud Foundations',
-              org: 'AWS',
-              date: '03/07/2022',
+              img: "aws-cloudfoundations.png",
+              title: "AWS Academy Cloud Foundations",
+              org: "AWS",
+              date: "03/07/2022",
             },
             {
-              img: 'datacamp/statement-of-accomplishment.png',
-              title: 'Intermediate SQL Queries',
-              org: 'Data Camp',
-              date: 'APR 15, 2022',
+              img: "datacamp/statement-of-accomplishment.png",
+              title: "Intermediate SQL Queries",
+              org: "Data Camp",
+              date: "APR 15, 2022",
             },
           ].map((cert, idx) => (
             <article key={idx} className="w-[250px]">
-              <img
+              <Image
                 src={`/images/cert/${cert.img}`}
                 alt={cert.title}
-                className="w-[100px] mx-auto"
+                width={100}
+                height={100}
+                className="mx-auto object-contain"
               />
               <div className="font-bold mt-2 text-[16px] whitespace-nowrap overflow-hidden text-ellipsis">
                 {cert.title}
@@ -354,6 +182,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </div >
+    </div>
   );
 }

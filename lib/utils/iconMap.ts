@@ -10,7 +10,29 @@ import { PiFileCSharpBold, PiFileSqlBold } from 'react-icons/pi';
 import { TbBrandNextjs, TbBrandMysql } from "react-icons/tb";
 import { BiLogoSpringBoot, BiLogoPostgresql } from "react-icons/bi";
 import { DiMsqlServer } from "react-icons/di";
+import {
+  FiGithub,
+  FiYoutube
+} from "react-icons/fi";
 
+import {
+  LuLinkedin,
+  LuFacebook
+} from "react-icons/lu";
+
+import {
+  SiLeetcode
+} from "react-icons/si";
+
+import {
+  TbBrandHackerrank,
+  TbBrandTiktok
+} from "react-icons/tb";
+// SKILL ICONS
+import {
+  SiNextdotjs, SiSpringboot,
+  SiPostgresql, SiDocker, SiNodedotjs,
+} from "react-icons/si";
 import { IconType } from 'react-icons';
 
 type IconEntry = {
@@ -19,6 +41,14 @@ type IconEntry = {
 };
 
 export const iconMap: Record<string, IconEntry> = {
+  github: { icon: FiGithub, color: "#000" },
+  leetcode: { icon: SiLeetcode, color: "#FFA116" },
+  hackerrank: { icon: TbBrandHackerrank, color: "#32c766" },
+  linkedin: { icon: LuLinkedin, color: "#0A66C2" },
+  youtube: { icon: FiYoutube, color: "#FF0000" },
+  facebook: { icon: LuFacebook, color: "#1877F2" },
+  tiktok: { icon: TbBrandTiktok, color: "#000" },
+
   //fe
   vue: { icon: FaVuejs, color: '#42b883' },
   react: { icon: FaReact, color: '#61dafb' },
