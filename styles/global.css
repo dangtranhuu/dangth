@@ -242,3 +242,9 @@ body {
 .react-activity-calendar__scroll-container::-webkit-scrollbar-thumb:hover {
   background-color: #888;
 }
+
+.nav-hide {
+  transform: translateY(150%);
+  opacity: 0;
+  pointer-events: none;
+}

@@ -70,7 +70,7 @@ export default async function RootLayout({
 
   return (
 
-    <html className={cmuSansVi.variable}>
+    <html className={cmuSansVi.variable} lang="vi">
       <head>
         {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
