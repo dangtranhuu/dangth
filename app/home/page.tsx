@@ -36,6 +36,9 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           {/* AvatarStack */}
           <div className="order-2 md:order-none">
+            <h1 className="sr-only">
+              Trần Hữu Đang – Fullstack Developer
+            </h1>
             <h1 className="text-[40px] md:text-[50px] font-bold">Tran Huu Dang</h1>
             <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">Fullstack developer</p>
           </div>
