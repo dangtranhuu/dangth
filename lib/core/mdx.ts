@@ -26,6 +26,7 @@ export interface MarkdownContent {
   image?: string | null
   tags?: string[]
   contentHtml: string
+  contentText: string
   readingTime: number
   lastUpdated: string
 }
@@ -73,6 +74,7 @@ export async function getMarkdownContent(
     tags: data.tags ?? [],
     image: data.image ?? firstImage,
     contentHtml,
+    contentText,
     readingTime,
     lastUpdated: stat.mtime.toISOString()
   }

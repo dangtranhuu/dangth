@@ -149,17 +149,68 @@ export async function generateMetadata(
   const post = await getPost(params.slug);
   if (!post) notFound();
 
+  const url = `https://dangth.dev/post/${params.slug}`;
+  const title = post.title;
+
+  // Tự tạo description từ nội dung vì bạn KHÔNG có excerpt/description
+  const rawText = post.contentText ||
+    post.contentHtml.replace(/<[^>]+>/g, " "); // fallback strip HTML
+
+  const description =
+    rawText.slice(0, 160).trim() + "..." ||
+    `Bài viết: ${post.title}`;
+
+  const ogImage = post.image || "/images/og-image.png";
+
   return {
-    title: post.title,
-    openGraph: {
-      title: post.title,
-      type: "article",
-      images: post.image ? [post.image] : [],
+    metadataBase: new URL("https://dangth.dev"),
+
+    title,
+    description,
+
+    alternates: {
+      canonical: url,
     },
+
+    openGraph: {
+      type: "article",
+      url,
+      title,
+      description,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        }
+      ],
+    },
+
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      images: post.image ? [post.image] : [],
+      title,
+      description,
+      images: [ogImage],
     },
+
+    other: {
+      "script:ld+json": JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: title,
+        description,
+        author: {
+          "@type": "Person",
+          name: "Trần Hữu Đang",
+          url: "https://dangth.dev"
+        },
+        datePublished: post.date,
+        dateModified: post.lastUpdated || post.date,
+        image: ogImage,
+        mainEntityOfPage: url,
+        articleBody: rawText
+      })
+    }
   };
 }
