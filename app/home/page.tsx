@@ -32,18 +32,18 @@ export default function Home() {
     <div className="pt-[50px] max-w-[700px] mx-auto px-4 pb-24 text-[var(--text-color)] dark:text-[var(--text-color-dark)]">
 
       {/* HEADER */}
-      <div className="mt-10 fade-in">
+      <div className={`relative mt-10`}>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
+          {/* AvatarStack */}
+          <div className="order-2 md:order-none">
             <h1 className="text-[40px] md:text-[50px] font-bold">Tran Huu Dang</h1>
-            <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">
-              Fullstack developer
-            </p>
+            <p className="text-[#2b2c2fa1] dark:text-[#E5E7EB] font-semibold">Fullstack developer</p>
           </div>
 
-          <div>
+          <div className="md:static mx-auto mb-[50px] ml-[30%] md:ml-0 md:mb-0 md:mx-0">
             <AvatarStack />
           </div>
+
         </div>
 
         {/* SOCIAL */}
