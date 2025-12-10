@@ -34,13 +34,14 @@ export interface PostMeta {
 
 
 // Lấy tất cả slug từ thư mục posts
-export function getAllPostSlugs(): { params: { slug: string } }[] {
+export function getAllPostSlugs(): { slug: string }[] {
   return fs.readdirSync(postsDir)
     .filter(file => file.endsWith('.md'))
     .map(file => ({
-      params: { slug: file.replace(/\.md$/, '') }
+      slug: file.replace(/\.md$/, '')
     }))
 }
+
 
 // Load nội dung bài viết từ slug
 export function getPost(slug: string) {

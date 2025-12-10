@@ -9,60 +9,58 @@ import { MdDateRange, MdHistory, MdRebaseEdit } from "react-icons/md"
 import { IoTimerOutline } from "react-icons/io5"
 import type { Metadata } from "next";
 
-
 export default async function Page({ params }: { params: { slug: string } }) {
-  const post = await getPost(params.slug)
-  if (!post) notFound()
-  const allPosts = await getAllPostsMeta()
-  allPosts.sort((a, b) => a.slug.localeCompare(b.slug))
-  const currentIndex = allPosts.findIndex(p => p.slug === params.slug)
-  const previous = currentIndex > 0 ? allPosts[currentIndex - 1] : null
-  const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null
+
+  // 🔥 MUST UNWRAP (Next.js App Router)
+  const { slug } = params;
+
+  const post = await getPost(slug);
+  if (!post) notFound();
+
+  const allPosts = await getAllPostsMeta();
+  allPosts.sort((a, b) => a.slug.localeCompare(b.slug));
+
+  // 🔥 FIX: dùng slug chứ không dùng params.slug
+  const currentIndex = allPosts.findIndex(p => p.slug === slug);
+
+  const previous = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const next = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
 
   const contentWithLang = post.contentHtml.replace(
     /<pre><code class="[^"]*language-(\w+)"/g,
     `<pre data-lang="$1"><code class="hljs language-$1"`
-  )
+  );
 
-  const headings = extractHeadings(contentWithLang)
+  const headings = extractHeadings(contentWithLang);
 
   return (
     <div className="post relative flex gap-6 mt-12 px-4 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
 
-      {/* TOC fixed right */}
+      {/* TOC giữ nguyên */}
       {headings.length > 0 && (
         <aside className="hidden xl:block fixed top-[100px] right-8 min-w-[200px] max-h-[calc(100vh-120px)] overflow-y-auto text-sm text-gray-500 dark:text-gray-400">
-          <strong className="block text-base text-gray-800 dark:text-gray-100 mb-4">Mục lục</strong>
+          <strong className="block text-base mb-4">Mục lục</strong>
           <ul className="space-y-1">
             {headings.map((heading, idx) => (
-              <li
-                key={idx}
-                className={`toc-item level-${heading.level} list-none`}
-              >
-                <a
-                  href={`#${heading.id}`}
-                  className="text-gray-600 hover:text-blue-500 no-underline dark:text-gray-300"
-                >
+              <li key={idx} className={`toc-item level-${heading.level}`}>
+                <a href={`#${heading.id}`} className="text-gray-600 hover:text-blue-500 dark:text-gray-300">
                   {heading.text}
                 </a>
               </li>
             ))}
-            <li className="toc-item list-none level-2">
-              <a href="#comments" className="hover:text-blue-500">Thảo luận</a>
-            </li>
+            <li className="toc-item level-2"><a href="#comments">Thảo luận</a></li>
           </ul>
         </aside>
       )}
 
-      {/* Main content */}
       <article className="prose lg:prose-lg dark:prose-invert max-w-4xl mx-auto w-full">
-        {/* Tags */}
+
         {Array.isArray(post.tags) && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-6">
             {post.tags.map((tag, idx) => (
               <span
                 key={idx}
-                className="rounded-full border border-[#414141] text-[#414141] bg-[#4141410] text-[12px] leading-6 px-[10px] py-0 dark:border-[#b1b1b1] dark:text-[#cfcfcf]"
+                className="rounded-full border border-[#414141] text-[#414141] dark:border-[#b1b1b1] dark:text-[#cfcfcf] text-[12px] px-[10px]"
               >
                 {tag}
               </span>
@@ -70,147 +68,87 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
         )}
 
-        {/* Title */}
-        <h1 className="mb-4 leading-[normal]">{post.title}</h1>
+        <h1 className="mb-4">{post.title}</h1>
 
-        {/* Metadata */}
-        <div className="flex flex-wrap items-center gap-4 text-[18px] text-gray-600 dark:text-gray-400 mb-4">
-          <div className="flex items-center gap-1">
-            <MdDateRange />
-            <span>{post.date}</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <IoTimerOutline />
-            <span>{post.readingTime} phút đọc</span>
-          </div>
+        <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
+          <div className="flex items-center gap-1"><MdDateRange /> <span>{post.date}</span></div>
+          <div className="flex items-center gap-1"><IoTimerOutline /> <span>{post.readingTime} phút đọc</span></div>
         </div>
 
-
-        {/* Markdown */}
         <div dangerouslySetInnerHTML={{ __html: contentWithLang }} className="mt-10" />
 
-        {/* Edit & Update Info */}
-        <div className="mt-10 flex flex-wrap justify-between items-center text-[18px] text-gray-500 dark:text-gray-400 border-t pt-6 gap-4">
+        <div className="mt-10 flex flex-wrap justify-between items-center border-t pt-6 text-gray-500 dark:text-gray-400 gap-4">
           <a
             href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.postDir}/${post.slug}.md`}
             target="_blank"
-            rel="noopener noreferrer"
             className="flex items-center gap-1 text-blue-500 hover:underline"
           >
-            <MdRebaseEdit />
-            Chỉnh sửa trên GitHub
+            <MdRebaseEdit /> Chỉnh sửa trên GitHub
           </a>
 
           <div className="flex items-center gap-1">
             <MdHistory />
-            <span>
-              Cập nhật: {new Date(post.lastUpdated ?? post.date).toLocaleString()}
-            </span>
+            <span>Cập nhật: {new Date(post.lastUpdated ?? post.date).toLocaleString()}</span>
           </div>
         </div>
 
-        {/* Pagination */}
         {(previous || next) && (
           <div className="mt-10 pt-6 border-t flex justify-between text-blue-500 text-sm">
-            <div>
-              {previous && (
-                <Link href={`/post/${previous.slug}`} className="hover:underline">
-                  ← {previous.title}
-                </Link>
-              )}
-            </div>
-            <div>
-              {next && (
-                <Link href={`/post/${next.slug}`} className="hover:underline">
-                  {next.title} →
-                </Link>
-              )}
-            </div>
+            <div>{previous && <Link href={`/post/${previous.slug}`}>← {previous.title}</Link>}</div>
+            <div>{next && <Link href={`/post/${next.slug}`}>{next.title} →</Link>}</div>
           </div>
         )}
 
-        {/* Comments */}
-        <div className='mt-[100px]'>
+        <div id="comments" className="mt-[100px]">
           <GiscusComments />
         </div>
       </article>
     </div>
-  )
+  );
 }
 
+
+// -------------------------
+// 🔥 generateStaticParams()
+// -------------------------
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs()
-  return slugs.map(({ params }) => ({ slug: params.slug }))
+  const slugs = getAllPostSlugs();
+  return slugs.map(s => ({ slug: s.slug }));
 }
 
+
+
+
+// -------------------------
+// 🔥 generateMetadata()
+// -------------------------
 export async function generateMetadata(
   { params }: { params: { slug: string } }
 ): Promise<Metadata> {
-  const post = await getPost(params.slug);
+
+  const { slug } = await params;
+
+  const post = await getPost(slug);
   if (!post) notFound();
 
-  const url = `https://dangth.dev/post/${params.slug}`;
+  const url = `https://dangth.dev/post/${slug}`;
   const title = post.title;
-
-  // Tự tạo description từ nội dung vì bạn KHÔNG có excerpt/description
-  const rawText = post.contentText ||
-    post.contentHtml.replace(/<[^>]+>/g, " "); // fallback strip HTML
-
-  const description =
-    rawText.slice(0, 160).trim() + "..." ||
-    `Bài viết: ${post.title}`;
-
+  const raw = post.contentText || post.contentHtml.replace(/<[^>]+>/g, " ");
+  const description = raw.slice(0, 160).trim() + "...";
   const ogImage = post.image || "/images/og-image.png";
 
   return {
     metadataBase: new URL("https://dangth.dev"),
-
     title,
     description,
-
-    alternates: {
-      canonical: url,
-    },
-
+    alternates: { canonical: url },
     openGraph: {
       type: "article",
       url,
       title,
       description,
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: title,
-        }
-      ],
+      images: [{ url: ogImage, width: 1200, height: 630 }],
     },
-
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
-    },
-
-    other: {
-      "script:ld+json": JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Article",
-        headline: title,
-        description,
-        author: {
-          "@type": "Person",
-          name: "Trần Hữu Đang",
-          url: "https://dangth.dev"
-        },
-        datePublished: post.date,
-        dateModified: post.lastUpdated || post.date,
-        image: ogImage,
-        mainEntityOfPage: url,
-        articleBody: rawText
-      })
-    }
+    twitter: { card: "summary_large_image", title, description, images: [ogImage] },
   };
 }
