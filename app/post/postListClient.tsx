@@ -22,12 +22,18 @@ export default function PostListClient({ posts }: { posts: Post[] }) {
 
   const tagCounts: Record<string, number> = {}
   posts.forEach((post) => {
-    post.tags?.forEach((tag) => {
-      tagCounts[tag] = (tagCounts[tag] || 0) + 1
-    })
+    // Chỉ tính tag của các bài đã được xuất bản (để đồng nhất với sortedPosts)
+    if (post.published) {
+      post.tags?.forEach((tag) => {
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1
+      })
+    }
   })
 
-  const allTags = Object.entries(tagCounts).sort((a, b) => b[1] - a[1])
+  // 🔥 ĐÃ SỬA: Lọc bỏ các tag có count = 1
+  const allTags = Object.entries(tagCounts)
+    .filter(([, count]) => count > 1) // Chỉ giữ lại tag có số lượng > 1
+    .sort((a, b) => b[1] - a[1]) // Sắp xếp theo thứ tự giảm dần của số lượng
   const sortedPosts = [...posts]
     .filter((post) => post.published) // 👈 lọc chỉ các bài viết đã được xuất bản
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
