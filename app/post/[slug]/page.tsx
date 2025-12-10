@@ -12,7 +12,8 @@ import type { Metadata } from "next";
 export default async function Page({ params }: { params: { slug: string } }) {
 
   // 🔥 MUST UNWRAP (Next.js App Router)
-  const { slug } = params;
+  const { slug } = await params;
+
 
   const post = await getPost(slug);
   if (!post) notFound();
@@ -43,7 +44,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <ul className="space-y-1">
             {headings.map((heading, idx) => (
               <li key={idx} className={`toc-item level-${heading.level}`}>
-                <a href={`#${heading.id}`} className="text-gray-600 hover:text-blue-500 dark:text-gray-300">
+                <a
+                  href={`#${heading.id}`}
+                  // Sử dụng truncate và giới hạn chiều rộng
+                  className="text-gray-600 hover:text-blue-500 dark:text-gray-300 max-w-[300px] truncate block" // <--- Đã sửa đổi
+                >
                   {heading.text}
                 </a>
               </li>
@@ -127,6 +132,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 
   const { slug } = await params;
+
 
   const post = await getPost(slug);
   if (!post) notFound();
