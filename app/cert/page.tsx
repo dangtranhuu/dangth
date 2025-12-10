@@ -22,6 +22,13 @@ export default function CertPage() {
       ],
     },
     {
+      org: 'Google Educator',
+      logo: '/images/cert/google/logo.png',
+      certs: [
+        { name: 'Gemini Certified Educator', image: '/images/cert/google/gemini-certified-educator.jpg', level: 'Certification' },
+      ],
+    },
+    {
       org: 'Data Camp',
       logo: '/images/cert/datacamp/datacamp-logo-freelogovectors.net_.png',
       certs: [
