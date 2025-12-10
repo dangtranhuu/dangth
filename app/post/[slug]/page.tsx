@@ -72,13 +72,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             ))}
           </div>
         )}
-        <h2 className="
-            !mt-0 !mb-6 
-            text-3xl lg:text-4xl 
-            font-extrabold 
-            tracking-wider 
-            leading-tight
-        ">
+        <h2 >
           {post.title}
         </h2>
 
