@@ -72,8 +72,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
             ))}
           </div>
         )}
-
-        <h1 className="mb-4">{post.title}</h1>
+        <h2 className="
+            !mt-0 !mb-6 
+            text-3xl lg:text-4xl 
+            font-extrabold 
+            tracking-wider 
+            leading-tight
+        ">
+          {post.title}
+        </h2>
 
         <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
           <div className="flex items-center gap-1"><MdDateRange /> <span>{post.date}</span></div>
