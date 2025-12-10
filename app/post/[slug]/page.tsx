@@ -83,7 +83,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
         <div dangerouslySetInnerHTML={{ __html: contentWithLang }} className="mt-10" />
 
-        <div className="mt-10 flex flex-wrap justify-between items-center border-t pt-6 text-gray-500 dark:text-gray-400 gap-4">
+        <div className="mt-10 flex flex-wrap justify-between items-center border-t pt-6 text-gray-500 dark:text-gray-400 gap-4 dark:border-[hsl(0_0%_100%/0.33)]">
           <a
             href={`${SITE_CONFIG.githubRepo}/edit/${SITE_CONFIG.githubBranch}/${SITE_CONFIG.postDir}/${post.slug}.md`}
             target="_blank"
@@ -99,7 +99,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
 
         {(previous || next) && (
-          <div className="mt-10 pt-6 border-t flex justify-between text-blue-500 text-sm">
+          <div className="mt-10 pt-6 border-t flex justify-between text-blue-500 text-sm dark:border-[hsl(0_0%_100%/0.33)]">
             <div>{previous && <Link href={`/post/${previous.slug}`}>← {previous.title}</Link>}</div>
             <div>{next && <Link href={`/post/${next.slug}`}>{next.title} →</Link>}</div>
           </div>

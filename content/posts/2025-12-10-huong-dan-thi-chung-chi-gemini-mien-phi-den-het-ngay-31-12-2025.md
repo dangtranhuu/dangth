@@ -28,7 +28,6 @@ Sau khi tự mình vượt qua bài thi và thành công nhận chứng chỉ, t
 
 > **Kêu gọi hành động SEO:** Đừng để mất 25 USD chỉ vì chần chừ! Hãy cùng tôi tối ưu hóa quá trình ôn thi và nhận chứng chỉ Gemini ngay hôm nay!
 
----
 
 ## 1. Lợi Ích Vượt Trội Khi Sở Hữu Chứng Chỉ Gemini (Chuẩn SEO: Giá trị)
 
@@ -49,7 +48,6 @@ Việc sở hữu **Certificate Gemini Educator** hoặc **Student** là sự ch
 ![](/images/cert/google/gemini-certified-educator.jpg)
 ![](/images/cert/google/gemini-certified-student.jpg)
 
----
 
 ## 2. Hướng Dẫn Từng Bước Thi Chứng Chỉ Gemini Google Miễn Phí
 
@@ -91,7 +89,6 @@ Khi bạn đạt điểm vượt qua yêu cầu (thường là 80%-86% trở lê
 2.  **Xác minh:** Chứng chỉ của bạn sẽ hiển thị đầy đủ tên đã đăng ký và giá trị trong **3 năm**.
 3.  **Khai thác:** Ngay lập tức thêm chứng chỉ này vào hồ sơ LinkedIn, CV, hoặc trang web cá nhân của bạn để tạo uy tín và thu hút nhà tuyển dụng.
 
----
 
 ## 4. Kết Luận và Kêu gọi Hành động Cuối Cùng
 
@@ -102,5 +99,3 @@ Cuộc đua AI đang diễn ra mạnh mẽ, và **Certificate Gemini Google** l�
 > **Bạn đã sẵn sàng nâng cấp hồ sơ năng lực AI của mình chưa?**
 >
 > **Bắt đầu thi ngay** [Link đăng ký Google Official] **và chia sẻ kết quả với tôi qua bình luận bên dưới nhé!**
-
----

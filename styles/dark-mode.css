@@ -27,6 +27,11 @@
   color: var(--color-btn-primary-text);
 }
 
+.dark .prose hr {
+  /* border-color: var(--hr-border-color-dark); */
+  border-top: 1px solid hsl(0deg 0% 100% / 33%);
+}
+
 .dark .post aside strong {
   color: var(--color-btn-primary-text);
 }
