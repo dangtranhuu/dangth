@@ -11,6 +11,8 @@ import { cmuSansVi } from './fonts'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ImageZoomClient from '@/components/ImageZoomClient'
+import Live2DClient from '@/components/Live2DClient';
+
 
 export const metadata = {
   metadataBase: new URL('https://dangth.dev'),
@@ -79,6 +81,7 @@ export default async function RootLayout({
       </head>
       <body className='dark:bg-[var(--background-color-dark)] min-h-screen flex flex-col'>
         <ImageZoomClient />
+        <Live2DClient />
         <Navbar />
         <main className='dark:bg-[var(--background-color-dark)]'>{children}</main>
         <Footer />
