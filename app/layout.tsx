@@ -13,55 +13,77 @@ import Footer from '@/components/Footer'
 import ImageZoomClient from '@/components/ImageZoomClient'
 import Live2DClient from '@/components/Live2DClient';
 
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://dangth.dev'),
+
   title: {
     default: 'Trần Hữu Đang – Lập trình viên Fullstack',
-    template: '%s | Trần Hữu Đang'
+    template: '%s | Trần Hữu Đang',
   },
+
   description:
-    'Portfolio của Trần Hữu Đang – Lập trình viên Fullstack, kinh nghiệm Next.js, Spring Boot, DevOps, Microservices, và phát triển hệ thống web.',
+    'Portfolio của Trần Hữu Đang – Lập trình viên Fullstack với kinh nghiệm Next.js, Spring Boot, DevOps, Microservices và xây dựng hệ thống web.',
+
   keywords: [
     'Trần Hữu Đang',
-    'lập trình viên',
     'lập trình viên fullstack',
+    'fullstack developer vietnam',
     'nextjs developer',
     'spring boot developer',
     'portfolio lập trình viên',
-    'fullstack developer vietnam'
   ],
-  openGraph: {
-    title: 'Trần Hữu Đang – Fullstack Developer',
-    description:
-      'Xem portfolio của Trần Hữu Đang, bao gồm kinh nghiệm, dự án, chứng chỉ và kỹ năng.',
-    url: 'https://dangth.dev',
-    type: 'website',
-    siteName: 'dangth.dev',
-    locale: 'vi_VN',
-    images: ['/images/og-image.png'],
+
+  authors: [{ name: "Trần Hữu Đang" }],
+  creator: "Trần Hữu Đang",
+  publisher: "Trần Hữu Đang",
+
+  alternates: {
+    canonical: 'https://dangth.dev',
   },
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+
+  openGraph: {
+    title: 'Trần Hữu Đang – Lập trình viên Fullstack',
+    description:
+      'Portfolio cá nhân của Trần Hữu Đang, chia sẻ dự án, kinh nghiệm và kỹ năng phát triển web.',
+    url: 'https://dangth.dev',
+    siteName: 'Trần Hữu Đang',
+    locale: 'vi_VN',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Trần Hữu Đang – Lập trình viên Fullstack',
+      },
+    ],
+  },
+
   twitter: {
     card: 'summary_large_image',
-    title: 'Trần Hữu Đang – Fullstack Developer',
-    description: 'Portfolio lập trình viên fullstack.',
-    images: ['/images/og-image.png'],
+    title: 'Trần Hữu Đang – Lập trình viên Fullstack',
+    description: 'Portfolio lập trình viên Fullstack.',
+    images: ['/og-image.png'],
   },
-  other: {
-    'script:ld+json': JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: 'Trần Hữu Đăng',
-      url: 'https://dangth.dev',
-      jobTitle: 'Lập trình viên Fullstack',
-      sameAs: [
-        'https://github.com/dangtranhuu',
-        'https://www.linkedin.com/in/tranhuudang',
-        'https://www.facebook.com/dangth.dev',
-        'https://www.youtube.com/@devlands'
-      ],
-    }),
-  }
 };
 
 export default async function RootLayout({
