@@ -29,7 +29,7 @@ Sau khi tự mình vượt qua bài thi và thành công nhận chứng chỉ, t
 > **Kêu gọi hành động SEO:** Đừng để mất 25 USD chỉ vì chần chừ! Hãy cùng tôi tối ưu hóa quá trình ôn thi và nhận chứng chỉ Gemini ngay hôm nay!
 
 
-## 1. Lợi Ích Vượt Trội Khi Sở Hữu Chứng Chỉ Gemini (Chuẩn SEO: Giá trị)
+## 1. Lợi Ích Vượt Trội Khi Sở Hữu Chứng Chỉ Gemini 
 
 Việc sở hữu **Certificate Gemini Educator** hoặc **Student** là sự chứng minh mạnh mẽ nhất về khả năng bạn làm việc hiệu quả với các Mô hình Ngôn ngữ Lớn (LLMs).
 
@@ -79,7 +79,7 @@ Bài thi kéo dài khoảng 60 phút, với 37-39 câu hỏi trắc nghiệm đa
 | **Prompt Tối Ưu** | Sử dụng prompt chính xác: *"chỉ cần trả lời bằng lựa chọn đúng, không cần giải thích" + [Câu hỏi của bạn]"* | Tiết kiệm thời gian đọc và phân tích đáp án. |
 | **Tài liệu Tham khảo** | Tải và sử dụng bộ đáp án đã được tổng hợp (tài liệu PDF/Google Docs) | Đảm bảo kết quả cho các câu hỏi lý thuyết về chính sách và tính năng cố định. |
 
-> **Tài nguyên Vàng:** Bạn có thể tải bộ đáp án tham khảo **Tại đây** [Thay bằng Link Đáp án PDF/Doc của bạn] hoặc **xem online đáp án chứng chỉ Gemini** [Thay bằng Link Online của bạn]. Dùng **Ctrl+F** để tìm kiếm câu hỏi nhanh chóng trong tài liệu.
+<!-- > **Tài nguyên Vàng:** Bạn có thể tải bộ đáp án tham khảo **Tại đây** [Thay bằng Link Đáp án PDF/Doc của bạn] hoặc **xem online đáp án chứng chỉ Gemini** [Thay bằng Link Online của bạn]. Dùng **Ctrl+F** để tìm kiếm câu hỏi nhanh chóng trong tài liệu. -->
 
 ### Bước 4: Nhận & Khai thác Chứng Chỉ
 
