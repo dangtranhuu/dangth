@@ -1,5 +1,5 @@
 ---
-title: Tái Thiết Hệ Thống Comment của Reddit: Từ Python Monolith Đến Go Microservices
+title: "Tái Thiết Hệ Thống Comment của Reddit: Từ Python Monolith Đến Go Microservices"
 subtitle: Bài học về chiến lược migration dữ liệu, hiệu năng và tính nhất quán ở quy mô lớn
 author: [Trần Hữu Đang] 
 date: "2025-12-15"
