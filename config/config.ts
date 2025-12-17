@@ -19,6 +19,6 @@ export const GISCUS = {
 }
 
 export const GITHUB = {
-  username: "dangtranhuu",
+  username: "2hjaito",
   topic: "featured"
 }
