@@ -225,8 +225,12 @@ body {
   fill: #53d353;
 }
 
+.react-activity-calendar__scroll-container {
+  padding-bottom: 5px !important;
+}
+
 .react-activity-calendar__scroll-container::-webkit-scrollbar {
-  height: 6px;
+  height: 5px;
 }
 
 .react-activity-calendar__scroll-container::-webkit-scrollbar-track {
@@ -234,7 +238,7 @@ body {
 }
 
 .react-activity-calendar__scroll-container::-webkit-scrollbar-thumb {
-  background-color: #bbb;
+  background-color: #bbbbbb4d;
   border-radius: 999px;
   transition: background-color 0.2s;
 }
