@@ -1,0 +1,33 @@
+name: Deploy Production - dangth
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Production Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
+          key: ${{ secrets.PROD_KEY }}
+          script: |
+            set -e
+
+            cd /root/projects/dangth
+
+            echo "👉 Pull latest code"
+            git fetch origin release
+            git reset --hard origin/release
+
+            echo "👉 Deploy with Docker Compose"
+            docker compose -p dangth-prod -f docker-compose.prod.yml down --remove-orphans
+            docker compose -p dangth-prod -f docker-compose.prod.yml up -d --build
+
+            echo "✅ Deploy finished"
+            docker ps

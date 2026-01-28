@@ -1,0 +1,17 @@
+services:
+  dangth:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dangth-prod
+    environment:
+      - NODE_ENV=production
+      - PORT=1210
+    ports:
+      - "1210:1210"
+    restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
