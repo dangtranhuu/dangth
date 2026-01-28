@@ -75,7 +75,10 @@ chmod 600 /root/.ssh/authorized_keys
 
 ![HotJava Trình Diễn](/images/post/2026-1-28-auto-deploy-vps-github-actions/2.png)
 
-⚠️ Lưu ý cực quan trọng: File /root/.ssh/github_actions_dangth_prod (Private Key) là "sinh mạng" của server bạn. Tuyệt đối không được push file này lên GitHub hay để lộ cho bất kỳ ai. Chúng ta chỉ copy nội dung của nó để dán vào GitHub Secrets ở bước sau thôi nhé!
+
+> [!WARNING]
+> **Lưu ý cực quan trọng:**
+> File /root/.ssh/github_actions_dangth_prod (Private Key) là "sinh mạng" của server bạn. Tuyệt đối không được push file này lên GitHub hay để lộ cho bất kỳ ai. Chúng ta chỉ copy nội dung của nó để dán vào GitHub Secrets ở bước sau thôi nhé!
 
 ---
 
@@ -182,7 +185,6 @@ Bây giờ là lúc tận hưởng thành quả. Bạn chỉ cần thực hiện
 
 Ngay lập tức, tab Actions trên GitHub sẽ bừng sáng. Bạn có thể nhìn thấy quy trình đang chạy từng bước một: từ việc SSH vào server, kiểm tra Port, cho đến build lại Docker image. Cảm giác ngồi xem máy tự làm việc thay mình thực sự rất "phê"!
 ![HotJava Trình Diễn](/images/post/2026-1-28-auto-deploy-vps-github-actions/6.png)
-
 
 
 Và đây là kết quả cuối cùng: Một màu xanh hy vọng! Mọi dòng lệnh đều thực thi trơn tru, Port 1210 đã được bàn giao cho phiên bản code mới nhất mà không gặp bất kỳ sự cố xung đột nào.
