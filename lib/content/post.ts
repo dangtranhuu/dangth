@@ -32,6 +32,11 @@ export interface PostMeta {
   published: boolean
 }
 
+function safeDate(value: any): string {
+  if (!value) return ''
+  const d = new Date(value)
+  return isNaN(d.getTime()) ? '' : d.toISOString().slice(0, 10)
+}
 
 // Lấy tất cả slug từ thư mục posts
 export function getAllPostSlugs(): { slug: string }[] {
@@ -63,7 +68,7 @@ export async function getAllPostsMeta() {
         title: data.title ?? '',
         subtitle: data.subtitle ?? '',
         author: data.author ?? '',
-        date: typeof data.date === 'string' ? data.date : new Date(data.date).toISOString().slice(0, 10),
+        date: safeDate(data.date),
         image: data.image ?? null,
         tags: data.tags ?? [],
         arxiv: data.arxiv ?? null,
