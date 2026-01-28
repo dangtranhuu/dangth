@@ -25,9 +25,19 @@ jobs:
             git fetch origin release
             git reset --hard origin/release
 
+            echo "👉 Stop container using port 1210 (if any)"
+            OLD_CONTAINER_ID=$(docker ps -q --filter "publish=1210")
+            if [ -n "$OLD_CONTAINER_ID" ]; then
+              echo "⚠️ Found container using port 1210: $OLD_CONTAINER_ID"
+              docker stop $OLD_CONTAINER_ID
+              docker rm $OLD_CONTAINER_ID
+            else
+              echo "✅ No container using port 1210"
+            fi
+
             echo "👉 Deploy with Docker Compose"
-            docker compose -p dangth-prod -f docker-compose.prod.yml down --remove-orphans
             docker compose -p dangth-prod -f docker-compose.prod.yml up -d --build
 
             echo "✅ Deploy finished"
             docker ps
+
