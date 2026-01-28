@@ -34,6 +34,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   const headings = extractHeadings(contentWithLang);
 
+  function safeDateString(value?: string | number | Date) {
+    if (!value) return null;
+    const d = new Date(value);
+    return isNaN(d.getTime()) ? null : d.toLocaleString();
+  }
+
   return (
     <div className="post relative flex gap-6 mt-12 px-4 text-[var(--text-color)] dark:text-[var(--text-color-dark)] dark:bg-[var(--background-color-dark)]">
 
@@ -77,7 +83,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </h2>
 
         <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
-          <div className="flex items-center gap-1"><MdDateRange /> <span>{post.date}</span></div>
+          <div className="flex items-center gap-1">
+            <MdDateRange />
+            <span>{safeDateString(post.date) ?? post.date}</span>
+          </div>
+
           <div className="flex items-center gap-1"><IoTimerOutline /> <span>{post.readingTime} phút đọc</span></div>
         </div>
 
@@ -94,7 +104,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
           <div className="flex items-center gap-1">
             <MdHistory />
-            <span>Cập nhật: {new Date(post.lastUpdated ?? post.date).toLocaleString()}</span>
+            <span>
+              Cập nhật: {safeDateString(post.lastUpdated ?? post.date) ?? "Đang cập nhật"}
+            </span>
+
           </div>
         </div>
 
