@@ -184,7 +184,9 @@ Ngay lập tức, tab Actions trên GitHub sẽ bừng sáng. Bạn có thể nh
 ![HotJava Trình Diễn](/images/post/2026-1-28-auto-deploy-vps-github-actions/6.png)
 
 
+
 Và đây là kết quả cuối cùng: Một màu xanh hy vọng! Mọi dòng lệnh đều thực thi trơn tru, Port 1210 đã được bàn giao cho phiên bản code mới nhất mà không gặp bất kỳ sự cố xung đột nào.
+
 ![HotJava Trình Diễn](/images/post/2026-1-28-auto-deploy-vps-github-actions/7.png)
 ---
 
@@ -195,7 +197,3 @@ Vậy là xong! Từ nay, mỗi khi bạn `git push origin release`, hệ thốn
 Việc tối ưu CI/CD không chỉ giúp bạn rảnh tay hơn mà còn hạn chế tối đa downtime cho ứng dụng của mình.
 
 **Bạn có đang gặp khó khăn ở bước cấu hình SSH hay bị lỗi quyền (permission) trên VPS không? Hãy để lại comment bên dưới hoặc chia sẻ kinh nghiệm deploy của bạn, mình sẽ hỗ trợ giải đáp ngay nhé! 👇**
-
----
-
-**Sếp thấy bản này đã đủ "nhiệt" và đầy đủ các lưu ý kỹ thuật chưa? Cần thêm mắm dặm muối gì cứ bảo mình nhé!**
