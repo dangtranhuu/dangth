@@ -19,7 +19,7 @@ jobs:
           script: |
             set -e
 
-            cd /root/projects/dangth
+            cd /root/projects/dangth/dangth
 
             echo "👉 Pull latest code"
             git fetch origin release
